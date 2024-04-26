@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FTL>
+
+<version>^1.10.0</version>
+
+<mod:findLike type="scripts" limit="1">
+    <mod-append:script>data/scripts/fishing.lua</mod-append:script>
+</mod:findLike>
+
+<events>
+    <variable name="fish_active" op="set" val="0"/>
+    <variable name="fish_this_sector" op="set" val="0"/>
+    <variable name="fish_this_jump" op="set" val="0"/>
+</events>
+
+</FTL>

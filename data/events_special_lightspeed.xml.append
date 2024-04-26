@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <mod:findName type = "event" name = "REROUTE_MENU">
+    <mod-append:variable name="fish_this_sector" op="set" val="0"/>
+  </mod:findName>
+
+  <mod:findName type = "event" name = "REROUTE_MENU_LASTSTAND">
+    <mod-append:variable name="fish_this_sector" op="set" val="0"/>
+  </mod:findName>
+</FTL>
