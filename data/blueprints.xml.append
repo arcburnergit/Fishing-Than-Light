@@ -1095,8 +1095,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Coho Salmon</title>
-	<short>Coho Salmon</short>
+	<title>Alliance Fish</title>
+	<short>Alliance Fish</short>
 	<desc>A unique space fish, when consumed gives a +45% health bonus to all crew</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1116,8 +1116,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Roosterfish</title>
-	<short>Roosterfish</short>
+	<title>Commando Fish</title>
+	<short>Commando Fish</short>
 	<desc>A unique space fish, when consumed gives a +45% damage bonus to all crew</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1137,8 +1137,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Yellowfin Salmon</title>
-	<short>Yellowfin Salmon</short>
+	<title>Harmony Fish</title>
+	<short>Harmony Fish</short>
 	<desc>A unique space fish, when consumed gives a +45% damage reduction bonus to all crew</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1158,9 +1158,9 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Flathead Catfish</title>
-	<short>Flathead Catfish</short>
-	<desc>A unique space fish, when consumed gives a +45% movement speed bonus to all crew</desc>
+	<title>Energy Fish</title>
+	<short>Energy Fish</short>
+	<desc>A unique space fish, when consumed gives +1 bonus power to all zoltans.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1179,8 +1179,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Bream</title>
-	<short>Golden Bream</short>
+	<title>Weed Fish</title>
+	<short>Weed Fish</short>
 	<desc>A unique space fish, when consumed gives a +45% repair speed bonus to all crew</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1200,8 +1200,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Black Cobia</title>
-	<short>Black Cobia</short>
+	<title>Mantis Fish</title>
+	<short>Mantis Fish</short>
 	<desc>A unique space fish, when consumed gives a +20% weapon charge speed bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1221,8 +1221,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Wisdomfish</title>
-	<short>Wisdomfish</short>
+	<title>Ice Fish</title>
+	<short>Ice Fish</short>
 	<desc>A unique space fish, when consumed gives a +25% shield charge speed bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1242,8 +1242,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Stone Fish</title>
+	<short>Stone Fish</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1263,8 +1263,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Insurgent Fish</title>
+	<short>Insurgent Fish</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1284,8 +1284,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Theif Fish</title>
+	<short>Theif Fish</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1305,8 +1305,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Anaerobic Fish</title>
+	<short>Anaerobic Fish</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1326,8 +1326,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Slug Ray</title>
+	<short>Slug Ray</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1347,8 +1347,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Leech?</title>
+	<short>Leech?</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1368,8 +1368,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Ancient Fish</title>
+	<short>Ancient Fish</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -1389,8 +1389,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Golden Trout</title>
-	<short>Golden Trout</short>
+	<title>Fishvan</title>
+	<short>Fishvan</short>
 	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
