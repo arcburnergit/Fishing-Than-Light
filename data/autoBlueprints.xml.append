@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<mod:findName type="blueprintList" name="LIST_WEAPONS_ALL">
+  <mod-append:name></mod-append:name>
+</mod:findName>
+<mod:findName type="blueprintList" name="LIST_WEAPONS_ALL_CRAPBUCKET">
+	<mod-append:name></mod-append:name>
+</mod:findName>
+
+<blueprintList name="BLUELIST_FISHING_RODS_UP">
+  <name>FISHING_ROD_1</name>
+  <name>FISHING_ROD_2</name>
+</blueprintList>
+
+<blueprintList name="BLUELIST_FISHING_RODS">
+  <name>FISHING_ROD_1</name>
+  <name>FISHING_ROD_2</name>
+  <name>FISHING_ROD_3</name>
+</blueprintList>
+
+<blueprintList name="BLUELIST_FISH">
+  <name>FISH_FOOD_1</name>
+  <name>FISH_FOOD_2</name>
+  <name>FISH_FOOD_3</name>
+  <name>FISH_FOOD_4</name>
+  <name>FISH_FOOD_5</name>
+  <name>FISH_FOOD_6</name>
+  <name>FISH_FOOD_7</name>
+  <name>FISH_FOOD_8</name>
+  <name>FISH_FOOD_11</name>
+  <name>FISH_FOOD_12</name>
+  <name>FISH_FOOD_13</name>
+  <name>FISH_FOOD_14</name>
+  <name>FISH_FOOD_15</name>
+  <name>FISH_FOOD_16</name>
+  <name>FISH_FOOD_17</name>
+  <name>FISH_FOOD_18</name>
+  <name>FISH_FOOD_21</name>
+  <name>FISH_FOOD_22</name>
+  <name>FISH_FOOD_23</name>
+  <name>FISH_FOOD_24</name>
+  <name>FISH_FOOD_25</name>
+  <name>FISH_FOOD_26</name>
+  <name>FISH_FOOD_27</name>
+  <name>FISH_FOOD_28</name>
+  <name>FISH_FOOD_31</name>
+  <name>FISH_FOOD_32</name>
+  <name>FISH_FOOD_33</name>
+  <name>FISH_FOOD_34</name>
+  <name>FISH_FOOD_35</name>
+</blueprintList>
+
+<blueprintList name="FISHLIST_1">
+  <name>FISH_FOOD_1</name>
+  <name>FISH_FOOD_2</name>
+  <name>FISH_FOOD_3</name>
+  <name>FISH_FOOD_4</name>
+  <name>FISH_FOOD_5</name>
+  <name>FISH_FOOD_6</name>
+  <name>FISH_FOOD_7</name>
+  <name>FISH_FOOD_8</name>
+</blueprintList>
+
+<blueprintList name="FISHLIST_2">
+  <name>FISH_FOOD_11</name>
+  <name>FISH_FOOD_12</name>
+  <name>FISH_FOOD_13</name>
+  <name>FISH_FOOD_14</name>
+  <name>FISH_FOOD_15</name>
+  <name>FISH_FOOD_16</name>
+  <name>FISH_FOOD_17</name>
+  <name>FISH_FOOD_18</name>
+</blueprintList>
+
+<blueprintList name="FISHLIST_3">
+  <name>FISH_FOOD_21</name>
+  <name>FISH_FOOD_22</name>
+  <name>FISH_FOOD_23</name>
+  <name>FISH_FOOD_24</name>
+  <name>FISH_FOOD_25</name>
+  <name>FISH_FOOD_26</name>
+  <name>FISH_FOOD_27</name>
+  <name>FISH_FOOD_28</name>
+</blueprintList>
+
+<blueprintList name="FISHLIST_LEG">
+  <name>FISH_FOOD_31</name>
+  <name>FISH_FOOD_32</name>
+  <name>FISH_FOOD_33</name>
+  <name>FISH_FOOD_34</name>
+  <name>FISH_FOOD_35</name>
+</blueprintList>
+</FTL>

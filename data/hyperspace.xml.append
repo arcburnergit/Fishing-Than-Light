@@ -2,16 +2,390 @@
 
 <FTL>
 
-<version>^1.10.0</version>
+<version>^1.11.0</version>
 
 <mod:findLike type="scripts" limit="1">
     <mod-append:script>data/scripts/fishing.lua</mod-append:script>
 </mod:findLike>
 
 <events>
+    <variable name="fish_sector" op="set" val="0"/>
     <variable name="fish_active" op="set" val="0"/>
     <variable name="fish_this_sector" op="set" val="0"/>
     <variable name="fish_this_jump" op="set" val="0"/>
+    <req name="fish_option" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>fish_active</name>
+        </req>
+        <req>
+            <name>BLUELIST_FISHING_RODS</name>
+        </req>
+    </req>
+
+    <req name="fish_start" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>fish_this_sector</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>fish_active</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>fish_this_jump</name>
+        </req>
+        <req>
+            <name>BLUELIST_FISHING_RODS</name>
+        </req>
+    </req>
+</events>
+
+<mod:findLike type="ships">
+  	<mod:findLike type="shipOrder">
+		<mod-append:ship>PLAYER_SHIP_FISHING</mod-append:ship>
+		<mod-append:empty />
+		<mod-append:empty />
+		<mod-append:empty />
+			<!-- -->
+		<mod-append:empty />
+		<mod-append:empty />
+		<mod-append:empty />
+		<mod-append:empty />
+
+		<mod-append:empty />
+		<mod-append:empty />
+	</mod:findLike>
+	<mod-append:ship name="PLAYER_SHIP_FISHING" b="false" c="false" >
+        <unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+        <achievement name="FISHING_SHIP_ACH_1" layout="all">
+            <name>Big Catch</name>
+            <description>Have your entire cargo full of fish.</description>
+            <icon>fish_1_icon</icon>
+            <lockImage>fish_1_icon_locked</lockImage>
+        </achievement>
+        <achievement name="FISHING_SHIP_ACH_2" layout="all">
+            <name>A great voyage</name>
+            <description>Successfully catch a fish in sectors belonging to each faction; civilians, rebels, pirates, engi, zoltans, mantis, rocks, slug, orchid, shell, leech, and lanius/ghost .</description>
+            <icon>fish_2_icon</icon>
+            <lockImage>fish_2_icon_locked</lockImage>
+        </achievement>
+        <achievement name="FISHING_SHIP_ACH_3" layout="all">
+            <name>Hold my fishing rod</name>
+            <description>Successfully catch a fish during the fight with the rebel flagship.</description>
+            <icon>fish_3_icon</icon>
+            <lockImage>fish_3_icon_locked</lockImage>
+        </achievement>
+	</mod-append:ship>
+
+	<mod-append:customShip name="PLAYER_SHIP_FISHING">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_FISHING">
+	</mod-append:customShip>
+</mod:findLike>
+
+<augments>
+    <aug name="FISH_AUG_1">
+        <statBoosts>
+            <statBoost name="maxHealth">
+                <boostType>MULT</boostType>
+                <amount>1.05</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_2">
+        <statBoosts>
+            <statBoost name="damageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.05</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_3">
+        <statBoosts>
+            <statBoost name="allDamageTakenMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.95</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_4">
+        <statBoosts>
+            <statBoost name="moveSpeedMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.05</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_5">
+        <statBoosts>
+            <statBoost name="repairSpeed">
+                <boostType>MULT</boostType>
+                <amount>1.05</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_6">
+        <function name="AUTO_COOLDOWN" value="0.01" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_7">
+        <function name="SHIELD_RECHARGE" value="0.01" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_8">
+        <function name="SCRAP_COLLECTOR" value="0.01" useForReqs="false" warning="false"/>
+    </aug>
+
+    <aug name="FISH_AUG_11">
+        <statBoosts>
+            <statBoost name="maxHealth">
+                <boostType>MULT</boostType>
+                <amount>1.15</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_12">
+        <statBoosts>
+            <statBoost name="damageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.15</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_13">
+        <statBoosts>
+            <statBoost name="allDamageTakenMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.85</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_14">
+        <statBoosts>
+            <statBoost name="moveSpeedMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.15</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_15">
+        <statBoosts>
+            <statBoost name="repairSpeed">
+                <boostType>MULT</boostType>
+                <amount>1.15</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_16">
+        <function name="AUTO_COOLDOWN" value="0.05" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_17">
+        <function name="SHIELD_RECHARGE" value="0.06" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_18">
+        <function name="SCRAP_COLLECTOR" value="0.05" useForReqs="false" warning="false"/>
+    </aug>
+
+    <aug name="FISH_AUG_21">
+        <statBoosts>
+            <statBoost name="maxHealth">
+                <boostType>MULT</boostType>
+                <amount>1.45</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_22">
+        <statBoosts>
+            <statBoost name="damageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.45</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_23">
+        <statBoosts>
+            <statBoost name="allDamageTakenMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.55</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_24">
+        <statBoosts>
+            <statBoost name="moveSpeedMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.45</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_25">
+        <statBoosts>
+            <statBoost name="repairSpeed">
+                <boostType>MULT</boostType>
+                <amount>1.45</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_26">
+        <function name="AUTO_COOLDOWN" value="0.20" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_27">
+        <function name="SHIELD_RECHARGE" value="0.25" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_28">
+        <function name="SCRAP_COLLECTOR" value="0.20" useForReqs="false" warning="false"/>
+    </aug>
+
+    <aug name="FISH_AUG_31">
+        <statBoosts>
+            <statBoost name="moveSpeedMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.1</amount>
+                <shipTarget>ORIGINAL_SHIP</shipTarget>
+                <crewTarget>ENEMIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_32">
+        <statBoosts>
+            <statBoost name="canFight">
+                <boostType>SET</boostType>
+                <value>false</value>
+                <shipTarget>ORIGINAL_SHIP</shipTarget>
+                <crewTarget>ALL</crewTarget>
+                <droneTarget>ALL</droneTarget>
+                <priority>100</priority>
+            </statBoost>
+        </statBoosts>
+        <statBoosts>
+            <statBoost name="trueHealAmount">
+                <boostType>SET</boostType>
+                <amount>-2</amount>
+                <shipTarget>ORIGINAL_SHIP</shipTarget>
+                <crewTarget>ENEMIES</crewTarget>
+                <droneTarget>ALL</droneTarget>
+                <priority>100</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_33">
+        <statBoosts>
+            <statBoost name="canRepair">
+                <boostType>SET</boostType>
+                <value>false</value>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>100</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_341">
+        <function name="SHIELD_RECHARGE" value="-0.5" useForReqs="false" warning="false" />
+        <function name="AUTO_COOLDOWN" value="1.1" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_342">
+        <function name="SHIELD_RECHARGE" value="1.1" useForReqs="false" warning="false" />
+        <function name="AUTO_COOLDOWN" value="-0.5" useForReqs="false" warning="false" />
+    </aug>
+</augments>
+
+<events>
+    <metaVariable name="fish_obtained_1" op="set" val="0"/>
+    <metaVariable name="fish_obtained_2" op="set" val="0"/>
+    <metaVariable name="fish_obtained_3" op="set" val="0"/>
+    <metaVariable name="fish_obtained_4" op="set" val="0"/>
+    <metaVariable name="fish_obtained_5" op="set" val="0"/>
+    <metaVariable name="fish_obtained_6" op="set" val="0"/>
+    <metaVariable name="fish_obtained_7" op="set" val="0"/>
+    <metaVariable name="fish_obtained_8" op="set" val="0"/>
+
+    <metaVariable name="fish_obtained_11" op="set" val="0"/>
+    <metaVariable name="fish_obtained_12" op="set" val="0"/>
+    <metaVariable name="fish_obtained_13" op="set" val="0"/>
+    <metaVariable name="fish_obtained_14" op="set" val="0"/>
+    <metaVariable name="fish_obtained_15" op="set" val="0"/>
+    <metaVariable name="fish_obtained_16" op="set" val="0"/>
+    <metaVariable name="fish_obtained_17" op="set" val="0"/>
+    <metaVariable name="fish_obtained_18" op="set" val="0"/>
+    
+    <metaVariable name="fish_obtained_21" op="set" val="0"/>
+    <metaVariable name="fish_obtained_22" op="set" val="0"/>
+    <metaVariable name="fish_obtained_23" op="set" val="0"/>
+    <metaVariable name="fish_obtained_24" op="set" val="0"/>
+    <metaVariable name="fish_obtained_25" op="set" val="0"/>
+    <metaVariable name="fish_obtained_26" op="set" val="0"/>
+    <metaVariable name="fish_obtained_27" op="set" val="0"/>
+    <metaVariable name="fish_obtained_28" op="set" val="0"/>
+    
+    <metaVariable name="fish_obtained_31" op="set" val="0"/>
+    <metaVariable name="fish_obtained_32" op="set" val="0"/>
+    <metaVariable name="fish_obtained_33" op="set" val="0"/>
+    <metaVariable name="fish_obtained_34" op="set" val="0"/>
+    <metaVariable name="fish_obtained_35" op="set" val="0"/>
 </events>
 
 </FTL>

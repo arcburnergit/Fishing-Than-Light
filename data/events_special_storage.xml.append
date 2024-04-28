@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<mod:findName type="event" name="STORAGE_CHECK_BUTTON">
+  <mod-append:choice req="fish_option" blue="true" hidden="true">
+    <text>Fishing.</text>
+    <event load="STORAGE_CHECK_FISHING" />
+  </mod-append:choice>
+</mod:findName>
+
+<event name="STORAGE_CHECK_FISHING_LOAD">
+  <loadEvent>STORAGE_CHECK_FISHING</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_FISHING">
+  <text>What do you want to do?</text>
+  <checkCargo />
+  <choice hidden="true" req="fish_this_jump" lvl="1">
+    <text>5 Jumps until fish population has recovered enough for fishing</text>
+    <event load="OPTION_INVALID" />
+  </choice>
+  <choice hidden="true" req="fish_this_sector" lvl="4" max_lvl="4">
+    <text>4 Jumps until fish population has recovered enough for fishing</text>
+    <event load="OPTION_INVALID" />
+  </choice>
+  <choice hidden="true" req="fish_this_sector" lvl="3" max_lvl="3">
+    <text>3 Jumps until fish population has recovered enough for fishing</text>
+    <event load="OPTION_INVALID" />
+  </choice>
+  <choice hidden="true" req="fish_this_sector" lvl="2" max_lvl="2">
+    <text>2 Jumps until fish population has recovered enough for fishing</text>
+    <event load="OPTION_INVALID" />
+  </choice>
+  <choice hidden="true" req="fish_this_sector" lvl="1" max_lvl="1">
+    <text>1 Jumps until fish population has recovered enough for fishing</text>
+    <event load="OPTION_INVALID" />
+  </choice>
+
+  <choice req="fish_start">
+    <text>Go Fishing Out of Combat.</text>
+    <event name="FISHING_START_NOCOMBAT">
+      <item_modify>
+        <item type="scrap" min="-10" max="-10" />
+      </item_modify>
+    </event>
+  </choice>
+  <choice req="BLUELIST_FISHING_RODS_UP" blue="false">
+    <text>Upgrade a harpoon.</text>
+    <event>
+      <text>Choose a harpoon to upgrade.</text>
+      <choice req="FISHING_ROD_1">
+        <text>Upgrade your Harpoon MK I. -20~</text>
+        <event>
+          <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
+          <item_modify>
+            <item type="scrap" min="-20" max="-20" />
+          </item_modify>
+          <remove name="FISHING_ROD_1" />
+          <weapon name="FISHING_ROD_2" />
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK_FISHING_LOAD"/>
+          </choice>
+        </event>
+      </choice>
+      <choice req="FISHING_ROD_2">
+        <text>Upgrade your Harpoon MK II. -20~</text>
+        <event>
+          <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
+          <item_modify>
+            <item type="scrap" min="-20" max="-20" />
+          </item_modify>
+          <remove name="FISHING_ROD_2" />
+          <weapon name="FISHING_ROD_3" />
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK_FISHING_LOAD"/>
+          </choice>
+        </event>
+      </choice>
+      <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_FISHING_LOAD"/>
+      </choice>
+    </event>
+  </choice>
+  <choice req="BLUELIST_FISH">
+    <text>Consume a fish</text>
+    <event load="STORAGE_CHECK_FISHING_FOOD" />
+  </choice>
+  <choice>
+    <text>Examine your fish glossary</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY" />
+  </choice>
+  <!--choice>
+    <text>Install an internal fishing upgrade.</text>
+    <event load="STORAGE_CHECK_FISHING_UPGRADE" />
+  </choice!-->
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_FOOD" >
+  <text>Which fish would you like to cook?</text>
+  <choice req="FISH_FOOD_1">
+    <text>Cook the Orange Snapper. (+5% max health)</text>
+    <event>
+      <remove name="FISH_FOOD_1"/>
+      <hiddenAug>FISH_AUG_1</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_2">
+    <text>Cook the Red Emperor. (+5% damage)</text>
+    <event>
+      <remove name="FISH_FOOD_2"/>
+      <hiddenAug>FISH_AUG_2</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_3">
+    <text>Cook the Striped Coral Trout. (+5% damage reduction)</text>
+    <event>
+      <remove name="FISH_FOOD_3"/>
+      <hiddenAug>FISH_AUG_3</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_4">
+    <text>Cook the Spotted Mackeral. (+5% move speed)</text>
+    <event>
+      <remove name="FISH_FOOD_4"/>
+      <hiddenAug>FISH_AUG_4</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_5">
+    <text>Cook the Estuary Rockcod. (+5% repair speed)</text>
+    <event>
+      <remove name="FISH_FOOD_5"/>
+      <hiddenAug>FISH_AUG_5</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_6">
+    <text>Cook the Blue Threadfin. (+1% weapon charge rate)</text>
+    <event>
+      <remove name="FISH_FOOD_6"/>
+      <hiddenAug>FISH_AUG_6</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_7">
+    <text>Cook the Rock Blackfish. (+1% shield charge rate)</text>
+    <event>
+      <remove name="FISH_FOOD_7"/>
+      <hiddenAug>FISH_AUG_7</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_8">
+    <text>Cook the Longtail Tuna. (+1% scrap bonus)</text>
+    <event>
+      <remove name="FISH_FOOD_8"/>
+      <hiddenAug>FISH_AUG_8</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+
+  <choice req="FISH_FOOD_11">
+    <text>Cook the Doublefin Eel. (+15% max health)</text>
+    <event>
+      <remove name="FISH_FOOD_11"/>
+      <hiddenAug>FISH_AUG_11</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_12">
+    <text>Cook the Blue Eel. (+15% damage)</text>
+    <event>
+      <remove name="FISH_FOOD_12"/>
+      <hiddenAug>FISH_AUG_12</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_13">
+    <text>Cook the Yellowfin Sunfish. (+15% damage reduction)</text>
+    <event>
+      <remove name="FISH_FOOD_13"/>
+      <hiddenAug>FISH_AUG_13</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_14">
+    <text>Cook the Big Eye Tuna. (+15% move speed)</text>
+    <event>
+      <remove name="FISH_FOOD_14"/>
+      <hiddenAug>FISH_AUG_14</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_15">
+    <text>Cook the Spotted Barracuda. (+15% repair speed)</text>
+    <event>
+      <remove name="FISH_FOOD_15"/>
+      <hiddenAug>FISH_AUG_15</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_16">
+    <text>Cook the Brown Trout. (+5% weapon charge rate)</text>
+    <event>
+      <remove name="FISH_FOOD_16"/>
+      <hiddenAug>FISH_AUG_16</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_17">
+    <text>Cook the Goatfish. (+6% shield charge rate)</text>
+    <event>
+      <remove name="FISH_FOOD_17"/>
+      <hiddenAug>FISH_AUG_17</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_18">
+    <text>Cook the Coronation Trout. (+5% scrap bonus)</text>
+    <event>
+      <remove name="FISH_FOOD_18"/>
+      <hiddenAug>FISH_AUG_18</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+
+  <choice req="FISH_FOOD_21">
+    <text>Cook the Coho Salmon. (+45% max health)</text>
+    <event>
+      <remove name="FISH_FOOD_21"/>
+      <hiddenAug>FISH_AUG_21</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_22">
+    <text>Cook the Roosterfish. (+45% damage)</text>
+    <event>
+      <remove name="FISH_FOOD_22"/>
+      <hiddenAug>FISH_AUG_22</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_23">
+    <text>Cook the Yellowfin Salmon. (+45% damage reduction)</text>
+    <event>
+      <remove name="FISH_FOOD_23"/>
+      <hiddenAug>FISH_AUG_23</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_24">
+    <text>Cook the Flathead Catfish. (+45% move speed)</text>
+    <event>
+      <remove name="FISH_FOOD_24"/>
+      <hiddenAug>FISH_AUG_24</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_25">
+    <text>Cook the Golden Bream. (+45% repair speed)</text>
+    <event>
+      <remove name="FISH_FOOD_25"/>
+      <hiddenAug>FISH_AUG_25</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_26">
+    <text>Cook the Black Cobia. (+20% weapon charge rate)</text>
+    <event>
+      <remove name="FISH_FOOD_26"/>
+      <hiddenAug>FISH_AUG_26</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_27">
+    <text>Cook the Wisdomfish. (+25% shield charge rate)</text>
+    <event>
+      <remove name="FISH_FOOD_27"/>
+      <hiddenAug>FISH_AUG_27</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_28">
+    <text>Cook the Golden Trout. (+20% scrap bonus)</text>
+    <event>
+      <remove name="FISH_FOOD_28"/>
+      <hiddenAug>FISH_AUG_28</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+
+  <choice req="FISH_FOOD_31">
+    <text>Cook the Wahoo. (-90% enemy move speed)</text>
+    <event>
+      <remove name="FISH_FOOD_31"/>
+      <hiddenAug>FISH_AUG_31</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_32">
+    <text>Cook the Mahi Mahi. (-100% damage for all crew on ship, 2 damage/second to enemy on ship)</text>
+    <event>
+      <remove name="FISH_FOOD_32"/>
+      <hiddenAug>FISH_AUG_32</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_33">
+    <text>Cook the Shorefish. (no repairing by crew, all systems autorepair)</text>
+    <event>
+      <remove name="FISH_FOOD_33"/>
+      <hiddenAug>FISH_AUG_33</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_34">
+    <text>Cook the Grouper. (+110% weapon charge speed bonus, -50% shield charge speed bonus)</text>
+    <event>
+      <remove name="FISH_FOOD_34"/>
+      <hiddenAug>FISH_AUG_341</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_34">
+    <text>Cook the Grouper. (+110% shield charge speed bonus, -50% weapon charge speed bonus)</text>
+    <event>
+      <remove name="FISH_FOOD_34"/>
+      <hiddenAug>FISH_AUG_342</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_35">
+    <text>Cook the Spotted Barracuda. (3 random weapons)</text>
+    <event>
+      <text>You cut the fish open to reveal a strange weapon cache. You pull out the first weapon.</text>
+      <remove name="FISH_FOOD_35"/>
+      <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
+      <choice>
+        <text>Continue...</text>
+        <event>
+          <text>You pull out a second weapon.</text>
+          <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
+          <choice>
+            <text>Continue...</text>
+            <event>
+              <text>You pull out a third and final weapon.</text>
+              <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
+              <choice>
+                <text>Continue...</text>
+                <event load="STORAGE_CHECK_FISHING_LOAD" />
+              </choice>
+            </event>
+          </choice>
+        </event>
+      </choice>
+    </event>
+  </choice>
+  <choice>
+    <text>Don't cook anything.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_LOAD">
+  <loadEvent>STORAGE_CHECK_FISH_GLOSSARY</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY">
+  <text>You open your book to the page of contents.</text>
+  <choice>
+    <text>Turn to chapter 1: Basic Fish.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_1"/>
+  </choice>
+  <choice>
+    <text>Turn to chapter 2: Uncommon Fish.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_2"/>
+  </choice>
+  <choice>
+    <text>Turn to chapter 3: Rare Fish.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_3"/>
+  </choice>
+  <choice>
+    <text>Turn to chapter 4: Legendary Fish.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_4"/>
+  </choice>
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_1">
+  <text>You open the book up to the chapter on the most common fish.</text>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_1"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_2"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_3"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_4"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_5"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_6"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_7"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_8"/>
+    </event>
+  </choice>
+
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+  <choice>
+    <text>Close the Glossary.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_2">
+  <text>You open the book up to the chapter on the more uncommon fish.</text>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_11"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_12"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_13"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_14"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_15"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_16"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_17"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <weapon name="FISH_FOOD_18"/>
+    </event>
+  </choice>
+
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+  <choice>
+    <text>Close the Glossary.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_3">
+  <text>You open the book up to the chapter on the more uncommon fish.</text>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_21"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_22"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_23"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_24"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_25"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_26"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_27"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <weapon name="FISH_FOOD_28"/>
+    </event>
+  </choice>
+
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+  <choice>
+    <text>Close the Glossary.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_4">
+  <text>You open the book up to the chapter on the more uncommon fish.</text>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <weapon name="FISH_FOOD_31"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <weapon name="FISH_FOOD_32"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <weapon name="FISH_FOOD_33"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <weapon name="FISH_FOOD_34"/>
+    </event>
+  </choice>
+  <choice>
+    <text> </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <weapon name="FISH_FOOD_35"/>
+    </event>
+  </choice>
+
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+  <choice>
+    <text>Close the Glossary.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_UPGRADE">
+  <text>Choose an internal upgrade to install.</text>
+  <choice req="">
+</event>
+</FTL>

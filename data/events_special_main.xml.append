@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<!--
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			                    HANGAR OBJECTS
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<mod:findName type="event" name="START_BEACON_PREP_LOAD">
+	<mod-append:backgroundObject name="FISHING_ROD_1_OBJECT">
+		<layer z="0">background</layer>
+		<spawnArea x="714" y="88" w="0" h="0" center="true"/>
+		<anim>fishing_rod_1_icon_select</anim>
+		<hoverAnim>fishing_rod_1_icon_select_on</hoverAnim>
+		<inactiveAnim hide="true"/>
+		<tooltip>An old fishing harpoon.</tooltip>
+		<clickAction>
+			<event load="FISH_GIVE_BAD_ROD"/>
+			<destroy/>
+		</clickAction>
+	</mod-append:backgroundObject>
+</mod:findName>
+
+<event name="FISH_GIVE_BAD_ROD">
+	<text>You notice an old fishing harpoon lying around, you decide to take it with you.</text>
+	<weapon name="FISHING_ROD_1"/>
+	<unlockCustomShip silent="false">PLAYER_SHIP_FISHING</unlockCustomShip>
+</event>
+
+</FTL>
+

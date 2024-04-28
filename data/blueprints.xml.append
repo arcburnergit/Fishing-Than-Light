@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<shipBlueprint name="PLAYER_SHIP_FISHING" layout="fishp_trawler_a" img="fishp_trawler_a">
+	<class>Trawler Class</class>
+	<name>Little Skipper</name>
+	<desc>A small vessel dedicated to fishing in the vast emptiness of space.</desc>
+	<systemList>
+		<cloaking power="1" room="9" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="6" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="1" start="true" img="room_doors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="1" room="13" start="false" img="room_drones_18" />
+		<engines power="1" room="14" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="12" start="false" img="room_hacking_2" />
+		<medbay power="1" room="6" start="true" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="7" start="false" img="room_mind_9" />
+		<oxygen power="1" room="8" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="2" start="true" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" room="5" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="3" start="false" />
+		<weapons power="4" room="4" start="true" img="room_weapons_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="8" count="4">
+		<weapon name="BEAM_REPAIR" />
+		<weapon name="LASER_BURST_SYLVAN" />
+		<weapon name="FISHING_ROD_2" />
+	</weaponList>
+	<droneList drones="8" count="2" />
+	<health amount="30" />
+	<maxPower amount="9" />
+	<crewCount amount="1" class="slug_ranger" />
+</shipBlueprint>
+
+<weaponBlueprint name="FISHING_ROD_1"> 
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK I</title>
+	<short>Harpoon MK I</short>
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, just be sure you don't exit combat too soon or the emergency harpoon power may shut off too soon.
+This harpoon will be able to catch the more common fish.
+	</desc>
+	<tooltip>A Basic Fishing Harpoon.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<cooldown>60</cooldown>
+	<power>0</power>
+	<cost>25</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>61</amount>
+		<count>2</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<weaponArt>fishing_rod_1</weaponArt> 
+	<iconImage>laser_chain</iconImage>
+	<iconReplace>fishing_rod_1_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISHING_ROD_2"> 
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK II</title>
+	<short>Harpoon MK II</short>
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, just be sure you don't exit combat too soon or the emergency harpoon power may shut off too soon.
+This harpoon will be able to catch most fish.
+	</desc>
+	<tooltip>A Fishing Harpoon.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<cooldown>40</cooldown>
+	<power>1</power>
+	<cost>50</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>41</amount>
+		<count>2</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<weaponArt>fishing_rod_2</weaponArt> 
+	<iconImage>laser_chain</iconImage>
+	<iconReplace>fishing_rod_2_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISHING_ROD_3"> 
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK III</title>
+	<short>Harpoon MK III</short>
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, just be sure you don't exit combat too soon or the emergency harpoon power may shut off too soon.
+This harpoon will be able to catch even the most elusive fish.
+	</desc>
+	<tooltip>An Advanced Fishing Harpoon.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<cooldown>20</cooldown>
+	<power>2</power>
+	<cost>75</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>21</amount>
+		<count>2</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<weaponArt>fishing_rod_3</weaponArt> 
+	<iconImage>laser_chain</iconImage>
+	<iconReplace>fishing_rod_3_icon</iconReplace>
+</weaponBlueprint>
+
+<augBlueprint name="FISH_INAUG_">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+</FTL>
+
+<FTL>
+<augBlueprint name="FISH_AUG_1">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_2">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_3">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_4">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_5">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_6">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_7">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_8">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_1">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Orange Snapper</title>
+	<short>Orange Snapper</short>
+	<desc>A basic space fish, when consumed gives a +5% health bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish1</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_2">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Red Emperor</title>
+	<short>Red Emperor</short>
+	<desc>A basic space fish, when consumed gives a +5% damage bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish2</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_3">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Striped Coral Trout</title>
+	<short>Striped Coral Trout</short>
+	<desc>A basic space fish, when consumed gives a +5% damage reduction bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish3</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_4">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Spotted Mackeral</title>
+	<short>Spotted Mackeral</short>
+	<desc>A basic space fish, when consumed gives a +5% movement speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish4</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_5">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Estuary Rockcod</title>
+	<short>Estuary Rockcod</short>
+	<desc>A basic space fish, when consumed gives a +5% repair speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish5</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_6">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Blue Threadfin</title>
+	<short>Blue Threadfin</short>
+	<desc>A basic space fish, when consumed gives a +1% weapon charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish6</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_7">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Rock Blackfish</title>
+	<short>Rock Blackfish</short>
+	<desc>A basic space fish, when consumed gives a +1% shield charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish7</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_8">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Longtail Tuna</title>
+	<short>Longtail Tuna</short>
+	<desc>A basic space fish, when consumed gives a +1% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish8</iconReplace>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<augBlueprint name="FISH_AUG_11">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_12">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_13">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_14">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_15">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_16">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_17">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_18">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_11">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Doublefin Eel</title>
+	<short>Doublefin Eel</short>
+	<desc>An uncommon space fish, when consumed gives a +15% health bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish11</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_12">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Blue Eel</title>
+	<short>Blue Eel</short>
+	<desc>An uncommon space fish, when consumed gives a +15% damage bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish12</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_13">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Yellowfin Sunfish</title>
+	<short>Yellowfin Sunfish</short>
+	<desc>An uncommon space fish, when consumed gives a +15% damage reduction bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish13</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_14">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Big Eye Tuna</title>
+	<short>Big Eye Tuna</short>
+	<desc>An uncommon space fish, when consumed gives a +15% movement speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish14</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_15">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Spotted Barracuda</title>
+	<short>Spotted Barracuda</short>
+	<desc>An uncommon space fish, when consumed gives a +15% repair speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish15</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_16">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Brown Trout</title>
+	<short>Brown Trout</short>
+	<desc>An uncommon space fish, when consumed gives a +5% weapon charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish16</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_17">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Goatfish</title>
+	<short>Goatfish</short>
+	<desc>An uncommon space fish, when consumed gives a +6% shield charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish17</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_18">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Coronation Trout</title>
+	<short>Coronation Trout</short>
+	<desc>An uncommon space fish, when consumed gives a +5% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish18</iconReplace>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<augBlueprint name="FISH_AUG_21">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_22">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_23">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_24">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_25">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_26">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_27">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_28">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_21">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Coho Salmon</title>
+	<short>Coho Salmon</short>
+	<desc>A rare space fish, when consumed gives a +45% health bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish21</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_22">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Roosterfish</title>
+	<short>Roosterfish</short>
+	<desc>A rare space fish, when consumed gives a +45% damage bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish22</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_23">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Yellowfin Salmon</title>
+	<short>Yellowfin Salmon</short>
+	<desc>A rare space fish, when consumed gives a +45% damage reduction bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish23</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_24">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Flathead Catfish</title>
+	<short>Flathead Catfish</short>
+	<desc>A rare space fish, when consumed gives a +45% movement speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish24</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_25">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Bream</title>
+	<short>Golden Bream</short>
+	<desc>A rare space fish, when consumed gives a +45% repair speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish25</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_26">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Black Cobia</title>
+	<short>Black Cobia</short>
+	<desc>A rare space fish, when consumed gives a +20% weapon charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish26</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_27">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Wisdomfish</title>
+	<short>Wisdomfish</short>
+	<desc>A rare space fish, when consumed gives a +25% shield charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish27</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_28">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A rare space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish28</iconReplace>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<augBlueprint name="FISH_AUG_31">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_32">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_33">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_341">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_342">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_31">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Wahoo</title>
+	<short>Wahoo</short>
+	<desc>A legendary space fish, when consumed gives hostile crew a 90% movespeed reduction</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>150</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish31</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_32">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Mahi Mahi</title>
+	<short>Mahi Mahi</short>
+	<desc>A legendary space fish, when consumed makes all crew and drones on your ship incapable of combat, however it also damages enemy crew and drones at 2 damage/second</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>150</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish32</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_33">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Shorefish</title>
+	<short>Shorefish</short>
+	<desc>A legendary space fish, when consumed makes your crew incapable of repairing, however all systems now autorepair</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>150</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish33</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_34">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Grouper</title>
+	<short>Grouper</short>
+	<desc>A legendary space fish, when consumed can either be made to give a +110% weapon charge speed bonus, but also a -50% shield charge speed bonus or a 110% shield charge speed bonus but a -50% weapon charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>150</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish34</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_35">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Bluefish</title>
+	<short>Bluefish</short>
+	<desc>A legendary space fish, when consumed gives 3 random weapons</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>150</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish35</iconReplace>
+</weaponBlueprint>
+</FTL>
+
+<FTL>
+<augBlueprint name="FISH_AUG_41">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_42">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_43">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_44">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_45">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_46">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_47">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_48">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_41">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Coho Salmon</title>
+	<short>Coho Salmon</short>
+	<desc>A unique space fish, when consumed gives a +45% health bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish41</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_42">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Roosterfish</title>
+	<short>Roosterfish</short>
+	<desc>A unique space fish, when consumed gives a +45% damage bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish42</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_43">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Yellowfin Salmon</title>
+	<short>Yellowfin Salmon</short>
+	<desc>A unique space fish, when consumed gives a +45% damage reduction bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish43</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_44">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Flathead Catfish</title>
+	<short>Flathead Catfish</short>
+	<desc>A unique space fish, when consumed gives a +45% movement speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish44</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_45">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Bream</title>
+	<short>Golden Bream</short>
+	<desc>A unique space fish, when consumed gives a +45% repair speed bonus to all crew</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish45</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_46">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Black Cobia</title>
+	<short>Black Cobia</short>
+	<desc>A unique space fish, when consumed gives a +20% weapon charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish46</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_47">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Wisdomfish</title>
+	<short>Wisdomfish</short>
+	<desc>A unique space fish, when consumed gives a +25% shield charge speed bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish47</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_48">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish48</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_49">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish49</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_40">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish40</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_4A">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish4A</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_4B">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish4B</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_4C">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish4C</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_4D">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish4D</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_4E">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Golden Trout</title>
+	<short>Golden Trout</short>
+	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>80</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish4E</iconReplace>
+</weaponBlueprint>
+</FTL>

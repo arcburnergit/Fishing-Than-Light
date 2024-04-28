@@ -1,10 +1,1036 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <mod:findName type = "event" name = "REROUTE_MENU">
-    <mod-append:variable name="fish_this_sector" op="set" val="0"/>
-  </mod:findName>
+<!--mod:findName type="event" name="ATLAS_MENU">
+  <mod-append:variable name="fish_this_sector" op="set" val="1"/>
+</mod:findName>
 
-  <mod:findName type = "event" name = "REROUTE_MENU_LASTSTAND">
-    <mod-append:variable name="fish_this_sector" op="set" val="0"/>
-  </mod:findName>
+<mod:findName type="event" name="REROUTE_MENU_LASTSTAND">
+  <mod-append:variable name="fish_this_sector" op="set" val="1"/>
+</mod:findName-->
+<event name="FISH_ULTRA_RARE">
+  <text>You've managed to reel in a legendary fish!</text>
+  <weapon name="FISHLIST_LEG" />
+</event>
+<event name="FISH_JUNK">
+  <text>You reel in your catch to discover nothing more than some old junk.</text>
+  <!--weapon name="FISHLIST_JUNK" /-->
+</event>
+
+<event name="FISH_RANDOM_1">
+  <text>You've reeled in a basic fish, good for selling or cooking.</text>
+  <weapon name="FISHLIST_1" />
+</event>
+<event name="FISH_RANDOM_2">
+  <weapon name="FISHLIST_2" />
+</event>
+<event name="FISH_RANDOM_3">
+  <weapon name="FISHLIST_3" />
+</event>
+
+<event name="FISH_WEAPON_1">
+  <text>You reel in your catch to discover its no fish at all, instead it's a weapon!</text>
+  <weapon name="RANDOM" />
+</event>
+<event name="FISH_HEKTAR_1_LOOT">
+  <text>You reel in your catch to discover its no fish at all, instead it's a weapon!</text>
+  <weapon name="GIFTLIST_MODULES" />
+</event>
+<event name="FISH_HEKTAR_2_LOOT">
+  <text>You reel in your catch to discover its no fish at all, instead it's a weapon!</text>
+  <weapon name="SHOP_ITEM_HEKTAR_BASE" />
+</event>
+<event name="FISH_DRONE_1">
+  <text>You reel in your catch to discover its no fish at all, instead it's a drone!</text>
+  <drone name="RANDOM" />
+</event>
+<event name="FISH_CREW_1">
+  <text>As you reel in your catch you realise its no fish at all, instead you've got a new crewmember.</text>
+  <crewMember amount="1" class="RANDOM" />
+</event>
+<event name="FISH_FISHGUN">
+  <text>The fish you reeled in turns out to be more deadly than expected.</text>
+  <!--weapon name="FISHLIST_GUNS" /-->
+</event>
+
+<event name="FISH_SCRAP_1">
+  <text>It isn't a fish, but it's better than nothing.</text>
+  <autoReward level="LOW">stuff</autoReward>
+</event>
+<event name="FISH_SCRAP_2">
+  <text>You've pulled up a heap of junk, atleast there are some useful components in the mix.</text>
+  <autoReward level="MED">stuff</autoReward>
+</event>
+<event name="FISH_SCRAP_3">
+  <text>It isn't a fish, but it is a decent reward for your troubles.</text>
+  <autoReward level="HIGH">stuff</autoReward>
+</event>
+
+<event name="FISH_FED_GIVE">
+  <text>You reeled in a unique federation fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_CIV_GIVE">
+  <text>You reeled in a unique civilian fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_ENGI_GIVE">
+  <text>You reeled in a unique engi fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_ZOL_GIVE">
+  <text>You reeled in a unique zoltan fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_ORC_GIVE">
+  <text>You reeled in a unique orchid fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_MAN_GIVE">
+  <text>You reeled in a unique mantis fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_CRY_GIVE">
+  <text>You reeled in a unique crystal fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_ROCK_GIVE">
+  <text>You reeled in a unique rock fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_REB_GIVE">
+  <text>You reeled in a unique rebel fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_PIR_GIVE">
+  <text>You reeled in a unique pirate fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_LAN_GIVE">
+  <text>You reeled in a unique anaerobic fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_SLUG_GIVE">
+  <text>You reeled in a unique slug fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_LEECH_GIVE">
+  <text>You reeled in a unique leech fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_HEKTAR_GIVE">
+  <text>You reeled in a unique hektar fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_ANCIENT_GIVE">
+  <text>You reeled in a unique ancient fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+<event name="FISH_NEXUS_GIVE">
+  <text>You reeled in a unique nexus fish!</text>
+  <!--weapon name="FISH_FED"-->
+</event>
+
+<event name="FISH_DROPPOINT_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_DROPPOINT_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_DROPPOINT_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_FED_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_CIVILIAN_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_WEAPON_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_CIVILIAN_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_CIVILIAN_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_CIV_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_ENGI_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ENGI_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_DRONE_1"/>
+    <event load="FISH_DRONE_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ENGI_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_ENGI_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_DRONE_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_ZOLTAN_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ZOLTAN_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ZOLTAN_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_ZOL_GIVE"/>
+    <event load="FISH_ZOL_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_ORCHID_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ORCHID_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ORCHID_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_ORC_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_MANTIS_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_MANTIS_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_MAN_GIVE"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_MANTIS_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_MAN_GIVE"/>
+    <event load="FISH_MAN_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_CRYSTAL_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_CRYSTAL_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_CRYSTAL_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_CRY_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_ROCK_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ROCK_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ROCK_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_ROCK_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_REBEL_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_CREW_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_REBEL_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_REBEL_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_REB_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_PIRATE_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_PIRATE_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_PIRATE_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_PIR_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_LANIUS_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_LANIUS_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_LANIUS_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_LAN_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_SLUG_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_SLUG_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_SLUG_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SLUG_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_LEECH_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_LEECH_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_LEECH_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_LEECH_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_HEKTAR_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_HEKTAR_1_LOOT"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_HEKTAR_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_HEKTAR_1_LOOT"/>
+    <event load="FISH_HEKTAR_1_LOOT"/>
+    <event load="FISH_HEKTAR_2_LOOT"/>
+    <event load="FISH_HEKTAR_2_LOOT"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_HEKTAR_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_HEKTAR_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_HEKTAR_1_LOOT"/>
+    <event load="FISH_HEKTAR_1_LOOT"/>
+    <event load="FISH_HEKTAR_1_LOOT"/>
+    <event load="FISH_HEKTAR_2_LOOT"/>
+    <event load="FISH_HEKTAR_2_LOOT"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_ANCIENT_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ANCIENT_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_ANCIENT_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_ANCIENT_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+
+
+<event name="FISH_NEXUS_1">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_JUNK"/>
+    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_NEXUS_2">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_RANDOM_2"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_FISHGUN"/>
+  </loadEventList>
+</event>
+
+<event name="FISH_NEXUS_3">
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_SCRAP_3"/>
+    <event load="FISH_NEXUS_GIVE"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_RANDOM_3"/>
+    <event load="FISH_CREW_1"/>
+    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_FISHGUN"/>
+    <event name="FISH_ULTRA_RARE"/>
+  </loadEventList>
+</event>
+
+<mod:findName type="event" name="ENTER_ASTEROID">
+  <mod-append:variable name="fish_sector" op="set" val="1"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_UNION">
+  <mod-append:variable name="fish_sector" op="set" val="1"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_UNION_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="1"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_UNION_HACKED">
+  <mod-append:variable name="fish_sector" op="set" val="0"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_MILITIA">
+  <mod-append:variable name="fish_sector" op="set" val="1"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ENGI">
+  <mod-append:variable name="fish_sector" op="set" val="2"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ENGI_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="2"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ZOLTAN">
+  <mod-append:variable name="fish_sector" op="set" val="3"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ZOLTAN_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="3"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ORCHID">
+  <mod-append:variable name="fish_sector" op="set" val="4"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ORCHID_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="4"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_VAMPWEED">
+  <mod-append:variable name="fish_sector" op="set" val="4"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_VAMPWEED_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="4"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_FREEMANTIS">
+  <mod-append:variable name="fish_sector" op="set" val="5"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_FREEMANTIS_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="5"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SEPARATIST">
+  <mod-append:variable name="fish_sector" op="set" val="2"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_CRYSTAL">
+  <mod-append:variable name="fish_sector" op="set" val="6"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_CRYSTAL_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="6"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_OUTCAST">
+  <mod-append:variable name="fish_sector" op="set" val="7"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_OUTCAST_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="7"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_FEDERATION">
+  <mod-append:variable name="fish_sector" op="set" val="1"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_FEDERATION_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="1"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_REBEL">
+  <mod-append:variable name="fish_sector" op="set" val="8"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_REBEL_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="8"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_PIRATE">
+  <mod-append:variable name="fish_sector" op="set" val="9"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_PIRATE_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="9"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_MANTIS">
+  <mod-append:variable name="fish_sector" op="set" val="5"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_MANTIS_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="5"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ROCK">
+  <mod-append:variable name="fish_sector" op="set" val="7"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ROCK_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="7"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_LOSTSUN">
+  <mod-append:variable name="fish_sector" op="set" val="7"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_DUSKBRINGER">
+  <mod-append:variable name="fish_sector" op="set" val="3"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_DUSKBRINGER_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="3"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_COALITION">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_COALITION_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_AUTO">
+  <mod-append:variable name="fish_sector" op="set" val="8"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_AUTO_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="8"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ABANDONED">
+  <mod-append:variable name="fish_sector" op="set" val="10"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_LANIUS">
+  <mod-append:variable name="fish_sector" op="set" val="10"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_NEBULA">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SLUG">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SLUG_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_CLAN">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SHELL">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SHELL_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_MORPH">
+  <mod-append:variable name="fish_sector" op="set" val="11"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_LEECH">
+  <mod-append:variable name="fish_sector" op="set" val="12"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_LEECH_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="12"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_GHOST">
+  <mod-append:variable name="fish_sector" op="set" val="10"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_GHOST_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="10"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_DYNASTY">
+  <mod-append:variable name="fish_sector" op="set" val="10"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_DYNASTY_UNIQUE">
+  <mod-append:variable name="fish_sector" op="set" val="10"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_MONK">
+  <mod-append:variable name="fish_sector" op="set" val="3"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SALE_SLUG">
+  <mod-append:variable name="fish_sector" op="set" val="9"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SALE_PIRATE">
+  <mod-append:variable name="fish_sector" op="set" val="9"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SALE_ABANDONED">
+  <mod-append:variable name="fish_sector" op="set" val="9"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_SALE_LEECH">
+  <mod-append:variable name="fish_sector" op="set" val="9"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_AUGMENTED">
+  <mod-append:variable name="fish_sector" op="set" val="14"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ANCIENT">
+  <mod-append:variable name="fish_sector" op="set" val="14"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ROYAL">
+  <mod-append:variable name="fish_sector" op="set" val="14"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ORIGINS">
+  <mod-append:variable name="fish_sector" op="set" val="6"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_ENTER_ORIGINS_RUWEN">
+  <mod-append:variable name="fish_sector" op="set" val="6"/>
+</mod:findName>
+
+<mod:findName type="event" name="ENTER_NEXUS">
+  <mod-append:variable name="fish_sector" op="set" val="15"/>
+</mod:findName>
+
 </FTL>
