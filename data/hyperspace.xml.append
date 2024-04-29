@@ -9,6 +9,13 @@
     <mod-append:script>data/scripts/fish/ship_ach.lua</mod-append:script>
 </mod:findLike>
 
+
+<mod:findLike type="events" limit="1">
+    <mod:findName type="req" name="LIST_CHECK_AUGMENTS">
+        <mod-append:name>FISH_AUG_4E</mod-append:name>
+    </mod:findName>
+</mod:findLike>
+
 <events>
     <variable name="fish_sector" op="set" val="0"/>
     <variable name="fish_active" op="set" val="0"/>
@@ -18,8 +25,9 @@
         <req lvl="0" max_lvl="0">
             <name>fish_active</name>
         </req>
-        <req>
+        <req type="any">
             <name>BLUELIST_FISHING_RODS</name>
+            <name>BLUELIST_FISH</name>
         </req>
     </req>
 
@@ -425,7 +433,9 @@
                 <crewTarget>ALLIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
                 <priority>0</priority>
-				<whiteList load="LIST_CREW_HUMAN" />
+				<whiteList>
+                    <human/>
+                </whiteList>
             </statBoost>
         </statBoosts>
     </aug>

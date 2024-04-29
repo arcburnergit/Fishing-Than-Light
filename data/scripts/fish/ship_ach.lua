@@ -48,6 +48,7 @@ end
 local function check_fish_ach(itemName)
     if string_starts(itemName, "FISH_FOOD_") then
         if itemName == "FISH_FOOD_4E" then
+            local unlockTracker = Hyperspace.CustomShipUnlocks.instance
             unlockTracker:UnlockShip("PLAYER_SHIP_FISHING_3", false)
         end
         local fishId = string.sub(itemName, 11, string.len(itemName))

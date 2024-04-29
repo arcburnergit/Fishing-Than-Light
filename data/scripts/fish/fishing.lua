@@ -108,6 +108,24 @@ local function get_adjacent_rooms(shipId, roomId, diagonals)
     return adjacentRooms
 end
 
+local RandomList = {
+    New = function(self, table)
+        table = table or {}
+        self.__index = self
+        setmetatable(table, self)
+        return table
+    end,
+
+    GetItem = function(self)
+        local index = Hyperspace.random32() % #self + 1
+        return self[index]
+    end,
+}
+
+-------------the good stuff
+
+fishSounds = RandomList:New {"fishsplash1", "fishsplash2", "fishsplash3", "fishsplash4", "fishsplash5", "fishsplash6", "fishsplash7"}
+
 mods.fishing.rods = {}
 local rods = mods.fishing.rods
 rods["FISHING_ROD_1"] = 5
@@ -179,6 +197,25 @@ flagShipBlueprints["FLAGSHIP_1"] = true
 flagShipBlueprints["FLAGSHIP_2"] = true
 flagShipBlueprints["FLAGSHIP_3"] = true
 flagShipBlueprints["FLAGSHIP_CONSTRUCTION"] = true
+flagShipBlueprints["BOSS_1_EASY"] = true
+flagShipBlueprints["BOSS_2_EASY"] = true
+flagShipBlueprints["BOSS_3_EASY"] = true
+flagShipBlueprints["BOSS_1_NORMAL"] = true
+flagShipBlueprints["BOSS_2_NORMAL"] = true
+flagShipBlueprints["BOSS_3_NORMAL"] = true
+flagShipBlueprints["BOSS_1_HARD"] = true
+flagShipBlueprints["BOSS_2_HARD"] = true
+flagShipBlueprints["BOSS_3_HARD"] = true
+flagShipBlueprints["BOSS_1_EASY_DLC"] = true
+flagShipBlueprints["BOSS_2_EASY_DLC"] = true
+flagShipBlueprints["BOSS_3_EASY_DLC"] = true
+flagShipBlueprints["BOSS_1_NORMAL_DLC"] = true
+flagShipBlueprints["BOSS_2_NORMAL_DLC"] = true
+flagShipBlueprints["BOSS_3_NORMAL_DLC"] = true
+flagShipBlueprints["BOSS_1_HARD_DLC"] = true
+flagShipBlueprints["BOSS_2_HARD_DLC"] = true
+flagShipBlueprints["BOSS_3_HARD_DLC"] = true
+
 
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint)
@@ -268,6 +305,8 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 
         fishTimer = math.max(fishTimer - Hyperspace.FPS.SpeedFactor/16, 0)
         if fishTimer == 0 then
+            local soundName = fishSounds:GetItem()
+            Hyperspace.Sounds:PlaySoundMix(soundName, -1, true)
             fishTimer = 1 + (2*math.random())
             local negative = math.random()
             local random = ((math.random() + 3) * (fishNumber * 2 + 20))
@@ -502,7 +541,7 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 end) 
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-    if shipManager:HasAugmentation("ARC_SUPER_HULL") then
+    if shipManager:HasAugmentation("ARC_SUPER_HULL") > 0 then
         local hullData = userdata_table(shipManager, "mods.arc.hullData")
         if hullData.tempHp then 
             if hullData.tempHp > 0 and damage.iDamage > 0 then
@@ -538,13 +577,13 @@ script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
 end, function() end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-    if shipManager:HasAugmentation("FISH_AUG_44") and shipManager:HasSystem(0) then
+    if shipManager:HasAugmentation("FISH_AUG_44") > 0 and shipManager:HasSystem(0) then
         shipManager.shieldSystem:SetBonusPower(2,0)
     end
 end)
 local crystalGun = Hyperspace.Blueprints:GetWeaponBlueprint("CRYSTAL_BURST_1")
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-    if shipManager:HasAugmentation("FISH_AUG_47") then
+    if shipManager:HasAugmentation("FISH_AUG_47") > 0 then
         local targetRoom = get_room_at_location(shipManager, location, true)
         for crewmem in vter(get_ship_crew_room(shipManager, targetRoom)) do
             local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
@@ -562,7 +601,7 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
 end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
-    if shipManager:HasAugmentation("FISH_AUG_47") and realNewTile then
+    if shipManager:HasAugmentation("FISH_AUG_47") > 0 and realNewTile then
         local targetRoom = get_room_at_location(shipManager, location, true)
         for crewmem in vter(get_ship_crew_point(shipManager, location.x, location.y)) do
             local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
@@ -582,9 +621,9 @@ end)
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     if damage.iDamage > 0 then
         local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
-        if shipManager:HasAugmentation("FISH_AUG_40") then
+        if shipManager:HasAugmentation("FISH_AUG_40") > 0 then
             shipManager:ModifyScrapCount(-3,false)
-        elseif otherShip:HasAugmentation("FISH_AUG_40") then
+        elseif otherShip:HasAugmentation("FISH_AUG_40") > 0 then
             otherShip:ModifyScrapCount(1,false)
         end
     end
@@ -593,9 +632,9 @@ end)
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
     if damage.iDamage > 0 and realNewTile then
         local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
-        if shipManager:HasAugmentation("FISH_AUG_40") then
+        if shipManager:HasAugmentation("FISH_AUG_40") > 0 then
             shipManager:ModifyScrapCount(-3,false)
-        elseif otherShip:HasAugmentation("FISH_AUG_40") then
+        elseif otherShip:HasAugmentation("FISH_AUG_40") > 0 then
             otherShip:ModifyScrapCount(1,false)
         end
     end

@@ -38,6 +38,7 @@
   <choice req="fish_start">
     <text>Go Fishing Out of Combat.</text>
     <event name="FISHING_START_NOCOMBAT">
+			<playMusic>fishmusic</playMusic>
       <item_modify>
         <item type="scrap" min="-10" max="-10" />
       </item_modify>
@@ -479,11 +480,11 @@
       <event load="STORAGE_CHECK_ANC_UPGRADE" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_47">
+  <choice req="FISH_FOOD_4E">
     <text>Cook Fishvan. (Fish Merchant Beacon, +1 Sylvans)</text>
     <event>
       <remove name="FISH_FOOD_4E"/>
-      <crew name="LIST_CREW_SYLVAN_START" />
+      <crewMember amount="1" class="LIST_CREW_SYLVAN_START"  all_skills="2"/>
       <hiddenAug>FISH_AUG_4E</hiddenAug>
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>

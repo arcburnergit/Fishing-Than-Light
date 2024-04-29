@@ -1,3 +1,17 @@
 <FTL>
-<harpoonfire volume="12">weapons/harpoonfire.ogg</harpoonfire>
+<harpoonfire volume="13">weapons/harpoonfire.ogg</harpoonfire>
+<fishsplash1 volume="4">fish/fish_splash_1.ogg</fishsplash1>
+<fishsplash2 volume="4">fish/fish_splash_2.ogg</fishsplash2>
+<fishsplash3 volume="4">fish/fish_splash_3.ogg</fishsplash3>
+<fishsplash4 volume="4">fish/fish_splash_4.ogg</fishsplash4>
+<fishsplash5 volume="4">fish/fish_splash_5.ogg</fishsplash5>
+<fishsplash6 volume="4">fish/fish_splash_6.ogg</fishsplash6>
+<fishsplash7 volume="4">fish/fish_splash_7.ogg</fishsplash7>
 </FTL>
+
+<music>
+    <track>
+        <name>fishmusic</name>
+        <explore>fish_music_track.ogg</explore>
+    </track>
+</music>
