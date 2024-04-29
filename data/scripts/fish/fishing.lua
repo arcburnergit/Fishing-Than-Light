@@ -132,16 +132,6 @@ rods["FISHING_ROD_3"] = 16
 13 - hektar
 14 - ancient
 15 - nexus
-
-E251002A
-2A0051E2
-
-E0869007
-079086E0
-
-0409B01A
-1AB00904
-
 ]]
 
 mods.fishing.sectors = {}
@@ -178,9 +168,24 @@ local hasJump = false
 local xOffset = 650
 local yOffset = 75
 
+local shipBlueprint = nil
+
+local flagShipBlueprints = {}
+flagShipBlueprints["MU_MFK_FLAGSHIP_CASUAL"] = true
+flagShipBlueprints["MU_MFK_FLAGSHIP_NORMAL"] = true
+flagShipBlueprints["MU_MFK_FLAGSHIP_CHALLENGE"] = true
+flagShipBlueprints["MU_MFK_FLAGSHIP_EXTREME"] = true
+flagShipBlueprints["FLAGSHIP_1"] = true
+flagShipBlueprints["FLAGSHIP_2"] = true
+flagShipBlueprints["FLAGSHIP_3"] = true
+flagShipBlueprints["FLAGSHIP_CONSTRUCTION"] = true
+
+
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint)
     local fishingData = rods[weaponBlueprint.name]
     if fishingData then
+        shipBlueprint = Hyperspace.ships.enemy.myBlueprint.blueprintName
+        print(shipBlueprint)
         Hyperspace.playerVariables.fish_this_jump = 1
         Hyperspace.playerVariables.fish_active = 1
         fishNumber = math.random(1,fishingData)
@@ -193,6 +198,7 @@ end)
 script.on_game_event("FISHING_START_NOCOMBAT", false, function()
     local shipManager = Hyperspace.ships.player
     local maxRodStrength = 5
+    shipBlueprint = nil
     for weapon in vter(shipManager:GetWeaponList()) do
         local fishingData = rods[weapon.blueprint.name]
         if fishingData then
@@ -234,7 +240,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
     if Hyperspace.playerVariables.fish_active == 1 and not commandGui.bPaused then
         local gravity = 50
-        local maxSpeed = 200
+        local maxSpeed = 150
         if isJump and not hasJump then
             --print("JUMP")
             hasJump = true
@@ -243,7 +249,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
             end
             selectSpeed = math.min(selectSpeed + 50, maxSpeed)
         else
-            selectSpeed = math.max(selectSpeed - gravity * Hyperspace.FPS.SpeedFactor/16, maxSpeed * -1)
+            selectSpeed = math.max(selectSpeed - (gravity+20) * Hyperspace.FPS.SpeedFactor/16, maxSpeed * -1)
         end
 
         selectPos = math.max(math.min(selectPos + selectSpeed * Hyperspace.FPS.SpeedFactor/16 , 446-36), 0+36)
@@ -280,12 +286,22 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 
         if math.abs(selectPos - fishPos) < 46 then
             --print("Catching: ".. tostring(fishCatch))
-            fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * 2.75  * (maxRodStrength/5) * (16-fishNumber))
+            fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
             if fishCatch == fishMax then 
-                print("WIN")
+                --print("WIN")
                 --fishCatch = 0b
                 Hyperspace.playerVariables.fish_active = 0
                 -- TRIGGER FISH CATCH
+                --[[if Hyperspace.ships.enemy then
+                    --print("isFighting enemy")
+                    if flagShipBlueprints[Hyperspace.ships.enemy.myBlueprint.blueprintName] then
+                        --print("FIGHTING FLAGSHIP")
+                        Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_3", false)
+                    end
+                end]]
+                if flagShipBlueprints[shipBlueprint] then
+                    Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_3", false)
+                end
                 if fishNumber == 16 then
                     local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
                     Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_ULTRA_RARE",false,-1)
@@ -456,8 +472,131 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     if shipManager:HasAugmentation("FISH_AUG_33") > 0 then
         for system in vter(shipManager.vSystemList) do
             if system:NeedsRepairing() then
-                system:PartialRepair(2,true)
+                system:PartialRepair(2,false)
             end
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+    local hullData = userdata_table(shipManager, "mods.arc.hullData")
+    if shipManager:HasAugmentation("ARC_SUPER_HULL") > 0   then
+        hullData.tempHp = math.floor(shipManager:GetAugmentationValue("ARC_SUPER_HULL"))
+    else
+        hullData.tempHp = nil
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+    --log(beamHitType)
+    if shipManager:HasAugmentation("ARC_SUPER_HULL") > 0 and beamHitType == 2 then
+       local hullData = userdata_table(shipManager, "mods.arc.hullData")
+        if hullData.tempHp then 
+            if hullData.tempHp > 0 and damage.iDamage > 0 then
+                hullData.tempHp = hullData.tempHp - damage.iDamage
+                shipManager:DamageHull((-1 * damage.iDamage), true)
+            end
+        end
+    end 
+    return Defines.Chain.CONTINUE, beamHitType
+end) 
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if shipManager:HasAugmentation("ARC_SUPER_HULL") then
+        local hullData = userdata_table(shipManager, "mods.arc.hullData")
+        if hullData.tempHp then 
+            if hullData.tempHp > 0 and damage.iDamage > 0 then
+                hullData.tempHp = hullData.tempHp - damage.iDamage
+                shipManager:DamageHull((-1 * damage.iDamage), true)
+            end
+        end
+    end
+end)
+
+script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
+    if Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then
+        local shipManager = Hyperspace.Global.GetInstance():GetShipManager(0)
+        local hullData = userdata_table(shipManager, "mods.arc.hullData")
+        if hullData.tempHp then
+            local hullHP = hullData.tempHp
+            local xPos = 380
+            local yPos = 47
+            local xText = 413
+            local yText = 58
+            local tempHpImage = Hyperspace.Resources:CreateImagePrimitiveString(
+                "statusUI/arc_tempHull.png",
+                xPos,
+                yPos,
+                0,
+                Graphics.GL_Color(1, 1, 1, 1),
+                1.0,
+                false)
+            Graphics.CSurface.GL_RenderPrimitive(tempHpImage)
+            Graphics.freetype.easy_print(0, xText, yText, hullHP)
+        end
+    end
+end, function() end)
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+    if shipManager:HasAugmentation("FISH_AUG_44") and shipManager:HasSystem(0) then
+        shipManager.shieldSystem:SetBonusPower(2,0)
+    end
+end)
+local crystalGun = Hyperspace.Blueprints:GetWeaponBlueprint("CRYSTAL_BURST_1")
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if shipManager:HasAugmentation("FISH_AUG_47") then
+        local targetRoom = get_room_at_location(shipManager, location, true)
+        for crewmem in vter(get_ship_crew_room(shipManager, targetRoom)) do
+            local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+            local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
+            local crystal = spaceManager:CreateMissile(
+                crystalGun,
+                projectile.position,
+                projectile.currentSpace,
+                shipManager.iShipId,
+                otherShip:GetRandomRoomCenter(),
+                math.abs(shipManager.iShipId-1),
+                0.0)
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+    if shipManager:HasAugmentation("FISH_AUG_47") and realNewTile then
+        local targetRoom = get_room_at_location(shipManager, location, true)
+        for crewmem in vter(get_ship_crew_point(shipManager, location.x, location.y)) do
+            local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+            local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
+            local crystal = spaceManager:CreateMissile(
+                crystalGun,
+                projectile.position,
+                projectile.currentSpace,
+                shipManager.iShipId,
+                otherShip:GetRandomRoomCenter(),
+                math.abs(shipManager.iShipId-1),
+                0.0)
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if damage.iDamage > 0 then
+        local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
+        if shipManager:HasAugmentation("FISH_AUG_40") then
+            shipManager:ModifyScrapCount(-3,false)
+        elseif otherShip:HasAugmentation("FISH_AUG_40") then
+            otherShip:ModifyScrapCount(1,false)
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+    if damage.iDamage > 0 and realNewTile then
+        local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
+        if shipManager:HasAugmentation("FISH_AUG_40") then
+            shipManager:ModifyScrapCount(-3,false)
+        elseif otherShip:HasAugmentation("FISH_AUG_40") then
+            otherShip:ModifyScrapCount(1,false)
         end
     end
 end)

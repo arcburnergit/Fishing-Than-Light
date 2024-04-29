@@ -5,7 +5,8 @@
 <version>^1.11.0</version>
 
 <mod:findLike type="scripts" limit="1">
-    <mod-append:script>data/scripts/fishing.lua</mod-append:script>
+    <mod-append:script>data/scripts/fish/fishing.lua</mod-append:script>
+    <mod-append:script>data/scripts/fish/ship_ach.lua</mod-append:script>
 </mod:findLike>
 
 <events>
@@ -53,27 +54,34 @@
 		<mod-append:empty />
 		<mod-append:empty />
 	</mod:findLike>
-	<mod-append:ship name="PLAYER_SHIP_FISHING" b="false" c="false" >
+	<mod-append:ship name="PLAYER_SHIP_FISHING" b="true" c="true" >
         <unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+        <unlock variant="b" silent="false">
+			<type>4</type>
+		</unlock>
+        <unlock variant="c" silent="false">
 			<type>4</type>
 		</unlock>
         <achievement name="FISHING_SHIP_ACH_1" layout="all">
             <name>Big Catch</name>
             <description>Have your entire cargo full of fish.</description>
-            <icon>fish_1_icon</icon>
-            <lockImage>fish_1_icon_locked</lockImage>
+            <icon>fish_ship_1_icon</icon>
+            <lockImage>fish_ship_1_icon_locked</lockImage>
         </achievement>
         <achievement name="FISHING_SHIP_ACH_2" layout="all">
-            <name>A great voyage</name>
-            <description>Successfully catch a fish in sectors belonging to each faction; civilians, rebels, pirates, engi, zoltans, mantis, rocks, slug, orchid, shell, leech, and lanius/ghost .</description>
-            <icon>fish_2_icon</icon>
-            <lockImage>fish_2_icon_locked</lockImage>
+            <name>A Great Voyage</name>
+            <description>Fill out all but the two hidden fish in the fish glossary of unique fish (Check Achievements).</description>
+            <icon>fish_ship_2_icon</icon>
+            <lockImage>fish_ship_2_icon_locked</lockImage>
+            <variable name="fish_ship_ach_2_req" amount="1"/>
         </achievement>
         <achievement name="FISHING_SHIP_ACH_3" layout="all">
-            <name>Hold my fishing rod</name>
+            <name>Hold My Fishing Rod</name>
             <description>Successfully catch a fish during the fight with the rebel flagship.</description>
-            <icon>fish_3_icon</icon>
-            <lockImage>fish_3_icon_locked</lockImage>
+            <icon>fish_ship_3_icon</icon>
+            <lockImage>fish_ship_3_icon_locked</lockImage>
         </achievement>
 	</mod-append:ship>
 
@@ -82,9 +90,65 @@
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 
-	<mod-append:customShip name="PLAYER_SHIP_FISHING">
+	<mod-append:customShip name="PLAYER_SHIP_FISHING_2">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_FISHING_3">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
 </mod:findLike>
+
+<store>
+	<customStore id="STORE_FISHING_SYLVAN">
+		<resource>
+		  <type>drones</type>
+		  <count min="4" max="7"/>
+          <price>-1</price>
+		</resource>
+		<resource>
+		  <type>missiles</type>
+		  <count min="2" max="5"/>
+          <price>-1</price>
+		</resource>
+		<resource>
+		  <type>fuel</type>
+		  <count min="5" max="9"/>
+          <price>-1</price>
+		</resource>
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="WEAPONS">
+        <item>
+            <blueprint>FISHLIST_1</blueprint>
+            <price>-1</price>
+        </item>    
+        <item>
+            <blueprint>FISHLIST_1</blueprint>
+            <price>-1</price>
+        </item>    
+        <item>
+            <blueprint>FISHLIST_2</blueprint>
+            <price>-1</price>
+			</item>    
+		</category>
+        <category type="WEAPONS">
+        <item>
+            <blueprint>FISHLIST_2</blueprint>
+            <price>-1</price>
+        </item>
+        <item>
+            <blueprint>FISHLIST_3</blueprint>
+            <price>-1</price>
+        </item>
+        <item>
+            <blueprint>FISHLIST_3</blueprint>
+            <price>-1</price>
+        </item>
+        </category>
+    </customStore>
+</store>
 
 <augments>
     <aug name="FISH_AUG_1">
@@ -351,6 +415,160 @@
         <function name="SHIELD_RECHARGE" value="1.1" useForReqs="false" warning="false" />
         <function name="AUTO_COOLDOWN" value="-0.5" useForReqs="false" warning="false" />
     </aug>
+
+    <aug name="FISH_AUG_42">
+        <statBoosts>
+            <statBoost name="noSlot">
+                <boostType>SET</boostType>
+                <value>true</value>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+				<whiteList load="LIST_CREW_HUMAN" />
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_43">
+        <statBoosts>
+            <statBoost name="maxHealth">
+                <boostType>MULT</boostType>
+                <amount>1.45</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+            <statBoost name="damageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.45</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_45">
+        <statBoosts>
+            <statBoost name="suffocationModifier">
+                <boostType>MULT</boostType>
+                <amount>2</amount>
+                <shipTarget>ORIGINAL_SHIP</shipTarget>
+                <crewTarget>ALL</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+            </statBoost>
+			<statBoost name="canSuffocate">
+				<boostType>SET</boostType>
+				<value>false</value>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+				<priority>999</priority>
+			</statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_46">
+        <statBoosts>
+            <statBoost name="rangedDamageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.5</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ENEMIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+            <statBoost name="rangedDamageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.416</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+            </statBoost>
+			<statBoost name="damageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.2</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>0</priority>
+			</statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_48">
+        <function name="ARC_SUPER_HULL" value="5" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_49">
+        <statBoosts>
+            <statBoost name="damageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.5</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALL</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+				<whiteList load="LIST_CREW_HUMAN" />
+            </statBoost>
+			<statBoost name="allDamageTakenMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.67</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALL</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+				<whiteList load="LIST_CREW_HUMAN" />
+			</statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_4A">
+        <statBoosts>
+            <statBoost name="suffocationModifier">
+                <boostType>MULT</boostType>
+                <amount>0.2</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_4B">
+        <statBoosts>
+			<statBoost name="resistsMindControl">
+				<boostType>SET</boostType>
+				<value>true</value>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>ALLIES</crewTarget>
+				<priority>999</priority>
+			</statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_4C">
+        <statBoosts>
+            <statBoost name="maxHealth">
+                <boostType>MULT</boostType>
+                <amount>0.5</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+				<whiteList load="LIST_CREW_LEECH" />
+            </statBoost>
+            <statBoost name="canTeleport">
+                <boostType>SET</boostType>
+                <value>true</value>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+				<whiteList load="LIST_CREW_LEECH" />
+            </statBoost>
+        </statBoosts>
+    </aug>
+
+
 </augments>
 
 <events>
@@ -386,6 +604,388 @@
     <metaVariable name="fish_obtained_33" op="set" val="0"/>
     <metaVariable name="fish_obtained_34" op="set" val="0"/>
     <metaVariable name="fish_obtained_35" op="set" val="0"/>
+    
+    
+    <metaVariable name="fish_obtained_41" op="set" val="0"/>
+    <metaVariable name="fish_obtained_42" op="set" val="0"/>
+    <metaVariable name="fish_obtained_43" op="set" val="0"/>
+    <metaVariable name="fish_obtained_44" op="set" val="0"/>
+    <metaVariable name="fish_obtained_45" op="set" val="0"/>
+    <metaVariable name="fish_obtained_46" op="set" val="0"/>
+    <metaVariable name="fish_obtained_47" op="set" val="0"/>
+    <metaVariable name="fish_obtained_48" op="set" val="0"/>
+    <metaVariable name="fish_obtained_49" op="set" val="0"/>
+    <metaVariable name="fish_obtained_40" op="set" val="0"/>
+    <metaVariable name="fish_obtained_4A" op="set" val="0"/>
+    <metaVariable name="fish_obtained_4B" op="set" val="0"/>
+    <metaVariable name="fish_obtained_4C" op="set" val="0"/>
+    <metaVariable name="fish_obtained_4D" op="set" val="0"/>
+    <metaVariable name="fish_obtained_4E" op="set" val="0"/>
+
+    <req name="fish_ship_ach_2_req" type="all">
+        <name>fish_obtained_41</name>
+        <name>fish_obtained_42</name>
+        <name>fish_obtained_43</name>
+        <name>fish_obtained_44</name>
+        <name>fish_obtained_45</name>
+        <name>fish_obtained_46</name>
+        <name>fish_obtained_47</name>
+        <name>fish_obtained_48</name>
+        <name>fish_obtained_49</name>
+        <name>fish_obtained_40</name>
+        <name>fish_obtained_4A</name>
+        <name>fish_obtained_4B</name>
+        <name>fish_obtained_4C</name>
+    </req>
 </events>
+
+<achievements>
+    <page>
+        <section text="Basic Fish" hidden="false">
+            <achievement name="FISH_CAUGHT_1">
+                <name>Orange Snapper</name>
+                <description>Catch an Orange Snapper.</description>
+                <header>Fish Caught!</header>
+                <icon>fish1</icon>
+                <variable name="fish_obtained_1" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_2">
+                <name>Red Emperor</name>
+                <description>Catch a Red Emperor.</description>
+                <header>Fish Caught!</header>
+                <icon>fish2</icon>
+                <variable name="fish_obtained_2" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_3">
+                <name>Striped Coral Trout</name>
+                <description>Catch a Striped Coral Trout.</description>
+                <header>Fish Caught!</header>
+                <icon>fish3</icon>
+                <variable name="fish_obtained_3" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_4">
+                <name>Spotted Mackeral</name>
+                <description>Catch a Spotted Mackeral.</description>
+                <header>Fish Caught!</header>
+                <icon>fish4</icon>
+                <variable name="fish_obtained_4" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_5">
+                <name>Estuary Rockcod</name>
+                <description>Catch an Estuary Rockcod.</description>
+                <header>Fish Caught!</header>
+                <icon>fish5</icon>
+                <variable name="fish_obtained_5" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_6">
+                <name>Blue Threadfin</name>
+                <description>Catch a Blue Threadfin.</description>
+                <header>Fish Caught!</header>
+                <icon>fish6</icon>
+                <variable name="fish_obtained_6" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_7">
+                <name>Rock Blackfish</name>
+                <description>Catch a Rock Blackfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish7</icon>
+                <variable name="fish_obtained_7" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_8">
+                <name>Longtail Tuna</name>
+                <description>Catch a Longtail Tuna.</description>
+                <header>Fish Caught!</header>
+                <icon>fish8</icon>
+                <variable name="fish_obtained_8" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+        </section>
+        
+        <section text="Uncommon Fish" hidden="false">
+            <achievement name="FISH_CAUGHT_21">
+                <name>Coho Salmon</name>
+                <description>Catch a Coho Salmon.</description>
+                <header>Fish Caught!</header>
+                <icon>fish21</icon>
+                <variable name="fish_obtained_21" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_22">
+                <name>Roosterfish</name>
+                <description>Catch a Roosterfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish22</icon>
+                <variable name="fish_obtained_22" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_23">
+                <name>Yellowfin Salmon</name>
+                <description>Catch a Yellowfin Salmon.</description>
+                <header>Fish Caught!</header>
+                <icon>fish23</icon>
+                <variable name="fish_obtained_23" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_24">
+                <name>Flathead Catfish</name>
+                <description>Catch a Flathead Catfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish24</icon>
+                <variable name="fish_obtained_24" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_25">
+                <name>Golden Bream</name>
+                <description>Catch a Golden Bream.</description>
+                <header>Fish Caught!</header>
+                <icon>fish25</icon>
+                <variable name="fish_obtained_25" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_26">
+                <name>Black Cobia</name>
+                <description>Catch a Black Cobia.</description>
+                <header>Fish Caught!</header>
+                <icon>fish26</icon>
+                <variable name="fish_obtained_26" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_27">
+                <name>Wisdomfish</name>
+                <description>Catch a Wisdomfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish27</icon>
+                <variable name="fish_obtained_27" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_28">
+                <name>Golden Trout</name>
+                <description>Catch a Golden Trout.</description>
+                <header>Fish Caught!</header>
+                <icon>fish28</icon>
+                <variable name="fish_obtained_28" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+        </section>
+
+        <section text="Legendary Fish" hidden="false">
+            <achievement name="FISH_CAUGHT_31">
+                <name>Wahoo</name>
+                <description>Catch a Wahoo.</description>
+                <header>Fish Caught!</header>
+                <icon>fish31</icon>
+                <variable name="fish_obtained_31" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_32">
+                <name>Mahi Mahi</name>
+                <description>Catch a Mahi Mahi.</description>
+                <header>Fish Caught!</header>
+                <icon>fish32</icon>
+                <variable name="fish_obtained_32" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_33">
+                <name>Shorefish</name>
+                <description>Catch a Shorefish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish33</icon>
+                <variable name="fish_obtained_33" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_34">
+                <name>Grouper</name>
+                <description>Catch a Grouper.</description>
+                <header>Fish Caught!</header>
+                <icon>fish34</icon>
+                <variable name="fish_obtained_34" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_35">
+                <name>Bluefish</name>
+                <description>Catch a Bluefish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish35</icon>
+                <variable name="fish_obtained_35" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+        </section>
+
+        <section text="Unique Fish" hidden="false">
+            <achievement name="FISH_CAUGHT_41">
+                <name>Alliance Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from the Federation Droppoint.</secretDescription>
+                <description>Catch a Alliance Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish41</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_41" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_42">
+                <name>Commando Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Civilian sector.</secretDescription>
+                <description>Catch a Commando Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish42</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_42" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_43">
+                <name>Harmony Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from an Engi sector.</secretDescription>
+                <description>Catch a Harmony Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish43</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_43" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_44">
+                <name>Energy Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Zoltan sector.</secretDescription>
+                <description>Catch an Energy Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish44</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_44" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_45">
+                <name>Kelp Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from an Orchid sector.</secretDescription>
+                <description>Catch a Kelp Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish45</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_45" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_46">
+                <name>Mantis Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Mantis sector.</secretDescription>
+                <description>Catch a Mantis Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish46</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_46" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_47">
+                <name>Ice Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Crystal sector.</secretDescription>
+                <description>Catch an Ice Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish47</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_47" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_48">
+                <name>Stone Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Rock sector.</secretDescription>
+                <description>Catch a Stone Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish48</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_48" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_49">
+                <name>Insurgent Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Rebel sector.</secretDescription>
+                <description>Catch an Insurgent Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish49</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_49" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_40">
+                <name>Theif Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Pirate sector.</secretDescription>
+                <description>Catch a Theif Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish40</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_40" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_4A">
+                <name>Anaerobic Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Lanius or Ghost sector.</secretDescription>
+                <description>Catch an Anaerobic Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish4A</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_4A" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_4B">
+                <name>Slug Ray</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Lanius or Ghost sector.</secretDescription>
+                <description>Catch a Slug Ray.</description>
+                <header>Fish Caught!</header>
+                <icon>fish4B</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_4B" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_4C">
+                <name>Leech?</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a Leech sector.</secretDescription>
+                <description>Catch a Leech?</description>
+                <header>Fish Caught!</header>
+                <icon>fish4C</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_4C" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_4D">
+                <name>Ancient Fish</name>
+                <secretName>??? Fish</secretName>
+                <secretDescription>Catch a unique fish from a ??? sector.</secretDescription>
+                <description>Catch a Ancient Fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish4D</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_4D" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_4E">
+                <name>Fishvan</name>
+                <secretName>??????</secretName>
+                <secretDescription>Catch ?????? from the ?????.</secretDescription>
+                <description>Catch Fishvan.</description>
+                <header>Fish Caught!</header>
+                <icon>fish4E</icon>
+				<lockImage>ach_locked</lockImage>
+                <variable name="fish_obtained_4E" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+        </section>
+    </page>
+</achievements>
 
 </FTL>

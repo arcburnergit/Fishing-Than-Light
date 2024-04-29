@@ -19,12 +19,29 @@
 <event name="FISH_RANDOM_1">
   <text>You've reeled in a basic fish, good for selling or cooking.</text>
   <weapon name="FISHLIST_1" />
+  
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_RANDOM_2">
+  <text>You've reeled in a more uncommon fish, good for selling or cooking.</text>
   <weapon name="FISHLIST_2" />
+  
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_RANDOM_3">
+  <text>You've reeled in a rare fish, it will sell well, or can be cooked for a strong effect.</text>
   <weapon name="FISHLIST_3" />
+  
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 
 <event name="FISH_WEAPON_1">
@@ -49,7 +66,12 @@
 </event>
 <event name="FISH_FISHGUN">
   <text>The fish you reeled in turns out to be more deadly than expected.</text>
+  
   <!--weapon name="FISHLIST_GUNS" /-->
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 
 <event name="FISH_SCRAP_1">
@@ -67,68 +89,145 @@
 
 <event name="FISH_FED_GIVE">
   <text>You reeled in a unique federation fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_41"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_CIV_GIVE">
   <text>You reeled in a unique civilian fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_42"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_ENGI_GIVE">
   <text>You reeled in a unique engi fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_43"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_ZOL_GIVE">
   <text>You reeled in a unique zoltan fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_44"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_ORC_GIVE">
   <text>You reeled in a unique orchid fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_45"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_MAN_GIVE">
   <text>You reeled in a unique mantis fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_46"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_CRY_GIVE">
   <text>You reeled in a unique crystal fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_47"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_ROCK_GIVE">
   <text>You reeled in a unique rock fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_48"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_REB_GIVE">
   <text>You reeled in a unique rebel fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_49"/>
 </event>
 <event name="FISH_PIR_GIVE">
   <text>You reeled in a unique pirate fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_40"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_LAN_GIVE">
   <text>You reeled in a unique anaerobic fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_4A"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_SLUG_GIVE">
   <text>You reeled in a unique slug fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_4B"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_LEECH_GIVE">
-  <text>You reeled in a unique leech fish!</text>
-  <!--weapon name="FISH_FED"-->
+  <text>You reeled in a leech?</text>
+  
+  <weapon name="FISH_FOOD_4C"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_HEKTAR_GIVE">
-  <text>You reeled in a unique hektar fish!</text>
-  <!--weapon name="FISH_FED"-->
+  <loadEventList seeded="false" generate="false">
+    <event load="FISH_SLUG_GIVE"/>
+    <event load="FISH_PIR_GIVE"/>
+  </loadEventList>
+  <!--text>You reeled in a unique hektar fish!</text>
+  <weapon name="FISH_FOOD_4D"-->
 </event>
 <event name="FISH_ANCIENT_GIVE">
   <text>You reeled in a unique ancient fish!</text>
-  <!--weapon name="FISH_FED"-->
+  
+  <weapon name="FISH_FOOD_4E"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
 <event name="FISH_NEXUS_GIVE">
-  <text>You reeled in a unique nexus fish!</text>
-  <!--weapon name="FISH_FED"-->
+  <text>You reeled in a sylvan?</text>
+  
+  <weapon name="FISH_FOOD_4F"/>
+  <choice>
+    <text>Continue...</text>
+    <event load="FISHING_CHECK_ACH"/>
+  </choice>
 </event>
+
+<event name="FISHING_CHECK_ACH" />
 
 <event name="FISH_DROPPOINT_1">
   <loadEventList seeded="false" generate="false">
@@ -166,7 +265,7 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -210,7 +309,7 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -250,7 +349,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -289,7 +388,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -331,7 +430,7 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -375,7 +474,7 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -416,7 +515,7 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -456,7 +555,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -498,7 +597,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_CREW_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -538,7 +637,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -577,7 +676,7 @@
     <event load="FISH_RANDOM_3"/>
     <event load="FISH_CREW_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -615,7 +714,7 @@
     <event load="FISH_RANDOM_3"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -655,7 +754,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -697,7 +796,7 @@
     <event load="FISH_HEKTAR_1_LOOT"/>
     <event load="FISH_HEKTAR_2_LOOT"/>
     <event load="FISH_HEKTAR_2_LOOT"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -737,7 +836,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -777,7 +876,7 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event name="FISH_ULTRA_RARE"/>
+    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -994,19 +1093,19 @@
 </mod:findName>
 
 <mod:findName type="event" name="ENTER_SALE_SLUG">
-  <mod-append:variable name="fish_sector" op="set" val="9"/>
+  <mod-append:variable name="fish_sector" op="set" val="13"/>
 </mod:findName>
 
 <mod:findName type="event" name="ENTER_SALE_PIRATE">
-  <mod-append:variable name="fish_sector" op="set" val="9"/>
+  <mod-append:variable name="fish_sector" op="set" val="13"/>
 </mod:findName>
 
 <mod:findName type="event" name="ENTER_SALE_ABANDONED">
-  <mod-append:variable name="fish_sector" op="set" val="9"/>
+  <mod-append:variable name="fish_sector" op="set" val="13"/>
 </mod:findName>
 
 <mod:findName type="event" name="ENTER_SALE_LEECH">
-  <mod-append:variable name="fish_sector" op="set" val="9"/>
+  <mod-append:variable name="fish_sector" op="set" val="13"/>
 </mod:findName>
 
 <mod:findName type="event" name="ENTER_AUGMENTED">

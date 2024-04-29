@@ -4,6 +4,7 @@
 	<class>Trawler Class</class>
 	<name>Little Skipper</name>
 	<desc>A small vessel dedicated to fishing in the vast emptiness of space.</desc>
+	<unlock id="ship_PLAYER_SHIP_FISHING_unlock"/>
 	<systemList>
 		<cloaking power="1" room="9" start="false" img="room_cloaking_3" />
 		<clonebay power="1" room="6" start="false">
@@ -17,7 +18,7 @@
 				<number>1</number>
 			</slot>
 		</doors>
-		<drones power="1" room="13" start="false" img="room_drones_18" />
+		<drones power="1" max="8" room="13" start="false" img="room_drones_18" />
 		<engines power="1" room="14" start="true" img="room_engines_10">
 			<slot>
 				<direction>left</direction>
@@ -44,14 +45,14 @@
 				<number>1</number>
 			</slot>
 		</sensors>
-		<shields power="2" room="5" start="true" img="room_shields_7">
+		<shields power="2" max="8" room="5" start="true" img="room_shields_7">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
 			</slot>
 		</shields>
 		<teleporter power="1" room="3" start="false" />
-		<weapons power="4" room="4" start="true" img="room_weapons_7">
+		<weapons power="4" max="8" room="4" start="true" img="room_weapons_7">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -62,13 +63,163 @@
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="8" count="4">
 		<weapon name="BEAM_REPAIR" />
-		<weapon name="LASER_BURST_SYLVAN" />
+		<weapon name="LASER_BURST_3" />
 		<weapon name="FISHING_ROD_2" />
 	</weaponList>
 	<droneList drones="8" count="2" />
 	<health amount="30" />
 	<maxPower amount="9" />
 	<crewCount amount="1" class="slug_ranger" />
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_FISHING_2" layout="fishp_trawler_b" img="fishp_trawler_b">
+	<class>Trawler Class</class>
+	<name>The Jelly</name>
+	<desc>An experienced slug fisher has retired to this small trawling vessel to live out the rest of his days catching fish, unfortunately some federation hooligan stole his ship.</desc>
+	<unlock id="ship_PLAYER_SHIP_FISHING_2_unlock"/>
+	<systemList>
+		<battery power="1" room="3" start="false" img="room_battery_3" />
+		<cloaking power="1" room="2" start="false" img="room_cloaking_3" />
+		<clonebay power="1" room="9" start="false">
+			<slot>
+				<number>3</number>
+			</slot>
+		</clonebay>
+		<doors power="2" room="17" start="true" img="room_doors_10">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="1" max="8" room="10" start="false" img="room_drones_15" />
+		<engines power="2" room="13" start="true" img="room_engines_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="1" start="false" img="room_hacking_2" />
+		<medbay power="1" room="9" start="true" img="room_medbay_3">
+			<slot>
+				<number>3</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="11" start="false" img="room_mind_7" />
+		<oxygen power="1" room="4" start="true" img="room_oxygen_5" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="14" start="false" img="room_sensors_8">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="8" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="12" start="false" />
+		<weapons power="2" max="8" room="7" start="true" img="room_weapons_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="8" count="4">
+		<weapon name="LASER_CHAINGUN" />
+		<weapon name="LASER_CHAINGUN" />
+		<weapon name="FISHING_ROD_3" />
+	</weaponList>
+	<droneList drones="8" count="2" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="orchid" />
+	<crewCount amount="1" class="engi" />
+	<aug name="LOCKED_SLUG_GEL" />
+	<aug name="CRATE_SCRAP" />
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_FISHING_3" layout="fishp_trawler_c" img="fishp_trawler_c">
+	<class>Trawler Class</class>
+	<name>The Valkyrie</name>
+	<desc>After a fisherman pulled in fishvan, fishvan had the ship repainted in his own colours.</desc>
+	<unlock id="ship_PLAYER_SHIP_FISHING_3_unlock"/>
+	<systemList>
+		<battery power="1" room="8" start="false" img="room_battery_2" />
+		<cloaking power="1" room="13" start="false" img="room_cloaking_2" />
+		<clonebay power="1" room="12" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="true" img="room_doors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="1" max="8" room="10" start="false" img="room_drones_15" />
+		<engines power="2" room="14" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="9" start="false" img="room_hacking_11" />
+		<medbay power="1" room="12" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="6" start="false" img="room_mind_7" />
+		<oxygen power="1" room="7" start="true" img="room_oxygen_18" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="3" start="false" img="room_sensors_3">
+			<slot>
+				<direction>right</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="1" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="5" start="false" />
+		<weapons power="2" max="8" room="2" start="true" img="room_weapons_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="8" count="4">
+		<weapon name="LASER_BURST_SYLVAN" />
+		<weapon name="FISH_FOOD_4E" />
+	</weaponList>
+	<droneList drones="8" count="2" />
+	<health amount="30" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="slug_clansman" />
+	<aug name="SCRAP_COLLECTOR" />
 </shipBlueprint>
 
 <weaponBlueprint name="FISHING_ROD_1"> 
@@ -968,7 +1119,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Shorefish</title>
 	<short>Shorefish</short>
-	<desc>A legendary space fish, when consumed makes your crew incapable of repairing, however all systems now autorepair</desc>
+	<desc>A legendary space fish, when consumed makes your crew incapable of repairing, however all systems now autorepair at speeds equivilent to two crew members repairing.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1091,13 +1242,69 @@ This harpoon will be able to catch even the most elusive fish.
 	<stackable>true</stackable>
 </augBlueprint>
 
+<augBlueprint name="FISH_AUG_49">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_40">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_4A">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_4B">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_4C">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_4D">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_4E">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
 <weaponBlueprint name="FISH_FOOD_41">
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
 	<title>Alliance Fish</title>
 	<short>Alliance Fish</short>
-	<desc>A unique space fish, when consumed gives a +45% health bonus to all crew</desc>
+	<desc>A unique space fish, when consumed gives you +5 Reputation. (making you really cool)</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1118,7 +1325,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Commando Fish</title>
 	<short>Commando Fish</short>
-	<desc>A unique space fish, when consumed gives a +45% damage bonus to all crew</desc>
+	<desc>A unique space fish, when consumed makes all basic humans take up no slots.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1139,7 +1346,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Harmony Fish</title>
 	<short>Harmony Fish</short>
-	<desc>A unique space fish, when consumed gives a +45% damage reduction bonus to all crew</desc>
+	<desc>A unique space fish, when consumed gives all drones +50% health and +50% damage.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1160,7 +1367,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Energy Fish</title>
 	<short>Energy Fish</short>
-	<desc>A unique space fish, when consumed gives +1 bonus power to all zoltans.</desc>
+	<desc>A unique space fish, when consumed gives +2 bonus power to the shields system.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1179,9 +1386,9 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Weed Fish</title>
-	<short>Weed Fish</short>
-	<desc>A unique space fish, when consumed gives a +45% repair speed bonus to all crew</desc>
+	<title>Kelp Fish</title>
+	<short>Kelp Fish</short>
+	<desc>A unique space fish, when consumed doubles suffocation damage, and removes suffocation immunity from enemy crew.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1202,7 +1409,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Mantis Fish</title>
 	<short>Mantis Fish</short>
-	<desc>A unique space fish, when consumed gives a +20% weapon charge speed bonus</desc>
+	<desc>A unique space fish, when consumed all crew do -50% ranged damage but friendly crew gain +20% melee damage.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1223,7 +1430,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Ice Fish</title>
 	<short>Ice Fish</short>
-	<desc>A unique space fish, when consumed gives a +25% shield charge speed bonus</desc>
+	<desc>A unique space fish, when consumed your crew spawn crystal shards when hit by ship weapons.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1244,7 +1451,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Stone Fish</title>
 	<short>Stone Fish</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, when consumed gives 5 points of super hull which prevent 1 hull damage each.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1265,7 +1472,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Insurgent Fish</title>
 	<short>Insurgent Fish</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, when consumed gives all humans +50% damage and +33% damage reduction.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1286,7 +1493,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Theif Fish</title>
 	<short>Theif Fish</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, when consumed you gain 1 scrap every time you damage the enemy's hull but lose 3 every time your own hull is damaged.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1307,7 +1514,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Anaerobic Fish</title>
 	<short>Anaerobic Fish</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, when consumed gives all friendly crew 80% suffocation resistance.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1328,7 +1535,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Slug Ray</title>
 	<short>Slug Ray</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, when consumed gives all crew mind control resistance.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1349,7 +1556,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Leech?</title>
 	<short>Leech?</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, when consumed all friendly leeches gain teleportation but lose 50% of their health.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1370,7 +1577,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Ancient Fish</title>
 	<short>Ancient Fish</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, can be consumed to upgrade an obelisk weapon to the royal varient.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1391,7 +1598,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Fishvan</title>
 	<short>Fishvan</short>
-	<desc>A unique space fish, when consumed gives a +20% scrap bonus</desc>
+	<desc>A unique space fish, can be consumed to gain access to the fish merchant beacon and one free sylvan.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>

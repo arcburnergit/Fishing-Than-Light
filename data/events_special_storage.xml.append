@@ -367,8 +367,310 @@
       </choice>
     </event>
   </choice>
+
+
+  <choice req="FISH_FOOD_41">
+    <text>Cook the Alliance Fish. (+5 Reputation)</text>
+    <event>
+      <remove name="FISH_FOOD_41"/>
+      <variable name="rep_general" op="add" val="-5" />
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_42">
+    <text>Cook the Commando Fish. (Basic humans no longer take up slots)</text>
+    <event>
+      <remove name="FISH_FOOD_42"/>
+      <hiddenAug>FISH_AUG_42</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_43">
+    <text>Cook the Harmony Fish. (+50% drone health and damage)</text>
+    <event>
+      <remove name="FISH_FOOD_43"/>
+      <hiddenAug>FISH_AUG_43</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_44">
+    <text>Cook the Energy Fish. (+2 shield system bonus power)</text>
+    <event>
+      <remove name="FISH_FOOD_44"/>
+      <hiddenAug>FISH_AUG_44</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_45">
+    <text>Cook the Kelp Fish. (2x suffocation damage, removes enemy suffocation immunity)</text>
+    <event>
+      <remove name="FISH_FOOD_45"/>
+      <hiddenAug>FISH_AUG_45</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_46">
+    <text>Cook the Mantis Fish. (all crew -50% ranged damage, friendly crew +20% melee damage)</text>
+    <event>
+      <remove name="FISH_FOOD_46"/>
+      <hiddenAug>FISH_AUG_46</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_47">
+    <text>Cook the Ice Fish. (Crew spawn crystal shards when hit by ship weapons)</text>
+    <event>
+      <remove name="FISH_FOOD_47"/>
+      <hiddenAug>FISH_AUG_47</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_48">
+    <text>Cook the Stone Fish. (+5 super hull points)</text>
+    <event>
+      <remove name="FISH_FOOD_48"/>
+      <hiddenAug>FISH_AUG_48</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_49">
+    <text>Cook the Insurgent Fish. (All humans +50% damage, +33% damage reduction)</text>
+    <event>
+      <remove name="FISH_FOOD_49"/>
+      <hiddenAug>FISH_AUG_49</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_40">
+    <text>Cook the Theif Fish. (+1 scrap on enemy hull damage, -3 on own hull damage)</text>
+    <event>
+      <remove name="FISH_FOOD_40"/>
+      <hiddenAug>FISH_AUG_40</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_4A">
+    <text>Cook the Anaerobic Fish. (+80% suffocation resistance)</text>
+    <event>
+      <remove name="FISH_FOOD_4A"/>
+      <hiddenAug>FISH_AUG_4A</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_4B">
+    <text>Cook the Slug Ray. (Mind control immunity)</text>
+    <event>
+      <remove name="FISH_FOOD_4B"/>
+      <hiddenAug>FISH_AUG_4B</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_4C">
+    <text>Cook the Leech?. (All friendly leeches gain teleportation but lose 50% of their health)</text>
+    <event>
+      <remove name="FISH_FOOD_4C"/>
+      <hiddenAug>FISH_AUG_4C</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_4D">
+    <text>Cook the Ancient Fish. (Upgrades 1 obelisk weapon to the royal varient)</text>
+    <event>
+      <event load="STORAGE_CHECK_ANC_UPGRADE" />
+    </event>
+  </choice>
+  <choice req="FISH_FOOD_47">
+    <text>Cook Fishvan. (Fish Merchant Beacon, +1 Sylvans)</text>
+    <event>
+      <remove name="FISH_FOOD_4E"/>
+      <crew name="LIST_CREW_SYLVAN_START" />
+      <hiddenAug>FISH_AUG_4E</hiddenAug>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
   <choice>
     <text>Don't cook anything.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+
+<blueprintList name="GIFTLIST_ROYAL">  
+	<name>ROYAL_LASER_3</name>
+	<name>ROYAL_MISSILES</name>
+	<name>ROYAL_BEAM_3</name>
+	<name>ROYAL_HAVOC</name>
+	<name>ROYAL_ION_2</name>
+	<name>ROYAL_FOCUS</name>
+	<name>ROYAL_BOMB</name>
+</blueprintList>
+<blueprintList name="GIFTLIST_ROYAL">  
+	<name>ROYAL_COMBAT_LASER_2</name>
+	<name>ROYAL_DEFENSE_1</name>
+	<name>ROYAL_COMBAT_ION</name>
+	<name>ROYAL_COMBAT_MISSILE</name>
+</blueprintList>
+
+<event name="STORAGE_CHECK_ANC_UPGRADE">
+  <text>Which weapon would you like to upgrade?</text>
+
+  <choice hidden="true" req="ANCIENT_LASER_3" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Harbinger MK III</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_LASER_3" blue="true">
+    <text>Upgrade Harbinger MK III</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_LASER_3"/>
+      <weapon name="ROYAL_LASER_3"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_MISSILES" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Carnage Missiles</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_MISSILES" blue="true">
+    <text>Upgrade Carnage Missiles</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_MISSILES"/>
+      <weapon name="ROYAL_MISSILES"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_BEAM_3" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Eradicator MK III</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_BEAM_3" blue="true">
+    <text>Upgrade Eradicator MK III</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_BEAM_3"/>
+      <weapon name="ROYAL_BEAM_3"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_HAVOC" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Havoceizer</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_HAVOC" blue="true">
+    <text>Upgrade Havoceizer</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_HAVOC"/>
+      <weapon name="ROYAL_HAVOC"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_ION_2" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Plasma Cannon MK II</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_ION_2" blue="true">
+    <text>Upgrade Plasma Cannon MK II</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_ION_2"/>
+      <weapon name="ROYAL_ION_2"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_FOCUS" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Purifier Pinpoint MK I</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_FOCUS" blue="true">
+    <text>Upgrade Purifier Pinpoint MK I</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_FOCUS"/>
+      <weapon name="ROYAL_FOCUS"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_BOMB" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Payload Teleporter</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_BOMB" blue="true">
+    <text>Upgrade Payload Teleporter</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_BOMB"/>
+      <weapon name="ROYAL_BOMB"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_COMBAT_LASER_2" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Harbinger Drone Mk. II</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_COMBAT_LASER_2" blue="true">
+    <text>Upgrade Harbinger Drone Mk. II</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_COMBAT_LASER_2"/>
+      <drone name="ROYAL_COMBAT_LASER_2"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_DEFENSE_1" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Overwatcher</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_DEFENSE_1" blue="true">
+    <text>Upgrade Overwatcher</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_DEFENSE_1"/>
+      <drone name="ROYAL_DEFENSE_1"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_COMBAT_ION" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Plasma Drone</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_COMBAT_ION" blue="true">
+    <text>Upgrade Plasma Drone</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_COMBAT_ION"/>
+      <drone name="ROYAL_COMBAT_ION"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice hidden="true" req="ANCIENT_COMBAT_MISSILE" lvl="0" max_lvl="0" blue="false">
+    <text>Upgrade Carnage Drone</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ANCIENT_COMBAT_MISSILE" blue="true">
+    <text>Upgrade Carnage Drone</text>
+    <event>
+      <remove name="FISH_FOOD_4D"/>
+      <remove name="ANCIENT_COMBAT_MISSILE"/>
+      <drone name="ROYAL_COMBAT_MISSILE"/>
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice>
+
+  <choice>
+    <text>Nevermind.</text>
     <event load="STORAGE_CHECK_FISHING_LOAD"/>
   </choice>
 </event>
@@ -380,20 +682,24 @@
 <event name="STORAGE_CHECK_FISH_GLOSSARY">
   <text>You open your book to the page of contents.</text>
   <choice>
-    <text>Turn to chapter 1: Basic Fish.</text>
+    <text>Turn to chapter I: Basic Fish.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_1"/>
   </choice>
   <choice>
-    <text>Turn to chapter 2: Uncommon Fish.</text>
+    <text>Turn to chapter II: Uncommon Fish.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_2"/>
   </choice>
   <choice>
-    <text>Turn to chapter 3: Rare Fish.</text>
+    <text>Turn to chapter III: Rare Fish.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_3"/>
   </choice>
   <choice>
-    <text>Turn to chapter 4: Legendary Fish.</text>
+    <text>Turn to chapter IV: Legendary Fish.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_4"/>
+  </choice>
+  <choice>
+    <text>Turn to chapter V: Unique Fish.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_5"/>
   </choice>
   <choice>
     <text>Go back.</text>
@@ -403,70 +709,142 @@
 
 <event name="STORAGE_CHECK_FISH_GLOSSARY_1">
   <text>You open the book up to the chapter on the most common fish.</text>
-  <choice>
-    <text> </text>
+  <choice blue="false" req="fish_obtained_1" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_1"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_1" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_1"/>
+    </event>
+  </choice>
+
+  <choice blue="false" req="fish_obtained_2" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_2"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_2" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_2"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_3" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_3"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_3" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_3"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_4" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_4"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_4" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_4"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_5" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_5"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_5" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_5"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_6" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_6"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_6" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_6"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_7" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_7"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_7" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_7"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_8" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_8"/>
     </event>
   </choice>
+  <choice blue="true" req="fish_obtained_8" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_8"/>
+    </event>
+  </choice>
+  
 
   <choice>
     <text>Go back.</text>
@@ -480,67 +858,138 @@
 
 <event name="STORAGE_CHECK_FISH_GLOSSARY_2">
   <text>You open the book up to the chapter on the more uncommon fish.</text>
-  <choice>
-    <text> </text>
+  <choice blue="false" req="fish_obtained_11" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_11"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_11" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_11"/>
+    </event>
+  </choice>
+
+  <choice blue="false" req="fish_obtained_12" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_12"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_12" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_12"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_13" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_13"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_13" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_13"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_14" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_14"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_14" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_14"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_15" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_15"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_15" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_15"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_16" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_16"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_16" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_16"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_17" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_17"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_17" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_2</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_17"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_18" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_18"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_18" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_18"/>
     </event>
   </choice>
@@ -557,67 +1006,138 @@
 
 <event name="STORAGE_CHECK_FISH_GLOSSARY_3">
   <text>You open the book up to the chapter on the more uncommon fish.</text>
-  <choice>
-    <text> </text>
+  <choice blue="false" req="fish_obtained_21" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_21"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_21" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_21"/>
+    </event>
+  </choice>
+
+  <choice blue="false" req="fish_obtained_22" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_22"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_22" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_22"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_23" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_23"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_23" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_23"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_24" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_24"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_24" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_24"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_25" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_25"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_25" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_25"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_26" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_26"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_26" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_26"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_27" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_27"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_27" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_3</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_27"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_28" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_28"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_28" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_28"/>
     </event>
   </choice>
@@ -634,43 +1154,87 @@
 
 <event name="STORAGE_CHECK_FISH_GLOSSARY_4">
   <text>You open the book up to the chapter on the more uncommon fish.</text>
-  <choice>
-    <text> </text>
+  <choice blue="false" req="fish_obtained_31" lvl="1">
+    <text>FOUND    </text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_31"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_31" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_31"/>
+    </event>
+  </choice>
+
+  <choice blue="false" req="fish_obtained_32" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_32"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_32" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_32"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_33" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_33"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_33" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_33"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_34" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_34"/>
     </event>
   </choice>
-  <choice>
-    <text> </text>
+  <choice blue="true" req="fish_obtained_34" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
     <event>
       <text>1</text>
-      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_4</loadEvent>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_34"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_35" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_35"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_35" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
       <weapon name="FISH_FOOD_35"/>
     </event>
   </choice>
@@ -685,8 +1249,214 @@
   </choice>
 </event>
 
-<event name="STORAGE_CHECK_FISH_UPGRADE">
+<event name="STORAGE_CHECK_FISH_GLOSSARY_5">
+  <text>You open the book up to the chapter on the unique fish that can be found in the multiverse, however it appears that no one has actually recorded any of the fish, you'll have to do it yourself.</text>
+
+  <choice blue="false" req="fish_obtained_41" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_41"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_41" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_42" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_42"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_42" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_43" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_43"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_43" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_44" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_44"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_44" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_45" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_45"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_45" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+
+  <choice blue="false" req="fish_obtained_46" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_46"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_46" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_47" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_47"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_47" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_48" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_48"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_48" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_49" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_49"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_49" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_40" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_40"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_45" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_4A" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_4A"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_4A" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_4B" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_4B"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_4B" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_4C" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_4C"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_4C" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_4D" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_4D"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_4D" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice blue="false" req="fish_obtained_4E" lvl="1">
+    <text>Found</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_5</loadEvent>
+      <weapon name="FISH_FOOD_4E"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="fish_obtained_4E" lvl="0" max_lvl="0">
+    <text>Unknown</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+  <choice>
+    <text>Close the Glossary.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<!--event name="STORAGE_CHECK_FISH_UPGRADE">
   <text>Choose an internal upgrade to install.</text>
   <choice req="">
-</event>
+</event-->
+
+<mod:findName type="event" name="STORAGE_CHECK_AUG">
+  <mod-append:choice req="FISH_AUG_4E" blue="true" hidden="true">
+    <text>(Fish Merchant Beacon) Summon a store.</text>
+    <event>
+			<store>STORE_TRANSPORT_SYLVAN</store>
+    </event>
+  </mod-append:choice>
+</mod:findName>
+
 </FTL>
