@@ -1,5 +1,5 @@
 mods.fishing = {}
-
+log("FISHIGN WORK")
 -----------------------
 -- UTILITY FUNCTIONS --
 -----------------------
@@ -258,7 +258,9 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_DOWN, function(x, y)
     --print("MousePos "..tostring(x).." "..tostring(y))
-    if x >= xOffset+18 and x <= xOffset+18+98 and y >= yOffset+409 and y <= yOffset+409+73 and Hyperspace.playerVariables.fish_active == 1 then
+    local mousePos = Hyperspace.Mouse.position
+
+    if mousePos.x >= xOffset+18 and mousePos.x <= xOffset+18+98 and mousePos.y >= yOffset+409 and mousePos.y <= yOffset+409+73 and Hyperspace.playerVariables.fish_active == 1 then
         isJump = true
         hasJump = false
         --print("CLICK")
@@ -621,7 +623,7 @@ local crystalGun = Hyperspace.Blueprints:GetWeaponBlueprint("CRYSTAL_BURST_1")
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     if shipManager:HasAugmentation("FISH_AUG_47") > 0 then
         local targetRoom = get_room_at_location(shipManager, location, true)
-        for crewmem in vter(get_ship_crew_room(shipManager, targetRoom)) do
+        for i, crewmem in ipairs(get_ship_crew_room(shipManager, targetRoom)) do
             local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
             local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
             local crystal = spaceManager:CreateMissile(
@@ -639,7 +641,7 @@ end)
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
     if shipManager:HasAugmentation("FISH_AUG_47") > 0 and realNewTile then
         local targetRoom = get_room_at_location(shipManager, location, true)
-        for crewmem in vter(get_ship_crew_point(shipManager, location.x, location.y)) do
+        for i, crewmem in ipairs(get_ship_crew_point(shipManager, location.x, location.y)) do
             local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
             local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
             local crystal = spaceManager:CreateMissile(
@@ -679,7 +681,7 @@ end)
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     if projectile.extend.name == "FISH_ION" then
         local targetRoom = get_room_at_location(shipManager, location, true)
-        for crewmem in vter(get_ship_crew_room(shipManager, targetRoom)) do
+        for i, crewmem in ipairs(get_ship_crew_room(shipManager, targetRoom)) do
             local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
             local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
             local randomRoom = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)

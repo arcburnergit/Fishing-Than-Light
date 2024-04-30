@@ -420,7 +420,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<power>2</power>
 	<cost>45</cost>
 	<bp>4</bp>
-	<rarity>3</rarity>
+	<rarity>0</rarity>
 	<image>ion_4_shot</image>
 	<explosion>explosion_small_ion</explosion>
 	<launchSounds>
@@ -1694,7 +1694,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Energy Fish</title>
 	<short>Energy Fish</short>
-	<desc>A unique space fish, when consumed gives +2 bonus power to the shields system.</desc>
+	<desc>A unique space fish, when consumed gives +1 bonus power to all zoltans in the shields system.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>

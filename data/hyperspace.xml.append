@@ -127,7 +127,7 @@
           <price>-1</price>
 		</resource>
         <itemPurchaseLimit>2</itemPurchaseLimit>
-		<category type="FISH">
+		<category type="WEAPON" name="FISH">
         <item>
             <blueprint>FISHLIST_1</blueprint>
             <price>-1</price>
@@ -141,7 +141,7 @@
             <price>-1</price>
 			</item>    
 		</category>
-        <category type="FISH">
+        <category type="WEAPON" name="FISH">
         <item>
             <blueprint>FISHLIST_2</blueprint>
             <price>-1</price>
@@ -155,7 +155,7 @@
             <price>-1</price>
         </item>
         </category>
-        <category type="FISH">
+        <category type="WEAPON" name="FISH">
         <item>
             <blueprint>FISHLIST_GUNS</blueprint>
             <price>-1</price>
@@ -470,6 +470,23 @@
                 <crewTarget>ALLIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
                 <priority>0</priority>
+            </statBoost>
+        </statBoosts>
+    </aug>
+    <aug name="FISH_AUG_44">
+        <statBoosts>
+            <statBoost name="BonusPower">
+                <boostType>ADD</boostType>
+                <amount>1</amount>
+                <shipTarget>ORIGINAL_SHIP</shipTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+				<systemRoomTarget>ALL</systemRoomTarget>
+				<systemList>
+					<shields />
+				</systemList>
+				<whiteList load="LIST_CREW_ZOLTAN" />
             </statBoost>
         </statBoosts>
     </aug>

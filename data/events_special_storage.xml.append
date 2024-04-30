@@ -49,11 +49,11 @@
     <event>
       <text>Choose a harpoon to upgrade.</text>
       <choice req="FISHING_ROD_1">
-        <text>Upgrade your Harpoon MK I. -20~</text>
+        <text>Upgrade your Harpoon MK I. -50~</text>
         <event>
           <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
           <item_modify>
-            <item type="scrap" min="-20" max="-20" />
+            <item type="scrap" min="-50" max="-50" />
           </item_modify>
           <remove name="FISHING_ROD_1" />
           <weapon name="FISHING_ROD_2" />
@@ -64,11 +64,11 @@
         </event>
       </choice>
       <choice req="FISHING_ROD_2">
-        <text>Upgrade your Harpoon MK II. -20~</text>
+        <text>Upgrade your Harpoon MK II. -50~</text>
         <event>
           <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
           <item_modify>
-            <item type="scrap" min="-20" max="-20" />
+            <item type="scrap" min="-50" max="-50" />
           </item_modify>
           <remove name="FISHING_ROD_2" />
           <weapon name="FISHING_ROD_3" />
@@ -373,9 +373,14 @@
   <choice req="FISH_FOOD_41">
     <text>Cook the Alliance Fish. (+5 Reputation)</text>
     <event>
+      <text>[NOTORIETY DECREASED X5 - GENERAL]
+      You have done a good deed here in the eyes of the Federation. If you've gained notoriety from other actions in the past, you're more likely to be forgiven for them.</text>
       <remove name="FISH_FOOD_41"/>
       <variable name="rep_general" op="add" val="-5" />
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <choice>
+        <text>Continue...</text>
+        <event load="STORAGE_CHECK_FISHING_LOAD" />
+      </choice>
     </event>
   </choice>
   <choice req="FISH_FOOD_42">
@@ -395,7 +400,7 @@
     </event>
   </choice>
   <choice req="FISH_FOOD_44">
-    <text>Cook the Energy Fish. (+2 shield system bonus power)</text>
+    <text>Cook the Energy Fish. (+1 bonus power to zoltans in shield system)</text>
     <event>
       <remove name="FISH_FOOD_44"/>
       <hiddenAug>FISH_AUG_44</hiddenAug>
