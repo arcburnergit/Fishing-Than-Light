@@ -475,7 +475,7 @@
     </aug>
     <aug name="FISH_AUG_44">
         <statBoosts>
-            <statBoost name="BonusPower">
+            <statBoost name="bonusPower">
                 <boostType>ADD</boostType>
                 <amount>1</amount>
                 <shipTarget>ORIGINAL_SHIP</shipTarget>
