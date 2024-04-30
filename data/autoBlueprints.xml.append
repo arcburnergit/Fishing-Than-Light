@@ -69,6 +69,21 @@
   <name>FISH_FOOD_4E</name>
 </blueprintList>
 
+<blueprintList name="FISHLIST_JUNK">
+  <name>FISH_FOOD_TINCAN</name>
+  <name>FISH_FOOD_BOOT</name>
+</blueprintList>
+
+<blueprintList name="FISHLIST_GUNS">
+  <name>FISH_FOOD_LASER</name>
+  <name>FISH_FOOD_ION</name>
+  <name>FISH_FOOD_FLAK</name>
+  <name>FISH_FOOD_BEAM</name>
+  <name>FISH_FOOD_MINELAYER</name>
+  <name>FISH_FOOD_MISSILE_1</name>
+  <name>FISH_FOOD_MISSILE_2</name>
+</blueprintList>
+
 <blueprintList name="FISHLIST_1">
   <name>FISH_FOOD_1</name>
   <name>FISH_FOOD_2</name>

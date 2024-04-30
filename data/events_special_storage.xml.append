@@ -303,7 +303,7 @@
 
 
   <choice req="FISH_FOOD_31">
-    <text>Cook the Wahoo. (-90% enemy move speed)</text>
+    <text>Cook the Queenfish. (-90% enemy move speed)</text>
     <event>
       <remove name="FISH_FOOD_31"/>
       <hiddenAug>FISH_AUG_31</hiddenAug>
@@ -476,15 +476,13 @@
   </choice>
   <choice req="FISH_FOOD_4D">
     <text>Cook the Ancient Fish. (Upgrades 1 obelisk weapon to the royal varient)</text>
-    <event>
-      <event load="STORAGE_CHECK_ANC_UPGRADE" />
-    </event>
+    <event load="STORAGE_CHECK_ANC_UPGRADE" />
   </choice>
   <choice req="FISH_FOOD_4E">
     <text>Cook Fishvan. (Fish Merchant Beacon, +1 Sylvans)</text>
     <event>
       <remove name="FISH_FOOD_4E"/>
-      <crewMember amount="1" class="LIST_CREW_SYLVAN_START"  all_skills="2"/>
+      <crewMember amount="1" class="LIST_CREW_SYLVAN_START"  all_skills="2">Sylvan</crewMember>
       <hiddenAug>FISH_AUG_4E</hiddenAug>
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
@@ -513,6 +511,11 @@
 	<name>ROYAL_COMBAT_MISSILE</name>
 </blueprintList>
 
+<event name="REMOVE_ANCIENT_FISH">
+  <remove name="FISH_FOOD_4D"/>
+  <loadEvent>STORAGE_CHECK_FISHING</loadEvent>
+</event>
+
 <event name="STORAGE_CHECK_ANC_UPGRADE">
   <text>Which weapon would you like to upgrade?</text>
 
@@ -523,10 +526,9 @@
   <choice req="ANCIENT_LASER_3" blue="true">
     <text>Upgrade Harbinger MK III</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_LASER_3"/>
       <weapon name="ROYAL_LASER_3"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -537,10 +539,9 @@
   <choice req="ANCIENT_MISSILES" blue="true">
     <text>Upgrade Carnage Missiles</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_MISSILES"/>
       <weapon name="ROYAL_MISSILES"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -551,10 +552,9 @@
   <choice req="ANCIENT_BEAM_3" blue="true">
     <text>Upgrade Eradicator MK III</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_BEAM_3"/>
       <weapon name="ROYAL_BEAM_3"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -565,10 +565,9 @@
   <choice req="ANCIENT_HAVOC" blue="true">
     <text>Upgrade Havoceizer</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_HAVOC"/>
       <weapon name="ROYAL_HAVOC"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -579,10 +578,9 @@
   <choice req="ANCIENT_ION_2" blue="true">
     <text>Upgrade Plasma Cannon MK II</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_ION_2"/>
       <weapon name="ROYAL_ION_2"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -593,10 +591,9 @@
   <choice req="ANCIENT_FOCUS" blue="true">
     <text>Upgrade Purifier Pinpoint MK I</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_FOCUS"/>
       <weapon name="ROYAL_FOCUS"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -607,10 +604,9 @@
   <choice req="ANCIENT_BOMB" blue="true">
     <text>Upgrade Payload Teleporter</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_BOMB"/>
       <weapon name="ROYAL_BOMB"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -621,10 +617,9 @@
   <choice req="ANCIENT_COMBAT_LASER_2" blue="true">
     <text>Upgrade Harbinger Drone Mk. II</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_COMBAT_LASER_2"/>
       <drone name="ROYAL_COMBAT_LASER_2"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -635,10 +630,9 @@
   <choice req="ANCIENT_DEFENSE_1" blue="true">
     <text>Upgrade Overwatcher</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_DEFENSE_1"/>
       <drone name="ROYAL_DEFENSE_1"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -649,10 +643,9 @@
   <choice req="ANCIENT_COMBAT_ION" blue="true">
     <text>Upgrade Plasma Drone</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_COMBAT_ION"/>
       <drone name="ROYAL_COMBAT_ION"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -663,10 +656,9 @@
   <choice req="ANCIENT_COMBAT_MISSILE" blue="true">
     <text>Upgrade Carnage Drone</text>
     <event>
-      <remove name="FISH_FOOD_4D"/>
       <remove name="ANCIENT_COMBAT_MISSILE"/>
       <drone name="ROYAL_COMBAT_MISSILE"/>
-      <event load="STORAGE_CHECK_FISHING_LOAD" />
+      <event load="REMOVE_ANCIENT_FISH" />
     </event>
   </choice>
 
@@ -1446,6 +1438,136 @@
   </choice>
 </event>
 
+<event name="STORAGE_CHECK_FISH_GLOSSARY_6">
+  <text>You open the book up to the chapter on the more dangerous kinds of fish.</text>
+  <choice blue="false" req="fish_obtained_LASER" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_LASER"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_LASER" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_LASER"/>
+    </event>
+  </choice>
+
+  <choice blue="false" req="fish_obtained_ION" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_ION"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_ION" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_ION"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_FLAK" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_FLAK"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_FLAK" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_FLAK"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_BEAM" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_BEAM"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_BEAM" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_BEAM"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_MINELAYER" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_MINELAYER"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_MINELAYER" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_MINELAYER"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_MISSILE_1" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_MISSILE_1"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_MISSILE_1" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_MISSILE_1"/>
+    </event>
+  </choice>
+  
+  <choice blue="false" req="fish_obtained_MISSILE_2" lvl="1">
+    <text>FOUND    </text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_MISSILE_2"/>
+    </event>
+  </choice>
+  <choice blue="true" req="fish_obtained_MISSILE_2" lvl="0" max_lvl="0">
+    <text>NOT FOUND</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISH_GLOSSARY_1</loadEvent>
+      <weapon name="FISH_FOOD_MISSILE_2"/>
+    </event>
+  </choice>
+
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+  <choice>
+    <text>Close the Glossary.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
 <!--event name="STORAGE_CHECK_FISH_UPGRADE">
   <text>Choose an internal upgrade to install.</text>
   <choice req="">
@@ -1455,7 +1577,7 @@
   <mod-append:choice req="FISH_AUG_4E" blue="true" hidden="true">
     <text>(Fish Merchant Beacon) Summon a store.</text>
     <event>
-			<store>STORE_TRANSPORT_SYLVAN</store>
+			<store>STORE_FISHING_SYLVAN</store>
     </event>
   </mod-append:choice>
 </mod:findName>

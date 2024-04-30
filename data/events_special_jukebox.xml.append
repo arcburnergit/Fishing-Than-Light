@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<!--
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	JUKEBOX
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+<mod:findName type="event" name="STORAGE_CHECK_JUKEBOX">
+	<mod-append:choice hidden="true" blue="true">
+		<text>Fishing: Fishing Music</text>
+		<event>
+			<playMusic>fishmusic</playMusic>
+			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
+		</event>
+	</mod-append:choice>
+</mod:findName>

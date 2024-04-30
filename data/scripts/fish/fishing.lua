@@ -216,6 +216,13 @@ flagShipBlueprints["BOSS_1_HARD_DLC"] = true
 flagShipBlueprints["BOSS_2_HARD_DLC"] = true
 flagShipBlueprints["BOSS_3_HARD_DLC"] = true
 
+local fishBeingCaught = false
+
+local reelPos = 1
+local releasePos = 1
+local reelMax = 34
+local releaseMax = 27
+local soundTimer=0
 
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint)
@@ -306,7 +313,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
         fishTimer = math.max(fishTimer - Hyperspace.FPS.SpeedFactor/16, 0)
         if fishTimer == 0 then
             local soundName = fishSounds:GetItem()
-            Hyperspace.Sounds:PlaySoundMix(soundName, -1, true)
+            Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
             fishTimer = 1 + (2*math.random())
             local negative = math.random()
             local random = ((math.random() + 3) * (fishNumber * 2 + 20))
@@ -325,6 +332,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 
         if math.abs(selectPos - fishPos) < 46 then
             --print("Catching: ".. tostring(fishCatch))
+            fishBeingCaught = true
             fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
             if fishCatch == fishMax then 
                 --print("WIN")
@@ -351,6 +359,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
                 end
             end
         else
+            fishBeingCaught = false
             fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * 3 * (5 - math.ceil(maxRodStrength/5)))
             if fishCatch == 0 then
                 Hyperspace.playerVariables.fish_active = 0
@@ -359,8 +368,30 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
             end
         end
     end
+
 end)
 
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    if Hyperspace.playerVariables.fish_active == 1 then
+        soundTimer = math.max(0, soundTimer - Hyperspace.FPS.SpeedFactor/16)
+        if soundTimer == 0 then
+            soundTimer = 0.1
+            if fishBeingCaught then
+                Hyperspace.Sounds:PlaySoundMix("reel"..tostring(reelPos), -1, false)
+                reelPos = reelPos + 1
+                if reelPos > reelMax then
+                    reelPos = 1
+                end
+            else
+                Hyperspace.Sounds:PlaySoundMix("release"..tostring(releasePos), -1, false)
+                releasePos = releasePos + 1
+                if releasePos > releaseMax then
+                    releasePos = 1
+                end
+            end
+        end
+    end
+end)
 
 
 script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
@@ -576,11 +607,16 @@ script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
     end
 end, function() end)
 
+--local powerSet = false
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     if shipManager:HasAugmentation("FISH_AUG_44") > 0 and shipManager:HasSystem(0) then
-        shipManager.shieldSystem:SetBonusPower(2,0)
+        --powerSet = true
+        shipManager.shieldSystem:SetBonusPower(0,2)
+    --[[elseif not Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then
+        powerSet = false]]
     end
 end)
+
 local crystalGun = Hyperspace.Blueprints:GetWeaponBlueprint("CRYSTAL_BURST_1")
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     if shipManager:HasAugmentation("FISH_AUG_47") > 0 then
@@ -637,5 +673,47 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
         elseif otherShip:HasAugmentation("FISH_AUG_40") > 0 then
             otherShip:ModifyScrapCount(1,false)
         end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if projectile.extend.name == "FISH_ION" then
+        local targetRoom = get_room_at_location(shipManager, location, true)
+        for crewmem in vter(get_ship_crew_room(shipManager, targetRoom)) do
+            local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+            local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
+            local randomRoom = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
+            crewmem:SetRoomPath(0, randomRoom)
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint)
+    if weaponBlueprint.name == "FISH_MISSILE_1" then 
+        local damage = projectile.damage
+        damage.iDamage = 0
+        projectile:SetDamage(damage)
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    if projectile.extend.name == "FISH_MISSILE_1" then
+        local damage2 = Hyperspace.Damage()
+        damage2.iDamage = 3
+        local weaponName = projectile.extend.name
+        projectile.extend.name = ""
+        shipManager:DamageArea(location, damage2, true)
+        projectile.extend.name = weaponName
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
+    if projectile.extend.name == "FISH_BEAM" and beamHitType == Defines.BeamHit.NEW_ROOM then
+        local damage2 = Hyperspace.Damage()
+        damage2.bLockdown = true
+        local weaponName = projectile.extend.name
+        projectile.extend.name = ""
+        shipManager:DamageArea(location, damage2, true)
+        projectile.extend.name = weaponName
     end
 end)

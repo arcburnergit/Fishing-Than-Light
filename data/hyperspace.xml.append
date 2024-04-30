@@ -127,7 +127,7 @@
           <price>-1</price>
 		</resource>
         <itemPurchaseLimit>2</itemPurchaseLimit>
-		<category type="WEAPONS">
+		<category type="FISH">
         <item>
             <blueprint>FISHLIST_1</blueprint>
             <price>-1</price>
@@ -141,7 +141,7 @@
             <price>-1</price>
 			</item>    
 		</category>
-        <category type="WEAPONS">
+        <category type="FISH">
         <item>
             <blueprint>FISHLIST_2</blueprint>
             <price>-1</price>
@@ -151,7 +151,21 @@
             <price>-1</price>
         </item>
         <item>
-            <blueprint>FISHLIST_3</blueprint>
+            <blueprint>FISHLIST</blueprint>
+            <price>-1</price>
+        </item>
+        </category>
+        <category type="FISH">
+        <item>
+            <blueprint>FISHLIST_GUNS</blueprint>
+            <price>-1</price>
+        </item>
+        <item>
+            <blueprint>FISHLIST_LEG</blueprint>
+            <price>-1</price>
+        </item>
+        <item>
+            <blueprint>BLUELIST_FISHING_RODS</blueprint>
             <price>-1</price>
         </item>
         </category>
@@ -992,6 +1006,65 @@
                 <icon>fish4E</icon>
 				<lockImage>ach_locked</lockImage>
                 <variable name="fish_obtained_4E" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+        </section>
+        
+        <section text="Fish Guns" hidden="false">
+            <achievement name="FISH_CAUGHT_LASER">
+                <name>Laserfish</name>
+                <description>Catch a Laserfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fishLASER</icon>
+                <variable name="fish_obtained_LASER" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_ION">
+                <name>Shockfish</name>
+                <description>Catch a Shockfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fishION</icon>
+                <variable name="fish_obtained_ION" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_FLAK">
+                <name>Scatterfish</name>
+                <description>Catch a Scatterfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fishFLAK</icon>
+                <variable name="fish_obtained_FLAK" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_BEAM">
+                <name>Beamfin fish</name>
+                <description>Catch a Beamfin fish.</description>
+                <header>Fish Caught!</header>
+                <icon>fishBEAM</icon>
+                <variable name="fish_obtained_BEAM" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_MINELAYER">
+                <name>Magnetfish</name>
+                <description>Catch a Magnetfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fishMINELAYER</icon>
+                <variable name="fish_obtained_MINELAYER" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_MISSILE_1">
+                <name>Breachfish</name>
+                <description>Catch a Breachfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fishMISSILE_1</icon>
+                <variable name="fish_obtained_MISSILE_1" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_MISSILE_2">
+                <name>Sailfish</name>
+                <description>Catch a Sailfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fishMISSILE_2</icon>
+                <variable name="fish_obtained_MISSILE_2" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
         </section>

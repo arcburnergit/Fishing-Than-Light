@@ -318,6 +318,333 @@ This harpoon will be able to catch even the most elusive fish.
 	<iconReplace>fishing_rod_3_icon</iconReplace>
 </weaponBlueprint>
 
+<weaponBlueprint name="FISH_FOOD_TINCAN">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Old Tin Can</title>
+	<short>Old Tin Can</short>
+	<desc>A piece of junk.</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fishjunk1</iconReplace>
+</weaponBlueprint>
+
+
+<weaponBlueprint name="FISH_FOOD_BOOT">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Old Boot</title>
+	<short>Old Boot</short>
+	<desc>A piece of junk.</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fishjunk2</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_LASER">
+	<type>LASER</type>
+	<title>Laserfish</title>
+	<short>Laserfish</short>
+	<tip>tip_laser</tip>
+	<desc>An amalgamation of a laser and a fish, projectiles stun and start fires.</desc>
+	<tooltip>Fires 3 projectiles, 1 damage each, 60% stun chance, 60% fire chance.</tooltip>
+	<damage>1</damage>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>4</fireChance>
+	<stunChance>4</stunChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>2</power>
+	<cost>60</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_laser</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_ION">
+	<type>LASER</type>
+	<title>Shockfish</title>
+	<short>Shockfish</short>
+	<tip>tip_ion</tip>
+	<desc>Similiar to an ion weapon, however it shocks crew and causes them to run to a random room.</desc>
+	<tooltip>Fires 1 projectiles, 2 ion damage, sends crew away from the room.</tooltip>
+	<damage>0</damage>
+	<ion>2</ion>
+	<speed>40</speed>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>14</cooldown>
+	<power>2</power>
+	<cost>45</cost>
+	<bp>4</bp>
+	<rarity>3</rarity>
+	<image>ion_4_shot</image>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_ion</weaponArt>
+	<iconImage>ion</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_FLAK">
+	<type>BURST</type>
+	<flavorType>Physical Projectile Blast</flavorType>
+	<drone_targetable>1</drone_targetable>
+	<title>Scatterfish</title>
+	<short>Scatterfish</short>
+	<tip>tip_flak</tip>
+	<desc>Fires a blast of debris across a random area doing up to 3 damage. Good at taking down shields but hard to aim.</desc>
+	<tooltip>Fires a blast of debris across a random area doing up to 3 damage.</tooltip>
+	<radius>45</radius>
+	<damage>1</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<spin>720</spin>
+	<fireChance>0</fireChance>
+	<breachChance>2</breachChance>
+	<cooldown>10</cooldown>
+	<power>2</power>
+	<cost>65</cost>
+	<bp>10</bp>
+	<speed>26</speed>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="1" fake="false">debris_large</projectile>
+		<projectile count="2" fake="false">debris_med</projectile>
+		<projectile count="3" fake="true">debris_small</projectile>
+	</projectiles>
+	<explosion>explosion_small_ion</explosion>
+	<launchSounds>
+		<sound>flak</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>flakImpact1</sound>
+		<sound>flakImpact2</sound>
+		<sound>flakImpact3</sound>
+		<sound>flakImpact4</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_flak</weaponArt> 
+	<iconImage>flak</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_BEAM">
+	<type>BEAM</type>
+	<title>Beamfin fish</title>
+	<short>Beamfin fish</short>
+	<tip>tip_beams</tip>
+	<desc>Does minimal damage but locks down rooms and fills them with fire.</desc>
+	<tooltip>1 damage, 2 shield pierce, locks down rooms and starts fires.</tooltip>
+	<damage>1</damage>
+	<sp>2</sp>
+	<fireChance>10</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>2</power>
+	<cost>60</cost>
+	<bp>12</bp>
+	<rarity>0</rarity>
+	<length>60</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_beam</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_MINELAYER">
+	<type>BURST</type>
+	<tip>tip_mine</tip>
+	<title>Magnetfish</title>
+	<short>Magnetfish</short>
+	<desc>Anti submarine fish, uses magnets to home in on the enemy ship making them far more accurate.</desc>
+	<tooltip>Fires 1 missile; does 1 damage; pierces all shields.</tooltip>
+	<drone_targetable>1</drone_targetable>
+	<radius>55</radius>
+    <accuracyMod>50</accuracyMod>
+	<damage>2</damage>
+	<noSysDamage>true</noSysDamage>
+	<missiles>1</missiles>
+	<spin>36</spin>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<cooldown>14</cooldown>
+	<power>2</power>
+	<speed>15</speed>
+	<cost>60</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<projectiles>
+		<projectile count="3" fake="false">fish_minelayer_proj</projectile>
+	</projectiles>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_minelayer</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_MISSILE_1">
+	<type>MISSILES</type>
+	<tip>tip_missiles</tip>
+	<title>Breachfish</title>
+	<short>Breachfish</short>
+	<desc>A fish specialized in breaching enemy ships, is capable of penetrating through super shields.</desc>
+	<tooltip>Fires 1 missile, does 3 damage, garenteed breach, penetrates super shields</tooltip>
+	<damage>3</damage>
+	<missiles>1</missiles>
+	<shots>1</shots>
+	<sp>30</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>1</stunChance>
+	<cooldown>15</cooldown>
+	<power>2</power>
+	<cost>60</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>fish_missile_1_proj</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_missile_1</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_MISSILE_2">
+	<type>MISSILES</type>
+	<tip>tip_missiles</tip>
+	<drone_targetable>2</drone_targetable>
+	<title>Sailfish</title>
+	<short>Sailfish</short>
+	<desc>A very resource expensive missile system, however it is capable of high damage.</desc>
+	<tooltip>Fires 1 missile that does 1 damage.</tooltip>
+	<damage>1</damage>
+	<missiles>1</missiles>
+	<shots>1</shots>
+	<sp>30</sp>
+	<fireChance>2</fireChance>
+	<breachChance>3</breachChance>
+	<stunChance>1</stunChance>
+	<cooldown>6</cooldown>
+	<power>2</power>
+	<cost>60</cost>
+	<speed>200</speed>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>fish_missile_2_proj</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_missile_2</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
 <augBlueprint name="FISH_INAUG_">
 	<title>fish</title>
 	<desc>fish</desc>
@@ -408,7 +735,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish1</iconReplace>
@@ -429,7 +756,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish2</iconReplace>
@@ -450,7 +777,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish3</iconReplace>
@@ -471,7 +798,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish4</iconReplace>
@@ -492,7 +819,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish5</iconReplace>
@@ -513,7 +840,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish6</iconReplace>
@@ -534,7 +861,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish7</iconReplace>
@@ -555,7 +882,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>10</cost>
+	<cost>20</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish8</iconReplace>
@@ -642,7 +969,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish11</iconReplace>
@@ -663,7 +990,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish12</iconReplace>
@@ -684,7 +1011,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish13</iconReplace>
@@ -705,7 +1032,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish14</iconReplace>
@@ -726,7 +1053,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish15</iconReplace>
@@ -747,7 +1074,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish16</iconReplace>
@@ -768,7 +1095,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish17</iconReplace>
@@ -789,7 +1116,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>20</cost>
+	<cost>40</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish18</iconReplace>
@@ -876,7 +1203,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish21</iconReplace>
@@ -897,7 +1224,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish22</iconReplace>
@@ -918,7 +1245,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish23</iconReplace>
@@ -939,7 +1266,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish24</iconReplace>
@@ -960,7 +1287,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish25</iconReplace>
@@ -981,7 +1308,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish26</iconReplace>
@@ -1002,7 +1329,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish27</iconReplace>
@@ -1023,7 +1350,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>40</cost>
+	<cost>60</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish28</iconReplace>
@@ -1075,8 +1402,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Wahoo</title>
-	<short>Wahoo</short>
+	<title>Queenfish</title>
+	<short>Queenfish</short>
 	<desc>A legendary space fish, when consumed gives hostile crew a 90% movespeed reduction</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>

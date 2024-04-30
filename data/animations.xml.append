@@ -83,6 +83,96 @@
 	<boost>fishing_rod_3_charge</boost>
 </weaponAnim>
 
+
+<animSheet name="fish_laser" w="240" h="117" fw="30" fh="117">weapon_fish/fish_laser.png</animSheet>
+<weaponAnim name="fish_laser">
+	<sheet>fish_laser</sheet>
+	<desc length="8" x="0" y="0" />
+	<chargedFrame>6</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="17" y="9" />
+	<mountPoint x="3" y="50" />
+</weaponAnim>
+
+<animSheet name="fish_ion" w="344" h="107" fw="43" fh="107">weapon_fish/fish_ion.png</animSheet>
+<weaponAnim name="fish_ion">
+	<sheet>fish_ion</sheet>
+	<desc length="8" x="0" y="0" />
+	<chargedFrame>6</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="19" y="7" />
+	<mountPoint x="3" y="50" />
+</weaponAnim>
+
+<animSheet name="fish_flak" w="376" h="107" fw="47" fh="107">weapon_fish/fish_flak.png</animSheet>
+<weaponAnim name="fish_flak">
+	<sheet>fish_flak</sheet>
+	<desc length="8" x="0" y="0" />
+	<chargedFrame>6</chargedFrame>
+	<fireFrame>7</fireFrame>
+	<firePoint x="17" y="10" />
+	<mountPoint x="3" y="50" />
+</weaponAnim>
+
+<animSheet name="fish_beam" w="268" h="182" fw="67" fh="182">weapon_fish/fish_beam.png</animSheet>
+<weaponAnim name="fish_beam">
+	<sheet>fish_beam</sheet>
+	<desc length="4" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="32" y="57" />
+	<mountPoint x="4" y="105" />
+	<chargeImage>weapon_fish/fish_beam_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_missile_1" w="350" h="146" fw="35" fh="146">weapon_fish/fish_missile_1.png</animSheet>
+<weaponAnim name="fish_missile_1">
+	<sheet>fish_missile_1</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint x="18" y="74" />
+	<mountPoint x="3" y="81" />
+</weaponAnim>
+<animSheet name="fish_missile_1_proj" w="35" h="146" fw="35" fh="146">weapon_fish/fish_missile_1_proj.png</animSheet>
+<anim name="fish_missile_1_proj">
+	<sheet>fish_missile_1_proj</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="fish_missile_2" w="670" h="160" fw="67" fh="160">weapon_fish/fish_missile_2.png</animSheet>
+<weaponAnim name="fish_missile_2">
+	<sheet>fish_missile_2</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint x="18" y="74" />
+	<mountPoint x="3" y="81" />
+</weaponAnim>
+<animSheet name="fish_missile_2_proj" w="67" h="160" fw="67" fh="160">weapon_fish/fish_missile_2_proj.png</animSheet>
+<anim name="fish_missile_2_proj">
+	<sheet>fish_missile_2_proj</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+<animSheet name="fish_minelayer" w="99" h="36" fw="33" fh="36">weapon_fish/fish_minelayer.png</animSheet>
+<weaponAnim name="fish_minelayer">
+	<sheet>fish_minelayer</sheet>
+	<desc length="3" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="15" y="4" />
+	<mountPoint x="4" y="22" />
+</weaponAnim>
+<animSheet name="fish_minelayer_proj" w="25" h="25" fw="25" fh="25">weapon_fish/mine_fish_bomb.png</animSheet>
+<anim name="fish_minelayer_proj">
+	<sheet>fish_minelayer_proj</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
 <animSheet name="invisible" w="24" h="80" fw="24" fh="80">weapon_fish/invisible.png</animSheet>
 <anim name="invisible">
 	<sheet>invisible</sheet>
@@ -101,6 +191,21 @@
 </FTL>
 
 <FTL>
+<animSheet name="fishjunk1" w="21" h="27" fw="21" fh="27">food_fish/old_can.png</animSheet>
+<anim name="fishjunk1">
+	<sheet>fishjunk1</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+<animSheet name="fishjunk2" w="32" h="29" fw="32" fh="29">food_fish/old_boot.png</animSheet>
+<anim name="fishjunk2">
+	<sheet>fishjunk2</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+
 <animSheet name="fish1" w="41" h="17" fw="41" fh="17">food_fish/fish1.png</animSheet>
 <anim name="fish1">
 	<sheet>fish1</sheet>
