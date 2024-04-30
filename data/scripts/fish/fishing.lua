@@ -612,7 +612,7 @@ end, function() end)
 --local powerSet = false
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     if shipManager:HasAugmentation("FISH_AUG_44") > 0 and shipManager:HasSystem(0) then
-        --powerSet = true
+        --[[powerSet = true
         shipManager.shieldSystem:SetBonusPower(0,2)
     --[[elseif not Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then
         powerSet = false]]
