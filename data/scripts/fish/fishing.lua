@@ -235,11 +235,13 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(
         Hyperspace.playerVariables.fish_active = 1
         local shipManager = Hyperspace.ships.player
         local fishMin = 1
-        local hasRepel = shipManager:HasAugmentation("FISH_AUG_REPEL") > 0
+        local hasRepel = shipManager:HasAugmentation("FISH_INAUG_REPEL") > 0
         if hasRepel and fishingData >= 5 then
             fishMin = math.floor(fishingData * 0.41)
         end
-        fishNumber = math.random(fishMin,fishingData)
+        log(tostring(fishMin).."to"..tostring(maxRodStrength))
+        fishNumber = math.random(1,fishingData)
+        if fishNumber < fishMin then fishNumber = fishNumber + fishMin end
         fishCatch = 92
         xOffset = 650
         selectSpeed = 0
@@ -272,15 +274,16 @@ local function fish_start_event()
         end
     end
     local fishMin = 1
-    local hasRepel = shipManager:HasAugmentation("FISH_AUG_REPEL") > 0
+    local hasRepel = shipManager:HasAugmentation("FISH_INAUG_REPEL") > 0
     if hasRepel and maxRodStrength >= 5 then
         fishMin = math.floor(fishingData * 0.41)
     end
     Hyperspace.playerVariables.fish_this_jump = 1
     Hyperspace.playerVariables.fish_active = 1
     Hyperspace.playerVariables.fish_again = Hyperspace.playerVariables.fish_again + 1
-    --print(tostring(fishMin).."to"..tostring(maxRodStrength))
-    fishNumber = math.random(fishMin,maxRodStrength)
+    log(tostring(fishMin).."to"..tostring(maxRodStrength))
+    fishNumber = math.random(1,maxRodStrength)
+    if fishNumber < fishMin then fishNumber = fishNumber + fishMin end
     fishCatch = 92
     xOffset = 850
     selectSpeed = 0
@@ -369,7 +372,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
             if fishTimer == 0 then
                 local soundName = fishSounds:GetItem()
                 Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
-                fishTimer = 1 + (2*math.random())
+                fishTimer = 1 - (fishNumber/17) + (2*math.random())
                 local negative = math.random()
                 local random = ((math.random() + 3) * (fishNumber * 2 + 20))
                 if negative >= 0.5 then 
@@ -392,21 +395,20 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 fishBeingCaught = true
                 fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
                 if fishCatch == fishMax then 
+                    local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+                    if Hyperspace.playerVariables.fish_music == 0 then
+                        Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
+                    end
                     Hyperspace.playerVariables.fish_active = 0
                     if flagShipBlueprints[shipBlueprint] then
                         Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_3", false)
                     end
                     if fishNumber == 16 then
-                        local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
                         Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_ULTRA_RARE",false,-1)
-                        if Hyperspace.playerVariables.fish_music == 0 then
-                            userdata_table(shipManager,"mods.fish.endMusic").time = 0.2
-                        end
                     else
                         if shipManager:HasAugmentation("FISH_INAUG_BAIT") > 0 then
                             maxRandom = 4
                         end
-                        local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
                         local randomJunk = math.random(1, maxRandom)
                         local fishNumber2 = math.ceil(fishNumber/5)
                         if randomJunk > 1 and Hyperspace.playerVariables.jumps_since_fish <= 7 - fishNumber2 and shipManager:HasAugmentation("FISH_AUG_FISHINGONLY") == 0 then
@@ -416,24 +418,23 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                             Hyperspace.playerVariables.jumps_since_fish = 0
                             Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,sectors[Hyperspace.playerVariables.fish_sector]..fishNumber2,false,-1)
                         end
-                        if Hyperspace.playerVariables.fish_music == 0 then
-                            userdata_table(shipManager,"mods.fish.endMusic").time = 0.2
-                        end
                     end
                 end
             else
                 fishBeingCaught = false
-                fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * 3 * (5 - math.ceil(maxRodStrength/5)))
+                fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * 5 * (5 - math.ceil(maxRodStrength/5)))
                 if fishCatch == 0 then
                     Hyperspace.playerVariables.fish_active = 0
                     if Hyperspace.playerVariables.fish_music == 0 then
-                        userdata_table(shipManager,"mods.fish.endMusic").time = 0.2
+                        local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+                        Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
+                        --userdata_table(shipManager,"mods.fish.endMusic").time = 0.2
                     end
                     --Hyperspace.playerVariables.fish_this_sector = 2
                 end
             end
         end
-        local musicTable = userdata_table(shipManager,"mods.fish.endMusic")
+        --[[local musicTable = userdata_table(shipManager,"mods.fish.endMusic")
         if musicTable.time then
             musicTable.time = musicTable.time - Hyperspace.FPS.SpeedFactor/16
             if musicTable.time < 0 then
@@ -441,7 +442,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
                 Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
             end
-        end
+        end]]
     end
 end)
 
@@ -527,7 +528,8 @@ script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
     end
 end, function() end)
 
-script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager)
+    local scrapLeft = 0
     Hyperspace.playerVariables.fish_again = 0
     if Hyperspace.playerVariables.fish_this_jump == 1 then
         Hyperspace.playerVariables.fish_this_jump = 0
@@ -563,6 +565,101 @@ Old Boot
 
 Tin Can
 
+
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FISH BOON <++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Fish Weapons
 2 Fish Laser
@@ -740,24 +837,30 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
     end
 end)
 
+local scrapLeft = 10
+
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-    if damage.iDamage > 0 then
+    if damage.iDamage > 0 and scrapLeft < 10 then
         local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
         if shipManager:HasAugmentation("FISH_AUG_40") > 0 then
-            shipManager:ModifyScrapCount(-3,false)
+            shipManager:ModifyScrapCount((-3 * shipManager:HasAugmentation("FISH_AUG_40")),false)
+            scrapLeft = scrapLeft - (3 * shipManager:HasAugmentation("FISH_AUG_40"))
         elseif otherShip:HasAugmentation("FISH_AUG_40") > 0 then
-            otherShip:ModifyScrapCount(1,false)
+            otherShip:ModifyScrapCount(shipManager:HasAugmentation("FISH_AUG_40"),false)
+            scrapLeft = scrapLeft + shipManager:HasAugmentation("FISH_AUG_40")
         end
     end
 end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
-    if damage.iDamage > 0 and realNewTile then
+    if damage.iDamage > 0 and realNewTile and scrapLeft < 10 then
         local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
         if shipManager:HasAugmentation("FISH_AUG_40") > 0 then
-            shipManager:ModifyScrapCount(-3,false)
+            shipManager:ModifyScrapCount((-3 * shipManager:HasAugmentation("FISH_AUG_40")),false)
+            scrapLeft = scrapLeft - (3 * shipManager:HasAugmentation("FISH_AUG_40"))
         elseif otherShip:HasAugmentation("FISH_AUG_40") > 0 then
-            otherShip:ModifyScrapCount(1,false)
+            otherShip:ModifyScrapCount(shipManager:HasAugmentation("FISH_AUG_40"),false)
+            scrapLeft = scrapLeft + shipManager:HasAugmentation("FISH_AUG_40")
         end
     end
 end)
@@ -805,7 +908,7 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
 end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-    if shipManager:HasAugmentation("FISH_FOOD_35") then
+    if shipManager:HasAugmentation("FISH_AUG_35") > 0 then
         for system in vter(shipManager.vSystemList) do 
             system.iActiveManned = 3
         end

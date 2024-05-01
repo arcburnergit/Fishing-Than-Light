@@ -13,6 +13,10 @@
 
 <event name="STORAGE_CHECK_FISHING">
   <text>What do you want to do?</text>
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
   <checkCargo />
   <choice hidden="true" req="fish_this_jump" lvl="1">
     <text>You cannot fish again this jump.</text>
@@ -156,14 +160,14 @@
     <text>Install an internal fishing upgrade.</text>
     <event load="STORAGE_CHECK_FISHING_UPGRADE" />
   </choice>
-	<choice>
-		<text>Nevermind.</text>
-		<event load="STORAGE_CHECK" />
-	</choice>
 </event>
 
 <event name="STORAGE_CHECK_FISHING_FOOD" >
   <text>Which fish would you like to cook?</text>
+  <choice>
+    <text>Don't cook anything.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
   <choice req="FISH_FOOD_1">
     <text>Cook the Orange Snapper. (+5% max health)</text>
     <event>
@@ -426,7 +430,7 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_33">
+  <choice req="fish_cons_33">
     <text>Cook the Shorefish. (no repairing by crew, all systems autorepair)</text>
     <event>
       <remove name="FISH_FOOD_33"/>
@@ -450,7 +454,7 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_35">
+  <choice req="fish_cons_35">
     <text>Cook the Bluefish. (Permanent lvl 2 manning)</text>
     <event>
       <remove name="FISH_FOOD_35"/>
@@ -513,7 +517,7 @@
       </choice>
     </event>
   </choice>
-  <choice req="FISH_FOOD_42">
+  <choice req="fish_cons_42">
     <text>Cook the Commando Fish. (Basic humans no longer take up slots)</text>
     <event>
       <remove name="FISH_FOOD_42"/>
@@ -529,7 +533,7 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_44">
+  <choice req="fish_cons_44">
     <text>Cook the Energy Fish. (+1 bonus power to zoltans in shield system)</text>
     <event>
       <remove name="FISH_FOOD_44"/>
@@ -553,7 +557,7 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_47">
+  <choice req="fish_cons_47">
     <text>Cook the Ice Fish. (Crew spawn crystal shards when hit by ship weapons)</text>
     <event>
       <remove name="FISH_FOOD_47"/>
@@ -578,7 +582,7 @@
     </event>
   </choice>
   <choice req="FISH_FOOD_40">
-    <text>Cook the Theif Fish. (+1 scrap on enemy hull damage, -3 on own hull damage)</text>
+    <text>Cook the Thief Fish. (+1 scrap on enemy hull damage, -3 on own hull damage)</text>
     <event>
       <remove name="FISH_FOOD_40"/>
       <hiddenAug>FISH_AUG_40</hiddenAug>
@@ -593,7 +597,7 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_4B">
+  <choice req="fish_cons_4B">
     <text>Cook the Slug Ray. (Mind control immunity)</text>
     <event>
       <remove name="FISH_FOOD_4B"/>
@@ -601,7 +605,7 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_4C">
+  <choice req="fish_cons_4C">
     <text>Cook the Leech?. (All friendly leeches gain teleportation but lose 50% of their health)</text>
     <event>
       <remove name="FISH_FOOD_4C"/>
@@ -621,11 +625,6 @@
       <hiddenAug>FISH_AUG_4E</hiddenAug>
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
-  </choice>
-
-  <choice>
-    <text>Don't cook anything.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
   </choice>
 </event>
 
@@ -647,8 +646,14 @@
 </blueprintList>
 
 <event name="REMOVE_ANCIENT_FISH">
+  <text>You combine the fish and the weapon.</text>
   <remove name="FISH_FOOD_4D"/>
-  <loadEvent>STORAGE_CHECK_FISHING</loadEvent>
+  <choice>
+    <text>Continue...</text>
+    <event>
+      <loadEvent>STORAGE_CHECK_FISHING</loadEvent>
+    </event>
+  </choice>
 </event>
 
 <event name="STORAGE_CHECK_ANC_UPGRADE">

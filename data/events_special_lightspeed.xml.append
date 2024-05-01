@@ -79,7 +79,7 @@
 </event>
 <event name="FISH_CREW_1">
   <text>As you reel in your catch you realise its no fish at all, instead you've got a new crewmember.</text>
-  <crewMember amount="1" class="RANDOM">Fish</crewMember>
+  <crewMember amount="1" class="random">Fish</crewMember>
 </event>
 <event name="FISH_FISHGUN">
   <text>The fish you reeled in turns out to be more deadly than expected.</text>
@@ -282,7 +282,6 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -326,7 +325,6 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -366,7 +364,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -405,7 +402,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -447,7 +443,6 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -490,7 +485,6 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -531,7 +525,6 @@
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -571,7 +564,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -613,7 +605,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_CREW_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -653,7 +644,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -691,7 +681,6 @@
     <event load="FISH_RANDOM_3"/>
     <event load="FISH_CREW_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -729,7 +718,6 @@
     <event load="FISH_RANDOM_3"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -769,7 +757,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -810,7 +797,6 @@
     <event load="FISH_HEKTAR_1_LOOT"/>
     <event load="FISH_HEKTAR_2_LOOT"/>
     <event load="FISH_HEKTAR_2_LOOT"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -850,7 +836,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 
@@ -890,7 +875,6 @@
     <event load="FISH_CREW_1"/>
     <event load="FISH_WEAPON_1"/>
     <event load="FISH_FISHGUN"/>
-    <event load="FISH_ULTRA_RARE"/>
   </loadEventList>
 </event>
 

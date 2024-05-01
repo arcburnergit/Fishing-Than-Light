@@ -169,6 +169,69 @@
             <name>FISH_INAUG_SAFE</name>
         </req>
     </req>
+
+    <req name="fish_cons_33" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_33</name>
+        </req>
+        <req lvl="1">
+            <name>FISH_FOOD_33</name>
+        </req>
+    </req>
+
+    <req name="fish_cons_35" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_35</name>
+        </req>
+        <req lvl="1">
+            <name>FISH_FOOD_35</name>
+        </req>
+    </req>
+
+    <req name="fish_cons_42" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_42</name>
+        </req>
+        <req lvl="1">
+            <name>FISH_FOOD_42</name>
+        </req>
+    </req>
+
+    <req name="fish_cons_44" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_44</name>
+        </req>
+        <req lvl="1">
+            <name>FISH_FOOD_44</name>
+        </req>
+    </req>
+
+    <req name="fish_cons_47" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_47</name>
+        </req>
+        <req lvl="1">
+            <name>FISH_FOOD_47</name>
+        </req>
+    </req>
+
+    <req name="fish_cons_4B" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_4B</name>
+        </req>
+        <req lvl="1">
+            <name>FISH_FOOD_4B</name>
+        </req>
+    </req>
+
+    <req name="fish_cons_4C" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_4C</name>
+        </req>
+        <req lvl="1">
+            <name>FISH_FOOD_4C</name>
+        </req>
+    </req>
 </events>
 
 <mod:findLike type="ships">
@@ -1094,8 +1157,8 @@
 
         <section text="Legendary Fish" hidden="false">
             <achievement name="FISH_CAUGHT_31">
-                <name>Wahoo</name>
-                <description>Catch a Wahoo.</description>
+                <name>Queenfish</name>
+                <description>Catch a Queenfish.</description>
                 <header>Fish Caught!</header>
                 <icon>fish31</icon>
                 <variable name="fish_obtained_31" amount="1" />
@@ -1252,10 +1315,10 @@
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
             <achievement name="FISH_CAUGHT_40">
-                <name>Theif Fish</name>
+                <name>Thief Fish</name>
                 <secretName>??? Fish</secretName>
                 <secretDescription>Catch a unique fish from a Pirate sector.</secretDescription>
-                <description>Catch a Theif Fish.</description>
+                <description>Catch a Thief Fish.</description>
                 <header>Fish Caught!</header>
                 <icon>fish40</icon>
 				<lockImage>ach_locked</lockImage>

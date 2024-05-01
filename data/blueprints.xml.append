@@ -530,7 +530,7 @@ This harpoon will be able to catch even the most elusive fish.
 		<maxTime>30.0</maxTime>
 		<systemRepairMultiplier>0.75</systemRepairMultiplier>
 		<erodeShields>true</erodeShields>
-		<roomAnim renderLayer="3">                                                    
+		<roomAnim renderLayer="1">                                                    
 			<anim animType="default" animBorder="2">invisible</anim>                                                 
 				<wallAnim>fish_erosion</wallAnim>  
 		</roomAnim>
@@ -1020,7 +1020,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Reef Octopus</title>
 	<short>Reef Octopus</short>
-	<desc>A basic space fish, when consumed gives a +1% system resist</desc>
+	<desc>A basic space fish, when consumed gives a +1% system resist bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1041,7 +1041,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Eagle Ray</title>
 	<short>Eagle Ray</short>
-	<desc>A basic space fish, when consumed gives a +1% hull resist</desc>
+	<desc>A basic space fish, when consumed gives a +1% hull resist bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1312,7 +1312,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Yellowfin Kingfish</title>
 	<short>Yellowfin Kingfish</short>
-	<desc>An uncommon space fish, when consumed gives a +4% system resist</desc>
+	<desc>An uncommon space fish, when consumed gives a +4% system resist bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1333,7 +1333,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Rainbow Trout</title>
 	<short>Rainbow Trout</short>
-	<desc>An uncommon space fish, when consumed gives a +4% hull resist</desc>
+	<desc>An uncommon space fish, when consumed gives a +4% hull resist bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1604,7 +1604,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Channel Catfish</title>
 	<short>Channel Catfish</short>
-	<desc>A rare space fish, when consumed gives a +16% system resist</desc>
+	<desc>A rare space fish, when consumed gives a +16% system resist bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1625,7 +1625,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Common Sturgeon</title>
 	<short>Common Sturgeon</short>
-	<desc>A rare space fish, when consumed gives a +16% hull resist</desc>
+	<desc>A rare space fish, when consumed gives a +16% hull resist bonus</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1817,7 +1817,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Arapaima</title>
 	<short>Arapaima</short>
-	<desc>A legendary space fish, creates a new copy of itself every sector.</desc>
+	<desc>A legendary space fish, creates a single new copy of itself every sector.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1826,7 +1826,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<length>0</length>
 	<rarity>0</rarity>
 	<power>0</power>
-	<cost>50</cost>
+	<cost>100</cost>
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish36</iconReplace>
@@ -2168,8 +2168,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Theif Fish</title>
-	<short>Theif Fish</short>
+	<title>Thief Fish</title>
+	<short>Thief Fish</short>
 	<desc>A unique space fish, when consumed you gain 1 scrap every time you damage the enemy's hull but lose 3 every time your own hull is damaged.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
