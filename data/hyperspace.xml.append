@@ -16,11 +16,45 @@
     </mod:findName>
 </mod:findLike>
 
+<mod:findLike type="discord" limit="1">
+    <mod:findLike type="miniships">
+        <mod-append:miniship>miniship_kodiak</mod-append:miniship>
+        <mod-append:miniship>miniship_kodiak_b</mod-append:miniship>
+        <mod-append:miniship>miniship_kodiak_c</mod-append:miniship>
+        <mod-append:miniship>miniship_banshee</mod-append:miniship>
+        <mod-append:miniship>miniship_banshee_b</mod-append:miniship>
+        <mod-append:miniship>miniship_banshee_c</mod-append:miniship>
+        <mod-append:miniship>miniship_epsilon_cruiser</mod-append:miniship>
+    </mod:findLike>
+</mod:findLike>
+
 <events>
     <variable name="fish_sector" op="set" val="0"/>
     <variable name="fish_active" op="set" val="0"/>
     <variable name="fish_this_sector" op="set" val="0"/>
     <variable name="fish_this_jump" op="set" val="0"/>
+    <variable name="jumps_since_fish" op="set" val="0"/>
+    <variable name="fish_again" op="set" val="0"/>
+    <variable name="fish_music" op="set" val="0"/>
+
+    
+    <req name="fish_inaug_bait_check" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>FISH_AUG_FISHINGONLY</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INAUG_BAIT</name>
+        </req>
+    </req>
+    <req name="fish_inaug_bait_alt_check" type="all">
+        <req lvl="1">
+            <name>FISH_AUG_FISHINGONLY</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INAUG_BAIT_ALT</name>
+        </req>
+    </req>
+
     <req name="fish_option" type="all">
         <req lvl="0" max_lvl="0">
             <name>fish_active</name>
@@ -43,6 +77,96 @@
         </req>
         <req>
             <name>BLUELIST_FISHING_RODS</name>
+        </req>
+    </req>
+
+    <req name="fish_start_2" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>fish_this_sector</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>fish_active</name>
+        </req>
+        <req lvl="1" max_lvl="1">
+            <name>fish_again</name>
+        </req>
+        <req>
+            <name>BLUELIST_FISHING_RODS</name>
+        </req>
+        <req>
+            <name>FISH_INAUG_SAFE</name>
+        </req>
+    </req>
+
+    <req name="fish_start_3" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>fish_this_sector</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>fish_active</name>
+        </req>
+        <req lvl="2" max_lvl="2">
+            <name>fish_again</name>
+        </req>
+        <req>
+            <name>BLUELIST_FISHING_RODS</name>
+        </req>
+        <req>
+            <name>FISH_INAUG_SAFE</name>
+        </req>
+    </req>
+
+    <req name="fish_start_4" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>fish_this_sector</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>fish_active</name>
+        </req>
+        <req lvl="3" max_lvl="3">
+            <name>fish_again</name>
+        </req>
+        <req>
+            <name>BLUELIST_FISHING_RODS</name>
+        </req>
+        <req>
+            <name>FISH_INAUG_SAFE</name>
+        </req>
+    </req>
+
+    <req name="fish_start_5" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>fish_this_sector</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>fish_active</name>
+        </req>
+        <req lvl="4" max_lvl="4">
+            <name>fish_again</name>
+        </req>
+        <req>
+            <name>BLUELIST_FISHING_RODS</name>
+        </req>
+        <req>
+            <name>FISH_INAUG_SAFE</name>
+        </req>
+    </req>
+
+    <req name="fish_start_6" type="all">
+        <req lvl="0" max_lvl="0">
+            <name>fish_this_sector</name>
+        </req>
+        <req lvl="0" max_lvl="0">
+            <name>fish_active</name>
+        </req>
+        <req lvl="5" max_lvl="5">
+            <name>fish_again</name>
+        </req>
+        <req>
+            <name>BLUELIST_FISHING_RODS</name>
+        </req>
+        <req>
+            <name>FISH_INAUG_SAFE</name>
         </req>
     </req>
 </events>
@@ -173,6 +297,11 @@
 </store>
 
 <augments>
+    <aug name="FISH_AUG_FISHINGONLY">
+        <locked/>
+        <function name="SCRAP_COLLECTOR" value="-0.3" useForReqs="false" warning="false"/>
+    </aug>
+
     <aug name="FISH_AUG_1">
         <statBoosts>
             <statBoost name="maxHealth">
@@ -241,6 +370,12 @@
     </aug>
     <aug name="FISH_AUG_8">
         <function name="SCRAP_COLLECTOR" value="0.01" useForReqs="false" warning="false"/>
+    </aug>
+    <aug name="FISH_AUG_9">
+        <function name="SYSTEM_CASING" value="0.01" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_0">
+        <function name="ROCK_ARMOR" value="0.01" useForReqs="false" warning="false"/>
     </aug>
 
     <aug name="FISH_AUG_11">
@@ -312,6 +447,12 @@
     <aug name="FISH_AUG_18">
         <function name="SCRAP_COLLECTOR" value="0.05" useForReqs="false" warning="false"/>
     </aug>
+    <aug name="FISH_AUG_19">
+        <function name="SYSTEM_CASING" value="0.04" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_10">
+        <function name="ROCK_ARMOR" value="0.04" useForReqs="false" warning="false"/>
+    </aug>
 
     <aug name="FISH_AUG_21">
         <statBoosts>
@@ -382,6 +523,12 @@
     <aug name="FISH_AUG_28">
         <function name="SCRAP_COLLECTOR" value="0.20" useForReqs="false" warning="false"/>
     </aug>
+    <aug name="FISH_AUG_29">
+        <function name="SYSTEM_CASING" value="0.16" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_20">
+        <function name="ROCK_ARMOR" value="0.16" useForReqs="false" warning="false"/>
+    </aug>
 
     <aug name="FISH_AUG_31">
         <statBoosts>
@@ -437,6 +584,12 @@
         <function name="SHIELD_RECHARGE" value="1.1" useForReqs="false" warning="false" />
         <function name="AUTO_COOLDOWN" value="-0.5" useForReqs="false" warning="false" />
     </aug>
+    <aug name="FISH_AUG_36">
+        <function name="SYSTEM_CASING" value="0.01" useForReqs="false" warning="false" />
+    </aug>
+    <aug name="FISH_AUG_37">
+        <function name="ROCK_ARMOR" value="0.01" useForReqs="false" warning="false"/>
+    </aug>
 
     <aug name="FISH_AUG_42">
         <statBoosts>
@@ -474,7 +627,7 @@
         </statBoosts>
     </aug>
     <aug name="FISH_AUG_44">
-        <statBoosts>
+        <!--statBoosts>
             <statBoost name="bonusPower">
                 <boostType>ADD</boostType>
                 <amount>1</amount>
@@ -488,7 +641,7 @@
 				</systemList>
 				<whiteList load="LIST_CREW_ZOLTAN" />
             </statBoost>
-        </statBoosts>
+        </statBoosts-->
     </aug>
     <aug name="FISH_AUG_45">
         <statBoosts>
@@ -621,6 +774,8 @@
     <metaVariable name="fish_obtained_6" op="set" val="0"/>
     <metaVariable name="fish_obtained_7" op="set" val="0"/>
     <metaVariable name="fish_obtained_8" op="set" val="0"/>
+    <metaVariable name="fish_obtained_9" op="set" val="0"/>
+    <metaVariable name="fish_obtained_0" op="set" val="0"/>
 
     <metaVariable name="fish_obtained_11" op="set" val="0"/>
     <metaVariable name="fish_obtained_12" op="set" val="0"/>
@@ -630,6 +785,8 @@
     <metaVariable name="fish_obtained_16" op="set" val="0"/>
     <metaVariable name="fish_obtained_17" op="set" val="0"/>
     <metaVariable name="fish_obtained_18" op="set" val="0"/>
+    <metaVariable name="fish_obtained_19" op="set" val="0"/>
+    <metaVariable name="fish_obtained_10" op="set" val="0"/>
     
     <metaVariable name="fish_obtained_21" op="set" val="0"/>
     <metaVariable name="fish_obtained_22" op="set" val="0"/>
@@ -639,12 +796,16 @@
     <metaVariable name="fish_obtained_26" op="set" val="0"/>
     <metaVariable name="fish_obtained_27" op="set" val="0"/>
     <metaVariable name="fish_obtained_28" op="set" val="0"/>
+    <metaVariable name="fish_obtained_29" op="set" val="0"/>
+    <metaVariable name="fish_obtained_20" op="set" val="0"/>
     
     <metaVariable name="fish_obtained_31" op="set" val="0"/>
     <metaVariable name="fish_obtained_32" op="set" val="0"/>
     <metaVariable name="fish_obtained_33" op="set" val="0"/>
     <metaVariable name="fish_obtained_34" op="set" val="0"/>
     <metaVariable name="fish_obtained_35" op="set" val="0"/>
+    <metaVariable name="fish_obtained_36" op="set" val="0"/>
+    <metaVariable name="fish_obtained_37" op="set" val="0"/>
     
     
     <metaVariable name="fish_obtained_41" op="set" val="0"/>
@@ -747,9 +908,108 @@
                 <variable name="fish_obtained_8" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
+            <achievement name="FISH_CAUGHT_9">
+                <name>Reef Octopus</name>
+                <description>Catch a Reef Octopus.</description>
+                <header>Fish Caught!</header>
+                <icon>fish9</icon>
+                <variable name="fish_obtained_9" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_0">
+                <name>Eagle Ray</name>
+                <description>Catch a Eagle Ray.</description>
+                <header>Fish Caught!</header>
+                <icon>fish0</icon>
+                <variable name="fish_obtained_0" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+        </section>
+
+        <section text="Uncommon Fish" hidden="false">
+            <achievement name="FISH_CAUGHT_11">
+                <name>Doublefin Eel</name>
+                <description>Catch a Doublefin Eel.</description>
+                <header>Fish Caught!</header>
+                <icon>fish11</icon>
+                <variable name="fish_obtained_11" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_12">
+                <name>Blue Eel</name>
+                <description>Catch a Blue Eel.</description>
+                <header>Fish Caught!</header>
+                <icon>fish12</icon>
+                <variable name="fish_obtained_12" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_13">
+                <name>Yellowfin Sunfish</name>
+                <description>Catch a Yellowfin Sunfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish13</icon>
+                <variable name="fish_obtained_13" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_14">
+                <name>Big Eye Tuna</name>
+                <description>Catch a Big Eye Tuna.</description>
+                <header>Fish Caught!</header>
+                <icon>fish14</icon>
+                <variable name="fish_obtained_14" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_15">
+                <name>Spotted Barracuda</name>
+                <description>Catch a Spotted Barracuda.</description>
+                <header>Fish Caught!</header>
+                <icon>fish15</icon>
+                <variable name="fish_obtained_15" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_16">
+                <name>Brown Trout</name>
+                <description>Catch a Brown Trout.</description>
+                <header>Fish Caught!</header>
+                <icon>fish16</icon>
+                <variable name="fish_obtained_16" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_17">
+                <name>Goatfish</name>
+                <description>Catch a Goatfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish17</icon>
+                <variable name="fish_obtained_17" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_18">
+                <name>Coronation Trout</name>
+                <description>Catch a Coronation Trout.</description>
+                <header>Fish Caught!</header>
+                <icon>fish18</icon>
+                <variable name="fish_obtained_18" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_19">
+                <name>Yellowfin Kingfish</name>
+                <description>Catch a Yellowfin Kingfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish19</icon>
+                <variable name="fish_obtained_19" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_10">
+                <name>Rainbow Trout</name>
+                <description>Catch a Rainbow Trout.</description>
+                <header>Fish Caught!</header>
+                <icon>fish10</icon>
+                <variable name="fish_obtained_10" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
         </section>
         
-        <section text="Uncommon Fish" hidden="false">
+        <section text="Rare Fish" hidden="false">
             <achievement name="FISH_CAUGHT_21">
                 <name>Coho Salmon</name>
                 <description>Catch a Coho Salmon.</description>
@@ -814,6 +1074,22 @@
                 <variable name="fish_obtained_28" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
+            <achievement name="FISH_CAUGHT_29">
+                <name>Channel Catfish</name>
+                <description>Catch a Channel Catfish.</description>
+                <header>Fish Caught!</header>
+                <icon>fish29</icon>
+                <variable name="fish_obtained_29" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_20">
+                <name>Common Sturgeon</name>
+                <description>Catch a Common Sturgeon.</description>
+                <header>Fish Caught!</header>
+                <icon>fish20</icon>
+                <variable name="fish_obtained_20" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
         </section>
 
         <section text="Legendary Fish" hidden="false">
@@ -855,6 +1131,22 @@
                 <header>Fish Caught!</header>
                 <icon>fish35</icon>
                 <variable name="fish_obtained_35" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_36">
+                <name>Arapaima</name>
+                <description>Catch a Arapaima.</description>
+                <header>Fish Caught!</header>
+                <icon>fish36</icon>
+                <variable name="fish_obtained_36" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+            <achievement name="FISH_CAUGHT_37">
+                <name>Blue Marlin</name>
+                <description>Catch a Blue Marlin.</description>
+                <header>Fish Caught!</header>
+                <icon>fish37</icon>
+                <variable name="fish_obtained_37" amount="1" />
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
         </section>
@@ -1015,10 +1307,10 @@
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
             <achievement name="FISH_CAUGHT_4E">
-                <name>Fishvan</name>
+                <name>Sylfin</name>
                 <secretName>??????</secretName>
                 <secretDescription>Catch ?????? from the ?????.</secretDescription>
-                <description>Catch Fishvan.</description>
+                <description>Catch Sylfin.</description>
                 <header>Fish Caught!</header>
                 <icon>fish4E</icon>
 				<lockImage>ach_locked</lockImage>

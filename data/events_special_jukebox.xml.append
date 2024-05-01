@@ -6,12 +6,23 @@
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 <mod:findName type="event" name="STORAGE_CHECK_JUKEBOX">
+	<mod:findLike type="choice" start="1" limit="1">
+		<mod:findLike type="event">
+			<mod-append:variable name="fish_music" op="set" val="0"/>
+		</mod:findLike>
+	</mod:findLike>
+
 	<mod-append:choice hidden="true" blue="true">
 		<text>Fishing: Fishing Music</text>
 		<event>
+			<variable name="fish_music" op="set" val="1"/>
 			<playMusic>fishmusic</playMusic>
 			<loadEvent>STORAGE_CHECK_JUKEBOX</loadEvent>
 		</event>
 	</mod-append:choice>
 </mod:findName>
+
+<event name="FISH_END_MUSIC">
+	<playMusic />
+</event>
 </FTL>

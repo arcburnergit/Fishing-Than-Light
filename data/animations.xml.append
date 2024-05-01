@@ -188,6 +188,13 @@
 	<mountPoint x="2" y="8" />
 	<boost>invisible</boost>
 </weaponAnim>
+
+<animSheet name="fish_erosion" w="175" h="35" fw="35" fh="35">effects/fish_erosion.png</animSheet>
+<anim name="fish_erosion">
+	<sheet>fish_erosion</sheet>
+	<desc length="5" x="0" y="0"/>
+	<time>0.2</time>
+</anim>
 </FTL>
 
 <FTL>
@@ -201,6 +208,13 @@
 <animSheet name="fishjunk2" w="32" h="29" fw="32" fh="29">food_fish/old_boot.png</animSheet>
 <anim name="fishjunk2">
 	<sheet>fishjunk2</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+<animSheet name="fishjunk3" w="14" h="12" fw="14" fh="12">food_fish/old_rock.png</animSheet>
+<anim name="fishjunk3">
+	<sheet>fishjunk3</sheet>
 	<desc length="1" x="0" y="0" />
 	<time>1.0</time>
 </anim>
@@ -262,6 +276,20 @@
 	<time>1.0</time>
 </anim>
 
+<animSheet name="fish9" w="28" h="12" fw="28" fh="12">food_fish/fish9.png</animSheet>
+<anim name="fish9">
+	<sheet>fish9</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+<animSheet name="fish0" w="30" h="8" fw="30" fh="8">food_fish/fish0.png</animSheet>
+<anim name="fish0">
+	<sheet>fish0</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
 
 <animSheet name="fish11" w="35" h="23" fw="35" fh="23">food_fish/fish11.png</animSheet>
 <anim name="fish11">
@@ -315,6 +343,20 @@
 <animSheet name="fish18" w="55" h="22" fw="55" fh="22">food_fish/fish18.png</animSheet>
 <anim name="fish18">
 	<sheet>fish18</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+<animSheet name="fish19" w="41" h="15" fw="41" fh="15">food_fish/fish19.png</animSheet>
+<anim name="fish19">
+	<sheet>fish19</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+<animSheet name="fish10" w="41" h="17" fw="41" fh="17">food_fish/fish10.png</animSheet>
+<anim name="fish10">
+	<sheet>fish10</sheet>
 	<desc length="1" x="0" y="0" />
 	<time>1.0</time>
 </anim>
@@ -376,6 +418,21 @@
 	<time>1.0</time>
 </anim>
 
+<animSheet name="fish29" w="65" h="25" fw="65" fh="25">food_fish/fish29.png</animSheet>
+<anim name="fish29">
+	<sheet>fish29</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+<animSheet name="fish20" w="76" h="12" fw="76" fh="12">food_fish/fish20.png</animSheet>
+<anim name="fish20">
+	<sheet>fish20</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+
 <animSheet name="fish31" w="68" h="44" fw="68" fh="44">food_fish/fish31.png</animSheet>
 <anim name="fish31">
 	<sheet>fish31</sheet>
@@ -411,6 +468,19 @@
 	<time>1.0</time>
 </anim>
 
+<animSheet name="fish36" w="105" h="34" fw="105" fh="34">food_fish/fish36.png</animSheet>
+<anim name="fish36">
+	<sheet>fish36</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+
+<animSheet name="fish37" w="219" h="71" fw="219" fh="71">food_fish/fish37.png</animSheet>
+<anim name="fish37">
+	<sheet>fish37</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
 
 
 <animSheet name="fish41" w="66" h="23" fw="66" fh="23">food_fish/fish41.png</animSheet>

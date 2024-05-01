@@ -15,7 +15,7 @@
 		<anim>fishing_rod_1_icon_select</anim>
 		<hoverAnim>fishing_rod_1_icon_select_on</hoverAnim>
 		<inactiveAnim hide="true"/>
-		<tooltip>An old fishing harpoon.</tooltip>
+		<tooltip>An old rusty fishing harpoon.</tooltip>
 		<clickAction>
 			<event load="FISH_GIVE_BAD_ROD"/>
 			<destroy/>
@@ -25,7 +25,7 @@
 
 <event name="FISH_GIVE_BAD_ROD">
 	<text>You notice an old fishing harpoon lying around, you decide to take it with you.</text>
-	<weapon name="FISHING_ROD_1"/>
+	<weapon name="FISHING_ROD_0"/>
 	<unlockCustomShip silent="false">PLAYER_SHIP_FISHING</unlockCustomShip>
 </event>
 

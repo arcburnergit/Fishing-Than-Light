@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-<!--mod:findName type="event" name="ATLAS_MENU">
-  <mod-append:variable name="fish_this_sector" op="set" val="1"/>
+
+<mod:findName type="event" name="ATLAS_MENU">
+  <mod-append:triggeredEvent event="FISH_DUPE_FISH" seeded="false" loops="1" minTime="0.1" maxTime="0.1" />
 </mod:findName>
 
-<mod:findName type="event" name="REROUTE_MENU_LASTSTAND">
+<event name="FISH_DUPE_FISH">
+  <loadEventList seeded="false" first="true" generate="false">
+    <event req="FISH_FOOD_36" lvl="0" max_lvl="0">
+    </event>
+    <event req="FISH_FOOD_36" lvl="1" max_lvl="9999">
+      <weapon name="FISH_FOOD_36"/>
+    </event>
+  </loadEventList>
+</event>
+
+<!--mod:findName type="event" name="REROUTE_MENU_LASTSTAND">
   <mod-append:variable name="fish_this_sector" op="set" val="1"/>
 </mod:findName-->
 <event name="FISH_ULTRA_RARE">
@@ -15,12 +26,10 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 
 <event name="FISH_JUNK">
   <text>You reel in your catch to discover nothing more than some old junk.</text>
-  <playMusic />
   <weapon name="FISHLIST_JUNK" />
 </event>
 
@@ -32,7 +41,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_RANDOM_2">
   <text>You've reeled in a more uncommon fish, good for selling or cooking.</text>
@@ -42,7 +50,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_RANDOM_3">
   <text>You've reeled in a rare fish, it will sell well, or can be cooked for a strong effect.</text>
@@ -52,44 +59,36 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 
 <event name="FISH_WEAPON_1">
   <text>You reel in your catch to discover its no fish at all, instead it's a weapon!</text>
-  <playMusic />
   <weapon name="RANDOM" />
 </event>
 <event name="FISH_HEKTAR_1_LOOT">
   <text>You reel in your catch to discover its no fish at all, instead it's a weapon!</text>
-  <playMusic />
   <weapon name="GIFTLIST_MODULES" />
 </event>
 <event name="FISH_HEKTAR_2_LOOT">
   <text>You reel in your catch to discover its no fish at all, instead it's a weapon!</text>
-  <playMusic />
   <weapon name="SHOP_ITEM_HEKTAR_BASE" />
 </event>
 <event name="FISH_DRONE_1">
   <text>You reel in your catch to discover its no fish at all, instead it's a drone!</text>
-  <playMusic />
   <drone name="RANDOM" />
 </event>
 <event name="FISH_CREW_1">
   <text>As you reel in your catch you realise its no fish at all, instead you've got a new crewmember.</text>
-  <playMusic />
-  <crewMember amount="1" class="RANDOM" />
+  <crewMember amount="1" class="RANDOM">Fish</crewMember>
 </event>
 <event name="FISH_FISHGUN">
   <text>The fish you reeled in turns out to be more deadly than expected.</text>
-  <playMusic />
   
   <weapon name="FISHLIST_GUNS" />
   <choice>
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 
 <event name="FISH_SCRAP_1">
@@ -113,7 +112,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_CIV_GIVE">
   <text>You reeled in a unique civilian fish!</text>
@@ -123,7 +121,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_ENGI_GIVE">
   <text>You reeled in a unique engi fish!</text>
@@ -133,7 +130,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_ZOL_GIVE">
   <text>You reeled in a unique zoltan fish!</text>
@@ -143,7 +139,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_ORC_GIVE">
   <text>You reeled in a unique orchid fish!</text>
@@ -153,7 +148,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_MAN_GIVE">
   <text>You reeled in a unique mantis fish!</text>
@@ -163,7 +157,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_CRY_GIVE">
   <text>You reeled in a unique crystal fish!</text>
@@ -173,7 +166,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_ROCK_GIVE">
   <text>You reeled in a unique rock fish!</text>
@@ -183,7 +175,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_REB_GIVE">
   <text>You reeled in a unique rebel fish!</text>
@@ -198,7 +189,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_LAN_GIVE">
   <text>You reeled in a unique anaerobic fish!</text>
@@ -208,7 +198,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_SLUG_GIVE">
   <text>You reeled in a unique slug fish!</text>
@@ -218,7 +207,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_LEECH_GIVE">
   <text>You reeled in a leech?</text>
@@ -228,7 +216,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_HEKTAR_GIVE">
   <loadEventList seeded="false" generate="false">
@@ -246,7 +233,6 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 <event name="FISH_NEXUS_GIVE">
   <text>You reeled in a sylvan?</text>
@@ -256,14 +242,12 @@
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
   </choice>
-  <playMusic />
 </event>
 
 <event name="FISHING_CHECK_ACH" />
 
 <event name="FISH_DROPPOINT_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -306,7 +290,6 @@
 
 <event name="FISH_CIVILIAN_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_CREW_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -351,7 +334,6 @@
 
 <event name="FISH_ENGI_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -392,7 +374,6 @@
 
 <event name="FISH_ZOLTAN_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -432,7 +413,6 @@
 
 <event name="FISH_ORCHID_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -475,7 +455,6 @@
 
 <event name="FISH_MANTIS_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -519,7 +498,6 @@
 
 <event name="FISH_CRYSTAL_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -561,7 +539,6 @@
 
 <event name="FISH_ROCK_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -602,7 +579,6 @@
 
 <event name="FISH_REBEL_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -645,7 +621,6 @@
 
 <event name="FISH_PIRATE_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -686,7 +661,6 @@
 
 <event name="FISH_LANIUS_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -695,7 +669,6 @@
 
 <event name="FISH_LANIUS_2">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_LAN_GIVE"/>
@@ -726,7 +699,6 @@
 
 <event name="FISH_SLUG_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -765,7 +737,6 @@
 
 <event name="FISH_LEECH_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -806,7 +777,6 @@
 
 <event name="FISH_HEKTAR_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_HEKTAR_1_LOOT"/>
     <event load="FISH_RANDOM_1"/>
@@ -848,7 +818,6 @@
 
 <event name="FISH_ANCIENT_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -889,7 +858,6 @@
 
 <event name="FISH_NEXUS_1">
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_JUNK"/>
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
     <event load="FISH_RANDOM_1"/>

@@ -52,7 +52,7 @@
 			</slot>
 		</shields>
 		<teleporter power="1" room="3" start="false" />
-		<weapons power="4" max="8" room="4" start="true" img="room_weapons_7">
+		<weapons power="2" max="8" room="4" start="true" img="room_weapons_7">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -62,20 +62,24 @@
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="8" count="4">
-		<weapon name="BEAM_REPAIR" />
-		<weapon name="LASER_BURST_3" />
+		<weapon name="LASER_CHAINGUN" />
+		<weapon name="LASER_CHAINGUN" />
 		<weapon name="FISHING_ROD_2" />
 	</weaponList>
 	<droneList drones="8" count="2" />
 	<health amount="30" />
-	<maxPower amount="9" />
-	<crewCount amount="1" class="slug_ranger" />
+	<maxPower amount="7" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="orchid" />
+	<crewCount amount="1" class="engi" />
+	<aug name="FISH_AUG_FISHINGONLY" />
+    <mv-mapImage>map_icon_fishp_trawler</mv-mapImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_FISHING_2" layout="fishp_trawler_b" img="fishp_trawler_b">
 	<class>Trawler Class</class>
 	<name>The Jelly</name>
-	<desc>An experienced slug fisher has retired to this small trawling vessel to live out the rest of his days catching fish, unfortunately some federation hooligan stole his ship.</desc>
+	<desc>An experienced slug fisher has retired with their child to this small trawling vessel to live out the rest of their days catching fish.</desc>
 	<unlock id="ship_PLAYER_SHIP_FISHING_2_unlock"/>
 	<systemList>
 		<battery power="1" room="3" start="false" img="room_battery_3" />
@@ -125,7 +129,7 @@
 			</slot>
 		</shields>
 		<teleporter power="1" room="12" start="false" />
-		<weapons power="2" max="8" room="7" start="true" img="room_weapons_7">
+		<weapons power="4" max="8" room="7" start="true" img="room_weapons_7">
 			<slot>
 				<direction>up</direction>
 				<number>1</number>
@@ -135,24 +139,24 @@
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="8" count="4">
-		<weapon name="LASER_CHAINGUN" />
-		<weapon name="LASER_CHAINGUN" />
+		<weapon name="BEAM_REPAIR" />
+		<weapon name="FISH_FOOD_LASER" />
 		<weapon name="FISHING_ROD_3" />
 	</weaponList>
 	<droneList drones="8" count="2" />
 	<health amount="30" />
-	<maxPower amount="7" />
-	<crewCount amount="1" class="human" />
-	<crewCount amount="1" class="orchid" />
-	<crewCount amount="1" class="engi" />
+	<maxPower amount="9" />
+	<crewCount amount="1" class="slug_ranger" />
+	<crewCount amount="1" class="slug" />
 	<aug name="LOCKED_SLUG_GEL" />
-	<aug name="CRATE_SCRAP" />
+	<aug name="FISH_AUG_FISHINGONLY" />
+    <mv-mapImage>map_icon_fishp_trawler</mv-mapImage>
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_FISHING_3" layout="fishp_trawler_c" img="fishp_trawler_c">
 	<class>Trawler Class</class>
 	<name>The Valkyrie</name>
-	<desc>After a fisherman pulled in fishvan, fishvan had the ship repainted in his own colours.</desc>
+	<desc>After a fisherslug pulled in Sylfin, Sylfin had the ship repainted in their own colours.</desc>
 	<unlock id="ship_PLAYER_SHIP_FISHING_3_unlock"/>
 	<systemList>
 		<battery power="1" room="8" start="false" img="room_battery_2" />
@@ -220,14 +224,49 @@
 	<maxPower amount="7" />
 	<crewCount amount="1" class="slug_clansman" />
 	<aug name="SCRAP_COLLECTOR" />
+	<aug name="SCRAP_COLLECTOR" />
+	<aug name="FISH_AUG_FISHINGONLY" />
+    <mv-mapImage>map_icon_fishp_trawler</mv-mapImage>
 </shipBlueprint>
+
+<weaponBlueprint name="FISHING_ROD_0"> 
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Rusty Harpoon MK I</title>
+	<short>R. Harpoon MK I</short>
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, in combat it's free to fish, however out of combat the harpoon has to be baited with scrap metal.
+This harpoon will be able to catch the more common fish.
+	</desc>
+	<tooltip>A Basic Fishing Harpoon.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<cooldown>60</cooldown>
+	<power>1</power>
+	<cost>0</cost>
+	<bp>2</bp>
+	<rarity>4</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>61</amount>
+		<count>2</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<weaponArt>fishing_rod_1</weaponArt> 
+	<iconImage>laser_chain</iconImage>
+	<iconReplace>fishing_rod_1_icon</iconReplace>
+</weaponBlueprint>
 
 <weaponBlueprint name="FISHING_ROD_1"> 
 	<type>LASER</type>
 	<flavorType>Fishing Harpoon</flavorType>
 	<title>Harpoon MK I</title>
 	<short>Harpoon MK I</short>
-	<desc>Useless as a weapon, however it is quite effective at catching space fish, just be sure you don't exit combat too soon or the emergency harpoon power may shut off too soon.
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, in combat it's free to fish, however out of combat the harpoon has to be baited with scrap metal.
 This harpoon will be able to catch the more common fish.
 	</desc>
 	<tooltip>A Basic Fishing Harpoon.</tooltip>
@@ -259,7 +298,7 @@ This harpoon will be able to catch the more common fish.
 	<flavorType>Fishing Harpoon</flavorType>
 	<title>Harpoon MK II</title>
 	<short>Harpoon MK II</short>
-	<desc>Useless as a weapon, however it is quite effective at catching space fish, just be sure you don't exit combat too soon or the emergency harpoon power may shut off too soon.
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, in combat it's free to fish, however out of combat the harpoon has to be baited with scrap metal.
 This harpoon will be able to catch most fish.
 	</desc>
 	<tooltip>A Fishing Harpoon.</tooltip>
@@ -291,7 +330,7 @@ This harpoon will be able to catch most fish.
 	<flavorType>Fishing Harpoon</flavorType>
 	<title>Harpoon MK III</title>
 	<short>Harpoon MK III</short>
-	<desc>Useless as a weapon, however it is quite effective at catching space fish, just be sure you don't exit combat too soon or the emergency harpoon power may shut off too soon.
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, in combat it's free to fish, however out of combat the harpoon has to be baited with scrap metal.
 This harpoon will be able to catch even the most elusive fish.
 	</desc>
 	<tooltip>An Advanced Fishing Harpoon.</tooltip>
@@ -339,7 +378,6 @@ This harpoon will be able to catch even the most elusive fish.
 	<iconReplace>fishjunk1</iconReplace>
 </weaponBlueprint>
 
-
 <weaponBlueprint name="FISH_FOOD_BOOT">
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
@@ -361,8 +399,30 @@ This harpoon will be able to catch even the most elusive fish.
 	<iconReplace>fishjunk2</iconReplace>
 </weaponBlueprint>
 
+<weaponBlueprint name="FISH_FOOD_ROCK">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Rock</title>
+	<short>Rock</short>
+	<desc>A piece of junk.</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>10</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fishjunk3</iconReplace>
+</weaponBlueprint>
+
 <weaponBlueprint name="FISH_FOOD_LASER">
 	<type>LASER</type>
+	<flavorType>Fish</flavorType>
 	<title>Laserfish</title>
 	<short>Laserfish</short>
 	<tip>tip_laser</tip>
@@ -403,6 +463,7 @@ This harpoon will be able to catch even the most elusive fish.
 
 <weaponBlueprint name="FISH_FOOD_ION">
 	<type>LASER</type>
+	<flavorType>Fish</flavorType>
 	<title>Shockfish</title>
 	<short>Shockfish</short>
 	<tip>tip_ion</tip>
@@ -447,20 +508,33 @@ This harpoon will be able to catch even the most elusive fish.
 
 <weaponBlueprint name="FISH_FOOD_FLAK">
 	<type>BURST</type>
-	<flavorType>Physical Projectile Blast</flavorType>
+	<flavorType>Fish</flavorType>
 	<drone_targetable>1</drone_targetable>
 	<title>Scatterfish</title>
 	<short>Scatterfish</short>
 	<tip>tip_flak</tip>
-	<desc>Fires a blast of debris across a random area doing up to 3 damage. Good at taking down shields but hard to aim.</desc>
+	<desc>Fires a blast of debris across a random area doing damage over time to any rooms it hits. Good at taking down shields but hard to aim.</desc>
 	<tooltip>Fires a blast of debris across a random area doing up to 3 damage.</tooltip>
 	<radius>45</radius>
-	<damage>1</damage>
+	<damage>0</damage>
 	<shots>1</shots>
 	<sp>0</sp>
 	<spin>720</spin>
 	<fireChance>0</fireChance>
 	<breachChance>2</breachChance>
+	<erosionChance>10</erosionChance>                          
+	<erosion>                                                 
+		<speed>1</speed>
+		<maxSpeed>3</maxSpeed>
+		<time>10.0</time>
+		<maxTime>30.0</maxTime>
+		<systemRepairMultiplier>0.75</systemRepairMultiplier>
+		<erodeShields>true</erodeShields>
+		<roomAnim renderLayer="3">                                                    
+			<anim animType="default" animBorder="2">invisible</anim>                                                 
+				<wallAnim>fish_erosion</wallAnim>  
+		</roomAnim>
+	</erosion>
 	<cooldown>10</cooldown>
 	<power>2</power>
 	<cost>65</cost>
@@ -468,11 +542,10 @@ This harpoon will be able to catch even the most elusive fish.
 	<speed>26</speed>
 	<rarity>0</rarity>
 	<projectiles>
-		<projectile count="1" fake="false">debris_large</projectile>
+		<projectile count="1" fake="false">debris_large_fire</projectile>
 		<projectile count="2" fake="false">debris_med</projectile>
 		<projectile count="3" fake="true">debris_small</projectile>
 	</projectiles>
-	<explosion>explosion_small_ion</explosion>
 	<launchSounds>
 		<sound>flak</sound>
 	</launchSounds>
@@ -496,6 +569,7 @@ This harpoon will be able to catch even the most elusive fish.
 
 <weaponBlueprint name="FISH_FOOD_BEAM">
 	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
 	<title>Beamfin fish</title>
 	<short>Beamfin fish</short>
 	<tip>tip_beams</tip>
@@ -521,6 +595,7 @@ This harpoon will be able to catch even the most elusive fish.
 
 <weaponBlueprint name="FISH_FOOD_MINELAYER">
 	<type>BURST</type>
+	<flavorType>Fish</flavorType>
 	<tip>tip_mine</tip>
 	<title>Magnetfish</title>
 	<short>Magnetfish</short>
@@ -563,10 +638,12 @@ This harpoon will be able to catch even the most elusive fish.
 	</missSounds>
 	<weaponArt>fish_minelayer</weaponArt>
 	<iconImage>missile</iconImage>
+	<iconReplace>fish_minelayer_proj</iconReplace>
 </weaponBlueprint>
 
 <weaponBlueprint name="FISH_FOOD_MISSILE_1">
 	<type>MISSILES</type>
+	<flavorType>Fish</flavorType>
 	<tip>tip_missiles</tip>
 	<title>Breachfish</title>
 	<short>Breachfish</short>
@@ -606,11 +683,12 @@ This harpoon will be able to catch even the most elusive fish.
 
 <weaponBlueprint name="FISH_FOOD_MISSILE_2">
 	<type>MISSILES</type>
+	<flavorType>Fish</flavorType>
 	<tip>tip_missiles</tip>
 	<drone_targetable>2</drone_targetable>
 	<title>Sailfish</title>
 	<short>Sailfish</short>
-	<desc>A very resource expensive missile system, however it is capable of high damage.</desc>
+	<desc>A very resource expensive missile system, however it is capable of high damage. Moves so fast that drones struggle to hit it.</desc>
 	<tooltip>Fires 1 missile that does 1 damage.</tooltip>
 	<damage>1</damage>
 	<missiles>1</missiles>
@@ -645,12 +723,44 @@ This harpoon will be able to catch even the most elusive fish.
 	<iconImage>missile</iconImage>
 </weaponBlueprint>
 
-<augBlueprint name="FISH_INAUG_">
-	<title>fish</title>
+<augBlueprint name="FISH_AUG_FISHINGONLY">
+	<title>Fishing Vessel</title>
+	<desc>This vessel is specifically designed to go space fishing and as such is unable to pull up old junk while fishing, however the ship has 25% less scrap gain.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INAUG_BAIT">
+	<title>Improved Bait</title>
 	<desc>fish</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
-	<stackable>true</stackable>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INAUG_BAIT_ALT">
+	<title>Improved Bait</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INAUG_SAFE">
+	<title>Safety Overrides</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INAUG_REPEL">
+	<title>Fish Repellent</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
 </augBlueprint>
 
 </FTL>
@@ -713,6 +823,22 @@ This harpoon will be able to catch even the most elusive fish.
 </augBlueprint>
 
 <augBlueprint name="FISH_AUG_8">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_9">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_0">
 	<title>fish</title>
 	<desc>fish</desc>
 	<cost>0</cost>
@@ -887,6 +1013,48 @@ This harpoon will be able to catch even the most elusive fish.
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish8</iconReplace>
 </weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_9">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Reef Octopus</title>
+	<short>Reef Octopus</short>
+	<desc>A basic space fish, when consumed gives a +1% system resist</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish9</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_0">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Eagle Ray</title>
+	<short>Eagle Ray</short>
+	<desc>A basic space fish, when consumed gives a +1% hull resist</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>20</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish0</iconReplace>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -947,6 +1115,22 @@ This harpoon will be able to catch even the most elusive fish.
 </augBlueprint>
 
 <augBlueprint name="FISH_AUG_18">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_19">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_10">
 	<title>fish</title>
 	<desc>fish</desc>
 	<cost>0</cost>
@@ -1121,6 +1305,48 @@ This harpoon will be able to catch even the most elusive fish.
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish18</iconReplace>
 </weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_19">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Yellowfin Kingfish</title>
+	<short>Yellowfin Kingfish</short>
+	<desc>An uncommon space fish, when consumed gives a +4% system resist</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish19</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_10">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Rainbow Trout</title>
+	<short>Rainbow Trout</short>
+	<desc>An uncommon space fish, when consumed gives a +4% hull resist</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>40</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish10</iconReplace>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -1181,6 +1407,22 @@ This harpoon will be able to catch even the most elusive fish.
 </augBlueprint>
 
 <augBlueprint name="FISH_AUG_28">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_29">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_20">
 	<title>fish</title>
 	<desc>fish</desc>
 	<cost>0</cost>
@@ -1355,6 +1597,48 @@ This harpoon will be able to catch even the most elusive fish.
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish28</iconReplace>
 </weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_29">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Channel Catfish</title>
+	<short>Channel Catfish</short>
+	<desc>A rare space fish, when consumed gives a +16% system resist</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>60</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish29</iconReplace>
+</weaponBlueprint>
+ 
+<weaponBlueprint name="FISH_FOOD_20">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Common Sturgeon</title>
+	<short>Common Sturgeon</short>
+	<desc>A rare space fish, when consumed gives a +16% hull resist</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>60</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish20</iconReplace>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -1391,6 +1675,30 @@ This harpoon will be able to catch even the most elusive fish.
 </augBlueprint>
 
 <augBlueprint name="FISH_AUG_342">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_35">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_36">
+	<title>fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_AUG_37">
 	<title>fish</title>
 	<desc>fish</desc>
 	<cost>0</cost>
@@ -1488,7 +1796,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Bluefish</title>
 	<short>Bluefish</short>
-	<desc>A legendary space fish, when consumed gives 3 random weapons</desc>
+	<desc>A legendary space fish, when consumed gives all systems permanent lvl 2 manning.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1501,6 +1809,48 @@ This harpoon will be able to catch even the most elusive fish.
 	<image>beam_contact</image>
 	<weaponArt>invisible</weaponArt>
 	<iconReplace>fish35</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_FOOD_36">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Arapaima</title>
+	<short>Arapaima</short>
+	<desc>A legendary space fish, creates a new copy of itself every sector.</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>50</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish36</iconReplace>
+</weaponBlueprint>
+ 
+<weaponBlueprint name="FISH_FOOD_37">
+	<type>BEAM</type>
+	<flavorType>Fish</flavorType>
+	<tip>tip_fish_food</tip>
+	<title>Blue Marlin</title>
+	<short>Blue Marlin</short>
+	<desc>A legendary space fish, when consumed gives 5 random weapons</desc>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>150</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>fish37</iconReplace>
 </weaponBlueprint>
 </FTL>
 
@@ -1694,7 +2044,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Energy Fish</title>
 	<short>Energy Fish</short>
-	<desc>A unique space fish, when consumed gives +1 bonus power to all zoltans in the shields system.</desc>
+	<desc>A unique space fish, when consumed gives -1 power to the first weapon.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1757,7 +2107,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Ice Fish</title>
 	<short>Ice Fish</short>
-	<desc>A unique space fish, when consumed your crew spawn crystal shards when hit by ship weapons.</desc>
+	<desc>A unique space fish, when consumed your crew spawn powerful crystal shards when hit by ship weapons.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -1923,8 +2273,8 @@ This harpoon will be able to catch even the most elusive fish.
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Fishvan</title>
-	<short>Fishvan</short>
+	<title>Sylfin</title>
+	<short>Sylfin</short>
 	<desc>A unique space fish, can be consumed to gain access to the fish merchant beacon and one free sylvan.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
