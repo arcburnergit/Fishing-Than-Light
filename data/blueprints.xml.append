@@ -468,16 +468,16 @@ This harpoon will be able to catch even the most elusive fish.
 	<short>Shockfish</short>
 	<tip>tip_ion</tip>
 	<desc>Similiar to an ion weapon, however it shocks crew and causes them to run to a random room.</desc>
-	<tooltip>Fires 1 projectiles, 2 ion damage, sends crew away from the room.</tooltip>
+	<tooltip>Fires 1 projectiles, 1 ion damage, sends crew away from the room.</tooltip>
 	<damage>0</damage>
-	<ion>2</ion>
+	<ion>1</ion>
 	<speed>40</speed>
 	<shots>1</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
 	<stunChance>2</stunChance>
-	<cooldown>14</cooldown>
+	<cooldown>5</cooldown>
 	<power>2</power>
 	<cost>45</cost>
 	<bp>4</bp>
@@ -731,6 +731,14 @@ This harpoon will be able to catch even the most elusive fish.
 	<stackable>false</stackable>
 </augBlueprint>
 
+<augBlueprint name="FISH_AUG_FISH_BOON">
+	<title>Fishing Vessel</title>
+	<desc>This vessel is specifically designed to go space fishing and as such is unable to pull up old junk while fishing, however the ship has 25% less scrap gain.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
 <augBlueprint name="FISH_INAUG_BAIT">
 	<title>Improved Bait</title>
 	<desc>fish</desc>
@@ -763,6 +771,13 @@ This harpoon will be able to catch even the most elusive fish.
 	<stackable>false</stackable>
 </augBlueprint>
 
+<augBlueprint name="FISH_INAUG_PREIG">
+	<title>Harpoon Pre-igniter</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
 </FTL>
 
 <FTL>
@@ -1838,7 +1853,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Blue Marlin</title>
 	<short>Blue Marlin</short>
-	<desc>A legendary space fish, when consumed gives 5 random weapons</desc>
+	<desc>A legendary space fish, when consumed gives 3 random weapons</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>

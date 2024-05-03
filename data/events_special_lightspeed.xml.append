@@ -28,9 +28,15 @@
   </choice>
 </event>
 
+
 <event name="FISH_JUNK">
-  <text>You reel in your catch to discover nothing more than some old junk.</text>
-  <weapon name="FISHLIST_JUNK" />
+  <loadEventList seeded="false" generate="false">
+    <event>
+      <text>You reel in your catch to discover nothing more than some old junk.</text>
+      <weapon name="FISHLIST_JUNK" />
+    </event>
+    <event load="FISH_RANDOM_1"/>
+  </loadEventList>
 </event>
 
 <event name="FISH_RANDOM_1">

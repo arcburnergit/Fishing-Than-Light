@@ -29,5 +29,11 @@
 	<unlockCustomShip silent="false">PLAYER_SHIP_FISHING</unlockCustomShip>
 </event>
 
+<mod:findName type="event" name="BOON_SELECT">
+	<mod:findLike type="loadEventList">
+		<mod-append:event name="BOON_SELECT_FISH" req="prof_z_boon_fish" />
+	</mod:findLike>
+</mod:findName>
+
 </FTL>
 

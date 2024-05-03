@@ -7,6 +7,28 @@
   </mod-append:choice>
 </mod:findName>
 
+<mod:findName type="event" name="COMBAT_CHECK_HOTKEYS">
+  <mod-append:choice hidden="true">
+    <text>Fishing Button (default is the tab key)</text>
+		<event name="COMBAT_CHECK_HOTKEYS_FISH_START">
+      <text>Press any key and use the mouse to select "Continue" to set a new key, or select "Restore Default" to return this hotkey to its default setting.</text>
+      <choice hidden="true">
+          <text>Continue</text>
+          <event name="COMBAT_CHECK_HOTKEYS_FISH_END_1">
+              <loadEvent>COMBAT_CHECK_TOGGLE</loadEvent>
+          </event>
+      </choice>
+      <choice hidden="true">
+          <text>Restore Default</text>
+          <event name="COMBAT_CHECK_HOTKEYS_FISH_END_2">
+              <metaVariable name="prof_hotkey_fish" op="set" val="30" />
+              <loadEvent>COMBAT_CHECK_TOGGLE</loadEvent>
+          </event>
+      </choice>
+    </event>
+  </mod-append:choice>
+</mod:findName>
+
 <event name="STORAGE_CHECK_FISHING_LOAD">
   <loadEvent>STORAGE_CHECK_FISHING</loadEvent>
 </event>
@@ -462,39 +484,25 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="FISH_FOOD_37">
+  <choice hidden="true" req="FISH_FOOD_37">
     <text>Cook the Blue Marlin. (3 random weapons)</text>
     <event>
       <text>You cut the fish open to reveal a strange weapon cache. You pull out the first weapon.</text>
-      <remove name="FISH_FOOD_37"/>
-      <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
-      <choice>
+      <weapon name="LIST_WEAPONS_ALL_CRAPBUCKET" />
+      <choice hidden="true">
         <text>Continue...</text>
         <event>
           <text>You pull out a second weapon.</text>
-          <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
-          <choice>
+          <weapon name="LIST_WEAPONS_ALL_CRAPBUCKET" />
+          <choice hidden="true">
             <text>Continue...</text>
             <event>
               <text>You pull out a third and final weapon.</text>
-              <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
-              <choice>
+              <weapon name="LIST_WEAPONS_ALL_CRAPBUCKET" />
+              <remove name="FISH_FOOD_37"/>
+              <choice hidden="true">
                 <text>Continue...</text>
-                <event>
-                  <text>You pull out a second weapon.</text>
-                  <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
-                  <choice>
-                    <text>Continue...</text>
-                    <event>
-                      <text>You pull out a third and final weapon.</text>
-                      <weapon name="LIST_WEAPON_ALL_CRAPBUCKET"/>
-                      <choice>
-                        <text>Continue...</text>
-                        <event load="STORAGE_CHECK_FISHING_LOAD" />
-                      </choice>
-                    </event>
-                  </choice>
-                </event>
+                <event load="STORAGE_CHECK_FISHING_LOAD" />
               </choice>
             </event>
           </choice>
@@ -613,6 +621,14 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
+  <!--choice req="FISH_FOOD_4F">
+    <text>Cook dive fish. (Fish Merchant Beacon, +1 Sylvans)</text>
+    <event>
+      <remove name="FISH_FOOD_4F"/>
+      
+      <event load="STORAGE_CHECK_FISHING_LOAD" />
+    </event>
+  </choice-->
   <choice req="FISH_FOOD_4D">
     <text>Cook the Ancient Fish. (Upgrades 1 obelisk weapon to the royal varient)</text>
     <event load="STORAGE_CHECK_ANC_UPGRADE" />
@@ -646,14 +662,8 @@
 </blueprintList>
 
 <event name="REMOVE_ANCIENT_FISH">
-  <text>You combine the fish and the weapon.</text>
   <remove name="FISH_FOOD_4D"/>
-  <choice>
-    <text>Continue...</text>
-    <event>
-      <loadEvent>STORAGE_CHECK_FISHING</loadEvent>
-    </event>
-  </choice>
+  <loadEvent>STORAGE_CHECK_FISHING</loadEvent>
 </event>
 
 <event name="STORAGE_CHECK_ANC_UPGRADE">
@@ -666,9 +676,13 @@
   <choice req="ANCIENT_LASER_3" blue="true">
     <text>Upgrade Harbinger MK III</text>
     <event>
+      <text>You combine the fish and the weapon.</text>
       <remove name="ANCIENT_LASER_3"/>
       <weapon name="ROYAL_LASER_3"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -679,9 +693,13 @@
   <choice req="ANCIENT_MISSILES" blue="true">
     <text>Upgrade Carnage Missiles</text>
     <event>
+      <text>You combine the fish and the weapon.</text>
       <remove name="ANCIENT_MISSILES"/>
       <weapon name="ROYAL_MISSILES"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -692,9 +710,13 @@
   <choice req="ANCIENT_BEAM_3" blue="true">
     <text>Upgrade Eradicator MK III</text>
     <event>
+      <text>You combine the fish and the weapon.</text>
       <remove name="ANCIENT_BEAM_3"/>
       <weapon name="ROYAL_BEAM_3"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -705,9 +727,13 @@
   <choice req="ANCIENT_HAVOC" blue="true">
     <text>Upgrade Havoceizer</text>
     <event>
+      <text>You combine the fish and the weapon.</text>
       <remove name="ANCIENT_HAVOC"/>
       <weapon name="ROYAL_HAVOC"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -718,9 +744,13 @@
   <choice req="ANCIENT_ION_2" blue="true">
     <text>Upgrade Plasma Cannon MK II</text>
     <event>
+      <text>You combine the fish and the weapon.</text>
       <remove name="ANCIENT_ION_2"/>
       <weapon name="ROYAL_ION_2"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -731,9 +761,13 @@
   <choice req="ANCIENT_FOCUS" blue="true">
     <text>Upgrade Purifier Pinpoint MK I</text>
     <event>
+      <text>You combine the fish and the weapon.</text>
       <remove name="ANCIENT_FOCUS"/>
       <weapon name="ROYAL_FOCUS"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -744,9 +778,13 @@
   <choice req="ANCIENT_BOMB" blue="true">
     <text>Upgrade Payload Teleporter</text>
     <event>
+      <text>You combine the fish and the weapon.</text>
       <remove name="ANCIENT_BOMB"/>
       <weapon name="ROYAL_BOMB"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -757,9 +795,13 @@
   <choice req="ANCIENT_COMBAT_LASER_2" blue="true">
     <text>Upgrade Harbinger Drone Mk. II</text>
     <event>
+      <text>You combine the fish and the drone.</text>
       <remove name="ANCIENT_COMBAT_LASER_2"/>
       <drone name="ROYAL_COMBAT_LASER_2"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -770,9 +812,13 @@
   <choice req="ANCIENT_DEFENSE_1" blue="true">
     <text>Upgrade Overwatcher</text>
     <event>
+      <text>You combine the fish and the drone.</text>
       <remove name="ANCIENT_DEFENSE_1"/>
       <drone name="ROYAL_DEFENSE_1"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -783,9 +829,13 @@
   <choice req="ANCIENT_COMBAT_ION" blue="true">
     <text>Upgrade Plasma Drone</text>
     <event>
+      <text>You combine the fish and the drone.</text>
       <remove name="ANCIENT_COMBAT_ION"/>
       <drone name="ROYAL_COMBAT_ION"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -796,9 +846,13 @@
   <choice req="ANCIENT_COMBAT_MISSILE" blue="true">
     <text>Upgrade Carnage Drone</text>
     <event>
+      <text>You combine the fish and the drone.</text>
       <remove name="ANCIENT_COMBAT_MISSILE"/>
       <drone name="ROYAL_COMBAT_MISSILE"/>
-      <event load="REMOVE_ANCIENT_FISH" />
+      <choice>
+        <text>Continue...</text>
+        <event load="REMOVE_ANCIENT_FISH" />
+      </choice>
     </event>
   </choice>
 
@@ -1915,10 +1969,26 @@
       </choice>
     </event>
   </choice>
+  <!--choice blue="false" req="FISH_INAUG_PREIG" lvl="0" max_lvl="0">
+    <text>Harpoon Pre-igniter. (Pre-ignites your harpoon)</text>
+    <event>
+      <text>You install the Pre-igniter.</text>
+      <item_modify>
+        <item type="scrap" min="-40" max="-40" />
+        <item type="missiles" min="-4" max="-4" />
+        <item type="drones" min="-4" max="-4" />
+      </item_modify>
+      <hiddenAug>FISH_INAUG_PREIG</hiddenAug>
+      <choice>
+        <text>Continue...</text>
+        <event load="STORAGE_CHECK_FISHING_LOAD"/>
+      </choice>
+    </event>
+  </choice>
   <choice>
     <text>Nevermind.</text>
     <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
+  </choice-->
 </event>
 
 <mod:findName type="event" name="STORAGE_CHECK_AUG">

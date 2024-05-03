@@ -82,7 +82,7 @@ local function ach_check_loop()
             end
         end
         if allFishCargo and cargoList:size() >=4 then
-            print("FISHING_SHIP_ACH_1")
+            --print("FISHING_SHIP_ACH_1")
             Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_1", false)
         end
     end

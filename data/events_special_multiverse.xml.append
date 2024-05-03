@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<!--
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			                    HANGAR OBJECTS
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+-->
+
+<mod:findName type="event" name="THE_JUDGES_ROCKMAN_REAL">
+	<mod-append:choice hidden="true" req="BLUELIST_FISH" blue="false">
+        <text>Present a fish.</text>
+        <event>
+            <text>"This... this is a fish? I'm not sure why you have brought me this, however this IS tribute, if only becuase I'm not sure how you got your hands on it. I shall BLESS you with the BLESSING OF FISH. But have PATIENCE. It is not for now, but for LATER!"</text>
+            <achievement silent="false">ACH_BOON_FISH</achievement>
+            <metaVariable name="prof_r_boon_fish" op="set" val="1" />
+            <choice hidden="true">
+                <text>Continue...</text>
+                <event load="THE_JUDGES_ROCK_ADVICE" />
+            </choice>
+        </event>
+    </mod-append:choice>
+</mod:findName>
+
+<mod:findName type="event" name="THE_JUDGES_VARIABLE_CLEAR">
+    <mod-append:metaVariable name="prof_r_boon_fish" op="set" val="0" />
+</mod:findName>
+
+</FTL>

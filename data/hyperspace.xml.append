@@ -29,6 +29,8 @@
 </mod:findLike>
 
 <events>
+    <metaVariable name="prof_r_boon_fish" op="set" val="0" />
+    <metaVariable name="prof_hotkey_fish" op="set" val="9"/>
     <variable name="fish_sector" op="set" val="0"/>
     <variable name="fish_active" op="set" val="0"/>
     <variable name="fish_this_sector" op="set" val="0"/>
@@ -314,47 +316,50 @@
           <price>-1</price>
 		</resource>
         <itemPurchaseLimit>2</itemPurchaseLimit>
-		<category type="WEAPON" name="FISH">
-        <item>
-            <blueprint>FISHLIST_1</blueprint>
-            <price>-1</price>
-        </item>    
-        <item>
-            <blueprint>FISHLIST_1</blueprint>
-            <price>-1</price>
-        </item>    
-        <item>
-            <blueprint>FISHLIST_2</blueprint>
-            <price>-1</price>
+		<category type="WEAPONS">
+            <customTitle>FISH</customTitle>
+            <item>
+                <blueprint>FISHLIST_1</blueprint>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>FISHLIST_1</blueprint>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>FISHLIST_2</blueprint>
+                <price>-1</price>
 			</item>    
 		</category>
-        <category type="WEAPON" name="FISH">
-        <item>
-            <blueprint>FISHLIST_2</blueprint>
-            <price>-1</price>
-        </item>
-        <item>
-            <blueprint>FISHLIST_3</blueprint>
-            <price>-1</price>
-        </item>
-        <item>
-            <blueprint>FISHLIST</blueprint>
-            <price>-1</price>
-        </item>
+        <category type="WEAPONS">
+            <customTitle>FISH</customTitle>
+            <item>
+                <blueprint>FISHLIST_2</blueprint>
+                <price>-1</price>
+            </item>
+            <item>
+                <blueprint>FISHLIST_3</blueprint>
+                <price>-1</price>
+            </item>
+            <item>
+                <blueprint>FISHLIST_3</blueprint>
+                <price>-1</price>
+            </item>
         </category>
-        <category type="WEAPON" name="FISH">
-        <item>
-            <blueprint>FISHLIST_GUNS</blueprint>
-            <price>-1</price>
-        </item>
-        <item>
-            <blueprint>FISHLIST_LEG</blueprint>
-            <price>-1</price>
-        </item>
-        <item>
-            <blueprint>BLUELIST_FISHING_RODS</blueprint>
-            <price>-1</price>
-        </item>
+        <category type="WEAPONS">
+            <customTitle>FISH</customTitle>
+            <item>
+                <blueprint>FISHLIST_GUNS</blueprint>
+                <price>-1</price>
+            </item>
+            <item>
+                <blueprint>FISHLIST_LEG</blueprint>
+                <price>-1</price>
+            </item>
+            <item>
+                <blueprint>BLUELIST_FISHING_RODS</blueprint>
+                <price>-1</price>
+            </item>
         </category>
     </customStore>
 </store>
