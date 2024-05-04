@@ -409,7 +409,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
         end
 
         local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
-        if Hyperspace.playerVariables.fish_active == 1 and not commandGui.bPaused then
+        if Hyperspace.playerVariables.fish_active == 1 and not (commandGui.bPaused or commandGui.event_pause) then
             local gravity = 50
             local maxSpeed = 150
             if isJump and not hasJump then

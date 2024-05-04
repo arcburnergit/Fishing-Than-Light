@@ -545,7 +545,7 @@
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
   </choice>
-  <choice req="fish_cons_44">
+  <choice req="FISH_FOOD_44">
     <text>Cook the Energy Fish. (+1 bonus power to zoltans in shield system)</text>
     <event>
       <remove name="FISH_FOOD_44"/>

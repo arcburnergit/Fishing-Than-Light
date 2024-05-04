@@ -661,13 +661,13 @@
 
     <aug name="FISH_AUG_42">
         <statBoosts>
-            <statBoost name="noSlot">
-                <boostType>SET</boostType>
-                <value>true</value>
+            <statBoost name="crewSlots">
+                <boostType>MULT</boostType>
+                <value>0</value>
                 <shipTarget>ALL</shipTarget>
                 <crewTarget>ALLIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
-                <priority>0</priority>
+                <priority>99999</priority>
 				<whiteList>
                     <human/>
                 </whiteList>
