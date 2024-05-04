@@ -171,6 +171,10 @@ sectors[12] = "FISH_LEECH_"
 sectors[13] = "FISH_HEKTAR_"
 sectors[14] = "FISH_ANCIENT_"
 sectors[15] = "FISH_NEXUS_"
+sectors[16] = "FISH_FR_"
+sectors[17] = "FISH_FM_"
+sectors[18] = "FISH_AI_"
+sectors[19] = "FISH_CHRONO_"
 
 local fishSpeed = 0
 local fishPos = 0
@@ -228,7 +232,7 @@ local soundTimer=0
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint)
     local fishingData = rods[weaponBlueprint.name]
-    if fishingData then
+    if fishingData and Hyperspace.playerVariables.fish_this_jump == 0 then
         shipBlueprint = Hyperspace.ships.enemy.myBlueprint.blueprintName
         --print(shipBlueprint)
         Hyperspace.playerVariables.fish_this_jump = 1
@@ -344,6 +348,25 @@ script.on_internal_event(Defines.InternalEvents.ON_KEY_DOWN, function(key)
     end
 end)
 
+script.on_internal_event(Defines.InternalEvents.ON_KEY_UP, function(key)
+    local cmdGui = Hyperspace.Global.GetInstance():GetCApp().gui
+    if Hyperspace.ships.player and not (Hyperspace.ships.player.bJumping or cmdGui.event_pause or cmdGui.menu_pause) then
+        if key == Hyperspace.metaVariables.prof_hotkey_fish and Hyperspace.playerVariables.fish_active == 1 then
+            isJump = false
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.ON_MOUSE_L_BUTTON_UP, function(x, y)
+    --print("MousePos "..tostring(x).." "..tostring(y))
+    local mousePos = Hyperspace.Mouse.position
+
+    if mousePos.x >= xOffset+18 and mousePos.x <= xOffset+18+98 and mousePos.y >= yOffset+409 and mousePos.y <= yOffset+409+73 and Hyperspace.playerVariables.fish_active == 1 then
+        isJump = false
+        --print("CLICK")
+    end
+end)
+
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
     for weapon in vter(shipManager:GetWeaponList()) do
         local fishingData = rods[weapon.blueprint.name]
@@ -363,17 +386,13 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
             local fishingData = rods[weapon.blueprint.name]
             if fishingData then
                 maxRodStrength = math.max(maxRodStrength, fishingData)
-                if Hyperspace.ships.enemy then
-                    if Hyperspace.ships.enemy.hostile_ship then
-                        --print("SHECK")
-                        if Hyperspace.playerVariables.fish_this_sector >= 1 then
-                            weapon.boostLevel = 1
-                        elseif Hyperspace.playerVariables.fish_active == 1 then
-                            weapon.boostLevel = 2
-                        elseif Hyperspace.playerVariables.fish_this_jump == 1 then
-                            weapon.boostLevel = 1
-                        end
-                    end
+                if Hyperspace.playerVariables.fish_active == 1 then
+                    weapon.boostLevel = 2
+                elseif Hyperspace.playerVariables.fish_active == 0 and weapon.boostLevel == 2 then
+                    weapon.boostLevel = 1
+                elseif weapon.cooldown.first > 1 and Hyperspace.playerVariables.fish_this_jump == 1 then
+                    weapon.cooldown.first = 0
+                    weapon.boostLevel = 1
                 end
             end
         end
@@ -600,6 +619,12 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
     end
     if Hyperspace.playerVariables.fish_this_sector >= 1 then
         Hyperspace.playerVariables.fish_this_sector = Hyperspace.playerVariables.fish_this_sector - 1
+    end
+    for weapon in vter(shipManager:GetWeaponList()) do
+        local fishingData = rods[weapon.blueprint.name]
+        if fishingData then
+            weapon.boostLevel = 0
+        end
     end
 end)
 
