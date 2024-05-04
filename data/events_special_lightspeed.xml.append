@@ -243,7 +243,7 @@
 <event name="FISH_NEXUS_GIVE">
   <text>You reeled in a sylvan?</text>
   
-  <weapon name="FISH_FOOD_4F"/>
+  <weapon name="FISH_FOOD_4E"/>
   <choice>
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>
