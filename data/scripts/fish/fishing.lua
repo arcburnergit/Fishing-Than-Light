@@ -390,8 +390,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                     weapon.boostLevel = 2
                 elseif Hyperspace.playerVariables.fish_active == 0 and weapon.boostLevel == 2 then
                     weapon.boostLevel = 1
-                elseif weapon.cooldown.first > 1 and Hyperspace.playerVariables.fish_this_jump == 1 then
-                    weapon.cooldown.first = 0
+                elseif weapon.cooldown.first > 1 and Hyperspace.playerVariables.fish_this_jump == 1 and weapon.cooldown.first <= 10 then
                     weapon.boostLevel = 1
                 end
             end
@@ -620,12 +619,12 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
     if Hyperspace.playerVariables.fish_this_sector >= 1 then
         Hyperspace.playerVariables.fish_this_sector = Hyperspace.playerVariables.fish_this_sector - 1
     end
-    for weapon in vter(shipManager:GetWeaponList()) do
+    --[[for weapon in vter(shipManager:GetWeaponList()) do
         local fishingData = rods[weapon.blueprint.name]
         if fishingData then
             weapon.boostLevel = 0
         end
-    end
+    end]]
 end)
 
 
@@ -776,8 +775,11 @@ end, function() end)
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     if shipManager:HasAugmentation("FISH_AUG_44") > 0 and Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then 
         local first = true
+        local powerNum = shipManager:HasAugmentation("FISH_AUG_44")
         for weapon in vter(shipManager:GetWeaponList()) do 
-            if weapon.blueprint.power >= 1 and first then
+            weapon.requiredPower = math.max(weapon.blueprint.power - powerNum, 0)
+            powerNum = powerNum - math.min(powerNum, weapon.blueprint.power)
+            --[[if weapon.blueprint.power >= 1 and first then
                 first = false
                 if weapon.requiredPower == weapon.blueprint.power and weapon.powered then 
                     shipManager.weaponSystem:ForceDecreasePower(shipManager.weaponSystem:GetMaxPower())
@@ -788,7 +790,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
                     shipManager.weaponSystem:ForceDecreasePower(shipManager.weaponSystem:GetMaxPower())
                 end
                 weapon.requiredPower = weapon.blueprint.power
-            end
+            end]]
         end 
     end
 end)
