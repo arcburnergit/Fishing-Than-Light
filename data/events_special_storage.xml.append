@@ -182,6 +182,10 @@
     <text>Install an internal fishing upgrade.</text>
     <event load="STORAGE_CHECK_FISHING_UPGRADE" />
   </choice>
+  <choice>
+    <text>Fishing Info.</text>
+    <event load="STORAGE_CHECK_FISHING_INFO" />
+  </choice>
 </event>
 
 <event name="STORAGE_CHECK_FISHING_FOOD" >
@@ -1905,6 +1909,11 @@
 
 <event name="STORAGE_CHECK_FISHING_UPGRADE">
   <text>Choose an internal upgrade to install.</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+
   <choice blue="false" req="fish_inaug_bait_check" >
     <text>Improved bait. (Reduces chance of recieving junk)</text>
     <event>
@@ -2000,4 +2009,19 @@
   </mod-append:choice>
 </mod:findName>
 
+<event name="STORAGE_CHECK_FISHING_INFO">
+  <text>Fishing rewards are calculated as such;
+When you catch a fish it first calculates the chance of getting junk, intially this is a 3/4 chance, which is reduced to 2/3 by the internal augment, and 0/1 by the boon and fishing vessel augment.
+If it decided you caught junk theres a 50% chance of a basic fish and a 50% chance for a junk item (The useless items worth 5 scrap).
+(This does not apply to the glowing blue fish which is a garenteed legendary fish.)
+
+Otherwise the fishing loot is determined by the loot table corresponding to the difficulty of fish you caught. There are different loot tables depending on your sector.
+
+Fish difficulty is determined when you start fishing, normally its a number from 1 to the strength of your harpoon, a MK 1 has a strength of 5, a MK 2 a strength of 10, and a MK 3 a stregth of 16.
+The MK2 and MK3 will raise the lower bound of the difficulty if you have the internal augment to make basic fish rarer.</text>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
 </FTL>

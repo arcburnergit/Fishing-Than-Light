@@ -725,7 +725,7 @@ This harpoon will be able to catch even the most elusive fish.
 
 <augBlueprint name="FISH_AUG_FISHINGONLY">
 	<title>Fishing Vessel</title>
-	<desc>This vessel is specifically designed to go space fishing and as such is unable to pull up old junk while fishing, however the ship has 25% less scrap gain.</desc>
+	<desc>This vessel is specifically designed to go space fishing and as such is unable to pull up old junk while fishing, however the ship has 30% less scrap gain.</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
@@ -733,7 +733,7 @@ This harpoon will be able to catch even the most elusive fish.
 
 <augBlueprint name="FISH_AUG_FISH_BOON">
 	<title>Fishing Vessel</title>
-	<desc>This vessel is specifically designed to go space fishing and as such is unable to pull up old junk while fishing, however the ship has 25% less scrap gain.</desc>
+	<desc>This vessel is specifically designed to go space fishing and as such is unable to pull up old junk while fishing.</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>

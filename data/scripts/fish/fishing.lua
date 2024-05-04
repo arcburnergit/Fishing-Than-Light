@@ -363,12 +363,17 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
             local fishingData = rods[weapon.blueprint.name]
             if fishingData then
                 maxRodStrength = math.max(maxRodStrength, fishingData)
-                if Hyperspace.playerVariables.fish_this_sector >= 1 then
-                    weapon.boostLevel = 1
-                elseif Hyperspace.playerVariables.fish_active == 1 then
-                    weapon.boostLevel = 2
-                elseif Hyperspace.playerVariables.fish_this_jump == 1 then
-                    weapon.boostLevel = 1
+                if Hyperspace.ships.enemy then
+                    if Hyperspace.ships.enemy.hostile_ship then
+                        print("SHECK")
+                        if Hyperspace.playerVariables.fish_this_sector >= 1 then
+                            weapon.boostLevel = 1
+                        elseif Hyperspace.playerVariables.fish_active == 1 then
+                            weapon.boostLevel = 2
+                        elseif Hyperspace.playerVariables.fish_this_jump == 1 then
+                            weapon.boostLevel = 1
+                        end
+                    end
                 end
             end
         end
