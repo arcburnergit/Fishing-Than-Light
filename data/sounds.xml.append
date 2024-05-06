@@ -75,6 +75,7 @@
 <music>
     <track>
         <name>fishmusic</name>
-        <explore>fish_music_track.ogg</explore>
+        <explore>lz_MUS_FishEXPLORE.ogg</explore>
+        <combat>lz_MUS_FishBATTLE.ogg</combat>
     </track>
 </music>
