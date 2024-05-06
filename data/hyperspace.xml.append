@@ -38,6 +38,13 @@
     <variable name="jumps_since_fish" op="set" val="0"/>
     <variable name="fish_again" op="set" val="0"/>
     <variable name="fish_music" op="set" val="0"/>
+    <variable name="fish_caught" op="set" val="0"/>
+    <variable name="fish_caught_basic" op="set" val="0"/>
+    <variable name="fish_caught_uncom" op="set" val="0"/>
+    <variable name="fish_caught_rare" op="set" val="0"/>
+    <variable name="fish_caught_leg" op="set" val="0"/>
+    <variable name="fish_caught_unique" op="set" val="0"/>
+    <variable name="fish_caught_guns" op="set" val="0"/>
 
     
     <req name="fish_inaug_bait_check" type="all">
@@ -766,18 +773,36 @@
         <statBoosts>
             <statBoost name="damageMultiplier">
                 <boostType>MULT</boostType>
-                <amount>1.5</amount>
+                <amount>2</amount>
                 <shipTarget>ALL</shipTarget>
-                <crewTarget>ALL</crewTarget>
+                <crewTarget>ALLIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
                 <priority>999</priority>
 				<whiteList load="LIST_CREW_HUMAN" />
             </statBoost>
 			<statBoost name="allDamageTakenMultiplier">
                 <boostType>MULT</boostType>
-                <amount>0.67</amount>
+                <amount>0.5</amount>
                 <shipTarget>ALL</shipTarget>
-                <crewTarget>ALL</crewTarget>
+                <crewTarget>ALLIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+				<whiteList load="LIST_CREW_HUMAN" />
+			</statBoost>
+            <statBoost name="damageMultiplier">
+                <boostType>MULT</boostType>
+                <amount>1.4</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ENEMIES</crewTarget>
+                <droneTarget>CREW</droneTarget>
+                <priority>999</priority>
+				<whiteList load="LIST_CREW_HUMAN" />
+            </statBoost>
+			<statBoost name="allDamageTakenMultiplier">
+                <boostType>MULT</boostType>
+                <amount>0.8</amount>
+                <shipTarget>ALL</shipTarget>
+                <crewTarget>ENEMIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
                 <priority>999</priority>
 				<whiteList load="LIST_CREW_HUMAN" />
@@ -1442,6 +1467,17 @@
                 <header>Fish Caught!</header>
                 <icon>fishMISSILE_2</icon>
                 <variable name="fish_obtained_MISSILE_2" amount="1" />
+				<multiDifficulty>false</multiDifficulty>
+            </achievement>
+        </section>
+        <section text="Fish Boon" hidden="false">
+            <achievement name="ACH_BOON_FISH">
+				<name>Blessing of Fish</name>
+				<secretDescription>Receive the Blessing of Fish from Wakeson.</secretDescription>
+				<description>Show a fish to Wakeson. 
+				While in effect; You will no longer fish up junk.</description>
+				<header>Blessing Received</header>
+				<icon>ach_boon_fish</icon>
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
         </section>

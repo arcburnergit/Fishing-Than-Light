@@ -186,6 +186,10 @@
     <text>Fishing Info.</text>
     <event load="STORAGE_CHECK_FISHING_INFO" />
   </choice>
+  <choice>
+    <text>Fishing Stats.</text>
+    <event load="STORAGE_CHECK_FISHING_STATS" />
+  </choice>
 </event>
 
 <event name="STORAGE_CHECK_FISHING_FOOD" >
@@ -873,6 +877,10 @@
 <event name="STORAGE_CHECK_FISH_GLOSSARY">
   <text>You open your book to the page of contents.</text>
   <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+  <choice>
     <text>Turn to chapter I: Basic Fish.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_1"/>
   </choice>
@@ -896,14 +904,16 @@
     <text>Turn to chapter VI: Fish Guns.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_6"/>
   </choice>
-  <choice>
-    <text>Go back.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
 </event>
 
 <event name="STORAGE_CHECK_FISH_GLOSSARY_1">
   <text>You open the book up to the chapter on the most common fish.</text>
+
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+
   <choice blue="false" req="fish_obtained_1" lvl="1">
     <text>FOUND    </text>
     <event>
@@ -1073,20 +1083,16 @@
       <weapon name="FISH_FOOD_0"/>
     </event>
   </choice>
-  
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_2">
+  <text>You open the book up to the chapter on the more uncommon fish.</text>
 
   <choice>
     <text>Go back.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
   </choice>
-  <choice>
-    <text>Close the Glossary.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
-</event>
 
-<event name="STORAGE_CHECK_FISH_GLOSSARY_2">
-  <text>You open the book up to the chapter on the more uncommon fish.</text>
   <choice blue="false" req="fish_obtained_11" lvl="1">
     <text>FOUND    </text>
     <event>
@@ -1256,19 +1262,16 @@
       <weapon name="FISH_FOOD_10"/>
     </event>
   </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_3">
+  <text>You open the book up to the chapter on the rare fish.</text>
 
   <choice>
     <text>Go back.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
   </choice>
-  <choice>
-    <text>Close the Glossary.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
-</event>
 
-<event name="STORAGE_CHECK_FISH_GLOSSARY_3">
-  <text>You open the book up to the chapter on the rare fish.</text>
   <choice blue="false" req="fish_obtained_21" lvl="1">
     <text>FOUND    </text>
     <event>
@@ -1438,19 +1441,16 @@
       <weapon name="FISH_FOOD_20"/>
     </event>
   </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_4">
+  <text>You open the book up to the chapter on the more uncommon fish.</text>
 
   <choice>
     <text>Go back.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
   </choice>
-  <choice>
-    <text>Close the Glossary.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
-</event>
 
-<event name="STORAGE_CHECK_FISH_GLOSSARY_4">
-  <text>You open the book up to the chapter on the more uncommon fish.</text>
   <choice blue="false" req="fish_obtained_31" lvl="1">
     <text>FOUND    </text>
     <event>
@@ -1569,19 +1569,15 @@
       <weapon name="FISH_FOOD_37"/>
     </event>
   </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_GLOSSARY_5">
+  <text>You open the book up to the chapter on the unique fish that can be found in the multiverse, however it appears that no one has actually recorded any of the fish, you'll have to do it yourself.</text>
 
   <choice>
     <text>Go back.</text>
     <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
   </choice>
-  <choice>
-    <text>Close the Glossary.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
-</event>
-
-<event name="STORAGE_CHECK_FISH_GLOSSARY_5">
-  <text>You open the book up to the chapter on the unique fish that can be found in the multiverse, however it appears that no one has actually recorded any of the fish, you'll have to do it yourself.</text>
 
   <choice blue="false" req="fish_obtained_41" lvl="1">
     <text>Found</text>
@@ -1765,19 +1761,16 @@
     <text>Unknown</text>
     <event load="OPTION_INVALID"/>
   </choice>
-  
-  <choice>
-    <text>Go back.</text>
-    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
-  </choice>
-  <choice>
-    <text>Close the Glossary.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
 </event>
 
 <event name="STORAGE_CHECK_FISH_GLOSSARY_6">
   <text>You open the book up to the chapter on the more dangerous kinds of fish.</text>
+
+  <choice>
+    <text>Go back.</text>
+    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
+  </choice>
+
   <choice blue="false" req="fish_obtained_LASER" lvl="1">
     <text>FOUND    </text>
     <event>
@@ -1896,15 +1889,6 @@
       <weapon name="FISH_FOOD_MISSILE_2"/>
     </event>
   </choice>
-
-  <choice>
-    <text>Go back.</text>
-    <event load="STORAGE_CHECK_FISH_GLOSSARY_LOAD"/>
-  </choice>
-  <choice>
-    <text>Close the Glossary.</text>
-    <event load="STORAGE_CHECK_FISHING_LOAD"/>
-  </choice>
 </event>
 
 <event name="STORAGE_CHECK_FISHING_UPGRADE">
@@ -2022,6 +2006,2210 @@ The MK2 and MK3 will raise the lower bound of the difficulty if you have the int
   <choice>
     <text>Continue...</text>
     <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_STATS_LOAD">
+  <loadEvent>STORAGE_CHECK_FISHING_STATS</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_STATS">
+  <text>Fishing Stats:</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+  <choice>
+    <text>Basic Fish Consumed.</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_1" />
+  </choice>
+  <choice>
+    <text>Uncommon Fish Consumed.</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_2" />
+  </choice>
+  <choice>
+    <text>Rare Fish Consumed.</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_3" />
+  </choice>
+  <choice>
+    <text>Legendary Fish Consumed.</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_4" />
+  </choice>
+  <choice>
+    <text>Unique Fish Consumed.</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_5" />
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_STATS_1">
+  <text>Basic Fish Consumed:</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_LOAD"/>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_1" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_1"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_1" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_1"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_1" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_1"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_1" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_1"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_1" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_1"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_2" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_2"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_2" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_2"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_2" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_2"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_2" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_2"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_2" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_2"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_3" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_3"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_3" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_3"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_3" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_3"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_3" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_3"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_3" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_3"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_4" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_4"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_4"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_4"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_4"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_4"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_5" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_5"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_5" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_5"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_5" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_5"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_5" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_5"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_5" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_5"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_6" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_6"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_6" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_6"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_6" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_6"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_6" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_6"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_6" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_6"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_7" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_7"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_7" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_7"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_7" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_7"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_7" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_7"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_7" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_7"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_8" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_8"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_8" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_8"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_8" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_8"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_8" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_8"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_8" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_8"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_9" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_9"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_9" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_9"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_9" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_9"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_9" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_9"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_9" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_9"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_0" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_0"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_0" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_0"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_0" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_0"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_0" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_0"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_0" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_1</loadEvent>
+      <weapon name="FISH_FOOD_0"/>
+    </event>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_STATS_2">
+  <text>Uncommon Fish Consumed:</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_LOAD"/>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_11" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_11"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_11" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_11"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_11" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_11"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_11" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_11"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_11" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_11"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_12" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_12"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_12" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_12"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_12" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_12"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_12" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_12"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_12" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_12"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_13" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_13"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_13" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_13"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_13" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_13"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_13" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_13"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_13" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_13"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_14" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_14"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_14" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_14"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_14" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_14"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_14" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_14"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_14" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_14"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_15" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_15"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_15" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_15"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_15" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_15"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_15" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_15"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_15" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_15"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_16" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_16"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_16" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_16"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_16" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_16"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_16" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_16"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_16" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_16"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_17" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_17"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_17" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_17"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_17" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_17"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_17" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_17"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_17" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_17"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_18" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_18"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_18" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_18"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_18" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_18"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_18" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_18"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_18" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_18"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_19" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_19"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_19" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_19"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_19" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_19"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_19" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_19"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_19" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_19"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_10" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_10"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_10" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_10"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_10" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_10"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_10" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_10"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_10" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_2</loadEvent>
+      <weapon name="FISH_FOOD_10"/>
+    </event>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_STATS_3">
+  <text>Rare Fish Consumed:</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_LOAD"/>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_21" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_21"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_21" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_21"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_21" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_21"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_21" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_21"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_21" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_21"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_22" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_22"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_22" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_22"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_22" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_22"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_22" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_22"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_22" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_22"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_23" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_23"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_23" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_23"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_23" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_23"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_23" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_23"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_23" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_23"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_24" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_24"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_24" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_24"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_24" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_24"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_24" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_24"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_24" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_24"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_25" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_25"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_25" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_25"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_25" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_25"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_25" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_25"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_25" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_25"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_26" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_26"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_26" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_26"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_26" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_26"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_26" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_26"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_26" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_26"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_27" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_27"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_27" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_27"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_27" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_27"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_27" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_27"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_27" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_27"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_28" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_28"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_28" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_28"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_28" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_28"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_28" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_28"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_28" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_28"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_29" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_29"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_29" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_29"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_29" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_29"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_29" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_29"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_29" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_29"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_20" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_20"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_20" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_20"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_20" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_20"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_20" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_20"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_20" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_3</loadEvent>
+      <weapon name="FISH_FOOD_20"/>
+    </event>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_STATS_4">
+  <text>Legendary Fish Consumed:</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_LOAD"/>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_31" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_31"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_31" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_31"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_31" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_31"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_31" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_31"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_31" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_31"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_32" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_32"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_32" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_32"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_32" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_32"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_32" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_32"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_32" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_32"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_33" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_33"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_33" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_33"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_33" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_33"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_33" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_33"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_33" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_33"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_34"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_34"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_34"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_34"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_34"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_35" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_35"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_35" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_35"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_35" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_35"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_35" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_35"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_35" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_35"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_36" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_36"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_36" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_36"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_36" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_36"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_36" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_36"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_36" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_36"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_37" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_37"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_37" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_37"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_37" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_37"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_37" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_37"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_37" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_4</loadEvent>
+      <weapon name="FISH_FOOD_37"/>
+    </event>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_STATS_5">
+  <text>Unique Fish Consumed:</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_STATS_LOAD"/>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_41" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_41"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_41" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_41"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_41" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_41"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_41" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_41"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_41" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_41"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_42" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_42"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_42" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_42"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_42" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_42"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_42" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_42"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_42" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_42"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_43" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_43"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_43" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_43"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_43" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_43"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_43" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_43"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_43" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_43"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_44" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_44"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_44" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_44"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_44" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_44"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_44" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_44"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_44" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_44"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_45" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_45"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_45" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_45"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_45" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_45"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_45" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_45"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_45" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_45"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_46" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_46"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_46" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_46"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_46" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_46"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_46" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_46"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_46" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_46"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_47" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_47"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_47" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_47"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_47" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_47"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_47" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_47"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_47" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_47"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_48" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_48"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_48" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_48"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_48" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_48"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_48" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_48"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_48" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_48"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_49" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_49"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_49" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_49"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_49" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_49"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_49" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_49"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_49" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_49"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_40" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_40"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_40" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_40"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_40" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_40"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_40" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_40"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_40" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_40"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_4A" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4A"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4A" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4A"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4A" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4A"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4A" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4A"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4A" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4A"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_4B" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4B"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4B" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4B"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4B" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4B"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4B" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4B"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4B" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4B"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_4C" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4C"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4C" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4C"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4C" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4C"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4C" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4C"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4C" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4C"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_4D" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4D"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4D" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4D"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4D" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4D"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4D" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4D"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4D" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4D"/>
+    </event>
+  </choice>
+
+  <choice blue="false" hidden="false" req="FISH_AUG_4E" lvl="1" max_lvl="1">
+    <text>1 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4E"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4E" lvl="2" max_lvl="2">
+    <text>2 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4E"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4E" lvl="3" max_lvl="3">
+    <text>3 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4E"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4E" lvl="4" max_lvl="4">
+    <text>4 Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4E"/>
+    </event>
+  </choice>
+  <choice blue="false" hidden="false" req="FISH_AUG_4E" lvl="5">
+    <text>5+ Consumed</text>
+    <event>
+      <text>A</text>
+      <loadEvent>STORAGE_CHECK_FISHING_STATS_5</loadEvent>
+      <weapon name="FISH_FOOD_4E"/>
+    </event>
   </choice>
 </event>
 </FTL>

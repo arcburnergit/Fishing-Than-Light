@@ -536,6 +536,65 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     end
 end)
 
+local fish_back_image = Hyperspace.Resources:CreateImagePrimitiveString(
+    "statusUI/fish_back.png",
+    0,
+    0,
+    0,
+    Graphics.GL_Color(1, 1, 1, 1),
+    1.0,
+    false)
+
+local fish_pressed = Hyperspace.Resources:CreateImagePrimitiveString(
+    "statusUI/fish_pressed.png",
+    0,
+    0,
+    0,
+    Graphics.GL_Color(1, 1, 1, 1),
+    1.0,
+    false)
+
+local fish_back_select_image = Hyperspace.Resources:CreateImagePrimitiveString(
+    "statusUI/fish_back_select.png",
+    0,
+    0,
+    0,
+    Graphics.GL_Color(1, 1, 1, 1),
+    1.0,
+    false)
+
+local barTexture = Hyperspace.Resources:GetImageId("statusUI/fish_bar.png")
+local barImage = Graphics.CSurface.GL_CreateImagePrimitive(barTexture,0, 0, 10, 1, 0, Graphics.GL_Color(1, 1, 1, 1))
+
+--local fishString = "fish/fish"..fishNumber..".png"
+local fish_fish_image = {}
+fish_fish_image[1] = Hyperspace.Resources:CreateImagePrimitiveString("fish/fish1.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[2] = Hyperspace.Resources:CreateImagePrimitiveString("fish/fish2.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[3] = Hyperspace.Resources:CreateImagePrimitiveString("fish/fish3.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[4] = Hyperspace.Resources:CreateImagePrimitiveString("fish/fish4.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[5] = Hyperspace.Resources:CreateImagePrimitiveString("fish/fish5.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[6] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish6.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[7] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish7.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[8] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish8.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[9] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish9.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[10] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish10.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[11] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish11.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[12] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish12.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[13] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish13.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[14] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish14.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[15] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish15.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+fish_fish_image[16] = Hyperspace.Resources:CreateImagePrimitiveString( "fish/fish16.png", 0, 0, 0, Graphics.GL_Color(1, 1, 1, 1), 1.0, false)
+
+local fish_select_image = Hyperspace.Resources:CreateImagePrimitiveString(
+    "statusUI/fish_select.png",
+    0,
+    0,
+    0,
+    Graphics.GL_Color(1, 1, 1, 1),
+    1.0,
+    false)
+
+
 
 script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
     local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
@@ -545,67 +604,35 @@ script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
         local mousePos = Hyperspace.Mouse.position
         local hoverButton = false
         if mousePos.x >= xOffset+18 and mousePos.x <= xOffset+18+98 and mousePos.y >= yOffset+409 and mousePos.y <= yOffset+409+73 then hoverButton = true else hoverButton = false end
-        local fish_back_image = Hyperspace.Resources:CreateImagePrimitiveString(
-            "statusUI/fish_back.png",
-            xOffset,
-            yOffset,
-            0,
-            Graphics.GL_Color(1, 1, 1, 1),
-            1.0,
-            false)
+        
+        Graphics.CSurface.GL_PushMatrix()
+        Graphics.CSurface.GL_Translate(xOffset,yOffset,0)
         Graphics.CSurface.GL_RenderPrimitive(fish_back_image)
-        Graphics.CSurface.GL_DestroyPrimitive(fish_back_image)
         if isJump then 
-            local fish_pressed = Hyperspace.Resources:CreateImagePrimitiveString(
-                "statusUI/fish_pressed.png",
-                xOffset,
-                yOffset,
-                0,
-                Graphics.GL_Color(1, 1, 1, 1),
-                1.0,
-                false)
             Graphics.CSurface.GL_RenderPrimitive(fish_pressed)
-            Graphics.CSurface.GL_DestroyPrimitive(fish_pressed)
         end
 
         if hoverButton then
-            local fish_back_select_image = Hyperspace.Resources:CreateImagePrimitiveString(
-                "statusUI/fish_back_select.png",
-                xOffset,
-                yOffset,
-                0,
-                Graphics.GL_Color(1, 1, 1, 1),
-                1.0,
-                false)
             Graphics.CSurface.GL_RenderPrimitive(fish_back_select_image)
-            Graphics.CSurface.GL_DestroyPrimitive(fish_back_select_image)
         end
-        local barTexture = Hyperspace.Resources:GetImageId("statusUI/fish_bar.png")
-        local barImage = Graphics.CSurface.GL_CreateImagePrimitive(barTexture,xOffset+190, 75+18+464-fishCatch, 10, fishCatch, 0, Graphics.GL_Color(1, 1, 1, 1))
-        Graphics.CSurface.GL_RenderPrimitive(barImage)
-        Graphics.CSurface.GL_DestroyPrimitive(barImage)
+        Graphics.CSurface.GL_PopMatrix()
 
-        local fishString = "fish/fish"..fishNumber..".png"
-        local fish_fish_image = Hyperspace.Resources:CreateImagePrimitiveString(
-            fishString,
-            xOffset+124,
-            yOffset+18+446-fishPos,
-            0,
-            Graphics.GL_Color(1, 1, 1, 1),
-            1.0,
-            false)
-        Graphics.CSurface.GL_RenderPrimitive(fish_fish_image)
-        Graphics.CSurface.GL_DestroyPrimitive(fish_fish_image)
-        local fish_select_image = Hyperspace.Resources:CreateImagePrimitiveString(
-            "statusUI/fish_select.png",
-            xOffset+124,
-            yOffset+18+446-36-selectPos,
-            0,
-            Graphics.GL_Color(1, 1, 1, 1),
-            1.0,
-            false)
+        Graphics.CSurface.GL_PushMatrix()
+        Graphics.CSurface.GL_Translate(xOffset+190,yOffset+18+464-fishCatch,0)
+        Graphics.CSurface.GL_Scale(1,fishCatch,0)
+        Graphics.CSurface.GL_RenderPrimitive(barImage)
+        Graphics.CSurface.GL_PopMatrix()
+
+        
+        Graphics.CSurface.GL_PushMatrix()
+        Graphics.CSurface.GL_Translate(xOffset+124,yOffset+18+446-fishPos,0)
+        Graphics.CSurface.GL_RenderPrimitive(fish_fish_image[fishNumber])
+        Graphics.CSurface.GL_PopMatrix()
+        
+        Graphics.CSurface.GL_PushMatrix()
+        Graphics.CSurface.GL_Translate(xOffset+124,yOffset+18+446-36-selectPos,0)
         Graphics.CSurface.GL_RenderPrimitive(fish_select_image)
-        Graphics.CSurface.GL_DestroyPrimitive(fish_select_image)
+        Graphics.CSurface.GL_PopMatrix()
     end
 end, function() end)
 
@@ -627,6 +654,48 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
     end]]
 end)
 
+script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
+    --print(event.eventName)
+    if event.eventName == "STORAGE_CHECK_FISHING_STATS" then
+        print()
+        event.text.data = "Fishing Stats: \n" .. 
+            "Successful Fishing Attempts: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught)) .. "\n" ..
+            "Basic Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_basic)) .. "\n" ..
+            "Uncommon Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_uncom)) .. "\n" ..
+            "Rare Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_rare)) .. "\n" ..
+            "Legendary Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_leg)) .. "\n" ..
+            "Unique Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_unique)) .. "\n" ..
+            "Gun Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_guns)) --.. "\n\n\n" ..
+            --"Fishes Consumed:"
+    end
+end)
+
+--[[local loopCount = 0
+for choice in vter(event.choices) do
+    if loopCount == 1 then
+        print(choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught))
+        choice.text.data = choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught)
+    elseif loopCount == 2 then
+        print(choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_basic))
+        choice.text.data = choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_basic)
+    elseif loopCount == 3 then
+        print(choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_uncom))
+        choice.text.data = choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_uncom)
+    elseif loopCount == 4 then
+        print(choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_rare))
+        choice.text.data = choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_rare)
+    elseif loopCount == 5 then
+        print(choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_leg))
+        choice.text.data = choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_leg)
+    elseif loopCount == 6 then
+        print(choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_unique))
+        choice.text.data = choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_unique)
+    elseif loopCount == 7 then
+        print(choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_guns))
+        choice.text.data = choice.text.data .. tostring(Hyperspace.playerVariables.fish_caught_guns)
+    end
+    loopCount = loopCount + 1
+end]]
 
 --[[
 

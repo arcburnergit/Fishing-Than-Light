@@ -19,6 +19,7 @@
   <mod-append:variable name="fish_this_sector" op="set" val="1"/>
 </mod:findName-->
 <event name="FISH_ULTRA_RARE">
+  <variable name="fish_caught_leg" op="add" val="1"/>
   <text>You've managed to reel in a legendary fish!</text>
   <weapon name="FISHLIST_LEG" />
   
@@ -30,6 +31,7 @@
 
 
 <event name="FISH_JUNK">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event>
       <text>You reel in your catch to discover nothing more than some old junk.</text>
@@ -40,6 +42,7 @@
 </event>
 
 <event name="FISH_RANDOM_1">
+  <variable name="fish_caught_basic" op="add" val="1"/>
   <text>You've reeled in a basic fish, good for selling or cooking.</text>
   <weapon name="FISHLIST_1" />
   
@@ -49,6 +52,7 @@
   </choice>
 </event>
 <event name="FISH_RANDOM_2">
+  <variable name="fish_caught_uncom" op="add" val="1"/>
   <text>You've reeled in a more uncommon fish, good for selling or cooking.</text>
   <weapon name="FISHLIST_2" />
   
@@ -58,6 +62,7 @@
   </choice>
 </event>
 <event name="FISH_RANDOM_3">
+  <variable name="fish_caught_rare" op="add" val="1"/>
   <text>You've reeled in a rare fish, it will sell well, or can be cooked for a strong effect.</text>
   <weapon name="FISHLIST_3" />
   
@@ -88,6 +93,7 @@
   <crewMember amount="1" class="random">Fish</crewMember>
 </event>
 <event name="FISH_FISHGUN">
+  <variable name="fish_caught_guns" op="add" val="1"/>
   <text>The fish you reeled in turns out to be more deadly than expected.</text>
   
   <weapon name="FISHLIST_GUNS" />
@@ -111,6 +117,7 @@
 </event>
 
 <event name="FISH_FED_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique federation fish!</text>
   
   <weapon name="FISH_FOOD_41"/>
@@ -120,6 +127,7 @@
   </choice>
 </event>
 <event name="FISH_CIV_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique civilian fish!</text>
   
   <weapon name="FISH_FOOD_42"/>
@@ -129,6 +137,7 @@
   </choice>
 </event>
 <event name="FISH_ENGI_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique engi fish!</text>
   
   <weapon name="FISH_FOOD_43"/>
@@ -138,6 +147,7 @@
   </choice>
 </event>
 <event name="FISH_ZOL_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique zoltan fish!</text>
   
   <weapon name="FISH_FOOD_44"/>
@@ -147,6 +157,7 @@
   </choice>
 </event>
 <event name="FISH_ORC_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique orchid fish!</text>
   
   <weapon name="FISH_FOOD_45"/>
@@ -156,6 +167,7 @@
   </choice>
 </event>
 <event name="FISH_MAN_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique mantis fish!</text>
   
   <weapon name="FISH_FOOD_46"/>
@@ -165,6 +177,7 @@
   </choice>
 </event>
 <event name="FISH_CRY_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique crystal fish!</text>
   
   <weapon name="FISH_FOOD_47"/>
@@ -174,6 +187,7 @@
   </choice>
 </event>
 <event name="FISH_ROCK_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique rock fish!</text>
   
   <weapon name="FISH_FOOD_48"/>
@@ -183,11 +197,13 @@
   </choice>
 </event>
 <event name="FISH_REB_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique rebel fish!</text>
   
   <weapon name="FISH_FOOD_49"/>
 </event>
 <event name="FISH_PIR_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique pirate fish!</text>
   
   <weapon name="FISH_FOOD_40"/>
@@ -197,6 +213,7 @@
   </choice>
 </event>
 <event name="FISH_LAN_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique anaerobic fish!</text>
   
   <weapon name="FISH_FOOD_4A"/>
@@ -206,6 +223,7 @@
   </choice>
 </event>
 <event name="FISH_SLUG_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique slug fish!</text>
   
   <weapon name="FISH_FOOD_4B"/>
@@ -215,6 +233,7 @@
   </choice>
 </event>
 <event name="FISH_LEECH_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a leech?</text>
   
   <weapon name="FISH_FOOD_4C"/>
@@ -232,6 +251,7 @@
   <weapon name="FISH_FOOD_4D"-->
 </event>
 <event name="FISH_ANCIENT_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique ancient fish!</text>
   
   <weapon name="FISH_FOOD_4E"/>
@@ -241,6 +261,7 @@
   </choice>
 </event>
 <event name="FISH_NEXUS_GIVE">
+  <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a sylvan?</text>
   
   <weapon name="FISH_FOOD_4E"/>
@@ -253,6 +274,7 @@
 <event name="FISHING_CHECK_ACH" />
 
 <event name="FISH_DROPPOINT_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -261,6 +283,7 @@
 </event>
 
 <event name="FISH_DROPPOINT_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -275,6 +298,7 @@
 </event>
 
 <event name="FISH_DROPPOINT_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -294,6 +318,7 @@
 
 
 <event name="FISH_CIVILIAN_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_CREW_1"/>
@@ -304,6 +329,7 @@
 </event>
 
 <event name="FISH_CIVILIAN_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_CIV_GIVE"/>
@@ -318,6 +344,7 @@
 </event>
 
 <event name="FISH_CIVILIAN_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_CIV_GIVE"/>
@@ -337,6 +364,7 @@
 
 
 <event name="FISH_ENGI_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -345,6 +373,7 @@
 </event>
 
 <event name="FISH_ENGI_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -359,6 +388,7 @@
 </event>
 
 <event name="FISH_ENGI_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -376,6 +406,7 @@
 
 
 <event name="FISH_ZOLTAN_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -384,6 +415,7 @@
 </event>
 
 <event name="FISH_ZOLTAN_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -397,6 +429,7 @@
 </event>
 
 <event name="FISH_ZOLTAN_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -414,6 +447,7 @@
 
 
 <event name="FISH_ORCHID_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -422,6 +456,7 @@
 </event>
 
 <event name="FISH_ORCHID_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -436,6 +471,7 @@
 </event>
 
 <event name="FISH_ORCHID_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -455,6 +491,7 @@
 
 
 <event name="FISH_MANTIS_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -463,6 +500,7 @@
 </event>
 
 <event name="FISH_MANTIS_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -477,6 +515,7 @@
 </event>
 
 <event name="FISH_MANTIS_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -497,6 +536,7 @@
 
 
 <event name="FISH_CRYSTAL_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -505,6 +545,7 @@
 </event>
 
 <event name="FISH_CRYSTAL_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -519,6 +560,7 @@
 </event>
 
 <event name="FISH_CRYSTAL_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_CRY_GIVE"/>
@@ -537,6 +579,7 @@
 
 
 <event name="FISH_ROCK_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -545,6 +588,7 @@
 </event>
 
 <event name="FISH_ROCK_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -559,6 +603,7 @@
 </event>
 
 <event name="FISH_ROCK_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -576,6 +621,7 @@
 
 
 <event name="FISH_REBEL_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -585,6 +631,7 @@
 </event>
 
 <event name="FISH_REBEL_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_REB_GIVE"/>
@@ -599,6 +646,7 @@
 </event>
 
 <event name="FISH_REBEL_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -617,6 +665,7 @@
 
 
 <event name="FISH_PIRATE_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -625,6 +674,7 @@
 </event>
 
 <event name="FISH_PIRATE_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -639,6 +689,7 @@
 </event>
 
 <event name="FISH_PIRATE_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -656,6 +707,7 @@
 
 
 <event name="FISH_LANIUS_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -664,6 +716,7 @@
 </event>
 
 <event name="FISH_LANIUS_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -676,6 +729,7 @@
 </event>
 
 <event name="FISH_LANIUS_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -693,6 +747,7 @@
 
 
 <event name="FISH_SLUG_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -701,6 +756,7 @@
 </event>
 
 <event name="FISH_SLUG_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -714,6 +770,7 @@
 </event>
 
 <event name="FISH_SLUG_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -730,6 +787,7 @@
 
 
 <event name="FISH_LEECH_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -738,6 +796,7 @@
 </event>
 
 <event name="FISH_LEECH_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -752,6 +811,7 @@
 </event>
 
 <event name="FISH_LEECH_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -769,6 +829,7 @@
 
 
 <event name="FISH_HEKTAR_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_HEKTAR_1_LOOT"/>
@@ -778,6 +839,7 @@
 </event>
 
 <event name="FISH_HEKTAR_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_RANDOM_2"/>
@@ -791,6 +853,7 @@
 </event>
 
 <event name="FISH_HEKTAR_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_HEKTAR_GIVE"/>
@@ -809,6 +872,7 @@
 
 
 <event name="FISH_ANCIENT_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -817,6 +881,7 @@
 </event>
 
 <event name="FISH_ANCIENT_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -831,6 +896,7 @@
 </event>
 
 <event name="FISH_ANCIENT_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
@@ -848,6 +914,7 @@
 
 
 <event name="FISH_NEXUS_1">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_1"/>
     <event load="FISH_RANDOM_1"/>
@@ -856,6 +923,7 @@
 </event>
 
 <event name="FISH_NEXUS_2">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_2"/>
     <event load="FISH_SCRAP_2"/>
@@ -870,6 +938,7 @@
 </event>
 
 <event name="FISH_NEXUS_3">
+  <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
     <event load="FISH_SCRAP_3"/>
     <event load="FISH_SCRAP_3"/>
