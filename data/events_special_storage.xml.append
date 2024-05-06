@@ -508,6 +508,7 @@
               <text>You pull out a third and final weapon.</text>
               <weapon name="LIST_WEAPONS_ALL_CRAPBUCKET" />
               <remove name="FISH_FOOD_37"/>
+              <hiddenAug>FISH_AUG_37</hiddenAug>
               <choice hidden="true">
                 <text>Continue...</text>
                 <event load="STORAGE_CHECK_FISHING_LOAD" />
@@ -3425,7 +3426,7 @@ The MK2 and MK3 will raise the lower bound of the difficulty if you have the int
     </event>
   </choice>
 
-  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="1" max_lvl="1">
+  <choice blue="false" hidden="false" req="fish_aug_34_count" lvl="1" max_lvl="1">
     <text>1 Consumed</text>
     <event>
       <text>A</text>
@@ -3433,7 +3434,7 @@ The MK2 and MK3 will raise the lower bound of the difficulty if you have the int
       <weapon name="FISH_FOOD_34"/>
     </event>
   </choice>
-  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="2" max_lvl="2">
+  <choice blue="false" hidden="false" req="fish_aug_34_count" lvl="2" max_lvl="2">
     <text>2 Consumed</text>
     <event>
       <text>A</text>
@@ -3441,7 +3442,7 @@ The MK2 and MK3 will raise the lower bound of the difficulty if you have the int
       <weapon name="FISH_FOOD_34"/>
     </event>
   </choice>
-  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="3" max_lvl="3">
+  <choice blue="false" hidden="false" req="fish_aug_34_count" lvl="3" max_lvl="3">
     <text>3 Consumed</text>
     <event>
       <text>A</text>
@@ -3449,7 +3450,7 @@ The MK2 and MK3 will raise the lower bound of the difficulty if you have the int
       <weapon name="FISH_FOOD_34"/>
     </event>
   </choice>
-  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="4" max_lvl="4">
+  <choice blue="false" hidden="false" req="fish_aug_34_count" lvl="4" max_lvl="4">
     <text>4 Consumed</text>
     <event>
       <text>A</text>
@@ -3457,7 +3458,7 @@ The MK2 and MK3 will raise the lower bound of the difficulty if you have the int
       <weapon name="FISH_FOOD_34"/>
     </event>
   </choice>
-  <choice blue="false" hidden="false" req="FISH_AUG_34" lvl="5">
+  <choice blue="false" hidden="false" req="fish_aug_34_count" lvl="5">
     <text>5+ Consumed</text>
     <event>
       <text>A</text>
