@@ -241,6 +241,11 @@
             <name>FISH_FOOD_4C</name>
         </req>
     </req>
+
+    <req name="fish_aug_34_count" type="sum">
+        <name>FISH_AUG_341</name>
+        <name>FISH_AUG_342</name>
+    </req>
 </events>
 
 <mod:findLike type="ships">
