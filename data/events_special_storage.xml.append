@@ -526,6 +526,7 @@
       <text>[NOTORIETY DECREASED X5 - GENERAL]
       You have done a good deed here in the eyes of the Federation. If you've gained notoriety from other actions in the past, you're more likely to be forgiven for them.</text>
       <remove name="FISH_FOOD_41"/>
+      <hiddenAug>FISH_AUG_41</hiddenAug>
       <variable name="rep_general" op="add" val="-5" />
       <choice>
         <text>Continue...</text>
