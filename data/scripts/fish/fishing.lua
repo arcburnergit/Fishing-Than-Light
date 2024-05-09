@@ -816,24 +816,24 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipMa
     end
 end)
 
+local xPos = 380
+local yPos = 47
+local xText = 413
+local yText = 58
+local tempHpImage = Hyperspace.Resources:CreateImagePrimitiveString(
+    "statusUI/arc_tempHull.png",
+    xPos,
+    yPos,
+    0,
+    Graphics.GL_Color(1, 1, 1, 1),
+    1.0,
+    false)
 script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
     if Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then
         local shipManager = Hyperspace.Global.GetInstance():GetShipManager(0)
         local hullData = userdata_table(shipManager, "mods.arc.hullData")
         if hullData.tempHp then
             local hullHP = math.floor(hullData.tempHp)
-            local xPos = 380
-            local yPos = 47
-            local xText = 413
-            local yText = 58
-            local tempHpImage = Hyperspace.Resources:CreateImagePrimitiveString(
-                "statusUI/arc_tempHull.png",
-                xPos,
-                yPos,
-                0,
-                Graphics.GL_Color(1, 1, 1, 1),
-                1.0,
-                false)
             Graphics.CSurface.GL_RenderPrimitive(tempHpImage)
             Graphics.freetype.easy_print(0, xText, yText, hullHP)
         end
@@ -846,8 +846,12 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
         local first = true
         local powerNum = shipManager:HasAugmentation("FISH_AUG_44")
         for weapon in vter(shipManager:GetWeaponList()) do 
-            weapon.requiredPower = math.max(weapon.blueprint.power - powerNum, 0)
-            powerNum = powerNum - math.min(powerNum, weapon.blueprint.power)
+            local powerReduction = math.max(weapon.blueprint.power - powerNum, 0)
+            if weapon.powered and weapon.requiredPower ~= powerReduction then
+                shipManager.weaponSystem:ForceDecreasePower(shipManager.weaponSystem:GetMaxPower())
+            end
+            weapon.requiredPower = powerReduction
+            powerNum = powerNum - powerReduction
             --[[if weapon.blueprint.power >= 1 and first then
                 first = false
                 if weapon.requiredPower == weapon.blueprint.power and weapon.powered then 
