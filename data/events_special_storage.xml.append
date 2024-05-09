@@ -150,11 +150,11 @@
         </event>
       </choice>
       <choice req="FISHING_ROD_2">
-        <text>Upgrade your Harpoon MK II to a MK III. -50~</text>
+        <text>Upgrade your Harpoon MK II to a MK III. -100~</text>
         <event>
           <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
           <item_modify>
-            <item type="scrap" min="-50" max="-50" />
+            <item type="scrap" min="-100" max="-100" />
           </item_modify>
           <remove name="FISHING_ROD_2" />
           <weapon name="FISHING_ROD_3" />
