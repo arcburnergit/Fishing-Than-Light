@@ -735,7 +735,7 @@
             </statBoost>
 			<statBoost name="canSuffocate">
 				<boostType>SET</boostType>
-				<value>false</value>
+				<value>true</value>
 				<shipTarget>ORIGINAL_SHIP</shipTarget>
 				<crewTarget>ENEMIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
