@@ -707,21 +707,7 @@
         </statBoosts>
     </aug>
     <aug name="FISH_AUG_44">
-        <!--statBoosts>
-            <statBoost name="bonusPower">
-                <boostType>ADD</boostType>
-                <amount>1</amount>
-                <shipTarget>ORIGINAL_SHIP</shipTarget>
-                <crewTarget>ALLIES</crewTarget>
-                <droneTarget>CREW</droneTarget>
-                <priority>999</priority>
-				<systemRoomTarget>ALL</systemRoomTarget>
-				<systemList>
-					<shields />
-				</systemList>
-				<whiteList load="LIST_CREW_ZOLTAN" />
-            </statBoost>
-        </statBoosts-->
+        <function name="ARC_WEAPON_POWER" value="1" useForReqs="false" warning="false" />
     </aug>
     <aug name="FISH_AUG_45">
         <statBoosts>

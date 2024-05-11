@@ -723,6 +723,14 @@ This harpoon will be able to catch even the most elusive fish.
 	<iconImage>missile</iconImage>
 </weaponBlueprint>
 
+<augBlueprint name="ARC_WEAPON_POWER">
+	<title>Weapon power</title>
+	<desc> </desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
 <augBlueprint name="ARC_SUPER_HULL">
 	<title>Super hull</title>
 	<desc> </desc>

@@ -842,15 +842,22 @@ end, function() end)
 
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-    if shipManager:HasAugmentation("FISH_AUG_44") > 0 and Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then 
+    if shipManager:HasAugmentation("ARC_WEAPON_POWER") > 0 and Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then 
         local first = true
-        local powerNum = shipManager:HasAugmentation("FISH_AUG_44")
+        local powerNum = math.floor(shipManager:GetAugmentationValue("ARC_WEAPON_POWER"))
+
+        --print("loop start: "..tostring(powerNum))
         for weapon in vter(shipManager:GetWeaponList()) do 
-            local powerReduction = math.max(weapon.blueprint.power - powerNum, 0)
-            if weapon.powered and weapon.requiredPower ~= powerReduction then
+            --print("Powernum: "..tostring(powerNum))
+            local powerReduction = powerNum
+            if powerNum > weapon.blueprint.power then
+                powerReduction = weapon.blueprint.power
+            end
+            --print(powerReduction)
+            if weapon.powered and weapon.requiredPower ~= (weapon.blueprint.power - powerReduction) then
                 shipManager.weaponSystem:ForceDecreasePower(shipManager.weaponSystem:GetMaxPower())
             end
-            weapon.requiredPower = powerReduction
+            weapon.requiredPower = weapon.blueprint.power - powerReduction
             powerNum = powerNum - powerReduction
             --[[if weapon.blueprint.power >= 1 and first then
                 first = false
