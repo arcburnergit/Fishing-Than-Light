@@ -912,36 +912,48 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
     end
 end)
 
-local scrapLeft = 10
+local scrapLeft = 0
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-    if damage.iDamage > 0 and scrapLeft < 10 then
+    if damage.iDamage > 0 then
+        --print(math.abs(shipManager.iShipId-1))
         local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
-        if shipManager:HasAugmentation("FISH_AUG_40") > 0 then
-            shipManager:ModifyScrapCount((-3 * shipManager:HasAugmentation("FISH_AUG_40")),false)
-            scrapLeft = scrapLeft - (3 * shipManager:HasAugmentation("FISH_AUG_40"))
-        elseif otherShip:HasAugmentation("FISH_AUG_40") > 0 then
-            otherShip:ModifyScrapCount(shipManager:HasAugmentation("FISH_AUG_40"),false)
-            scrapLeft = scrapLeft + shipManager:HasAugmentation("FISH_AUG_40")
+        --print(shipManager:GetAugmentationValue("ARC_THIEVERY"))
+        --print(otherShip:GetAugmentationValue("ARC_THIEVERY"))
+        if shipManager:GetAugmentationValue("ARC_THIEVERY") > 0 then
+            --print("THIS SHIP HAS ARC_THIEVERY")
+            shipManager:ModifyScrapCount((-3 * shipManager:GetAugmentationValue("ARC_THIEVERY")),false)
+            scrapLeft = scrapLeft - (3 * shipManager:GetAugmentationValue("ARC_THIEVERY"))
+            --print(shipManager:GetAugmentationValue("ARC_THIEVERY"))
+            --print(scrapLeft)
+        elseif otherShip:GetAugmentationValue("ARC_THIEVERY") > 0 and scrapLeft < 10 then
+            --print("THE OTHER SHIP HAS ARC_THIEVERY")
+            otherShip:ModifyScrapCount(otherShip:GetAugmentationValue("ARC_THIEVERY"),false)
+            scrapLeft = scrapLeft + otherShip:GetAugmentationValue("ARC_THIEVERY")
+            --print(otherShip:GetAugmentationValue("ARC_THIEVERY"))
+            --print(scrapLeft)
         end
     end
 end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManager, projectile, location, damage, realNewTile, beamHitType)
-    if damage.iDamage > 0 and realNewTile and scrapLeft < 10 then
+    if damage.iDamage > 0 and beamHitType == 2 then
         local otherShip = Hyperspace.Global.GetInstance():GetShipManager(math.abs(shipManager.iShipId-1))
-        if shipManager:HasAugmentation("FISH_AUG_40") > 0 then
-            shipManager:ModifyScrapCount((-3 * shipManager:HasAugmentation("FISH_AUG_40")),false)
-            scrapLeft = scrapLeft - (3 * shipManager:HasAugmentation("FISH_AUG_40"))
-        elseif otherShip:HasAugmentation("FISH_AUG_40") > 0 then
-            otherShip:ModifyScrapCount(shipManager:HasAugmentation("FISH_AUG_40"),false)
-            scrapLeft = scrapLeft + shipManager:HasAugmentation("FISH_AUG_40")
+        if shipManager:HasAugmentation("ARC_THIEVERY") > 0 then
+            shipManager:ModifyScrapCount((-3 * shipManager:GetAugmentationValue("ARC_THIEVERY")),false)
+            scrapLeft = scrapLeft - (3 * shipManager:GetAugmentationValue("ARC_THIEVERY"))
+        elseif otherShip:HasAugmentation("ARC_THIEVERY") > 0  and scrapLeft < 10 then
+            otherShip:ModifyScrapCount(otherShip:GetAugmentationValue("ARC_THIEVERY"),false)
+            scrapLeft = scrapLeft + otherShip:GetAugmentationValue("ARC_THIEVERY")
         end
     end
 end)
 
+
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
-    if projectile.extend.name == "FISH_FOOD_ION" then
+    local weaponName = nil
+    pcall(function() weaponName = projectile.extend.name end)
+    if weaponName == "FISH_FOOD_ION" then
         local targetRoom = get_room_at_location(shipManager, location, true)
         for i, crewmem in ipairs(get_ship_crew_room(shipManager, targetRoom)) do
             local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space

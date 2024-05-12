@@ -542,7 +542,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<speed>26</speed>
 	<rarity>0</rarity>
 	<projectiles>
-		<projectile count="1" fake="false">debris_large_fire</projectile>
+		<projectile count="2" fake="false">debris_large_fire</projectile>
 		<projectile count="2" fake="false">debris_med</projectile>
 		<projectile count="3" fake="true">debris_small</projectile>
 	</projectiles>
@@ -576,6 +576,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<desc>Does minimal damage but locks down rooms and fills them with fire.</desc>
 	<tooltip>1 damage, 2 shield pierce, locks down rooms and starts fires.</tooltip>
 	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
 	<sp>2</sp>
 	<fireChance>10</fireChance>
 	<breachChance>0</breachChance>
@@ -619,7 +620,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<bp>2</bp>
 	<rarity>0</rarity>
 	<projectiles>
-		<projectile count="3" fake="false">fish_minelayer_proj</projectile>
+		<projectile count="4" fake="false">fish_minelayer_proj</projectile>
 	</projectiles>
 	<launchSounds>
 		<sound>smallMissile1</sound>
@@ -733,6 +734,14 @@ This harpoon will be able to catch even the most elusive fish.
 
 <augBlueprint name="ARC_SUPER_HULL">
 	<title>Super hull</title>
+	<desc> </desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="ARC_THIEVERY">
+	<title>Thievery</title>
 	<desc> </desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
@@ -2201,7 +2210,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Thief Fish</title>
 	<short>Thief Fish</short>
-	<desc>A unique space fish, when consumed you gain 1 scrap every time you damage the enemy's hull but lose 3 every time your own hull is damaged.</desc>
+	<desc>A unique space fish, when consumed you gain 1 scrap every time you damage the enemy's hull but lose 3 every time your own hull is damaged. Can only gain up to 10 scrap per fight.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>

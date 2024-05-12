@@ -800,6 +800,9 @@
 			</statBoost>
         </statBoosts>
     </aug>
+    <aug name="FISH_AUG_40">
+        <function name="ARC_THIEVERY" value="1" useForReqs="false" warning="false" />
+    </aug>
     <aug name="FISH_AUG_4A">
         <statBoosts>
             <statBoost name="suffocationModifier">
