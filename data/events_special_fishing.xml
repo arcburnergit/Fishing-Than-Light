@@ -1,0 +1,5699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+
+<ship name="FISHING_STORE_SHIP" auto_blueprint="FISHING_STORE" />
+<event name="FISHING_STORE">
+    <beaconType id="map_icon_outpost" global="false">
+      <color r="175" g="215" b="205" a="1"/>
+    </beaconType>
+    <preventQuest />
+    <ship load="FISHING_STORE_SHIP" hostile="false"/>
+    <text load="FISH_ARRIVE_TEXT" />
+    <choice>
+        <text>Continue...</text>
+        <event>
+            <text>The station is running on old outdated technology, and as such you'll need to teleport aboard in order to access the store.
+
+In order to board the station you need to move 1 or more crew members into your piloting room and then the teleportation button next to the enemy ship box.
+To retrieve your crew bring them into the teleportation room on the station and press the same button.</text>
+            <variable name="fishing_store_visited" op="set" val="1"/>
+            <eventButton name="UI_FISH_BOARD">
+                <event load="FISHING_STORE_BOARD"/>
+                <image>statusUI/fish_board</image>
+                <customLocation x="700" y="513"/>
+                <tooltip>Teleport onto/off of the station.</tooltip>
+                <inactiveTooltip>You have no crew in your piloting or the station's teleporter, you cannot teleport.</inactiveTooltip>
+                <req>loc_fish_board_charged</req>
+                <jumpClear>true</jumpClear>
+            </eventButton>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+                <text>Do nothing.</text>
+                <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<event name="FISHING_STORE_BOARD"/>
+
+<textList name="FISH_ARRIVE_TEXT">
+	<text>You arrive at the outpost, a small station dedicated to space fishing.</text>
+	<text>You arrive at the beacon and are greeted by a space fishing outpost.</text>
+	<text>You've arrived at the beacon, theres a small outpost here dedicated to space fishing.</text>
+</textList>
+
+<event name="FISHING_STORE_INSTORE">
+    <text>You've arrived at the old fishing store.
+It appears they have a bounty board setup for fish, The rewards appear quite valuable, but you'll have to hunt down a specific fish for each bounty.</text>
+    <choice>
+        <text>Nevermind</text>
+        <event />
+    </choice>
+    <choice req="fishing_store_opened" hidden="true">
+        <text>Visit the store</text>
+        <event>
+            <variable name="fishing_store_opened" op="set" val="0"/>
+            <store>STORE_STANDARD</store>
+        </event>
+    </choice>
+    <choice hidden="true">
+        <text>View the Bounty Board</text>
+        <event load="FISHING_BOUNTY_BOARD" />
+    </choice>
+    <choice hidden="true">
+        <text>You can use the medbay to heal your crew</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+</event>
+
+<event name="FISHING_BOUNTY_BOARD">
+    <text>There are a number of bounties available.</text>
+    <choice>
+        <text>Nevermind</text>
+        <event />
+    </choice>
+
+
+
+
+
+    <choice req="fish_bait_bounty_11" lvl="1" max_lvl="1">
+        <text>Bounty 1: Orange Snapper</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="2" max_lvl="2">
+        <text>Bounty 1: Red Emperor</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="3" max_lvl="3">
+        <text>Bounty 1: Striped Coral Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="4" max_lvl="4">
+        <text>Bounty 1: Spotted Mackeral</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="5" max_lvl="5">
+        <text>Bounty 1: Estuary Rockcod</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="6" max_lvl="6">
+        <text>Bounty 1: Blue Threadfin</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="7" max_lvl="7">
+        <text>Bounty 1: Rock Blackfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="8" max_lvl="8">
+        <text>Bounty 1: Longtail Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="9" max_lvl="9">
+        <text>Bounty 1: Reef Octopus</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_11" lvl="10" max_lvl="10">
+        <text>Bounty 1: Eagle Ray</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_11_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_12" lvl="1" max_lvl="1">
+        <text>Bounty 2: Orange Snapper</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="2" max_lvl="2">
+        <text>Bounty 2: Red Emperor</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="3" max_lvl="3">
+        <text>Bounty 2: Striped Coral Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="4" max_lvl="4">
+        <text>Bounty 2: Spotted Mackeral</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="5" max_lvl="5">
+        <text>Bounty 2: Estuary Rockcod</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="6" max_lvl="6">
+        <text>Bounty 2: Blue Threadfin</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="7" max_lvl="7">
+        <text>Bounty 2: Rock Blackfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="8" max_lvl="8">
+        <text>Bounty 2: Longtail Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="9" max_lvl="9">
+        <text>Bounty 2: Reef Octopus</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_12" lvl="10" max_lvl="10">
+        <text>Bounty 2: Eagle Ray</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_12_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_13" lvl="1" max_lvl="1">
+        <text>Bounty 3: Orange Snapper</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="2" max_lvl="2">
+        <text>Bounty 3: Red Emperor</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="3" max_lvl="3">
+        <text>Bounty 3: Striped Coral Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="4" max_lvl="4">
+        <text>Bounty 3: Spotted Mackeral</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="5" max_lvl="5">
+        <text>Bounty 3: Estuary Rockcod</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="6" max_lvl="6">
+        <text>Bounty 3: Blue Threadfin</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="7" max_lvl="7">
+        <text>Bounty 3: Rock Blackfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="8" max_lvl="8">
+        <text>Bounty 3: Longtail Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="9" max_lvl="9">
+        <text>Bounty 3: Reef Octopus</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_13" lvl="10" max_lvl="10">
+        <text>Bounty 3: Eagle Ray</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_13_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_14" lvl="1" max_lvl="1">
+        <text>Bounty 4: Orange Snapper</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="2" max_lvl="2">
+        <text>Bounty 4: Red Emperor</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="3" max_lvl="3">
+        <text>Bounty 4: Striped Coral Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="4" max_lvl="4">
+        <text>Bounty 4: Spotted Mackeral</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="5" max_lvl="5">
+        <text>Bounty 4: Estuary Rockcod</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="6" max_lvl="6">
+        <text>Bounty 4: Blue Threadfin</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="7" max_lvl="7">
+        <text>Bounty 4: Rock Blackfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="8" max_lvl="8">
+        <text>Bounty 4: Longtail Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="9" max_lvl="9">
+        <text>Bounty 4: Reef Octopus</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_14" lvl="10" max_lvl="10">
+        <text>Bounty 4: Eagle Ray</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_14_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_15" lvl="1" max_lvl="1">
+        <text>Bounty 5: Orange Snapper</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="2" max_lvl="2">
+        <text>Bounty 5: Red Emperor</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="3" max_lvl="3">
+        <text>Bounty 5: Striped Coral Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="4" max_lvl="4">
+        <text>Bounty 5: Spotted Mackeral</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="5" max_lvl="5">
+        <text>Bounty 5: Estuary Rockcod</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="6" max_lvl="6">
+        <text>Bounty 5: Blue Threadfin</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="7" max_lvl="7">
+        <text>Bounty 5: Rock Blackfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="8" max_lvl="8">
+        <text>Bounty 5: Longtail Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="9" max_lvl="9">
+        <text>Bounty 5: Reef Octopus</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_15" lvl="10" max_lvl="10">
+        <text>Bounty 5: Eagle Ray</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_15_10</loadEvent>
+        </event>
+    </choice>
+
+
+
+
+
+
+
+    
+    <choice req="fish_bait_bounty_21" lvl="1" max_lvl="1">
+        <text>Bounty 6: Doublefin Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="2" max_lvl="2">
+        <text>Bounty 6: Blue Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="3" max_lvl="3">
+        <text>Bounty 6: Yellowfin Sunfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="4" max_lvl="4">
+        <text>Bounty 6: Big Eye Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="5" max_lvl="5">
+        <text>Bounty 6: Spotted Barracuda</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="6" max_lvl="6">
+        <text>Bounty 6: Brown Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="7" max_lvl="7">
+        <text>Bounty 6: Goatfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="8" max_lvl="8">
+        <text>Bounty 6: Coronation Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="9" max_lvl="9">
+        <text>Bounty 6: Yellowfin Kingfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_21" lvl="10" max_lvl="10">
+        <text>Bounty 6: Rainbow Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_21_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_22" lvl="1" max_lvl="1">
+        <text>Bounty 7: Doublefin Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="2" max_lvl="2">
+        <text>Bounty 7: Blue Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="3" max_lvl="3">
+        <text>Bounty 7: Yellowfin Sunfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="4" max_lvl="4">
+        <text>Bounty 7: Big Eye Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="5" max_lvl="5">
+        <text>Bounty 7: Spotted Barracuda</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="6" max_lvl="6">
+        <text>Bounty 7: Brown Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="7" max_lvl="7">
+        <text>Bounty 7: Goatfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="8" max_lvl="8">
+        <text>Bounty 7: Coronation Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="9" max_lvl="9">
+        <text>Bounty 7: Yellowfin Kingfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_22" lvl="10" max_lvl="10">
+        <text>Bounty 7: Rainbow Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_22_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_23" lvl="1" max_lvl="1">
+        <text>Bounty 8: Doublefin Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="2" max_lvl="2">
+        <text>Bounty 8: Blue Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="3" max_lvl="3">
+        <text>Bounty 8: Yellowfin Sunfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="4" max_lvl="4">
+        <text>Bounty 8: Big Eye Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="5" max_lvl="5">
+        <text>Bounty 8: Spotted Barracuda</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="6" max_lvl="6">
+        <text>Bounty 8: Brown Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="7" max_lvl="7">
+        <text>Bounty 8: Goatfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="8" max_lvl="8">
+        <text>Bounty 8: Coronation Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="9" max_lvl="9">
+        <text>Bounty 8: Yellowfin Kingfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_23" lvl="10" max_lvl="10">
+        <text>Bounty 8: Rainbow Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_23_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_24" lvl="1" max_lvl="1">
+        <text>Bounty 9: Doublefin Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="2" max_lvl="2">
+        <text>Bounty 9: Blue Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="3" max_lvl="3">
+        <text>Bounty 9: Yellowfin Sunfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="4" max_lvl="4">
+        <text>Bounty 9: Big Eye Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="5" max_lvl="5">
+        <text>Bounty 9: Spotted Barracuda</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="6" max_lvl="6">
+        <text>Bounty 9: Brown Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="7" max_lvl="7">
+        <text>Bounty 9: Goatfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="8" max_lvl="8">
+        <text>Bounty 9: Coronation Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="9" max_lvl="9">
+        <text>Bounty 9: Yellowfin Kingfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_24" lvl="10" max_lvl="10">
+        <text>Bounty 9: Rainbow Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_24_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_25" lvl="1" max_lvl="1">
+        <text>Bounty 10: Doublefin Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="2" max_lvl="2">
+        <text>Bounty 10: Blue Eel</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="3" max_lvl="3">
+        <text>Bounty 10: Yellowfin Sunfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="4" max_lvl="4">
+        <text>Bounty 10: Big Eye Tuna</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="5" max_lvl="5">
+        <text>Bounty 10: Spotted Barracuda</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="6" max_lvl="6">
+        <text>Bounty 10: Brown Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="7" max_lvl="7">
+        <text>Bounty 10: Goatfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="8" max_lvl="8">
+        <text>Bounty 10: Coronation Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="9" max_lvl="9">
+        <text>Bounty 10: Yellowfin Kingfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_25" lvl="10" max_lvl="10">
+        <text>Bounty 10: Rainbow Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_25_10</loadEvent>
+        </event>
+    </choice>
+
+
+
+
+
+
+
+    
+    <choice req="fish_bait_bounty_31" lvl="1" max_lvl="1">
+        <text>Bounty 11: Coho Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="2" max_lvl="2">
+        <text>Bounty 11: Roosterfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="3" max_lvl="3">
+        <text>Bounty 11: Yellowfin Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="4" max_lvl="4">
+        <text>Bounty 11: Flathead Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="5" max_lvl="5">
+        <text>Bounty 11: Golden Bream</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="6" max_lvl="6">
+        <text>Bounty 11: Black Cobia</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="7" max_lvl="7">
+        <text>Bounty 11: Wisdomfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="8" max_lvl="8">
+        <text>Bounty 11: Golden Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="9" max_lvl="9">
+        <text>Bounty 11: Channel Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_31" lvl="10" max_lvl="10">
+        <text>Bounty 11: Common Sturgeon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_31_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_32" lvl="1" max_lvl="1">
+        <text>Bounty 12: Coho Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="2" max_lvl="2">
+        <text>Bounty 12: Roosterfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="3" max_lvl="3">
+        <text>Bounty 12: Yellowfin Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="4" max_lvl="4">
+        <text>Bounty 12: Flathead Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="5" max_lvl="5">
+        <text>Bounty 12: Golden Bream</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="6" max_lvl="6">
+        <text>Bounty 12: Black Cobia</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="7" max_lvl="7">
+        <text>Bounty 12: Wisdomfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="8" max_lvl="8">
+        <text>Bounty 12: Golden Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="9" max_lvl="9">
+        <text>Bounty 12: Channel Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_32" lvl="10" max_lvl="10">
+        <text>Bounty 12: Common Sturgeon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_32_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_33" lvl="1" max_lvl="1">
+        <text>Bounty 13: Coho Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="2" max_lvl="2">
+        <text>Bounty 13: Roosterfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="3" max_lvl="3">
+        <text>Bounty 13: Yellowfin Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="4" max_lvl="4">
+        <text>Bounty 13: Flathead Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="5" max_lvl="5">
+        <text>Bounty 13: Golden Bream</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="6" max_lvl="6">
+        <text>Bounty 13: Black Cobia</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="7" max_lvl="7">
+        <text>Bounty 13: Wisdomfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="8" max_lvl="8">
+        <text>Bounty 13: Golden Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="9" max_lvl="9">
+        <text>Bounty 13: Channel Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_33" lvl="10" max_lvl="10">
+        <text>Bounty 13: Common Sturgeon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_33_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_34" lvl="1" max_lvl="1">
+        <text>Bounty 14: Coho Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="2" max_lvl="2">
+        <text>Bounty 14: Roosterfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="3" max_lvl="3">
+        <text>Bounty 14: Yellowfin Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="4" max_lvl="4">
+        <text>Bounty 14: Flathead Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="5" max_lvl="5">
+        <text>Bounty 14: Golden Bream</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="6" max_lvl="6">
+        <text>Bounty 14: Black Cobia</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="7" max_lvl="7">
+        <text>Bounty 14: Wisdomfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="8" max_lvl="8">
+        <text>Bounty 14: Golden Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="9" max_lvl="9">
+        <text>Bounty 14: Channel Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_34" lvl="10" max_lvl="10">
+        <text>Bounty 14: Common Sturgeon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_34_10</loadEvent>
+        </event>
+    </choice>
+
+    
+    <choice req="fish_bait_bounty_35" lvl="1" max_lvl="1">
+        <text>Bounty 15: Coho Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="2" max_lvl="2">
+        <text>Bounty 15: Roosterfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="3" max_lvl="3">
+        <text>Bounty 15: Yellowfin Salmon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="4" max_lvl="4">
+        <text>Bounty 15: Flathead Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="5" max_lvl="5">
+        <text>Bounty 15: Golden Bream</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="6" max_lvl="6">
+        <text>Bounty 15: Black Cobia</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="7" max_lvl="7">
+        <text>Bounty 15: Wisdomfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_7</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="8" max_lvl="8">
+        <text>Bounty 15: Golden Trout</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_8</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="9" max_lvl="9">
+        <text>Bounty 15: Channel Catfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_9</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_35" lvl="10" max_lvl="10">
+        <text>Bounty 15: Common Sturgeon</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_35_10</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1">
+        <text>Orange Snapper</text>
+        <event>
+            <remove name="FISH_FOOD_1"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1" lvl="0" max_lvl="0" hidden="true">
+        <text>Orange Snapper</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2">
+        <text>Red Emperor</text>
+        <event>
+            <remove name="FISH_FOOD_2"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2" lvl="0" max_lvl="0" hidden="true">
+        <text>Red Emperor</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3">
+        <text>Striped Coral Trout</text>
+        <event>
+            <remove name="FISH_FOOD_3"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3" lvl="0" max_lvl="0" hidden="true">
+        <text>Striped Coral Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4">
+        <text>Spotted Mackeral</text>
+        <event>
+            <remove name="FISH_FOOD_4"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Mackeral</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5">
+        <text>Estuary Rockcod</text>
+        <event>
+            <remove name="FISH_FOOD_5"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5" lvl="0" max_lvl="0" hidden="true">
+        <text>Estuary Rockcod</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6">
+        <text>Blue Threadfin</text>
+        <event>
+            <remove name="FISH_FOOD_6"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Threadfin</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7">
+        <text>Rock Blackfish</text>
+        <event>
+            <remove name="FISH_FOOD_7"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7" lvl="0" max_lvl="0" hidden="true">
+        <text>Rock Blackfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8">
+        <text>Longtail Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_8"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8" lvl="0" max_lvl="0" hidden="true">
+        <text>Longtail Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9">
+        <text>Reef Octopus</text>
+        <event>
+            <remove name="FISH_FOOD_9"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9" lvl="0" max_lvl="0" hidden="true">
+        <text>Reef Octopus</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_11_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_11_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0">
+        <text>Eagle Ray</text>
+        <event>
+            <remove name="FISH_FOOD_0"/>
+            <augment name="FISH_BAIT_11"/>
+            <variable name="fish_bait_bounty_11" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0" lvl="0" max_lvl="0" hidden="true">
+        <text>Eagle Ray</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_12_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1">
+        <text>Orange Snapper</text>
+        <event>
+            <remove name="FISH_FOOD_1"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1" lvl="0" max_lvl="0" hidden="true">
+        <text>Orange Snapper</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2">
+        <text>Red Emperor</text>
+        <event>
+            <remove name="FISH_FOOD_2"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2" lvl="0" max_lvl="0" hidden="true">
+        <text>Red Emperor</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3">
+        <text>Striped Coral Trout</text>
+        <event>
+            <remove name="FISH_FOOD_3"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3" lvl="0" max_lvl="0" hidden="true">
+        <text>Striped Coral Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4">
+        <text>Spotted Mackeral</text>
+        <event>
+            <remove name="FISH_FOOD_4"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Mackeral</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5">
+        <text>Estuary Rockcod</text>
+        <event>
+            <remove name="FISH_FOOD_5"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5" lvl="0" max_lvl="0" hidden="true">
+        <text>Estuary Rockcod</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6">
+        <text>Blue Threadfin</text>
+        <event>
+            <remove name="FISH_FOOD_6"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Threadfin</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7">
+        <text>Rock Blackfish</text>
+        <event>
+            <remove name="FISH_FOOD_7"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7" lvl="0" max_lvl="0" hidden="true">
+        <text>Rock Blackfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8">
+        <text>Longtail Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_8"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8" lvl="0" max_lvl="0" hidden="true">
+        <text>Longtail Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9">
+        <text>Reef Octopus</text>
+        <event>
+            <remove name="FISH_FOOD_9"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9" lvl="0" max_lvl="0" hidden="true">
+        <text>Reef Octopus</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_12_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_12_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0">
+        <text>Eagle Ray</text>
+        <event>
+            <remove name="FISH_FOOD_0"/>
+            <augment name="FISH_BAIT_12"/>
+            <variable name="fish_bait_bounty_12" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0" lvl="0" max_lvl="0" hidden="true">
+        <text>Eagle Ray</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_13_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1">
+        <text>Orange Snapper</text>
+        <event>
+            <remove name="FISH_FOOD_1"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1" lvl="0" max_lvl="0" hidden="true">
+        <text>Orange Snapper</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2">
+        <text>Red Emperor</text>
+        <event>
+            <remove name="FISH_FOOD_2"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2" lvl="0" max_lvl="0" hidden="true">
+        <text>Red Emperor</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3">
+        <text>Striped Coral Trout</text>
+        <event>
+            <remove name="FISH_FOOD_3"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3" lvl="0" max_lvl="0" hidden="true">
+        <text>Striped Coral Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4">
+        <text>Spotted Mackeral</text>
+        <event>
+            <remove name="FISH_FOOD_4"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Mackeral</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5">
+        <text>Estuary Rockcod</text>
+        <event>
+            <remove name="FISH_FOOD_5"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5" lvl="0" max_lvl="0" hidden="true">
+        <text>Estuary Rockcod</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6">
+        <text>Blue Threadfin</text>
+        <event>
+            <remove name="FISH_FOOD_6"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Threadfin</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7">
+        <text>Rock Blackfish</text>
+        <event>
+            <remove name="FISH_FOOD_7"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7" lvl="0" max_lvl="0" hidden="true">
+        <text>Rock Blackfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8">
+        <text>Longtail Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_8"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8" lvl="0" max_lvl="0" hidden="true">
+        <text>Longtail Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9">
+        <text>Reef Octopus</text>
+        <event>
+            <remove name="FISH_FOOD_9"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9" lvl="0" max_lvl="0" hidden="true">
+        <text>Reef Octopus</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_13_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_13_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0">
+        <text>Eagle Ray</text>
+        <event>
+            <remove name="FISH_FOOD_0"/>
+            <augment name="FISH_BAIT_13"/>
+            <variable name="fish_bait_bounty_13" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0" lvl="0" max_lvl="0" hidden="true">
+        <text>Eagle Ray</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_14_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1">
+        <text>Orange Snapper</text>
+        <event>
+            <remove name="FISH_FOOD_1"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1" lvl="0" max_lvl="0" hidden="true">
+        <text>Orange Snapper</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2">
+        <text>Red Emperor</text>
+        <event>
+            <remove name="FISH_FOOD_2"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2" lvl="0" max_lvl="0" hidden="true">
+        <text>Red Emperor</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3">
+        <text>Striped Coral Trout</text>
+        <event>
+            <remove name="FISH_FOOD_3"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3" lvl="0" max_lvl="0" hidden="true">
+        <text>Striped Coral Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4">
+        <text>Spotted Mackeral</text>
+        <event>
+            <remove name="FISH_FOOD_4"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Mackeral</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5">
+        <text>Estuary Rockcod</text>
+        <event>
+            <remove name="FISH_FOOD_5"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5" lvl="0" max_lvl="0" hidden="true">
+        <text>Estuary Rockcod</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6">
+        <text>Blue Threadfin</text>
+        <event>
+            <remove name="FISH_FOOD_6"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Threadfin</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7">
+        <text>Rock Blackfish</text>
+        <event>
+            <remove name="FISH_FOOD_7"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7" lvl="0" max_lvl="0" hidden="true">
+        <text>Rock Blackfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8">
+        <text>Longtail Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_8"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8" lvl="0" max_lvl="0" hidden="true">
+        <text>Longtail Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9">
+        <text>Reef Octopus</text>
+        <event>
+            <remove name="FISH_FOOD_9"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9" lvl="0" max_lvl="0" hidden="true">
+        <text>Reef Octopus</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_14_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_14_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0">
+        <text>Eagle Ray</text>
+        <event>
+            <remove name="FISH_FOOD_0"/>
+            <augment name="FISH_BAIT_14"/>
+            <variable name="fish_bait_bounty_14" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0" lvl="0" max_lvl="0" hidden="true">
+        <text>Eagle Ray</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_15_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1">
+        <text>Orange Snapper</text>
+        <event>
+            <remove name="FISH_FOOD_1"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_1" lvl="0" max_lvl="0" hidden="true">
+        <text>Orange Snapper</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2">
+        <text>Red Emperor</text>
+        <event>
+            <remove name="FISH_FOOD_2"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_2" lvl="0" max_lvl="0" hidden="true">
+        <text>Red Emperor</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3">
+        <text>Striped Coral Trout</text>
+        <event>
+            <remove name="FISH_FOOD_3"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_3" lvl="0" max_lvl="0" hidden="true">
+        <text>Striped Coral Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4">
+        <text>Spotted Mackeral</text>
+        <event>
+            <remove name="FISH_FOOD_4"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Mackeral</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5">
+        <text>Estuary Rockcod</text>
+        <event>
+            <remove name="FISH_FOOD_5"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_5" lvl="0" max_lvl="0" hidden="true">
+        <text>Estuary Rockcod</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6">
+        <text>Blue Threadfin</text>
+        <event>
+            <remove name="FISH_FOOD_6"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_6" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Threadfin</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7">
+        <text>Rock Blackfish</text>
+        <event>
+            <remove name="FISH_FOOD_7"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_7" lvl="0" max_lvl="0" hidden="true">
+        <text>Rock Blackfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8">
+        <text>Longtail Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_8"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_8" lvl="0" max_lvl="0" hidden="true">
+        <text>Longtail Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9">
+        <text>Reef Octopus</text>
+        <event>
+            <remove name="FISH_FOOD_9"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_9" lvl="0" max_lvl="0" hidden="true">
+        <text>Reef Octopus</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_15_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_15_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0">
+        <text>Eagle Ray</text>
+        <event>
+            <remove name="FISH_FOOD_0"/>
+            <augment name="FISH_BAIT_15"/>
+            <variable name="fish_bait_bounty_15" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_0" lvl="0" max_lvl="0" hidden="true">
+        <text>Eagle Ray</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11">
+        <text>Doublefin Eel</text>
+        <event>
+            <remove name="FISH_FOOD_11"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11" lvl="0" max_lvl="0" hidden="true">
+        <text>Doublefin Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12">
+        <text>Blue Eel</text>
+        <event>
+            <remove name="FISH_FOOD_12"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13">
+        <text>Yellowfin Sunfish</text>
+        <event>
+            <remove name="FISH_FOOD_13"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Sunfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14">
+        <text>Big Eye Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_14"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14" lvl="0" max_lvl="0" hidden="true">
+        <text>Big Eye Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15">
+        <text>Spotted Barracuda</text>
+        <event>
+            <remove name="FISH_FOOD_15"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Barracuda</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16">
+        <text>Brown Trout</text>
+        <event>
+            <remove name="FISH_FOOD_16"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16" lvl="0" max_lvl="0" hidden="true">
+        <text>Brown Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17">
+        <text>Goatfish</text>
+        <event>
+            <remove name="FISH_FOOD_17"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17" lvl="0" max_lvl="0" hidden="true">
+        <text>Goatfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18">
+        <text>Coronation Trout</text>
+        <event>
+            <remove name="FISH_FOOD_18"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18" lvl="0" max_lvl="0" hidden="true">
+        <text>Coronation Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19">
+        <text>Yellowfin Kingfish</text>
+        <event>
+            <remove name="FISH_FOOD_19"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Kingfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_21_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_21_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10">
+        <text>Rainbow Trout</text>
+        <event>
+            <remove name="FISH_FOOD_10"/>
+            <augment name="FISH_BAIT_21"/>
+            <variable name="fish_bait_bounty_21" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10" lvl="0" max_lvl="0" hidden="true">
+        <text>Rainbow Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_22_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11">
+        <text>Doublefin Eel</text>
+        <event>
+            <remove name="FISH_FOOD_11"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11" lvl="0" max_lvl="0" hidden="true">
+        <text>Doublefin Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12">
+        <text>Blue Eel</text>
+        <event>
+            <remove name="FISH_FOOD_12"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13">
+        <text>Yellowfin Sunfish</text>
+        <event>
+            <remove name="FISH_FOOD_13"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Sunfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14">
+        <text>Big Eye Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_14"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14" lvl="0" max_lvl="0" hidden="true">
+        <text>Big Eye Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15">
+        <text>Spotted Barracuda</text>
+        <event>
+            <remove name="FISH_FOOD_15"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Barracuda</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16">
+        <text>Brown Trout</text>
+        <event>
+            <remove name="FISH_FOOD_16"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16" lvl="0" max_lvl="0" hidden="true">
+        <text>Brown Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17">
+        <text>Goatfish</text>
+        <event>
+            <remove name="FISH_FOOD_17"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17" lvl="0" max_lvl="0" hidden="true">
+        <text>Goatfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18">
+        <text>Coronation Trout</text>
+        <event>
+            <remove name="FISH_FOOD_18"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18" lvl="0" max_lvl="0" hidden="true">
+        <text>Coronation Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19">
+        <text>Yellowfin Kingfish</text>
+        <event>
+            <remove name="FISH_FOOD_19"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Kingfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_22_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_22_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10">
+        <text>Rainbow Trout</text>
+        <event>
+            <remove name="FISH_FOOD_10"/>
+            <augment name="FISH_BAIT_22"/>
+            <variable name="fish_bait_bounty_22" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10" lvl="0" max_lvl="0" hidden="true">
+        <text>Rainbow Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_23_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11">
+        <text>Doublefin Eel</text>
+        <event>
+            <remove name="FISH_FOOD_11"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11" lvl="0" max_lvl="0" hidden="true">
+        <text>Doublefin Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12">
+        <text>Blue Eel</text>
+        <event>
+            <remove name="FISH_FOOD_12"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13">
+        <text>Yellowfin Sunfish</text>
+        <event>
+            <remove name="FISH_FOOD_13"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Sunfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14">
+        <text>Big Eye Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_14"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14" lvl="0" max_lvl="0" hidden="true">
+        <text>Big Eye Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15">
+        <text>Spotted Barracuda</text>
+        <event>
+            <remove name="FISH_FOOD_15"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Barracuda</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16">
+        <text>Brown Trout</text>
+        <event>
+            <remove name="FISH_FOOD_16"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16" lvl="0" max_lvl="0" hidden="true">
+        <text>Brown Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17">
+        <text>Goatfish</text>
+        <event>
+            <remove name="FISH_FOOD_17"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17" lvl="0" max_lvl="0" hidden="true">
+        <text>Goatfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18">
+        <text>Coronation Trout</text>
+        <event>
+            <remove name="FISH_FOOD_18"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18" lvl="0" max_lvl="0" hidden="true">
+        <text>Coronation Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19">
+        <text>Yellowfin Kingfish</text>
+        <event>
+            <remove name="FISH_FOOD_19"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Kingfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_23_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_23_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10">
+        <text>Rainbow Trout</text>
+        <event>
+            <remove name="FISH_FOOD_10"/>
+            <augment name="FISH_BAIT_23"/>
+            <variable name="fish_bait_bounty_23" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10" lvl="0" max_lvl="0" hidden="true">
+        <text>Rainbow Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_24_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11">
+        <text>Doublefin Eel</text>
+        <event>
+            <remove name="FISH_FOOD_11"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11" lvl="0" max_lvl="0" hidden="true">
+        <text>Doublefin Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12">
+        <text>Blue Eel</text>
+        <event>
+            <remove name="FISH_FOOD_12"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13">
+        <text>Yellowfin Sunfish</text>
+        <event>
+            <remove name="FISH_FOOD_13"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Sunfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14">
+        <text>Big Eye Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_14"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14" lvl="0" max_lvl="0" hidden="true">
+        <text>Big Eye Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15">
+        <text>Spotted Barracuda</text>
+        <event>
+            <remove name="FISH_FOOD_15"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Barracuda</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16">
+        <text>Brown Trout</text>
+        <event>
+            <remove name="FISH_FOOD_16"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16" lvl="0" max_lvl="0" hidden="true">
+        <text>Brown Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17">
+        <text>Goatfish</text>
+        <event>
+            <remove name="FISH_FOOD_17"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17" lvl="0" max_lvl="0" hidden="true">
+        <text>Goatfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18">
+        <text>Coronation Trout</text>
+        <event>
+            <remove name="FISH_FOOD_18"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18" lvl="0" max_lvl="0" hidden="true">
+        <text>Coronation Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19">
+        <text>Yellowfin Kingfish</text>
+        <event>
+            <remove name="FISH_FOOD_19"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Kingfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_24_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_24_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10">
+        <text>Rainbow Trout</text>
+        <event>
+            <remove name="FISH_FOOD_10"/>
+            <augment name="FISH_BAIT_24"/>
+            <variable name="fish_bait_bounty_24" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10" lvl="0" max_lvl="0" hidden="true">
+        <text>Rainbow Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_25_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11">
+        <text>Doublefin Eel</text>
+        <event>
+            <remove name="FISH_FOOD_11"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_11" lvl="0" max_lvl="0" hidden="true">
+        <text>Doublefin Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12">
+        <text>Blue Eel</text>
+        <event>
+            <remove name="FISH_FOOD_12"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Eel</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13">
+        <text>Yellowfin Sunfish</text>
+        <event>
+            <remove name="FISH_FOOD_13"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Sunfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14">
+        <text>Big Eye Tuna</text>
+        <event>
+            <remove name="FISH_FOOD_14"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14" lvl="0" max_lvl="0" hidden="true">
+        <text>Big Eye Tuna</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15">
+        <text>Spotted Barracuda</text>
+        <event>
+            <remove name="FISH_FOOD_15"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15" lvl="0" max_lvl="0" hidden="true">
+        <text>Spotted Barracuda</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16">
+        <text>Brown Trout</text>
+        <event>
+            <remove name="FISH_FOOD_16"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16" lvl="0" max_lvl="0" hidden="true">
+        <text>Brown Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17">
+        <text>Goatfish</text>
+        <event>
+            <remove name="FISH_FOOD_17"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17" lvl="0" max_lvl="0" hidden="true">
+        <text>Goatfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18">
+        <text>Coronation Trout</text>
+        <event>
+            <remove name="FISH_FOOD_18"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18" lvl="0" max_lvl="0" hidden="true">
+        <text>Coronation Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19">
+        <text>Yellowfin Kingfish</text>
+        <event>
+            <remove name="FISH_FOOD_19"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Kingfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_25_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_25_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10">
+        <text>Rainbow Trout</text>
+        <event>
+            <remove name="FISH_FOOD_10"/>
+            <augment name="FISH_BAIT_25"/>
+            <variable name="fish_bait_bounty_25" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10" lvl="0" max_lvl="0" hidden="true">
+        <text>Rainbow Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21">
+        <text>Coho Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_21"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21" lvl="0" max_lvl="0" hidden="true">
+        <text>Coho Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22">
+        <text>Roosterfish</text>
+        <event>
+            <remove name="FISH_FOOD_22"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22" lvl="0" max_lvl="0" hidden="true">
+        <text>Roosterfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23">
+        <text>Yellowfin Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_23"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24">
+        <text>Flathead Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_24"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24" lvl="0" max_lvl="0" hidden="true">
+        <text>Flathead Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25">
+        <text>Golden Bream</text>
+        <event>
+            <remove name="FISH_FOOD_25"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Bream</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26">
+        <text>Black Cobia</text>
+        <event>
+            <remove name="FISH_FOOD_26"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26" lvl="0" max_lvl="0" hidden="true">
+        <text>Black Cobia</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27">
+        <text>Wisdomfish</text>
+        <event>
+            <remove name="FISH_FOOD_27"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27" lvl="0" max_lvl="0" hidden="true">
+        <text>Wisdomfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28">
+        <text>Golden Trout</text>
+        <event>
+            <remove name="FISH_FOOD_28"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29">
+        <text>Channel Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_29"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29" lvl="0" max_lvl="0" hidden="true">
+        <text>Channel Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_31_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_31_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20">
+        <text>Common Sturgeon</text>
+        <event>
+            <remove name="FISH_FOOD_20"/>
+            <augment name="FISH_BAIT_31"/>
+            <variable name="fish_bait_bounty_31" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20" lvl="0" max_lvl="0" hidden="true">
+        <text>Common Sturgeon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_32_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21">
+        <text>Coho Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_21"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21" lvl="0" max_lvl="0" hidden="true">
+        <text>Coho Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22">
+        <text>Roosterfish</text>
+        <event>
+            <remove name="FISH_FOOD_22"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22" lvl="0" max_lvl="0" hidden="true">
+        <text>Roosterfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23">
+        <text>Yellowfin Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_23"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24">
+        <text>Flathead Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_24"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24" lvl="0" max_lvl="0" hidden="true">
+        <text>Flathead Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25">
+        <text>Golden Bream</text>
+        <event>
+            <remove name="FISH_FOOD_25"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Bream</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26">
+        <text>Black Cobia</text>
+        <event>
+            <remove name="FISH_FOOD_26"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26" lvl="0" max_lvl="0" hidden="true">
+        <text>Black Cobia</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27">
+        <text>Wisdomfish</text>
+        <event>
+            <remove name="FISH_FOOD_27"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27" lvl="0" max_lvl="0" hidden="true">
+        <text>Wisdomfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28">
+        <text>Golden Trout</text>
+        <event>
+            <remove name="FISH_FOOD_28"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29">
+        <text>Channel Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_29"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29" lvl="0" max_lvl="0" hidden="true">
+        <text>Channel Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_32_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_32_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20">
+        <text>Common Sturgeon</text>
+        <event>
+            <remove name="FISH_FOOD_20"/>
+            <augment name="FISH_BAIT_32"/>
+            <variable name="fish_bait_bounty_32" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20" lvl="0" max_lvl="0" hidden="true">
+        <text>Common Sturgeon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_33_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21">
+        <text>Coho Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_21"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21" lvl="0" max_lvl="0" hidden="true">
+        <text>Coho Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22">
+        <text>Roosterfish</text>
+        <event>
+            <remove name="FISH_FOOD_22"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22" lvl="0" max_lvl="0" hidden="true">
+        <text>Roosterfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23">
+        <text>Yellowfin Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_23"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24">
+        <text>Flathead Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_24"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24" lvl="0" max_lvl="0" hidden="true">
+        <text>Flathead Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25">
+        <text>Golden Bream</text>
+        <event>
+            <remove name="FISH_FOOD_25"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Bream</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26">
+        <text>Black Cobia</text>
+        <event>
+            <remove name="FISH_FOOD_26"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26" lvl="0" max_lvl="0" hidden="true">
+        <text>Black Cobia</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27">
+        <text>Wisdomfish</text>
+        <event>
+            <remove name="FISH_FOOD_27"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27" lvl="0" max_lvl="0" hidden="true">
+        <text>Wisdomfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28">
+        <text>Golden Trout</text>
+        <event>
+            <remove name="FISH_FOOD_28"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29">
+        <text>Channel Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_29"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29" lvl="0" max_lvl="0" hidden="true">
+        <text>Channel Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_33_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_33_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20">
+        <text>Common Sturgeon</text>
+        <event>
+            <remove name="FISH_FOOD_20"/>
+            <augment name="FISH_BAIT_33"/>
+            <variable name="fish_bait_bounty_33" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20" lvl="0" max_lvl="0" hidden="true">
+        <text>Common Sturgeon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_34_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21">
+        <text>Coho Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_21"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21" lvl="0" max_lvl="0" hidden="true">
+        <text>Coho Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22">
+        <text>Roosterfish</text>
+        <event>
+            <remove name="FISH_FOOD_22"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22" lvl="0" max_lvl="0" hidden="true">
+        <text>Roosterfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23">
+        <text>Yellowfin Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_23"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24">
+        <text>Flathead Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_24"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24" lvl="0" max_lvl="0" hidden="true">
+        <text>Flathead Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25">
+        <text>Golden Bream</text>
+        <event>
+            <remove name="FISH_FOOD_25"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Bream</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26">
+        <text>Black Cobia</text>
+        <event>
+            <remove name="FISH_FOOD_26"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26" lvl="0" max_lvl="0" hidden="true">
+        <text>Black Cobia</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27">
+        <text>Wisdomfish</text>
+        <event>
+            <remove name="FISH_FOOD_27"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27" lvl="0" max_lvl="0" hidden="true">
+        <text>Wisdomfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28">
+        <text>Golden Trout</text>
+        <event>
+            <remove name="FISH_FOOD_28"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29">
+        <text>Channel Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_29"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29" lvl="0" max_lvl="0" hidden="true">
+        <text>Channel Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_34_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_34_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20">
+        <text>Common Sturgeon</text>
+        <event>
+            <remove name="FISH_FOOD_20"/>
+            <augment name="FISH_BAIT_34"/>
+            <variable name="fish_bait_bounty_34" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20" lvl="0" max_lvl="0" hidden="true">
+        <text>Common Sturgeon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_35_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21">
+        <text>Coho Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_21"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_21" lvl="0" max_lvl="0" hidden="true">
+        <text>Coho Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22">
+        <text>Roosterfish</text>
+        <event>
+            <remove name="FISH_FOOD_22"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22" lvl="0" max_lvl="0" hidden="true">
+        <text>Roosterfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23">
+        <text>Yellowfin Salmon</text>
+        <event>
+            <remove name="FISH_FOOD_23"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23" lvl="0" max_lvl="0" hidden="true">
+        <text>Yellowfin Salmon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24">
+        <text>Flathead Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_24"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24" lvl="0" max_lvl="0" hidden="true">
+        <text>Flathead Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25">
+        <text>Golden Bream</text>
+        <event>
+            <remove name="FISH_FOOD_25"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Bream</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26">
+        <text>Black Cobia</text>
+        <event>
+            <remove name="FISH_FOOD_26"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26" lvl="0" max_lvl="0" hidden="true">
+        <text>Black Cobia</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27">
+        <text>Wisdomfish</text>
+        <event>
+            <remove name="FISH_FOOD_27"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27" lvl="0" max_lvl="0" hidden="true">
+        <text>Wisdomfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_8">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_8</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28">
+        <text>Golden Trout</text>
+        <event>
+            <remove name="FISH_FOOD_28"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28" lvl="0" max_lvl="0" hidden="true">
+        <text>Golden Trout</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_9">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_9</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29">
+        <text>Channel Catfish</text>
+        <event>
+            <remove name="FISH_FOOD_29"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29" lvl="0" max_lvl="0" hidden="true">
+        <text>Channel Catfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_35_10">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_35_10</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20">
+        <text>Common Sturgeon</text>
+        <event>
+            <remove name="FISH_FOOD_20"/>
+            <augment name="FISH_BAIT_35"/>
+            <variable name="fish_bait_bounty_35" op="set" val="0"/>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20" lvl="0" max_lvl="0" hidden="true">
+        <text>Common Sturgeon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+</FTL>

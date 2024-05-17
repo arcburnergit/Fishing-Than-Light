@@ -120,11 +120,11 @@
     <event>
       <text>Choose a harpoon to upgrade.</text>
       <choice req="FISHING_ROD_0">
-        <text>Upgrade your Rusty Harpoon MK I to a MK I. -50~</text>
+        <text>Upgrade your Rusty Harpoon MK I to a MK I. -25~</text>
         <event>
           <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
           <item_modify>
-            <item type="scrap" min="-50" max="-50" />
+            <item type="scrap" min="-25" max="-25" />
           </item_modify>
           <remove name="FISHING_ROD_0" />
           <weapon name="FISHING_ROD_1" />
@@ -181,6 +181,10 @@
   <choice>
     <text>Install an internal fishing upgrade.</text>
     <event load="STORAGE_CHECK_FISHING_UPGRADE" />
+  </choice>
+  <choice>
+    <text>Fishing Bait Options.</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT" />
   </choice>
   <choice>
     <text>Fishing Info.</text>
@@ -552,7 +556,7 @@
     </event>
   </choice>
   <choice req="FISH_FOOD_44">
-    <text>Cook the Energy Fish. (+1 bonus power to zoltans in shield system)</text>
+    <text>Cook the Energy Fish. (-1 power to your weapons, starting in the first weapon slot)</text>
     <event>
       <remove name="FISH_FOOD_44"/>
       <hiddenAug>FISH_AUG_44</hiddenAug>
@@ -568,7 +572,7 @@
     </event>
   </choice>
   <choice req="FISH_FOOD_46">
-    <text>Cook the Mantis Fish. (all crew -50% ranged damage, friendly crew +20% melee damage)</text>
+    <text>Cook the Mantis Fish. (all crew -50% ranged damage, friendly crew +100% melee damage)</text>
     <event>
       <remove name="FISH_FOOD_46"/>
       <hiddenAug>FISH_AUG_46</hiddenAug>
@@ -647,7 +651,7 @@
     <text>Cook Sylfin. (Fish Merchant Beacon, +1 Sylvans)</text>
     <event>
       <remove name="FISH_FOOD_4E"/>
-      <crewMember amount="1" class="LIST_CREW_SYLVAN_START"  all_skills="2">Sylvan</crewMember>
+      <crewMember amount="1" class="LIST_CREW_SYLVAN_START"  all_skills="2">Sylfin</crewMember>
       <hiddenAug>FISH_AUG_4E</hiddenAug>
       <event load="STORAGE_CHECK_FISHING_LOAD" />
     </event>
@@ -1984,6 +1988,54 @@
     <text>Nevermind.</text>
     <event load="STORAGE_CHECK_FISHING_LOAD"/>
   </choice-->
+  <choice blue="false" req="FISH_INAUG_SPEED" lvl="0" max_lvl="0">
+    <text>Faster reel. (Fish are caught 1.8x faster, but are lost 1.5x faster)</text>
+    <event>
+      <text>You install the faster reel.</text>
+      <item_modify>
+        <item type="scrap" min="-25" max="-25" />
+        <item type="fuel" min="-1" max="-1" />
+        <item type="missiles" min="-1" max="-1" />
+        <item type="drones" min="-1" max="-1" />
+      </item_modify>
+      <hiddenAug>FISH_INAUG_SPEED</hiddenAug>
+      <choice>
+        <text>Continue...</text>
+        <event load="STORAGE_CHECK_FISHING_LOAD"/>
+      </choice>
+    </event>
+  </choice>
+  <choice blue="false" req="FISH_INAUG_HIGHER" lvl="0" max_lvl="0">
+    <text>Extra rope. (Fish start with twice the catch percentage than before)</text>
+    <event>
+      <text>You install the extra rope.</text>
+      <item_modify>
+        <item type="scrap" min="-60" max="-60" />
+      </item_modify>
+      <hiddenAug>FISH_INAUG_HIGHER</hiddenAug>
+      <choice>
+        <text>Continue...</text>
+        <event load="STORAGE_CHECK_FISHING_LOAD"/>
+      </choice>
+    </event>
+  </choice>
+  <choice blue="false" req="FISH_INAUG_GRAV" lvl="0" max_lvl="0">
+    <text>Heavier bobber. (Gravity on the hook is 30% stronger, the fish slows down 30% faster)</text>
+    <event>
+      <text>You install the heavier bobber.</text>
+      <item_modify>
+        <item type="scrap" min="-30" max="-30" />
+        <item type="fuel" min="-10" max="-10" />
+        <item type="missiles" min="-3" max="-3" />
+        <item type="drones" min="-3" max="-3" />
+      </item_modify>
+      <hiddenAug>FISH_INAUG_GRAV</hiddenAug>
+      <choice>
+        <text>Continue...</text>
+        <event load="STORAGE_CHECK_FISHING_LOAD"/>
+      </choice>
+    </event>
+  </choice>
 </event>
 
 <mod:findName type="event" name="STORAGE_CHECK_AUG">
@@ -2004,10 +2056,752 @@ If it decided you caught junk theres a 50% chance of a basic fish and a 50% chan
 Otherwise the fishing loot is determined by the loot table corresponding to the difficulty of fish you caught. There are different loot tables depending on your sector.
 
 Fish difficulty is determined when you start fishing, normally its a number from 1 to the strength of your harpoon, a MK 1 has a strength of 5, a MK 2 a strength of 10, and a MK 3 a stregth of 16.
-The MK2 and MK3 will raise the lower bound of the difficulty if you have the internal augment to make basic fish rarer.</text>
+The MK2 and MK3 will raise the lower bound of the difficulty if you have the internal augment to make basic fish rarer.
+
+Basic, Uncommon and Rare fishing bonuses all stack multiplicatively, they also only apply to your own crew.
+Other bonus will usually stack multiplicatively however they may apply to enemy crew.</text>
   <choice>
     <text>Continue...</text>
     <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_BAIT_LOAD">
+  <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_BAIT">
+  <checkCargo/>
+  <text>What do you want to do?</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+  <choice req="fish_bait_equip_11" blue="false">
+    <text>Currently equiped bait: No Scrap</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_11"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_12" blue="false">
+    <text>Currently equiped bait: Less Generic Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_12"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_13" blue="false">
+    <text>Currently equiped bait: No Gun or Unique Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_13"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_14" blue="false">
+    <text>Currently equiped bait: No Crew</text>
+    <event>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_15" blue="false">
+    <text>Currently equiped bait: No Equipment</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_15"/>
+    </event>
+  </choice>
+  
+  <choice req="fish_bait_equip_21" blue="false">
+    <text>Currently equiped bait: No Scrap/Less Generic Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_21"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_22" blue="false">
+    <text>Currently equiped bait: Less Generic Fish/No Gun or Unique Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_22"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_23" blue="false">
+    <text>Currently equiped bait: No Gun or Unique Fish/No Crew</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_23"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_24" blue="false">
+    <text>Currently equiped bait: No Crew/No Equipment</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_24"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_25" blue="false">
+    <text>Currently equiped bait: No Equipment/No Scrap</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_25"/>
+    </event>
+  </choice>
+  
+  <choice req="fish_bait_equip_31" blue="false">
+    <text>Currently equiped bait: No Scrap/Less Generic Fish/No Gun or Unique Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_31"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_32" blue="false">
+    <text>Currently equiped bait: Less Generic Fish/No Gun or Unique Fish/No Crew</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_32"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_33" blue="false">
+    <text>Currently equiped bait: No Gun or Unique Fish/No Crew/No Equipment</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_33"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_34" blue="false">
+    <text>Currently equiped bait: No Crew/No Equipment/No Scrap</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_34"/>
+    </event>
+  </choice>
+  <choice req="fish_bait_equip_35" blue="false">
+    <text>Currently equiped bait: No Equipment/No Scrap/Less Generic Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_35"/>
+    </event>
+  </choice>
+
+  <choice blue="true">
+    <text>Unequip bait.</text>
+    <event name="FISH_EQUIP_BAIT_00">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_11" hidden="false">
+    <text>Store bait internally: No Scrap</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_11</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_11"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_11">
+    <text>Equip bait: No Scrap</text>
+    <event name="FISH_EQUIP_BAIT_11">
+      <variable name="fish_bait_equip_11" op="set" val="1"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_12" hidden="false">
+    <text>Store bait internally: Less Generic Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_12</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_12"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_12">
+    <text>Equip bait: Less Generic Fish</text>
+    <event name="FISH_EQUIP_BAIT_12">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="1"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_13" hidden="false">
+    <text>Store bait internally: No Gun or Unique Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_13</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_13"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_13">
+    <text>Equip bait: No Gun or Unique Fish</text>
+    <event name="FISH_EQUIP_BAIT_13">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="1"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_14" hidden="false">
+    <text>Store bait internally: No Crew</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_14</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_14"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_14">
+    <text>Equip bait: No Crew</text>
+    <event name="FISH_EQUIP_BAIT_14">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="1"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_15" hidden="false">
+    <text>Store bait internally: No Equipment</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_15</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_15"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_15">
+    <text>Equip bait: No Equipment</text>
+    <event name="FISH_EQUIP_BAIT_15">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="1"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_21" hidden="false">
+    <text>Store bait internally: No Scrap/Less Generic Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_21</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_21"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_21">
+    <text>Equip bait: No Scrap/Less Generic Fish</text>
+    <event name="FISH_EQUIP_BAIT_21">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="1"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_22" hidden="false">
+    <text>Store bait internally: Less Generic Fish/No Gun or Unique Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_22</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_22"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_22">
+    <text>Equip bait: Less Generic Fish/No Gun or Unique Fish</text>
+    <event name="FISH_EQUIP_BAIT_22">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="1"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_23" hidden="false">
+    <text>Store bait internally: No Gun or Unique Fish/No Crew</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_23</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_23"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_23">
+    <text>Equip bait: No Gun or Unique Fish/No Crew</text>
+    <event name="FISH_EQUIP_BAIT_23">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="1"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_24" hidden="false">
+    <text>Store bait internally: No Crew/No Equipment</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_24</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_24"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_24">
+    <text>Equip bait: No Crew/No Equipment</text>
+    <event name="FISH_EQUIP_BAIT_24">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="1"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_25" hidden="false">
+    <text>Store bait internally: No Equipment/No Scrap</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_25</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_25"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_25">
+    <text>Equip bait: No Equipment/No Scrap</text>
+    <event name="FISH_EQUIP_BAIT_25">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="1"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_31" hidden="false">
+    <text>Store bait internally: No Scrap/Less Generic Fish/No Gun or Unique Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_31</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_31"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_31">
+    <text>Equip bait: No Scrap/Less Generic Fish/No Gun or Unique Fish</text>
+    <event name="FISH_EQUIP_BAIT_31">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="1"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_32" hidden="false">
+    <text>Store bait internally: Less Generic Fish/No Gun or Unique Fish/No Crew</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_32</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_32"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_32">
+    <text>Equip bait: Less Generic Fish/No Gun or Unique Fish/No Crew</text>
+    <event name="FISH_EQUIP_BAIT_32">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="1"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_33" hidden="false">
+    <text>Store bait internally: No Gun or Unique Fish/No Crew/No Equipment</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_33</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_33"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_33">
+    <text>Equip bait: No Gun or Unique Fish/No Crew/No Equipment</text>
+    <event name="FISH_EQUIP_BAIT_33">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="1"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_34" hidden="false">
+    <text>Store bait internally: No Crew/No Equipment/No Scrap</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_34</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_34"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_34">
+    <text>Equip bait: No Crew/No Equipment/No Scrap</text>
+    <event name="FISH_EQUIP_BAIT_34">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="1"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_35" hidden="false">
+    <text>Store bait internally: No Equipment/No Scrap/Less Generic Fish</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_35</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_35"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_35">
+    <text>Equip bait: No Equipment/No Scrap/Less Generic Fish</text>
+    <event name="FISH_EQUIP_BAIT_35">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="1"/>
+    </event>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_11">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_11"/>
+  <hiddenAug>FISH_INBAIT_11</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_12">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_12"/>
+  <hiddenAug>FISH_INBAIT_12</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_13">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_13"/>
+  <hiddenAug>FISH_INBAIT_13</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_14">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_14"/>
+  <hiddenAug>FISH_INBAIT_14</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_15">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_15"/>
+  <hiddenAug>FISH_INBAIT_15</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_21">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_21"/>
+  <hiddenAug>FISH_INBAIT_21</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_22">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_22"/>
+  <hiddenAug>FISH_INBAIT_22</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_23">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_23"/>
+  <hiddenAug>FISH_INBAIT_23</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_24">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_24"/>
+  <hiddenAug>FISH_INBAIT_24</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_25">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_25"/>
+  <hiddenAug>FISH_INBAIT_25</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_31">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_31"/>
+  <hiddenAug>FISH_INBAIT_31</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_32">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_32"/>
+  <hiddenAug>FISH_INBAIT_32</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_33">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_33"/>
+  <hiddenAug>FISH_INBAIT_33</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_34">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_34"/>
+  <hiddenAug>FISH_INBAIT_34</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_35">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_35"/>
+  <hiddenAug>FISH_INBAIT_35</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
   </choice>
 </event>
 

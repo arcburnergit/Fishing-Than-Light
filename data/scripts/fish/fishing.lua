@@ -247,11 +247,14 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(
         fishNumber = math.random(1,fishingData)
         if fishNumber < fishMin then fishNumber = fishNumber + fishMin end
         fishCatch = 92
+        if shipManager:HasAugmentation("FISH_INAUG_HIGHER") > 0 then
+            fishCatch = 184
+        end
         xOffset = 650
         selectSpeed = 0
         selectPos = 200
         fishSpeed = 0
-        fishPos = 0
+        fishPos = 200
         projectile:Kill()
     end
 end)
@@ -289,11 +292,14 @@ local function fish_start_event()
     fishNumber = math.random(1,maxRodStrength)
     if fishNumber < fishMin then fishNumber = fishNumber + fishMin end
     fishCatch = 92
+    if shipManager:HasAugmentation("FISH_INAUG_HIGHER") > 0 then
+        fishCatch = 184
+    end
     xOffset = 850
     selectSpeed = 0
     selectPos = 200
     fishSpeed = 0
-    fishPos = 0
+    fishPos = 200
 end
 
 script.on_game_event("FISHING_START_NOCOMBAT", false, fish_start_event)
@@ -411,6 +417,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
         if Hyperspace.playerVariables.fish_active == 1 and not (commandGui.bPaused or commandGui.event_pause) then
             local gravity = 50
             local maxSpeed = 150
+            if shipManager:HasAugmentation("FISH_INAUG_GRAV") > 0 then gravity = 65 end
             if isJump and not hasJump then
                 --print("JUMP")
                 hasJump = true
@@ -461,7 +468,11 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 
                 --print("Catching: ".. tostring(fishCatch))
                 fishBeingCaught = true
-                fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
+                local scalerGain = 1
+                if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
+                    scalerGain = 1.8
+                end
+                fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * scalerGain * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
                 if fishCatch == fishMax then 
                     local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
                     if Hyperspace.playerVariables.fish_music == 0 then
@@ -490,7 +501,11 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 end
             else
                 fishBeingCaught = false
-                fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * 5 * (5 - math.ceil(maxRodStrength/5)))
+                local scalerLoss = 1
+                if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
+                    scalerLoss = 1.5
+                end
+                fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * scalerLoss * 5 * (5 - math.ceil(maxRodStrength/5)))
                 if fishCatch == 0 then
                     Hyperspace.playerVariables.fish_active = 0
                     if Hyperspace.playerVariables.fish_music == 0 then
@@ -1000,4 +1015,122 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
             system.iActiveManned = 3
         end
     end
+end)
+
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    local shipManager = Hyperspace.ships.player
+    if Hyperspace.ships.enemy then
+        --Hyperspace.playerVariables.loc_fish_board_charged = 0
+        --print("START LOOP")
+        local setBOARDVAL = nil
+        for crewmem in vter(shipManager.vCrewList) do
+            if crewmem.iShipId == 0 then
+                --print(tostring(crewmem.currentShipId).." == 0 AND "..tostring(crewmem.iRoomId).." == "..tostring(Hyperspace.ships.player:GetSystemRoom(6)).." AND "..tostring(crewmem.iShipId).." == 0")
+                --print(crewmem.currentShipId == 0 and crewmem.iRoomId == Hyperspace.ships.player:GetSystemRoom(6) and crewmem.iShipId == 0)
+            end
+            if (not crewmem:IsDrone()) and crewmem.currentShipId == 0 and crewmem.iRoomId == Hyperspace.ships.player:GetSystemRoom(6) and crewmem.iShipId == 0 then
+                Hyperspace.playerVariables.loc_fish_board_charged = 1
+                --print("SETFALSE")
+                setBOARDVAL = true
+                --print(setBOARDVAL)
+            end
+        end
+
+        for crewmem in vter(Hyperspace.ships.enemy.vCrewList) do
+            if crewmem.iShipId == 0 then
+                --print(tostring(crewmem.currentShipId).." == 1 AND "..tostring(crewmem.iRoomId).." == 0 AND "..tostring(crewmem.iShipId).." == 0")
+                --print(crewmem.currentShipId == 1 and crewmem.iRoomId == 0 and crewmem.iShipId == 0)
+            end
+            if (not crewmem:IsDrone()) and crewmem.currentShipId == 1 and crewmem.iRoomId == 0 and crewmem.iShipId == 0 then
+                Hyperspace.playerVariables.loc_fish_board_charged = 1
+                --print("SETFALSE")
+                setBOARDVAL = true
+                --print(setBOARDVAL)
+            end
+        end
+        --print(setBOARDVAL)
+
+        if not setBOARDVAL then
+            --print(setBOARDVAL)
+            --print("NONE")
+            Hyperspace.playerVariables.loc_fish_board_charged = 0
+        end
+    end
+end)
+
+script.on_game_event("FISHING_STORE_BOARD", false, function() 
+    --print("BOARD")
+    for crewmem in vter(Hyperspace.ships.player.vCrewList) do
+        if (not crewmem:IsDrone()) and crewmem.currentShipId == 0 and crewmem.iRoomId == Hyperspace.ships.player:GetSystemRoom(6) and crewmem.iShipId == 0 then
+            --print("TELEPORT CRTEW 1")
+            crewmem.extend:InitiateTeleport(1,0,0)
+            crewmem.bActiveManning = false
+        end
+    end 
+    for crewmem in vter(Hyperspace.ships.enemy.vCrewList) do
+        if (not crewmem:IsDrone()) and crewmem.iRoomId == 0 and crewmem.iShipId == 0 and crewmem.currentShipId == 1 then
+            --print("TELEPORT CRTEW 2")
+            crewmem.extend:InitiateTeleport(0,0,0)
+            crewmem.bActiveManning = false
+        end
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
+    if Hyperspace.ships.enemy then
+        if crewmem.iShipId == 1 and crewmem:AtGoal() and crewmem.currentShipId == 1 and Hyperspace.ships.enemy.myBlueprint.blueprintName == "FISHING_STORE" and math.random() > 0.999 then
+            --print("SETTING MOVE GOAL")
+            local shipManager = Hyperspace.ships.enemy
+            local randomRoom = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
+            crewmem:SetRoomPath(1, randomRoom)
+        end
+    end
+end)
+
+local entered = false
+script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
+    local shipManager = Hyperspace.ships.player
+    local inWeaponLoop = true
+    if Hyperspace.ships.enemy then
+        for crewmem in vter(Hyperspace.ships.enemy.vCrewList) do
+            if crewmem.iShipId == 0  then
+                --print(tostring(crewmem.currentShipId).." == 1 and"..tostring(crewmem.iRoomId).." == 7 and"..tostring(Hyperspace.ships.enemy.myBlueprint.blueprintName).." == FISHING_STORE and")
+            end
+            if crewmem.iShipId == 0 and crewmem.currentShipId == 1 and crewmem.iRoomId == 7 and Hyperspace.ships.enemy.myBlueprint.blueprintName == "FISHING_STORE" then
+                if entered then
+                    --print("TRIGGER")
+                    entered = false
+                    local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+                    Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISHING_STORE_INSTORE",false,-1)
+                end
+                inWeaponLoop = false
+            end
+        end
+    end
+    if inWeaponLoop == true then
+        --print("WIPE")
+        entered = true
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+    Hyperspace.playerVariables.fishing_store_opened = 1
+end)
+
+script.on_game_event("START_BEACON_EXPLAIN", false, function()
+    Hyperspace.playerVariables.fish_bait_bounty_11 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_12 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_13 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_14 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_15 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_21 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_22 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_23 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_24 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_25 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_31 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_32 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_33 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_34 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_35 = math.random(1, 10)
 end)

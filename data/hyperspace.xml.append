@@ -28,7 +28,45 @@
     </mod:findLike>
 </mod:findLike>
 
+
+<augments>
+    <aug name="FISHING_STATION_AUGMENT">
+        <statBoosts>
+			<statBoost name="healAmount">
+				<boostType>FLAT</boostType>
+				<shipTarget>ORIGINAL_SHIP</shipTarget>
+				<crewTarget>ENEMIES</crewTarget>
+				<droneTarget>CREW</droneTarget>
+				<amount>4.8</amount>
+				<priority>0</priority>
+				<systemRoomTarget>ALL</systemRoomTarget>
+				<systemList>
+				  <medbay />
+				</systemList>
+			</statBoost>
+		</statBoosts>
+    </aug>
+    <aug name="FISH_INBAIT_11">
+        <function name="FISH_BAIT_11" value="1" useForReqs="true" warning="false" />
+    </aug>
+    <aug name="FISH_INBAIT_12">
+        <function name="FISH_BAIT_12" value="1" useForReqs="true" warning="false" />
+    </aug>
+    <aug name="FISH_INBAIT_13">
+        <function name="FISH_BAIT_13" value="1" useForReqs="true" warning="false" />
+    </aug>
+    <aug name="FISH_INBAIT_14">
+        <function name="FISH_BAIT_14" value="1" useForReqs="true" warning="false" />
+    </aug>
+    <aug name="FISH_INBAIT_15">
+        <function name="FISH_BAIT_15" value="1" useForReqs="true" warning="false" />
+    </aug>
+</augments>
+
 <events>
+    <bossShip>FISHING_STORE</bossShip>
+    <eventFile>special_fishing</eventFile>
+
     <metaVariable name="prof_r_boon_fish" op="set" val="0" />
     <metaVariable name="prof_hotkey_fish" op="set" val="9"/>
     <variable name="fish_sector" op="set" val="0"/>
@@ -45,6 +83,178 @@
     <variable name="fish_caught_leg" op="set" val="0"/>
     <variable name="fish_caught_unique" op="set" val="0"/>
     <variable name="fish_caught_guns" op="set" val="0"/>
+    <variable name="loc_fish_board_charged" op="set" val="0"/>
+    <variable name="fishing_store_opened" op="set" val="0"/>
+    <variable name="fishing_store_visited" op="set" val="0"/>
+
+    <variable name="fish_bait_equip_11" op="set" val="0"/>
+    <variable name="fish_bait_equip_12" op="set" val="0"/>
+    <variable name="fish_bait_equip_13" op="set" val="0"/>
+    <variable name="fish_bait_equip_14" op="set" val="0"/>
+    <variable name="fish_bait_equip_15" op="set" val="0"/>
+    <req name="fish_instbait_11" type="all">
+        <name>FISH_BAIT_11</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_11</name>
+        </req>
+    </req>
+    <req name="fish_instbait_12" type="all">
+        <name>FISH_BAIT_12</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_12</name>
+        </req>
+    </req>
+    <req name="fish_instbait_13" type="all">
+        <name>FISH_BAIT_13</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_13</name>
+        </req>
+    </req>
+    <req name="fish_instbait_14" type="all">
+        <name>FISH_BAIT_14</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_14</name>
+        </req>
+    </req>
+    <req name="fish_instbait_15" type="all">
+        <name>FISH_BAIT_15</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_15</name>
+        </req>
+    </req>
+    <variable name="fish_bait_bounty_11" op="set" val="1"/>
+    <variable name="fish_bait_bounty_12" op="set" val="1"/>
+    <variable name="fish_bait_bounty_13" op="set" val="1"/>
+    <variable name="fish_bait_bounty_14" op="set" val="1"/>
+    <variable name="fish_bait_bounty_15" op="set" val="1"/>
+
+    <variable name="fish_bait_equip_21" op="set" val="0"/>
+    <variable name="fish_bait_equip_22" op="set" val="0"/>
+    <variable name="fish_bait_equip_23" op="set" val="0"/>
+    <variable name="fish_bait_equip_24" op="set" val="0"/>
+    <variable name="fish_bait_equip_25" op="set" val="0"/>
+    <req name="fish_instbait_21" type="all">
+        <name>FISH_BAIT_21</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_21</name>
+        </req>
+    </req>
+    <req name="fish_instbait_22" type="all">
+        <name>FISH_BAIT_22</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_22</name>
+        </req>
+    </req>
+    <req name="fish_instbait_23" type="all">
+        <name>FISH_BAIT_23</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_23</name>
+        </req>
+    </req>
+    <req name="fish_instbait_24" type="all">
+        <name>FISH_BAIT_24</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_24</name>
+        </req>
+    </req>
+    <req name="fish_instbait_25" type="all">
+        <name>FISH_BAIT_25</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_25</name>
+        </req>
+    </req>
+    <variable name="fish_bait_bounty_21" op="set" val="1"/>
+    <variable name="fish_bait_bounty_22" op="set" val="1"/>
+    <variable name="fish_bait_bounty_23" op="set" val="1"/>
+    <variable name="fish_bait_bounty_24" op="set" val="1"/>
+    <variable name="fish_bait_bounty_25" op="set" val="1"/>
+
+    <variable name="fish_bait_equip_31" op="set" val="0"/>
+    <variable name="fish_bait_equip_32" op="set" val="0"/>
+    <variable name="fish_bait_equip_33" op="set" val="0"/>
+    <variable name="fish_bait_equip_34" op="set" val="0"/>
+    <variable name="fish_bait_equip_35" op="set" val="0"/>
+    <req name="fish_instbait_31" type="all">
+        <name>FISH_BAIT_31</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_31</name>
+        </req>
+    </req>
+    <req name="fish_instbait_32" type="all">
+        <name>FISH_BAIT_32</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_32</name>
+        </req>
+    </req>
+    <req name="fish_instbait_33" type="all">
+        <name>FISH_BAIT_33</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_33</name>
+        </req>
+    </req>
+    <req name="fish_instbait_34" type="all">
+        <name>FISH_BAIT_34</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_34</name>
+        </req>
+    </req>
+    <req name="fish_instbait_35" type="all">
+        <name>FISH_BAIT_35</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_35</name>
+        </req>
+    </req>
+    <variable name="fish_bait_bounty_31" op="set" val="1"/>
+    <variable name="fish_bait_bounty_32" op="set" val="1"/>
+    <variable name="fish_bait_bounty_33" op="set" val="1"/>
+    <variable name="fish_bait_bounty_34" op="set" val="1"/>
+    <variable name="fish_bait_bounty_35" op="set" val="1"/>
+
+
+    <req name="fish_reward_scrap" type="any">
+        <name>fish_bait_equip_11</name>
+        <name>fish_bait_equip_21</name>
+        <name>fish_bait_equip_31</name>
+        <name>fish_bait_equip_25</name>
+        <name>fish_bait_equip_35</name>
+        <name>fish_bait_equip_34</name>
+    </req>
+
+    <req name="fish_reward_gfish" type="any">
+        <name>fish_bait_equip_12</name>
+        <name>fish_bait_equip_22</name>
+        <name>fish_bait_equip_32</name>
+        <name>fish_bait_equip_21</name>
+        <name>fish_bait_equip_31</name>
+        <name>fish_bait_equip_35</name>
+    </req>
+
+    <req name="fish_reward_wfish" type="any">
+        <name>fish_bait_equip_13</name>
+        <name>fish_bait_equip_23</name>
+        <name>fish_bait_equip_33</name>
+        <name>fish_bait_equip_22</name>
+        <name>fish_bait_equip_32</name>
+        <name>fish_bait_equip_31</name>
+    </req>
+
+    <req name="fish_reward_crew" type="any">
+        <name>fish_bait_equip_14</name>
+        <name>fish_bait_equip_24</name>
+        <name>fish_bait_equip_34</name>
+        <name>fish_bait_equip_23</name>
+        <name>fish_bait_equip_33</name>
+        <name>fish_bait_equip_32</name>
+    </req>
+
+    <req name="fish_reward_equip" type="any">
+        <name>fish_bait_equip_15</name>
+        <name>fish_bait_equip_25</name>
+        <name>fish_bait_equip_35</name>
+        <name>fish_bait_equip_24</name>
+        <name>fish_bait_equip_34</name>
+        <name>fish_bait_equip_33</name>
+    </req>
 
     
     <req name="fish_inaug_bait_check" type="all">
@@ -62,6 +272,12 @@
         <req lvl="0" max_lvl="0">
             <name>FISH_INAUG_BAIT_ALT</name>
         </req>
+    </req>
+
+    
+    <req name="FISH_SPAWN_CHECK" type="any">
+        <name>BLUELIST_FISHING_RODS</name>
+        <name>BLUELIST_FISH</name>
     </req>
 
     <req name="fish_option" type="all">
@@ -280,11 +496,11 @@
             <lockImage>fish_ship_1_icon_locked</lockImage>
         </achievement>
         <achievement name="FISHING_SHIP_ACH_2" layout="all">
-            <name>A Great Voyage</name>
-            <description>Fill out all but the two hidden fish in the fish glossary of unique fish (Check Achievements).</description>
+            <name>Master Baiter</name>
+            <description>Store 4 different types of bait internally on your ship.</description>
             <icon>fish_ship_2_icon</icon>
             <lockImage>fish_ship_2_icon_locked</lockImage>
-            <variable name="fish_ship_ach_2_req" amount="1"/>
+            <!--variable name="fish_ship_ach_2_req" amount="1"/-->
         </achievement>
         <achievement name="FISHING_SHIP_ACH_3" layout="all">
             <name>Hold My Fishing Rod</name>
@@ -302,11 +518,53 @@
 	<mod-append:customShip name="PLAYER_SHIP_FISHING_2">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<slug_ranger room="0" name="Jimmy" />
+			<slug room="0" name="Jimmy Jr."/>
+		</crew>
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_FISHING_3">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="FISHING_STORE">
+		<crew>
+			<slug_clansman room="7" name="Bob" />
+			<slug room="3" /> 
+			<slug_saboteur room="10" />
+			<human room="10" />
+			<orchid room="9" />
+			<soldier room="11" />
+			<shell room="15" />
+		</crew>
+		<rooms>
+			<room id="9">
+				<roomAnim renderLayer="1">sylvan_artillery</roomAnim>
+			</room>
+			<room id="18">
+				<roomAnim renderLayer="1">sylvan_battery</roomAnim>
+			</room>
+			<room id="11">
+				<roomAnim renderLayer="1">sylvanb_doors</roomAnim>
+			</room>
+			<room id="14">
+				<roomAnim renderLayer="1">sylvanb_hacking</roomAnim>
+			</room>
+			<room id="8">
+				<roomAnim renderLayer="1">sylvan_cloak</roomAnim>
+			</room>
+			<room id="7">
+				<roomAnim renderLayer="1">fishing_store_floor</roomAnim>
+			</room>
+			<room id="15">
+				<roomAnim renderLayer="1">fishing_crates_1</roomAnim>
+			</room>
+			<room id="17">
+				<roomAnim renderLayer="1">fishing_crates_2</roomAnim>
+			</room>
+		</rooms>
 	</mod-append:customShip>
 </mod:findLike>
 
@@ -741,7 +999,7 @@
             </statBoost>
             <statBoost name="rangedDamageMultiplier">
                 <boostType>MULT</boostType>
-                <amount>0.416</amount>
+                <amount>0.25</amount>
                 <shipTarget>ALL</shipTarget>
                 <crewTarget>ALLIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
@@ -749,7 +1007,7 @@
             </statBoost>
 			<statBoost name="damageMultiplier">
                 <boostType>MULT</boostType>
-                <amount>1.2</amount>
+                <amount>2</amount>
                 <shipTarget>ALL</shipTarget>
                 <crewTarget>ALLIES</crewTarget>
                 <droneTarget>CREW</droneTarget>
@@ -912,19 +1170,23 @@
     <metaVariable name="fish_obtained_4E" op="set" val="0"/>
 
     <req name="fish_ship_ach_2_req" type="all">
-        <name>fish_obtained_41</name>
-        <name>fish_obtained_42</name>
-        <name>fish_obtained_43</name>
-        <name>fish_obtained_44</name>
-        <name>fish_obtained_45</name>
-        <name>fish_obtained_46</name>
-        <name>fish_obtained_47</name>
-        <name>fish_obtained_48</name>
-        <name>fish_obtained_49</name>
-        <name>fish_obtained_40</name>
-        <name>fish_obtained_4A</name>
-        <name>fish_obtained_4B</name>
-        <name>fish_obtained_4C</name>
+        <req type="sum" lvl="4">
+            <name>FISH_INBAIT_11</name>
+            <name>FISH_INBAIT_12</name>
+            <name>FISH_INBAIT_13</name>
+            <name>FISH_INBAIT_14</name>
+            <name>FISH_INBAIT_15</name>
+            <name>FISH_INBAIT_21</name>
+            <name>FISH_INBAIT_22</name>
+            <name>FISH_INBAIT_23</name>
+            <name>FISH_INBAIT_24</name>
+            <name>FISH_INBAIT_25</name>
+            <name>FISH_INBAIT_31</name>
+            <name>FISH_INBAIT_32</name>
+            <name>FISH_INBAIT_33</name>
+            <name>FISH_INBAIT_34</name>
+            <name>FISH_INBAIT_35</name>
+        </req>
     </req>
 </events>
 

@@ -86,6 +86,24 @@ local function ach_check_loop()
             Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_1", false)
         end
     end
+
+    local baitCount = 0
+    if shipManager:HasAugmentation("FISH_INBAIT_11") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_12") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_13") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_14") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_15") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_21") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_22") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_23") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_24") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_25") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_31") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_32") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_33") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_34") > 0 then baitCount = baitCount + 1 end
+    if shipManager:HasAugmentation("FISH_INBAIT_35") > 0 then baitCount = baitCount + 1 end
+    if baitCount >= 4 then Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_2", false) end
 end
 
 script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, ach_check_loop)

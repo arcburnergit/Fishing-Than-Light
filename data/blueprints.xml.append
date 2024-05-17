@@ -139,15 +139,12 @@
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="8" count="4">
-		<weapon name="BEAM_REPAIR" />
-		<weapon name="FISH_FOOD_LASER" />
+		<weapon name="FISH_FOOD_BEAM" />
 		<weapon name="FISHING_ROD_3" />
 	</weaponList>
 	<droneList drones="8" count="2" />
 	<health amount="30" />
 	<maxPower amount="9" />
-	<crewCount amount="1" class="slug_ranger" />
-	<crewCount amount="1" class="slug" />
 	<aug name="LOCKED_SLUG_GEL" />
 	<aug name="FISH_AUG_FISHINGONLY" />
     <mv-mapImage>map_icon_fishp_trawler</mv-mapImage>
@@ -246,7 +243,7 @@ This harpoon will be able to catch the more common fish.
 	<power>1</power>
 	<cost>0</cost>
 	<bp>2</bp>
-	<rarity>4</rarity>
+	<rarity>0</rarity>
 	<image>invisible</image>
 	<boost>
 		<type>cooldown</type>
@@ -342,7 +339,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<power>2</power>
 	<cost>75</cost>
 	<bp>2</bp>
-	<rarity>4</rarity>
+	<rarity>3</rarity>
 	<image>invisible</image>
 	<boost>
 		<type>cooldown</type>
@@ -724,6 +721,14 @@ This harpoon will be able to catch even the most elusive fish.
 	<iconImage>missile</iconImage>
 </weaponBlueprint>
 
+<augBlueprint name="FISHING_STATION_AUGMENT">
+	<title>Fishing power</title>
+	<desc> </desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
 <augBlueprint name="ARC_WEAPON_POWER">
 	<title>Weapon power</title>
 	<desc> </desc>
@@ -803,6 +808,619 @@ This harpoon will be able to catch even the most elusive fish.
 	<rarity>0</rarity>
 	<stackable>false</stackable>
 </augBlueprint>
+
+<augBlueprint name="FISH_INAUG_SPEED">
+	<title>Faster Fishing</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INAUG_HIGHER">
+	<title>Higher Fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INAUG_GRAV">
+	<title>GRav Fish</title>
+	<desc>fish</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+</augBlueprint>
+</FTL>
+
+<FTL>
+<augBlueprint name="FISH_BAIT_11">
+	<title>Lure: Spinner</title>
+	<desc>When fishing you won't fish up scrap.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_12">
+	<title>Lure: Paddle Tail</title>
+	<desc>When fishing you are far less likely to fish up generic fish.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_13">
+	<title>Lure: Craw</title>
+	<desc>When fishing you won't fish up gun fish and unique fish.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_14">
+	<title>Lure: Grub</title>
+	<desc>When fishing you won't fish up crew.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_15">
+	<title>Lure: Jin Hook</title>
+	<desc>When fishing you won't fish up Equipment.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_11">
+	<title>No Scrap Bait IN</title>
+	<desc>When fishing you won't fish up scrap.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_12">
+	<title>No Fish Bait IN</title>
+	<desc>When fishing you are far less likely to fish up generic fish.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_13">
+	<title>No Weird Fish Bait IN</title>
+	<desc>When fishing you won't fish up gun fish and unique fish.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_14">
+	<title>No Crew Bait IN</title>
+	<desc>When fishing you won't fish up crew.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_15">
+	<title>No Fish Bait IN</title>
+	<desc>When fishing you won't fish up Equipment.</desc>
+	<cost>40</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_21">
+	<title>Lure: Spinning Paddle Tail</title>
+	<desc>When fishing you won't fish up scrap, you are far less likely to fish up generic fish.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_22">
+	<title>Lure: Craw Tail</title>
+	<desc>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_23">
+	<title>Lure: Craw Grub</title>
+	<desc>When fishing you won't fish up gun fish and unique fish, you won't fish up crew.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_24">
+	<title>Lure: Grub Hook</title>
+	<desc>When fishing you won't fish up crew, you won't fish up Equipment.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_25">
+	<title>Lure: Jin Hook Spinner</title>
+	<desc>When fishing you won't fish up Equipment, you won't fish up scrap.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_21">
+	<title>No Scrap Or Fish Bait</title>
+	<desc>When fishing you won't fish up scrap, you are far less likely to fish up generic fish.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_22">
+	<title>No Fish Bait</title>
+	<desc>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_23">
+	<title>No Weird Fish Bait</title>
+	<desc>When fishing you won't fish up gun fish and unique fish, you won't fish up crew.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_24">
+	<title>No Crew Bait</title>
+	<desc>When fishing you won't fish up crew, you won't fish up Equipment.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_25">
+	<title>No Fish Bait</title>
+	<desc>When fishing you won't fish up Equipment, you won't fish up scrap.</desc>
+	<cost>60</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_31">
+	<title>Lure: Spinning Paddle Craw</title>
+	<desc>When fishing you won't fish up scrap, you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_32">
+	<title>Lure: Craw Grub Tail</title>
+	<desc>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish, you won't fish up crew.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_33">
+	<title>Lure: Hooked Craw Grub</title>
+	<desc>When fishing you won't fish up gun fish and unique fish, you won't fish up crew, you won't fish up Equipment.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_34">
+	<title>Lure: Jin Grub Hook</title>
+	<desc>When fishing you won't fish up crew, you won't fish up Equipment, you won't fish up scrap.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_BAIT_35">
+	<title>Lure: Spinning Paddle Hook</title>
+	<desc>When fishing you won't fish up Equipment, you won't fish up scrap, you are far less likely to fish up generic fish.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_31">
+	<title>No Scrap Or Fish Bait</title>
+	<desc>When fishing you won't fish up scrap, you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_32">
+	<title>No Fish Bait</title>
+	<desc>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish, you won't fish up crew.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_33">
+	<title>No Weird Fish Bait</title>
+	<desc>When fishing you won't fish up gun fish and unique fish, you won't fish up crew, you won't fish up Equipment.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_34">
+	<title>No Crew Bait</title>
+	<desc>When fishing you won't fish up crew, you won't fish up Equipment, you won't fish up scrap.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_35">
+	<title>No Fish Bait</title>
+	<desc>When fishing you won't fish up Equipment, you won't fish up scrap, you are far less likely to fish up generic fish.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+
+<weaponBlueprint name="FISH_BAIT_FAKE_11">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Spinner</title>
+	<short>Lure: Spinner</short>
+	<desc>When fishing you won't fish up scrap.</desc>
+	<descriptionOverride>When fishing you won't fish up scrap.
+
+Default Price: 40~ - Selling Price:20~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_12">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Paddle Tail</title>
+	<short>Lure: Paddle Tail</short>
+	<desc>When fishing you are far less likely to fish up generic fish.</desc>
+	<descriptionOverride>When fishing you are far less likely to fish up generic fish.
+
+Default Price: 40~ - Selling Price:20~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_13">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Craw</title>
+	<short>Lure: Craw</short>
+	<desc>When fishing you won't fish up gun fish and unique fish.</desc>
+	<descriptionOverride>When fishing you won't fish up gun fish and unique fish.
+
+Default Price: 40~ - Selling Price:20~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_14">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Grub</title>
+	<short>Lure: Grub</short>
+	<desc>When fishing you won't fish up crew.</desc>
+	<descriptionOverride>When fishing you won't fish up crew.
+
+Default Price: 40~ - Selling Price:20~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_15">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Jin Hook</title>
+	<short>Lure: Jin Hook</short>
+	<desc>When fishing you won't fish up Equipment.</desc>
+	<descriptionOverride>When fishing you won't fish up Equipment.
+
+Default Price: 40~ - Selling Price:20~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+
+<weaponBlueprint name="FISH_BAIT_FAKE_21">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Spinning Paddle Tail</title>
+	<short>Lure: Spinning Paddle Tail</short>
+	<desc>When fishing you won't fish up scrap, you are far less likely to fish up generic fish.</desc>
+	<descriptionOverride>When fishing you won't fish up scrap, you are far less likely to fish up generic fish.
+
+Default Price: 60~ - Selling Price:30~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_22">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Craw Tail</title>
+	<short>Lure: Craw Tail</short>
+	<desc>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.</desc>
+	<descriptionOverride>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.
+
+Default Price: 60~ - Selling Price:30~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_23">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Craw Grub</title>
+	<short>Lure: Craw Grub</short>
+	<desc>When fishing you won't fish up gun fish and unique fish, you won't fish up crew.</desc>
+	<descriptionOverride>When fishing you won't fish up gun fish and unique fish, you won't fish up crew.
+
+Default Price: 60~ - Selling Price:30~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_24">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Grub Hook</title>
+	<short>Lure: Grub Hook</short>
+	<desc>When fishing you won't fish up crew, you won't fish up Equipment.</desc>
+	<descriptionOverride>When fishing you won't fish up crew, you won't fish up Equipment.
+
+Default Price: 60~ - Selling Price:30~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_25">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Jin Hook Spinner</title>
+	<short>Lure: Jin Hook Spinner</short>
+	<desc>When fishing you won't fish up Equipment, you won't fish up scrap.</desc>
+	<descriptionOverride>When fishing you won't fish up Equipment, you won't fish up scrap.
+
+Default Price: 60~ - Selling Price:30~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+
+<weaponBlueprint name="FISH_BAIT_FAKE_31">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Spinning Paddle Craw</title>
+	<short>Lure: Spinning Paddle Craw</short>
+	<desc>When fishing you won't fish up scrap, you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.</desc>
+	<descriptionOverride>When fishing you won't fish up scrap, you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish.
+
+Default Price: 80~ - Selling Price:40~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_32">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<short>Lure: Craw Grub Tail</short>
+	<desc>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish, you won't fish up crew.</desc>
+	<descriptionOverride>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish, you won't fish up crew.
+
+Default Price: 80~ - Selling Price:40~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_33">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Hooked Craw Grub</title>
+	<short>Lure: Hooked Craw Grub</short>
+	<desc>When fishing you won't fish up gun fish and unique fish, you won't fish up crew, you won't fish up Equipment.</desc>
+	<descriptionOverride>When fishing you won't fish up gun fish and unique fish, you won't fish up crew, you won't fish up Equipment.
+
+Default Price: 80~ - Selling Price:40~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_34">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Jin Grub Hook</title>
+	<short>Lure: Jin Grub Hook</short>
+	<desc>When fishing you won't fish up crew, you won't fish up Equipment, you won't fish up scrap.</desc>
+	<descriptionOverride>When fishing you won't fish up crew, you won't fish up Equipment, you won't fish up scrap.
+
+Default Price: 80~ - Selling Price:40~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_BAIT_FAKE_35">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Spinning Paddle Hook</title>
+	<short>Lure: Spinning Paddle Hook</short>
+	<desc>When fishing you won't fish up Equipment, you won't fish up scrap, you are far less likely to fish up generic fish.</desc>
+	<descriptionOverride>When fishing you won't fish up Equipment, you won't fish up scrap, you are far less likely to fish up generic fish.
+
+Default Price: 80~ - Selling Price:40~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -1752,7 +2370,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Queenfish</title>
 	<short>Queenfish</short>
-	<desc>A legendary space fish, when consumed gives hostile crew a 90% movespeed reduction</desc>
+	<desc>A legendary space fish, when consumed gives hostile crew a 90% movespeed reduction on your ship</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -2126,7 +2744,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Mantis Fish</title>
 	<short>Mantis Fish</short>
-	<desc>A unique space fish, when consumed all crew do -50% ranged damage but friendly crew gain +20% melee damage.</desc>
+	<desc>A unique space fish, when consumed all crew do -50% ranged damage but friendly crew gain +100% melee damage.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -2315,7 +2933,9 @@ This harpoon will be able to catch even the most elusive fish.
 	<tip>tip_fish_food</tip>
 	<title>Sylfin</title>
 	<short>Sylfin</short>
-	<desc>A unique space fish, can be consumed to gain access to the fish merchant beacon and one free sylvan.</desc>
+	<desc>A unique space fish, can be consumed to gain access to the fish merchant beacon and one free sylvan.
+
+The fish merchant beacon allows you to summon the fish merchant store at empty beacons.	</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>

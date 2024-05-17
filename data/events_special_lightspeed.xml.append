@@ -37,7 +37,7 @@
       <text>You reel in your catch to discover nothing more than some old junk.</text>
       <weapon name="FISHLIST_JUNK" />
     </event>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -276,8 +276,11 @@
 <event name="FISH_DROPPOINT_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -285,33 +288,33 @@
 <event name="FISH_DROPPOINT_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_FED_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_FED_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_DROPPOINT_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_FED_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_FED_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -320,44 +323,44 @@
 <event name="FISH_CIVILIAN_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_CREW_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
-    <event load="FISH_RANDOM_1"/>
-    <event load="FISH_WEAPON_1"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_CIVILIAN_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_CIV_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_CIV_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_CIVILIAN_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_CIV_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_CIV_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -366,8 +369,8 @@
 <event name="FISH_ENGI_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -375,31 +378,31 @@
 <event name="FISH_ENGI_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_ENGI_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ENGI_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_DRONE_1"/>
-    <event load="FISH_DRONE_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_DRONE_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_DRONE_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_ENGI_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_ENGI_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ENGI_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_DRONE_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_DRONE_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -408,8 +411,8 @@
 <event name="FISH_ZOLTAN_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -417,30 +420,30 @@
 <event name="FISH_ZOLTAN_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_ZOL_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ZOL_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_ZOLTAN_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_ZOL_GIVE"/>
-    <event load="FISH_ZOL_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ZOL_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_ZOL_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -449,8 +452,8 @@
 <event name="FISH_ORCHID_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -458,33 +461,33 @@
 <event name="FISH_ORCHID_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_ORC_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ORC_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_ORCHID_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_ORC_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ORC_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -493,8 +496,8 @@
 <event name="FISH_MANTIS_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -502,34 +505,34 @@
 <event name="FISH_MANTIS_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_MAN_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_MAN_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_MANTIS_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_MAN_GIVE"/>
-    <event load="FISH_MAN_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_MAN_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_MAN_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -538,8 +541,8 @@
 <event name="FISH_CRYSTAL_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -547,32 +550,32 @@
 <event name="FISH_CRYSTAL_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_CRY_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_CRY_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_CRYSTAL_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_CRY_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_CRY_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -581,8 +584,8 @@
 <event name="FISH_ROCK_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -590,31 +593,31 @@
 <event name="FISH_ROCK_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_ROCK_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ROCK_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_ROCK_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_ROCK_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ROCK_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -623,42 +626,42 @@
 <event name="FISH_REBEL_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
-    <event load="FISH_RANDOM_1"/>
-    <event load="FISH_CREW_1"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_REBEL_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_REB_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_REB_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_REBEL_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_REB_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_REB_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -667,8 +670,8 @@
 <event name="FISH_PIRATE_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -676,31 +679,31 @@
 <event name="FISH_PIRATE_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_PIR_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_PIR_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_PIRATE_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_PIR_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_PIR_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -709,8 +712,8 @@
 <event name="FISH_LANIUS_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -718,29 +721,29 @@
 <event name="FISH_LANIUS_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_LAN_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_LAN_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_LANIUS_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_LAN_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_LAN_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -749,8 +752,8 @@
 <event name="FISH_SLUG_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -758,29 +761,29 @@
 <event name="FISH_SLUG_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SLUG_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SLUG_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_SLUG_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SLUG_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SLUG_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -789,8 +792,8 @@
 <event name="FISH_LEECH_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -798,31 +801,31 @@
 <event name="FISH_LEECH_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_LEECH_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_LEECH_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_LEECH_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_LEECH_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_LEECH_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -831,9 +834,9 @@
 <event name="FISH_HEKTAR_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_HEKTAR_1_LOOT"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_1_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -841,31 +844,31 @@
 <event name="FISH_HEKTAR_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_HEKTAR_1_LOOT"/>
-    <event load="FISH_HEKTAR_1_LOOT"/>
-    <event load="FISH_HEKTAR_2_LOOT"/>
-    <event load="FISH_HEKTAR_2_LOOT"/>
+    <event load="FISH_HEKTAR_1_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_1_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_2_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_2_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_HEKTAR_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_HEKTAR_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_HEKTAR_1_LOOT"/>
-    <event load="FISH_HEKTAR_1_LOOT"/>
-    <event load="FISH_HEKTAR_1_LOOT"/>
-    <event load="FISH_HEKTAR_2_LOOT"/>
-    <event load="FISH_HEKTAR_2_LOOT"/>
+    <event load="FISH_HEKTAR_1_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_1_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_1_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_2_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_HEKTAR_2_LOOT" req="fish_reward_equip" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -874,8 +877,8 @@
 <event name="FISH_ANCIENT_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -883,31 +886,31 @@
 <event name="FISH_ANCIENT_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_ANCIENT_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ANCIENT_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_ANCIENT_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_ANCIENT_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_ANCIENT_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
@@ -916,8 +919,8 @@
 <event name="FISH_NEXUS_1">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_1"/>
-    <event load="FISH_RANDOM_1"/>
+    <event load="FISH_SCRAP_1" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_1" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_1"/>
   </loadEventList>
 </event>
@@ -925,31 +928,31 @@
 <event name="FISH_NEXUS_2">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_SCRAP_2"/>
-    <event load="FISH_NEXUS_GIVE"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_2" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_NEXUS_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_2" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_RANDOM_2"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 
 <event name="FISH_NEXUS_3">
   <variable name="fish_caught" op="add" val="1"/>
   <loadEventList seeded="false" generate="false">
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_SCRAP_3"/>
-    <event load="FISH_NEXUS_GIVE"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_SCRAP_3" req="fish_reward_scrap" lvl="0" max_lvl="0"/>
+    <event load="FISH_NEXUS_GIVE" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
+    <event load="FISH_RANDOM_3" req="fish_reward_gfish" lvl="0" max_lvl="0"/>
     <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_RANDOM_3"/>
-    <event load="FISH_CREW_1"/>
-    <event load="FISH_WEAPON_1"/>
-    <event load="FISH_FISHGUN"/>
+    <event load="FISH_CREW_1" req="fish_reward_crew" lvl="0" max_lvl="0"/>
+    <event load="FISH_WEAPON_1" req="fish_reward_equip" lvl="0" max_lvl="0"/>
+    <event load="FISH_FISHGUN" req="fish_reward_wfish" lvl="0" max_lvl="0"/>
   </loadEventList>
 </event>
 

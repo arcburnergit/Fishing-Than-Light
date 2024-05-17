@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FTL>
+<FTL>	
 
 <event name="BOON_SELECT_FISH">
 	<text>From nowhere, you hear a voice speaking to you. "CHALLENGER! For you, I grant the BLESSING OF FISH! You will no longer fish up junk, and may your travels be BLESSED! For whom do you thank? Why, the PREVIOUS CHALLENGER! Hahah!"</text>

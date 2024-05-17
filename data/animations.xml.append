@@ -1,4 +1,24 @@
 <FTL>
+<animSheet name="fishing_store_floor" w="70" h="70" fw="70" fh="70">decor/fishing_store_floor.png</animSheet>
+<anim name="fishing_store_floor">
+	<sheet>fishing_store_floor</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="fishing_crates_1" w="70" h="70" fw="70" fh="70">decor/fish_crates_1.png</animSheet>
+<anim name="fishing_crates_1">
+	<sheet>fishing_crates_1</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+<animSheet name="fishing_crates_2" w="70" h="70" fw="70" fh="70">decor/fish_crates_2.png</animSheet>
+<anim name="fishing_crates_2">
+	<sheet>fishing_crates_2</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+
+
 <animSheet name="fishing_rod_1_charge" w="72" h="1097" fw="24" fh="1097">weapon_fish/fishing_rod_1_charge.png</animSheet>
 <anim name="fishing_rod_1_charge">
 	<sheet>fishing_rod_1_charge</sheet>
@@ -187,6 +207,17 @@
 	<firePoint x="8" y="2" />
 	<mountPoint x="2" y="8" />
 	<boost>invisible</boost>
+</weaponAnim>
+
+<animSheet name="invisibleSmall" w="24" h="1" fw="24" fh="1">weapon_fish/invisible.png</animSheet>
+<weaponAnim name="invisibleSmall">
+	<sheet>invisibleSmall</sheet>
+	<desc length="1" x="0" y="0" />
+	<chargedFrame>0</chargedFrame>
+	<fireFrame>0</fireFrame>
+	<firePoint x="8" y="1" />
+	<mountPoint x="2" y="1" />
+	<boost>invisibleSmall</boost>
 </weaponAnim>
 
 <animSheet name="fish_erosion" w="175" h="35" fw="35" fh="35">effects/fish_erosion.png</animSheet>
