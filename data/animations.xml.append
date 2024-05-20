@@ -104,6 +104,41 @@
 </weaponAnim>
 
 
+<animSheet name="artillery_fishing_rod_charge" w="33" h="1200" fw="33" fh="1200">weapon_fish/artillery_fishing_rod_charge.png</animSheet>
+<anim name="artillery_fishing_rod_charge">
+	<sheet>artillery_fishing_rod_charge</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<animSheet name="artillery_fishing_rod" w="330" h="1200" fw="33" fh="1200">weapon_fish/artillery_fishing_rod.png</animSheet>
+<weaponAnim name="artillery_fishing_rod">
+	<sheet>artillery_fishing_rod</sheet>
+	<desc length="10" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>9</fireFrame>
+	<firePoint x="16" y="1159" />
+	<mountPoint x="16" y="1186" />
+	<boost>artillery_fishing_rod_charge</boost>
+</weaponAnim>
+
+<animSheet name="artillery_fishing_rod_2_charge" w="33" h="1200" fw="33" fh="1200">weapon_fish/artillery_fishing_rod_2_charge.png</animSheet>
+<anim name="artillery_fishing_rod_2_charge">
+	<sheet>artillery_fishing_rod_2_charge</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<animSheet name="artillery_fishing_rod_2" w="363" h="1200" fw="33" fh="1200">weapon_fish/artillery_fishing_rod_2.png</animSheet>
+<weaponAnim name="artillery_fishing_rod_2">
+	<sheet>artillery_fishing_rod_2</sheet>
+	<desc length="11" x="0" y="0" />
+	<chargedFrame>4</chargedFrame>
+	<fireFrame>10</fireFrame>
+	<firePoint x="16" y="1159" />
+	<mountPoint x="16" y="1186" />
+	<boost>artillery_fishing_rod_2_charge</boost>
+</weaponAnim>
+
+
 <animSheet name="fish_laser" w="240" h="117" fw="30" fh="117">weapon_fish/fish_laser.png</animSheet>
 <weaponAnim name="fish_laser">
 	<sheet>fish_laser</sheet>

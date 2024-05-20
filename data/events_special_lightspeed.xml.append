@@ -90,6 +90,7 @@
 </event>
 <event name="FISH_CREW_1">
   <text>As you reel in your catch you realise its no fish at all, instead you've got a new crewmember.</text>
+  <variable name="fish_caught_crew" op="add" val="1"/>
   <crewMember amount="1" class="random">Fish</crewMember>
 </event>
 <event name="FISH_FISHGUN">
@@ -254,7 +255,7 @@
   <variable name="fish_caught_unique" op="add" val="1"/>
   <text>You reeled in a unique ancient fish!</text>
   
-  <weapon name="FISH_FOOD_4E"/>
+  <weapon name="FISH_FOOD_4D"/>
   <choice>
     <text>Continue...</text>
     <event load="FISHING_CHECK_ACH"/>

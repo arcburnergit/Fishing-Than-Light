@@ -64,26 +64,38 @@ end
 
 local function ach_check_loop()
     local shipManager = Hyperspace.ships.player
-    if shipManager.iShipId == 0 then
-        local weaponList = shipManager:GetWeaponList()
-        local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
-        local cargoList = commandGui.equipScreen:GetCargoHold()
-        for weapon in vter(weaponList) do
-            local itemName = weapon.blueprint.name
-            check_fish_ach(itemName)
+    local weaponList = shipManager:GetWeaponList()
+    local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
+    local cargoList = commandGui.equipScreen:GetCargoHold()
+    for weapon in vter(weaponList) do
+        local itemName = weapon.blueprint.name
+        check_fish_ach(itemName)
+    end
+    local allFishCargo = true
+    --local hasCargo = false
+    for item in vter(cargoList) do
+        --hasCargo = true
+        local itemName = item
+        if not check_fish_ach(itemName) then
+            allFishCargo = false
         end
-        local allFishCargo = true
-        --local hasCargo = false
-        for item in vter(cargoList) do
-            --hasCargo = true
-            local itemName = item
-            if not check_fish_ach(itemName) then
-                allFishCargo = false
+    end
+    if allFishCargo and cargoList:size() >=4 then
+        --print("FISHING_SHIP_ACH_1")
+        Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_1", false)
+    end
+    if Hyperspace.playerVariables.fish_caught_crew >= 16 then
+        Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHARTY_SHIP_ACH_3", false)
+    end
+    if Hyperspace.playerVariables.fish_bait_equip_DOUBLE == 1 then
+        local hasArty = false
+        for artillery in vter(Hyperspace.ships.player.artillerySystems) do 
+            if artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_1" or artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_2" or artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_3" then 
+                hasArty = true
             end
         end
-        if allFishCargo and cargoList:size() >=4 then
-            --print("FISHING_SHIP_ACH_1")
-            Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_1", false)
+        if hasArty then
+            Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHARTY_SHIP_ACH_2", false)
         end
     end
 
@@ -103,7 +115,7 @@ local function ach_check_loop()
     if shipManager:HasAugmentation("FISH_INBAIT_33") > 0 then baitCount = baitCount + 1 end
     if shipManager:HasAugmentation("FISH_INBAIT_34") > 0 then baitCount = baitCount + 1 end
     if shipManager:HasAugmentation("FISH_INBAIT_35") > 0 then baitCount = baitCount + 1 end
-    if baitCount >= 4 then Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_2", false) end
+    if baitCount >= 8 then Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_2", false) end
 end
 
 script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, ach_check_loop)
@@ -114,6 +126,10 @@ local achLayoutUnlocks = {
     {
         achPrefix = "FISHING_SHIP_ACH",
         unlockShip = "PLAYER_SHIP_FISHING_2"
+    },
+    {
+        achPrefix = "FISHARTY_SHIP_ACH",
+        unlockShip = "PLAYER_SHIP_FISHARTY_2"
     }
 }
 

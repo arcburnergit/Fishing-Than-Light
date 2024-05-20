@@ -2,8 +2,12 @@
 
 <FTL>
 <text name="ship_PLAYER_SHIP_FISHING_unlock">Grab an old harpoon from the hanger.</text>
-<text name="ship_PLAYER_SHIP_FISHING_2_unlock">Complete 2/3 of the Fishing Ship Achievements to unlock this ship. (Hint: They can be completed on any ship)</text>
+<text name="ship_PLAYER_SHIP_FISHING_2_unlock">Complete 2/3 of the Fishing Trawler Ship Achievements to unlock this ship.</text>
 <text name="ship_PLAYER_SHIP_FISHING_3_unlock">In the deepest reaches of the multiverse there exists one fish to rule them all, or at least sell them.</text>
+
+<text name="ship_PLAYER_SHIP_FISHARTY_unlock">Complete a legendary bounty.</text>
+<text name="ship_PLAYER_SHIP_FISHARTY_2_unlock">Complete 2/3 of the Fishing Dredger Ship Achievements to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_FISHARTY_3_unlock">Coming Soon.</text>
 
 <text name="tip_fish_food">Tip: Check the storage menu to use the fish.</text>
 <text name="map_icon_fish">FISH</text>

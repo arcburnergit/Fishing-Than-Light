@@ -73,6 +73,7 @@
     <variable name="fish_active" op="set" val="0"/>
     <variable name="fish_this_sector" op="set" val="0"/>
     <variable name="fish_this_jump" op="set" val="0"/>
+    <variable name="fish_arty_this_jump" op="set" val="0"/>
     <variable name="jumps_since_fish" op="set" val="0"/>
     <variable name="fish_again" op="set" val="0"/>
     <variable name="fish_music" op="set" val="0"/>
@@ -86,6 +87,7 @@
     <variable name="loc_fish_board_charged" op="set" val="0"/>
     <variable name="fishing_store_opened" op="set" val="0"/>
     <variable name="fishing_store_visited" op="set" val="0"/>
+    <variable name="fish_caught_crew" op="set" val="0"/>
 
     <variable name="fish_bait_equip_11" op="set" val="0"/>
     <variable name="fish_bait_equip_12" op="set" val="0"/>
@@ -210,6 +212,14 @@
     <variable name="fish_bait_bounty_34" op="set" val="1"/>
     <variable name="fish_bait_bounty_35" op="set" val="1"/>
 
+    <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
+    <req name="fish_instbait_DOUBLE" type="all">
+        <name>FISH_BAIT_DOUBLE</name>
+        <req lvl="0" max_lvl="0">
+            <name>FISH_INBAIT_DOUBLE</name>
+        </req>
+    </req>
+    <variable name="fish_bait_bounty_DOUBLE" op="set" val="1"/>
 
     <req name="fish_reward_scrap" type="any">
         <name>fish_bait_equip_11</name>
@@ -467,7 +477,7 @@
 <mod:findLike type="ships">
   	<mod:findLike type="shipOrder">
 		<mod-append:ship>PLAYER_SHIP_FISHING</mod-append:ship>
-		<mod-append:empty />
+		<mod-append:ship>PLAYER_SHIP_FISHARTY</mod-append:ship>
 		<mod-append:empty />
 		<mod-append:empty />
 			<!-- -->
@@ -497,7 +507,7 @@
         </achievement>
         <achievement name="FISHING_SHIP_ACH_2" layout="all">
             <name>Master Baiter</name>
-            <description>Store 4 different types of bait internally on your ship.</description>
+            <description>Store 8 different types of bait internally on your ship.</description>
             <icon>fish_ship_2_icon</icon>
             <lockImage>fish_ship_2_icon_locked</lockImage>
             <!--variable name="fish_ship_ach_2_req" amount="1"/-->
@@ -507,6 +517,36 @@
             <description>Successfully catch a fish during the fight with the rebel flagship.</description>
             <icon>fish_ship_3_icon</icon>
             <lockImage>fish_ship_3_icon_locked</lockImage>
+        </achievement>
+	</mod-append:ship>
+
+	<mod-append:ship name="PLAYER_SHIP_FISHARTY" b="true" c="true" >
+        <unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+        <unlock variant="b" silent="false">
+			<type>4</type>
+		</unlock>
+        <unlock variant="c" silent="false">
+			<type>4</type>
+		</unlock>
+        <achievement name="FISHARTY_SHIP_ACH_1" layout="all">
+            <name>Eliminating a Species</name>
+            <description>Fish 4 times at the same beacon in combat.</description>
+            <icon>fish_arty_1_icon</icon>
+            <lockImage>fish_arty_1_icon_locked</lockImage>
+        </achievement>
+        <achievement name="FISHARTY_SHIP_ACH_2" layout="all">
+            <name>Fish Overload</name>
+            <description>Equip the double hook bait on an artillery harpoon.</description>
+            <icon>fish_arty_2_icon</icon>
+            <lockImage>fish_arty_2_icon_locked</lockImage>
+        </achievement>
+        <achievement name="FISHARTY_SHIP_ACH_3" layout="all">
+            <name>Technically Fish</name>
+            <description>Fish up 16 crew named fish during a run.</description>
+            <icon>fish_arty_3_icon</icon>
+            <lockImage>fish_arty_3_icon_locked</lockImage>
         </achievement>
 	</mod-append:ship>
 
@@ -525,6 +565,25 @@
 	</mod-append:customShip>
 
 	<mod-append:customShip name="PLAYER_SHIP_FISHING_3">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_FISHARTY">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_FISHARTY_2">
+		<hiddenAug>SHIP_SLUG</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<crew>
+			<slug_saboteur room="0" name="Silas" />
+			<slug_saboteur room="5" name="Sylvester"/>
+		</crew>
+	</mod-append:customShip>
+
+	<mod-append:customShip name="PLAYER_SHIP_FISHARTY_3">
 		<hiddenAug>SHIP_SLUG</hiddenAug>
 		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
 	</mod-append:customShip>
@@ -894,7 +953,7 @@
         <statBoosts>
             <statBoost name="trueHealAmount">
                 <boostType>SET</boostType>
-                <amount>-2</amount>
+                <amount>-5</amount>
                 <shipTarget>ORIGINAL_SHIP</shipTarget>
                 <crewTarget>ENEMIES</crewTarget>
                 <droneTarget>ALL</droneTarget>

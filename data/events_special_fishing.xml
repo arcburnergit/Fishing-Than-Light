@@ -17,6 +17,7 @@
 In order to board the station you need to move 1 or more crew members into your piloting room and then the teleportation button next to the enemy ship box.
 To retrieve your crew bring them into the teleportation room on the station and press the same button.</text>
             <variable name="fishing_store_visited" op="set" val="1"/>
+            <status type="limit" target="enemy" system="doors" amount="0" />
             <eventButton name="UI_FISH_BOARD">
                 <event load="FISHING_STORE_BOARD"/>
                 <image>statusUI/fish_board</image>
@@ -76,8 +77,50 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         <text>Nevermind</text>
         <event />
     </choice>
-
-
+    
+    
+    <choice req="fish_bait_bounty_DOUBLE" lvl="1" max_lvl="1">
+        <text>Bounty 0: Queenfish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_DOUBLE_1</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_DOUBLE" lvl="2" max_lvl="2">
+        <text>Bounty 0: Mahi Mahi</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_DOUBLE_2</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_DOUBLE" lvl="3" max_lvl="3">
+        <text>Bounty 0: Shorefish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_DOUBLE_3</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_DOUBLE" lvl="4" max_lvl="4">
+        <text>Bounty 0: Grouper</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_DOUBLE_4</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_DOUBLE" lvl="5" max_lvl="5">
+        <text>Bounty 0: Bluefish</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_DOUBLE_5</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_DOUBLE" lvl="6" max_lvl="6">
+        <text>Bounty 0: Arapaima</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_DOUBLE_6</loadEvent>
+        </event>
+    </choice>
+    <choice req="fish_bait_bounty_DOUBLE" lvl="7" max_lvl="7">
+        <text>Bounty 0 : Blue Marlin</text>
+        <event>
+            <loadEvent>FISH_BOUNTY_DOUBLE_7</loadEvent>
+        </event>
+    </choice>
 
 
 
@@ -1021,6 +1064,10 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <loadEvent>FISH_BOUNTY_35_10</loadEvent>
         </event>
     </choice>
+
+
+
+
 </event>
 
 <event name="FISH_BOUNTY_11_1">
@@ -3212,7 +3259,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         <event>
             <text>1</text>
             <loadEvent>FISH_BOUNTY_23_1</loadEvent>
-            <weapon name="FISH_BAIT_FAKE_22"/>
+            <weapon name="FISH_BAIT_FAKE_23"/>
         </event>
     </choice>
     <choice req="FISH_FOOD_11">
@@ -3243,7 +3290,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         <event>
             <text>1</text>
             <loadEvent>FISH_BOUNTY_23_2</loadEvent>
-            <weapon name="FISH_BAIT_FAKE_22"/>
+            <weapon name="FISH_BAIT_FAKE_23"/>
         </event>
     </choice>
     <choice req="FISH_FOOD_12">
@@ -3274,7 +3321,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         <event>
             <text>1</text>
             <loadEvent>FISH_BOUNTY_23_3</loadEvent>
-            <weapon name="FISH_BAIT_FAKE_22"/>
+            <weapon name="FISH_BAIT_FAKE_23"/>
         </event>
     </choice>
     <choice req="FISH_FOOD_13">
@@ -5687,6 +5734,232 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
     </choice>
     <choice req="FISH_FOOD_20" lvl="0" max_lvl="0" hidden="true">
         <text>Common Sturgeon</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+
+
+<event name="FISH_BOUNTY_DOUBLE_1">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_DOUBLE_1</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_31">
+        <text>Queenfish</text>
+        <event>
+            <remove name="FISH_FOOD_31"/>
+            <augment name="FISH_BAIT_DOUBLE"/>
+            <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_31" lvl="0" max_lvl="0" hidden="true">
+        <text>Queenfish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_DOUBLE_2">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_DOUBLE_2</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_32">
+        <text>Mahi Mahi</text>
+        <event>
+            <remove name="FISH_FOOD_32"/>
+            <augment name="FISH_BAIT_DOUBLE"/>
+            <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_32" lvl="0" max_lvl="0" hidden="true">
+        <text>Mahi Mahi</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_DOUBLE_3">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_DOUBLE_3</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_33">
+        <text>Shorefish</text>
+        <event>
+            <remove name="FISH_FOOD_33"/>
+            <augment name="FISH_BAIT_DOUBLE"/>
+            <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_33" lvl="0" max_lvl="0" hidden="true">
+        <text>Shorefish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_DOUBLE_4">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_DOUBLE_4</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_34">
+        <text>Grouper</text>
+        <event>
+            <remove name="FISH_FOOD_34"/>
+            <augment name="FISH_BAIT_DOUBLE"/>
+            <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_34" lvl="0" max_lvl="0" hidden="true">
+        <text>Grouper</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_DOUBLE_5">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_DOUBLE_5</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_35">
+        <text>Bluefish</text>
+        <event>
+            <remove name="FISH_FOOD_35"/>
+            <augment name="FISH_BAIT_DOUBLE"/>
+            <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_35" lvl="0" max_lvl="0" hidden="true">
+        <text>Bluefish</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_DOUBLE_6">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_DOUBLE_6</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_36">
+        <text>Arapaima</text>
+        <event>
+            <remove name="FISH_FOOD_36"/>
+            <augment name="FISH_BAIT_DOUBLE"/>
+            <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_36" lvl="0" max_lvl="0" hidden="true">
+        <text>Arapaima</text>
+        <event load="OPTION_INVALID"/>
+    </choice>
+    <choice>
+        <text>Nevermind</text>
+        <event>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+</event>
+
+<event name="FISH_BOUNTY_DOUBLE_7">
+    <text>Turn in Bounty:</text>
+    <choice>
+        <text>Reward:</text>
+        <event>
+            <text>1</text>
+            <loadEvent>FISH_BOUNTY_DOUBLE_7</loadEvent>
+            <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_37">
+        <text>Blue Marlin</text>
+        <event>
+            <remove name="FISH_FOOD_37"/>
+            <augment name="FISH_BAIT_DOUBLE"/>
+            <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_37" lvl="0" max_lvl="0" hidden="true">
+        <text>Blue Marlin</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
 <shipBlueprint name="PLAYER_SHIP_FISHING" layout="fishp_trawler_a" img="fishp_trawler_a">
-	<class>Trawler Class</class>
+	<class>Trawler</class>
 	<name>Little Skipper</name>
 	<desc>A small vessel dedicated to fishing in the vast emptiness of space.</desc>
 	<unlock id="ship_PLAYER_SHIP_FISHING_unlock"/>
@@ -77,7 +77,7 @@
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_FISHING_2" layout="fishp_trawler_b" img="fishp_trawler_b">
-	<class>Trawler Class</class>
+	<class>Trawler</class>
 	<name>The Jelly</name>
 	<desc>An experienced slug fisher has retired with their child to this small trawling vessel to live out the rest of their days catching fish.</desc>
 	<unlock id="ship_PLAYER_SHIP_FISHING_2_unlock"/>
@@ -151,7 +151,7 @@
 </shipBlueprint>
 
 <shipBlueprint name="PLAYER_SHIP_FISHING_3" layout="fishp_trawler_c" img="fishp_trawler_c">
-	<class>Trawler Class</class>
+	<class>Trawler</class>
 	<name>The Valkyrie</name>
 	<desc>After a fisherslug pulled in Sylfin, Sylfin had the ship repainted in their own colours.</desc>
 	<unlock id="ship_PLAYER_SHIP_FISHING_3_unlock"/>
@@ -224,6 +224,169 @@
 	<aug name="SCRAP_COLLECTOR" />
 	<aug name="FISH_AUG_FISHINGONLY" />
     <mv-mapImage>map_icon_fishp_trawler</mv-mapImage>
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_FISHARTY" layout="fishp_arty_a" img="fishp_arty_a">
+	<class>Dredger</class>
+	<name>The Pequod</name>
+	<desc>A small vessel with a built in harpoon which makes it extremely efficient at fishing.</desc>
+	<unlock id="ship_PLAYER_SHIP_FISHARTY_unlock"/>
+	<systemList>
+		<artillery power="1" max="4" room="1" start="true" weapon="ARTILLERY_FISHING_ROD_1" img="room_artillery" />
+		<battery power="1" room="4" start="false" img="room_battery_2" />
+		<cloaking power="1" room="9" start="true" img="room_cloaking_10" />
+		<clonebay power="1" room="6" start="false">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="3" start="false" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="10" start="false" img="room_drones_3" />
+		<engines power="2" room="8" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="11" start="false" img="room_hacking_3" />
+		<medbay power="1" room="6" start="true" img="room_medbay_13">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="13" start="false" img="room_mind_12" />
+		<oxygen power="1" room="14" start="true" img="room_oxygen_19" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="2" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="7" start="true" img="room_shields_8">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="5" start="false" />
+		<weapons power="1" max="8" room="12" start="true" img="room_weapons_8">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="5" count="4" >
+		<weapon name="LASER_CHARGEGUN" />
+	</weaponList>
+	<droneList drones="5" count="3" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="slug" />
+	<crewCount amount="1" class="leech" />
+	<crewCount amount="1" class="rock_outcast" />
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_FISHARTY_2" layout="fishp_arty_b" img="fishp_arty_b">
+	<class>Dredger</class>
+	<name>The Krait</name>
+	<desc>A pair of Clairvoyants decided to leave the fighting to other people, instead focusing their efforts on space fishing.</desc>
+	<unlock id="ship_PLAYER_SHIP_FISHARTY_2_unlock"/>
+	<systemList>
+		<artillery power="1" max="4" room="1" start="true" weapon="ARTILLERY_FISHING_ROD_2" img="room_artillery_5" />
+		<battery power="1" room="7" start="false" img="room_battery_2" />
+		<cloaking power="1" room="4" start="false" img="room_cloaking_7" />
+		<clonebay power="1" room="9" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="3" start="true" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="3" max="8" room="11" start="true" img="room_drones_17" />
+		<engines power="2" room="5" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="14" start="false" img="room_hacking_3" />
+		<medbay power="1" room="9" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="15" start="false" img="room_mind_12" />
+		<oxygen power="1" room="10" start="true" img="room_oxygen_19" />
+		<pilot power="1" room="0" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="2" start="false" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="6" start="true" img="room_shields_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="false" />
+		<weapons power="1" max="8" room="12" start="false" img="room_weapons_8">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>4</droneSlots>
+	<weaponList missiles="2" count="2" />
+	<droneList drones="16" count="4">
+		<drone name="ASSAULT_PARTICLE" />
+		<drone name="COMBAT_CONSERVATIVE_LASER" />
+	</droneList>
+	<health amount="30" />
+	<maxPower amount="7" />
+	<aug name="LOCKED_SLUG_GEL" />
+	<aug name="DRONE_RECOVERY" />
+</shipBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_FISHARTY_3" layout="fishp_arty_b" img="fishp_arty_b">
+	<class>Dredger</class>
+	<name>The </name>
+	<desc>???</desc>
+	<unlock id="ship_PLAYER_SHIP_FISHARTY_3_unlock"/>
+	<systemList>
+	</systemList>
+	<weaponSlots>3</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="2" count="2" />
+	<droneList drones="16" count="4" />
+	<health amount="30" />
+	<maxPower amount="1" />
 </shipBlueprint>
 
 <weaponBlueprint name="FISHING_ROD_0"> 
@@ -305,9 +468,41 @@ This harpoon will be able to catch most fish.
 	<fireChance>0</fireChance>
 	<cooldown>40</cooldown>
 	<power>1</power>
-	<cost>50</cost>
+	<cost>40</cost>
 	<bp>2</bp>
 	<rarity>4</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>41</amount>
+		<count>2</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<weaponArt>fishing_rod_2</weaponArt> 
+	<iconImage>laser_chain</iconImage>
+	<iconReplace>fishing_rod_2_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISHING_ROD_2_P"> 
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK II†</title>
+	<short>Harpoon MK II†</short>
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, in combat it's free to fish, however out of combat the harpoon has to be baited with scrap metal.
+This harpoon will be able to catch most fish.
+	</desc>
+	<tooltip>A Fishing Harpoon.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<cooldown>50</cooldown>
+	<power>0</power>
+	<cost>45</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
 	<image>invisible</image>
 	<boost>
 		<type>cooldown</type>
@@ -337,7 +532,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<fireChance>0</fireChance>
 	<cooldown>20</cooldown>
 	<power>2</power>
-	<cost>75</cost>
+	<cost>65</cost>
 	<bp>2</bp>
 	<rarity>3</rarity>
 	<image>invisible</image>
@@ -352,6 +547,140 @@ This harpoon will be able to catch even the most elusive fish.
 	<weaponArt>fishing_rod_3</weaponArt> 
 	<iconImage>laser_chain</iconImage>
 	<iconReplace>fishing_rod_3_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISHING_ROD_3_P"> 
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK III†</title>
+	<short>Harpoon MK III†</short>
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, in combat it's free to fish, however out of combat the harpoon has to be baited with scrap metal.
+This harpoon will be able to catch even the most elusive fish.
+	</desc>
+	<tooltip>An Advanced Fishing Harpoon.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<cooldown>30</cooldown>
+	<power>1</power>
+	<cost>70</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>21</amount>
+		<count>2</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<weaponArt>fishing_rod_3</weaponArt> 
+	<iconImage>laser_chain</iconImage>
+	<iconReplace>fishing_rod_3_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISHING_ROD_3_PP"> 
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK III††</title>
+	<short>Harpoon MK III††</short>
+	<desc>Useless as a weapon, however it is quite effective at catching space fish, in combat it's free to fish, however out of combat the harpoon has to be baited with scrap metal.
+This harpoon will be able to catch even the most elusive fish.
+	</desc>
+	<tooltip>An Advanced Fishing Harpoon.</tooltip>
+	<damage>0</damage>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<cooldown>40</cooldown>
+	<power>0</power>
+	<cost>75</cost>
+	<bp>2</bp>
+	<rarity>0</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>21</amount>
+		<count>2</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<weaponArt>fishing_rod_3</weaponArt> 
+	<iconImage>laser_chain</iconImage>
+	<iconReplace>fishing_rod_3_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_FISHING_ROD_1">
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK X</title>
+	<short>Harpoon MK X</short>
+	<desc>[Base cooldown: 20] This harpoon can fire multiple times each combat, cooldown doubles after each shot. 1st shot = MK III, 2nd shot = MK II, 3rd+ shot = MK I.</desc>
+	<tooltip>Artillery: A powerful fishing harpoon, capable of fishing multiple times each combat. Each time it fires it charges 50% slower that combat.</tooltip>
+	<damage>0</damage>
+	<ion>3</ion>
+    <accuracyMod>50</accuracyMod>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>20</cooldown>
+	<speed>200</speed>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>-1</amount>
+		<count>1</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<weaponArt>artillery_fishing_rod</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_FISHING_ROD_2">
+	<type>LASER</type>
+	<flavorType>Fishing Harpoon</flavorType>
+	<title>Harpoon MK XI</title>
+	<short>Harpoon MK XI</short>
+	<desc>[Base cooldown: 30] This harpoon shoots two harpoons at once, cooldown doubles after each shot. 1st shot = MK III, 2nd shot = MK II, 3rd+ shot = MK I.</desc>
+	<tooltip>Artillery: A powerful fishing harpoon, capable of fishing multiple times each combat. Each time it fires it charges 50% slower that combat.</tooltip>
+	<damage>0</damage>
+	<ion>3</ion>
+    <accuracyMod>50</accuracyMod>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>30</cooldown>
+	<speed>200</speed>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>invisible</image>
+	<boost>
+		<type>cooldown</type>
+		<amount>-1</amount>
+		<count>1</count>
+	</boost>
+	<launchSounds>
+		<sound>harpoonfire</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<weaponArt>artillery_fishing_rod_2</weaponArt>
 </weaponBlueprint>
 
 <weaponBlueprint name="FISH_FOOD_TINCAN">
@@ -1074,6 +1403,46 @@ This harpoon will be able to catch even the most elusive fish.
 	<rarity>0</rarity>
 	<stackable>true</stackable>
 </augBlueprint>
+
+<augBlueprint name="FISH_BAIT_DOUBLE">
+	<title>Lure: Double Hook</title>
+	<desc>When fishing you will hook a second fish that is a tier lower than the first fish. Has no effect on already doubled harpoons.</desc>
+	<cost>200</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+<augBlueprint name="FISH_INBAIT_DOUBLE">
+	<title>Double Hook</title>
+	<desc>When fishing you will hook a second fish that is a tier lower than the first fish. Has no effect on already doubled harpoons.</desc>
+	<cost>80</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+</augBlueprint>
+
+
+<weaponBlueprint name="FISH_BAIT_FAKE_DOUBLE">
+	<type>BEAM</type>
+	<flavorType>Lure</flavorType>
+	<title>Lure: Double Hook</title>
+	<short>Lure: Double Hook</short>
+	<desc>When fishing you will hook a second fish that is a tier lower than the first fish. Has no effect on already doubled harpoons.</desc>
+	<descriptionOverride>When fishing you will hook a second fish that is a tier lower than the first fish. Has no effect on already doubled harpoons.
+
+Default Price: 200~ - Selling Price:100~
+	</descriptionOverride>
+	<tooltip>Fish</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>0</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisibleSmall</weaponArt>
+</weaponBlueprint>
 
 
 <weaponBlueprint name="FISH_BAIT_FAKE_11">
@@ -2391,7 +2760,7 @@ Default Price: 80~ - Selling Price:40~
 	<tip>tip_fish_food</tip>
 	<title>Mahi Mahi</title>
 	<short>Mahi Mahi</short>
-	<desc>A legendary space fish, when consumed makes all crew and drones on your ship incapable of combat, however it also damages enemy crew and drones at 2 damage/second</desc>
+	<desc>A legendary space fish, when consumed makes all hostile and friendly crew and drones on your ship incapable of combat, however it also damages enemy crew and drones at 5 damage/second</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>

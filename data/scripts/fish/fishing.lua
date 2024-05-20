@@ -131,7 +131,10 @@ local rods = mods.fishing.rods
 rods["FISHING_ROD_0"] = 5
 rods["FISHING_ROD_1"] = 5
 rods["FISHING_ROD_2"] = 10
+rods["FISHING_ROD_2_p"] = 10
 rods["FISHING_ROD_3"] = 16
+rods["FISHING_ROD_3_P"] = 16
+rods["FISHING_ROD_3_PP"] = 16
 
 --[[
 
@@ -183,7 +186,6 @@ local selectPos = 200
 local fishCatch = 46
 local fishMax = 464
 local fishNumber = 1
-local fishDiff = 1
 local fishTimer = 2
 local isJump = false
 local hasJump = false
@@ -229,6 +231,13 @@ local reelMax = 34
 local releaseMax = 27
 local soundTimer=0
 
+local fishBeingCaught2 = false
+
+local fishSpeed2 = 0
+local fishPos2 = 0
+local fishCatch2 = 46
+local fishNumber2 = 0
+local fishTimer2 = 2
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(projectile, weaponBlueprint)
     local fishingData = rods[weaponBlueprint.name]
@@ -255,7 +264,111 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(
         selectPos = 200
         fishSpeed = 0
         fishPos = 200
+        fishTimer = 1
+        if Hyperspace.playerVariables.fish_bait_equip_DOUBLE == 1 then
+            fishNumber2 = math.abs(fishNumber2-5)
+            if fishNumber2 == 0 then fishNumber2 = 1 end
+            fishSpeed2 = 0
+            fishPos2 = 150
+            fishCatch2 = 92
+            fishTimer2 = 1
+            if shipManager:HasAugmentation("FISH_INAUG_HIGHER") > 0 then
+                fishCatch2 = 184
+            end
+        else
+            fishNumber2 = 0
+        end
         projectile:Kill()
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+    --local fishingData = rods[weapon.blueprint.name]
+    if weapon.blueprint.name == "ARTILLERY_FISHING_ROD_1" and Hyperspace.playerVariables.fish_active == 0 then
+        shipBlueprint = Hyperspace.ships.enemy.myBlueprint.blueprintName
+        Hyperspace.playerVariables.fish_this_jump = 1
+        Hyperspace.playerVariables.fish_active = 1
+        local shipManager = Hyperspace.ships.player
+        local fishMin = 1
+        local hasRepel = shipManager:HasAugmentation("FISH_INAUG_REPEL") > 0
+        if hasRepel and fishingData >= 5 then
+            fishMin = math.floor(fishingData * 0.41)
+        end
+        --log(tostring(fishMin).."to"..tostring(maxRodStrength))
+        local fishCatchMax = 5
+        if Hyperspace.playerVariables.fish_arty_this_jump == 0 then
+            fishCatchMax = 16
+        elseif Hyperspace.playerVariables.fish_arty_this_jump == 1 then
+            fishCatchMax = 10
+        end
+        fishNumber = math.random(1,fishCatchMax)
+        if fishNumber < fishMin then fishNumber = fishNumber + fishMin end
+
+
+        fishCatch = 92
+        if shipManager:HasAugmentation("FISH_INAUG_HIGHER") > 0 then
+            fishCatch = 184
+        end
+        xOffset = 650
+        selectSpeed = 0
+        selectPos = 200
+        fishSpeed = 0
+        fishPos = 200
+        if Hyperspace.playerVariables.fish_bait_equip_DOUBLE == 1 then
+            fishNumber2 = math.abs(fishNumber2-5)
+            if fishNumber2 == 0 then fishNumber2 = 1 end
+            fishSpeed2 = 0
+            fishPos2 = 150
+            fishCatch2 = 92
+            fishTimer2 = 1
+            if shipManager:HasAugmentation("FISH_INAUG_HIGHER") > 0 then
+                fishCatch2 = 184
+            end
+        else
+            fishNumber2 = 0
+        end
+        Hyperspace.playerVariables.fish_arty_this_jump = Hyperspace.playerVariables.fish_arty_this_jump + 1
+    end
+end)
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+    --local fishingData = rods[weapon.blueprint.name]
+    if weapon.blueprint.name == "ARTILLERY_FISHING_ROD_2" and Hyperspace.playerVariables.fish_active == 0 then
+        shipBlueprint = Hyperspace.ships.enemy.myBlueprint.blueprintName
+        Hyperspace.playerVariables.fish_this_jump = 1
+        Hyperspace.playerVariables.fish_active = 1
+        local shipManager = Hyperspace.ships.player
+        local fishMin = 1
+        local hasRepel = shipManager:HasAugmentation("FISH_INAUG_REPEL") > 0
+        if hasRepel and fishingData >= 5 then
+            fishMin = math.floor(fishingData * 0.41)
+        end
+        --log(tostring(fishMin).."to"..tostring(maxRodStrength))
+        local fishCatchMax = 5
+        if Hyperspace.playerVariables.fish_arty_this_jump == 0 then
+            fishCatchMax = 16
+        elseif Hyperspace.playerVariables.fish_arty_this_jump == 1 then
+            fishCatchMax = 10
+        end
+        fishNumber = math.random(1,fishCatchMax)
+        if fishNumber < fishMin then fishNumber = fishNumber + fishMin end
+        fishCatch2 = 92
+        fishCatch = 92
+        if shipManager:HasAugmentation("FISH_INAUG_HIGHER") > 0 then
+            fishCatch = 184
+            fishCatch2 = 184
+        end
+        xOffset = 650
+        selectSpeed = 0
+        selectPos = 200
+        fishSpeed = 0
+        fishPos = 200
+        fishNumber2 = math.random(1,fishCatchMax)
+        if fishNumber2 < fishMin then fishNumber2 = fishNumber2 + fishMin end
+        fishSpeed2 = 0
+        fishPos2 = 150
+        fishTimer2 = 1
+        Hyperspace.playerVariables.fish_arty_this_jump = Hyperspace.playerVariables.fish_arty_this_jump + 1
     end
 end)
 
@@ -280,6 +393,17 @@ local function fish_start_event()
             maxRodStrength = math.max(maxRodStrength, fishingData)
         end
     end
+
+    local hasArty2 = false
+    for artillery in vter(Hyperspace.ships.player.artillerySystems) do 
+        if artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_1" or artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_2" or artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_3" then 
+            maxRodStrength = math.max(maxRodStrength, 16)
+        end
+        if artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_2" then
+            hasArty2 = true
+        end
+    end
+
     local fishMin = 1
     local hasRepel = shipManager:HasAugmentation("FISH_INAUG_REPEL") > 0
     if hasRepel and maxRodStrength >= 5 then
@@ -300,6 +424,20 @@ local function fish_start_event()
     selectPos = 200
     fishSpeed = 0
     fishPos = 200
+    
+    if Hyperspace.playerVariables.fish_bait_equip_DOUBLE == 1 or hasArty2 then
+        fishNumber2 = math.abs(fishNumber2-5)
+        if fishNumber2 == 0 then fishNumber2 = 1 end
+        fishSpeed2 = 0
+        fishPos2 = 150
+        fishCatch2 = 92
+        fishTimer2 = 1
+        if shipManager:HasAugmentation("FISH_INAUG_HIGHER") > 0 then
+            fishCatch2 = 184
+        end
+    else
+        fishNumber2 = 0
+    end
 end
 
 script.on_game_event("FISHING_START_NOCOMBAT", false, fish_start_event)
@@ -414,7 +552,25 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
         end
 
         local commandGui = Hyperspace.Global.GetInstance():GetCApp().gui
+
+        for artillery in vter(Hyperspace.ships.player.artillerySystems) do 
+            if artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_1" or artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_2" or artillery.projectileFactory.blueprint.name == "ARTILLERY_FISHING_ROD_3" then 
+                maxRodStrength = math.max(maxRodStrength, 16)
+                if Hyperspace.playerVariables.fish_active == 1 then 
+                    artillery.projectileFactory.cooldown.first = 0
+                    artillery.projectileFactory.boostLevel = 1
+                elseif Hyperspace.playerVariables.fish_arty_this_jump > 0 and not (commandGui.bPaused or commandGui.event_pause) and artillery.projectileFactory.cooldown.first < artillery.projectileFactory.cooldown.second then
+                    artillery.projectileFactory.boostLevel = 0
+                    --print(1-0.5 ^ Hyperspace.playerVariables.fish_arty_this_jump)
+                    --artillery.projectileFactory:SetCooldownModifier(1000)
+                    artillery.projectileFactory.cooldown.first = math.max(0,artillery.projectileFactory.cooldown.first - ((1-(0.5 ^ Hyperspace.playerVariables.fish_arty_this_jump)) * Hyperspace.FPS.SpeedFactor/16))
+                else
+                    artillery.projectileFactory.boostLevel = 0
+                end
+            end
+        end
         if Hyperspace.playerVariables.fish_active == 1 and not (commandGui.bPaused or commandGui.event_pause) then
+            --print(fishCatch)
             local gravity = 50
             local maxSpeed = 150
             if shipManager:HasAugmentation("FISH_INAUG_GRAV") > 0 then gravity = 65 end
@@ -437,85 +593,204 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
             end
 
 
-            if fishSpeed > 0 then 
-                fishSpeed = fishSpeed - (gravity) *  Hyperspace.FPS.SpeedFactor/16
-            elseif fishSpeed < 0 then
-                fishSpeed = fishSpeed + (gravity) *  Hyperspace.FPS.SpeedFactor/16
-            end
+            if fishNumber > 0 then
 
-            fishTimer = math.max(fishTimer - Hyperspace.FPS.SpeedFactor/16, 0)
-            if fishTimer == 0 then
-                local soundName = fishSounds:GetItem()
-                Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
-                fishTimer = 1 - (fishNumber/17) + (2*math.random())
-                local negative = math.random()
-                local random = ((math.random() + 3) * (fishNumber * 2 + 20))
-                if negative >= 0.5 then 
-                    random = -1 * random
+                if fishSpeed > 0 then 
+                    fishSpeed = fishSpeed - (gravity) *  Hyperspace.FPS.SpeedFactor/16
+                elseif fishSpeed < 0 then
+                    fishSpeed = fishSpeed + (gravity) *  Hyperspace.FPS.SpeedFactor/16
                 end
-                fishSpeed = fishSpeed / 2
-                fishSpeed = math.max(-100, math.min(100, fishSpeed + random))
-            end
-            fishPos = math.max(0, math.min(fishPos + fishSpeed * Hyperspace.FPS.SpeedFactor/16, 446))
-            if fishPos == 0 then
-                fishSpeed = fishSpeed * -1.5
-            elseif fishPos == 446 then
-                fishSpeed = fishSpeed * -1.5
-            end
 
-            if math.abs(selectPos - fishPos) < 46 then
-                local maxRandom = 4
+                fishTimer = math.max(fishTimer - Hyperspace.FPS.SpeedFactor/16, 0)
+                if fishTimer == 0 then
+                    local soundName = fishSounds:GetItem()
+                    Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
+                    fishTimer = 1 - (fishNumber/17) + (2*math.random())
+                    local negative = math.random()
+                    local random = ((math.random() + 3) * (fishNumber * 2 + 20))
+                    if negative >= 0.5 then 
+                        random = -1 * random
+                    end
+                    fishSpeed = fishSpeed / 2
+                    fishSpeed = math.max(-100, math.min(100, fishSpeed + random))
+                end
+                fishPos = math.max(0, math.min(fishPos + fishSpeed * Hyperspace.FPS.SpeedFactor/16, 446))
+                if fishPos == 0 then
+                    fishSpeed = fishSpeed * -1.5
+                elseif fishPos == 446 then
+                    fishSpeed = fishSpeed * -1.5
+                end
 
-                --print("Catching: ".. tostring(fishCatch))
-                fishBeingCaught = true
-                local scalerGain = 1
-                if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
-                    scalerGain = 1.8
-                end
-                fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * scalerGain * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
-                if fishCatch == fishMax then 
-                    local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
-                    if Hyperspace.playerVariables.fish_music == 0 then
-                        Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
+                if math.abs(selectPos - fishPos) < 46 then
+                    local maxRandom = 4
+
+                    --print("Catching: ".. tostring(fishCatch))
+                    fishBeingCaught = true
+                    local scalerGain = 1
+                    if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
+                        scalerGain = 1.8
                     end
-                    Hyperspace.playerVariables.fish_active = 0
-                    if flagShipBlueprints[shipBlueprint] then
-                        Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_3", false)
-                    end
-                    if fishNumber == 16 then
-                        Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_ULTRA_RARE",false,-1)
-                    else
-                        if shipManager:HasAugmentation("FISH_INAUG_BAIT") > 0 then
-                            maxRandom = 3
-                        end
-                        local randomJunk = math.random(1, maxRandom)
-                        local fishNumber2 = math.ceil(fishNumber/5)
-                        if randomJunk > 1 and Hyperspace.playerVariables.jumps_since_fish <= 7 - fishNumber2 and shipManager:HasAugmentation("FISH_AUG_FISHINGONLY") == 0 and shipManager:HasAugmentation("FISH_AUG_FISH_BOON") == 0 then
-                            Hyperspace.playerVariables.jumps_since_fish = Hyperspace.playerVariables.jumps_since_fish + 1
-                            Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_JUNK",false,-1)
-                        else
-                            Hyperspace.playerVariables.jumps_since_fish = 0
-                            Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,sectors[Hyperspace.playerVariables.fish_sector]..fishNumber2,false,-1)
-                        end
-                    end
-                end
-            else
-                fishBeingCaught = false
-                local scalerLoss = 1
-                if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
-                    scalerLoss = 1.5
-                end
-                fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * scalerLoss * 5 * (5 - math.ceil(maxRodStrength/5)))
-                if fishCatch == 0 then
-                    Hyperspace.playerVariables.fish_active = 0
-                    if Hyperspace.playerVariables.fish_music == 0 then
+                    fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * scalerGain * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
+                    if fishCatch == fishMax then 
                         local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
-                        Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
-                        --userdata_table(shipManager,"mods.fish.endMusic").time = 0.2
+                        if fishNumber2 == 0 then
+                            if Hyperspace.playerVariables.fish_music == 0 then
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
+                            end
+                            if Hyperspace.playerVariables.fish_arty_this_jump >= 5 then
+                                Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHARTY_SHIP_ACH_1", false)
+                            end
+                            Hyperspace.playerVariables.fish_active = 0
+                        end
+                        if flagShipBlueprints[shipBlueprint] then
+                            Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_3", false)
+                        end
+                        if fishNumber == 16 then
+                            fishNumber = 0
+                            Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_ULTRA_RARE",false,-1)
+                        else
+                            if shipManager:HasAugmentation("FISH_INAUG_BAIT") > 0 then
+                                maxRandom = 3
+                            end
+                            local randomJunk = math.random(1, maxRandom)
+                            local fishNumberRound = math.ceil(fishNumber/5)
+                            if randomJunk > 1 and Hyperspace.playerVariables.jumps_since_fish <= 7 - fishNumberRound and shipManager:HasAugmentation("FISH_AUG_FISHINGONLY") == 0 and shipManager:HasAugmentation("FISH_AUG_FISH_BOON") == 0 then
+                                --print("JUNK1")
+                                Hyperspace.playerVariables.jumps_since_fish = Hyperspace.playerVariables.jumps_since_fish + 1
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_JUNK",false,-1)
+                            else
+                                --print("FISH1")
+                                Hyperspace.playerVariables.jumps_since_fish = 0
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,sectors[Hyperspace.playerVariables.fish_sector]..fishNumberRound,false,-1)
+                            end
+                            fishNumber = 0
+                        end
                     end
-                    --Hyperspace.playerVariables.fish_this_sector = 2
+                else
+                    fishBeingCaught = false
+                    local scalerLoss = 1
+                    if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
+                        scalerLoss = 1.5
+                    end
+                    fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * scalerLoss * 5 * (5 - math.ceil(maxRodStrength/5)))
+                    if fishCatch == 0 then
+                        fishNumber = 0
+                        if fishNumber2 == 0 then
+                            if Hyperspace.playerVariables.fish_arty_this_jump >= 4 then
+                                Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHARTY_SHIP_ACH_1", false)
+                            end
+                            Hyperspace.playerVariables.fish_active = 0
+                            if Hyperspace.playerVariables.fish_music == 0 then
+                                local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
+                                --userdata_table(shipManager,"mods.fish.endMusic").time = 0.2
+                            end
+                        end
+                        --Hyperspace.playerVariables.fish_this_sector = 2
+                    end
                 end
             end
+
+            if fishNumber2 > 0 then
+                if fishSpeed2 > 0 then 
+                    fishSpeed2 = fishSpeed2 - (gravity) *  Hyperspace.FPS.SpeedFactor/16
+                elseif fishSpeed < 0 then
+                    fishSpeed2 = fishSpeed2 + (gravity) *  Hyperspace.FPS.SpeedFactor/16
+                end
+
+                fishTimer2 = math.max(fishTimer - Hyperspace.FPS.SpeedFactor/16, 0)
+                if fishTimer2 == 0 then
+                    local soundName = fishSounds:GetItem()
+                    Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
+                    fishTimer2 = 1 - (fishNumber2/17) + (2*math.random())
+                    local negative = math.random()
+                    local random = ((math.random() + 3) * (fishNumber * 2 + 20))
+                    if negative >= 0.5 then 
+                        random = -1 * random
+                    end
+                    fishSpeed2 = fishSpeed2 / 2
+                    fishSpeed2 = math.max(-100, math.min(100, fishSpeed2 + random))
+                end
+                fishPos2 = math.max(0, math.min(fishPos2 + fishSpeed2 * Hyperspace.FPS.SpeedFactor/16, 446))
+                if fishPos2 == 0 then
+                    fishSpeed2 = fishSpeed2 * -1.5
+                elseif fishPos2 == 446 then
+                    fishSpeed2 = fishSpeed2 * -1.5
+                end
+
+                if math.abs(selectPos - fishPos2) < 46 then
+                    local maxRandom = 4
+
+                    --print("Catching: ".. tostring(fishCatch))
+                    fishBeingCaught2 = true
+                    local scalerGain2 = 1
+                    if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
+                        scalerGain2 = 1.8
+                    end
+
+                    fishCatch2 = math.min(fishMax, fishCatch2 + Hyperspace.FPS.SpeedFactor/16 * scalerGain2 * 2.75  * ((maxRodStrength/5) + (16-fishNumber2)))
+
+                    if fishCatch2 == fishMax then 
+                        local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+                        if fishNumber == 0 then
+                            if Hyperspace.playerVariables.fish_music == 0 then
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
+                            end
+                            if Hyperspace.playerVariables.fish_arty_this_jump >= 4 then
+                                Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHARTY_SHIP_ACH_1", false)
+                            end
+                            Hyperspace.playerVariables.fish_active = 0
+                        end
+                        if flagShipBlueprints[shipBlueprint] then
+                            Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHING_SHIP_ACH_3", false)
+                        end
+                        if fishNumber2 == 16 then
+                            fishNumber2 = 0
+                            Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_ULTRA_RARE",false,-1)
+                        else
+                            if shipManager:HasAugmentation("FISH_INAUG_BAIT") > 0 then
+                                maxRandom = 3
+                            end
+                            local randomJunk = math.random(1, maxRandom)
+                            local fishNumberRound2 = math.ceil(fishNumber2/5)
+                            if randomJunk > 1 and Hyperspace.playerVariables.jumps_since_fish <= 7 - fishNumberRound2 and shipManager:HasAugmentation("FISH_AUG_FISHINGONLY") == 0 and shipManager:HasAugmentation("FISH_AUG_FISH_BOON") == 0 then
+                                --print("JUNK2")
+                                Hyperspace.playerVariables.jumps_since_fish = Hyperspace.playerVariables.jumps_since_fish + 1
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_JUNK",false,-1)
+                            else
+                                --print("FISH2")
+                                Hyperspace.playerVariables.jumps_since_fish = 0
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,sectors[Hyperspace.playerVariables.fish_sector]..fishNumberRound2,false,-1)
+                            end
+                            fishNumber2 = 0
+                        end
+                    end
+                else
+                    fishBeingCaught2 = false
+                    local scalerLoss2 = 1
+                    if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
+                        scalerLoss2 = 1.5
+                    end
+                    fishCatch2 = math.max(0, fishCatch2 - Hyperspace.FPS.SpeedFactor/16 * scalerLoss2 * 5 * (5 - math.ceil(maxRodStrength/5)))
+                    if fishCatch2 == 0 then
+                        fishNumber2 = 0
+                        if fishNumber == 0 then
+                            if Hyperspace.playerVariables.fish_arty_this_jump >= 4 then
+                                Hyperspace.CustomAchievementTracker.instance:SetAchievement("FISHARTY_SHIP_ACH_1", false)
+                            end
+                            Hyperspace.playerVariables.fish_active = 0
+                            if Hyperspace.playerVariables.fish_music == 0 then
+                                local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+                                Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISH_END_MUSIC",false,-1)
+                                --userdata_table(shipManager,"mods.fish.endMusic").time = 0.2
+                            end
+                        end
+                        --Hyperspace.playerVariables.fish_this_sector = 2
+                    end
+                end
+            end
+
+            
         end
         --[[local musicTable = userdata_table(shipManager,"mods.fish.endMusic")
         if musicTable.time then
@@ -534,7 +809,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
         soundTimer = math.max(0, soundTimer - Hyperspace.FPS.SpeedFactor/16)
         if soundTimer == 0 then
             soundTimer = 0.1
-            if fishBeingCaught then
+            if (fishBeingCaught and fishNumber > 0) or (fishBeingCaught2 and fishNumber2 > 0) then
                 Hyperspace.Sounds:PlaySoundMix("reel"..tostring(reelPos), -1, false)
                 reelPos = reelPos + 1
                 if reelPos > reelMax then
@@ -632,17 +907,37 @@ script.on_render_event(Defines.RenderEvents.MOUSE_CONTROL, function()
         end
         Graphics.CSurface.GL_PopMatrix()
 
-        Graphics.CSurface.GL_PushMatrix()
-        Graphics.CSurface.GL_Translate(xOffset+190,yOffset+18+464-fishCatch,0)
-        Graphics.CSurface.GL_Scale(1,fishCatch,0)
-        Graphics.CSurface.GL_RenderPrimitive(barImage)
-        Graphics.CSurface.GL_PopMatrix()
+        if fishNumber > 0 then
+            Graphics.CSurface.GL_PushMatrix()
+            Graphics.CSurface.GL_Translate(xOffset+190,yOffset+18+464-fishCatch,0)
+            Graphics.CSurface.GL_Scale(1,fishCatch,0)
+            Graphics.CSurface.GL_RenderPrimitive(barImage)
+            Graphics.CSurface.GL_PopMatrix()
+        end
+        if fishNumber2 > 0 then
+            Graphics.CSurface.GL_PushMatrix()
+            if fishNumber > 0 then
+                Graphics.CSurface.GL_Translate(xOffset+190-10,yOffset+18+464-fishCatch2,0)
+            else
+                Graphics.CSurface.GL_Translate(xOffset+190,yOffset+18+464-fishCatch2,0)
+            end
+            Graphics.CSurface.GL_Scale(1,fishCatch2,0)
+            Graphics.CSurface.GL_RenderPrimitive(barImage)
+            Graphics.CSurface.GL_PopMatrix()
+        end
 
-        
-        Graphics.CSurface.GL_PushMatrix()
-        Graphics.CSurface.GL_Translate(xOffset+124,yOffset+18+446-fishPos,0)
-        Graphics.CSurface.GL_RenderPrimitive(fish_fish_image[fishNumber])
-        Graphics.CSurface.GL_PopMatrix()
+        if fishNumber > 0 then
+            Graphics.CSurface.GL_PushMatrix()
+            Graphics.CSurface.GL_Translate(xOffset+124,yOffset+18+446-fishPos,0)
+            Graphics.CSurface.GL_RenderPrimitive(fish_fish_image[fishNumber])
+            Graphics.CSurface.GL_PopMatrix()
+        end
+        if fishNumber2 > 0 then 
+            Graphics.CSurface.GL_PushMatrix()
+            Graphics.CSurface.GL_Translate(xOffset+124,yOffset+18+446-fishPos2,0)
+            Graphics.CSurface.GL_RenderPrimitive(fish_fish_image[fishNumber2])
+            Graphics.CSurface.GL_PopMatrix()
+        end
         
         Graphics.CSurface.GL_PushMatrix()
         Graphics.CSurface.GL_Translate(xOffset+124,yOffset+18+446-36-selectPos,0)
@@ -654,6 +949,7 @@ end, function() end)
 script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager)
     local scrapLeft = 0
     Hyperspace.playerVariables.fish_again = 0
+    Hyperspace.playerVariables.fish_arty_this_jump = 0
     if Hyperspace.playerVariables.fish_this_jump == 1 then
         Hyperspace.playerVariables.fish_this_jump = 0
         --Hyperspace.playerVariables.fish_this_sector = 5
@@ -672,7 +968,7 @@ end)
 script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
     --print(event.eventName)
     if event.eventName == "STORAGE_CHECK_FISHING_STATS" then
-        print()
+        --print()
         event.text.data = "Fishing Stats: \n" .. 
             "Successful Fishing Attempts: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught)) .. "\n" ..
             "Basic Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_basic)) .. "\n" ..
@@ -964,6 +1260,11 @@ script.on_internal_event(Defines.InternalEvents.DAMAGE_BEAM, function(shipManage
     end
 end)
 
+script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
+    if shipManager.iShipId == 0 then
+        scrapLeft = 10 * shipManager:GetAugmentationValue("ARC_THIEVERY")
+    end
+end)
 
 script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
     local weaponName = nil
@@ -1078,8 +1379,9 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
     if Hyperspace.ships.enemy then
-        if crewmem.iShipId == 1 and crewmem:AtGoal() and crewmem.currentShipId == 1 and Hyperspace.ships.enemy.myBlueprint.blueprintName == "FISHING_STORE" and math.random() > 0.999 then
+        if crewmem.iShipId == 1 and crewmem:AtGoal() and crewmem.currentShipId == 1 and Hyperspace.ships.enemy.myBlueprint.blueprintName == "FISHING_STORE" and math.random() > 0.9995 then
             --print("SETTING MOVE GOAL")
+            crewmem.crewAnim.bPlayer = true
             local shipManager = Hyperspace.ships.enemy
             local randomRoom = get_room_at_location(shipManager, shipManager:GetRandomRoomCenter(), false)
             crewmem:SetRoomPath(1, randomRoom)
@@ -1115,6 +1417,7 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
     Hyperspace.playerVariables.fishing_store_opened = 1
+    Hyperspace.playerVariables.fish_arty_this_jump = 0
 end)
 
 script.on_game_event("START_BEACON_EXPLAIN", false, function()
@@ -1133,4 +1436,5 @@ script.on_game_event("START_BEACON_EXPLAIN", false, function()
     Hyperspace.playerVariables.fish_bait_bounty_33 = math.random(1, 10)
     Hyperspace.playerVariables.fish_bait_bounty_34 = math.random(1, 10)
     Hyperspace.playerVariables.fish_bait_bounty_35 = math.random(1, 10)
+    Hyperspace.playerVariables.fish_bait_bounty_DOUBLE = math.random(1, 7)
 end)

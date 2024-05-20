@@ -119,6 +119,10 @@
     <text>Upgrade a harpoon.</text>
     <event>
       <text>Choose a harpoon to upgrade.</text>
+      <choice>
+        <text>Nevermind.</text>
+        <event load="STORAGE_CHECK_FISHING_LOAD"/>
+      </choice>
       <choice req="FISHING_ROD_0">
         <text>Upgrade your Rusty Harpoon MK I to a MK I. -25~</text>
         <event>
@@ -150,6 +154,21 @@
         </event>
       </choice>
       <choice req="FISHING_ROD_2">
+        <text>Upgrade your Harpoon MK II to a Power Efficient MK II†. -10~</text>
+        <event>
+          <text>By following the provided manual you're able to increase the power efficiency of your harpoon.</text>
+          <item_modify>
+            <item type="scrap" min="-10" max="-10" />
+          </item_modify>
+          <remove name="FISHING_ROD_2" />
+          <weapon name="FISHING_ROD_2_P" />
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK_FISHING_LOAD"/>
+          </choice>
+        </event>
+      </choice>
+      <choice req="FISHING_ROD_2">
         <text>Upgrade your Harpoon MK II to a MK III. -100~</text>
         <event>
           <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
@@ -164,9 +183,50 @@
           </choice>
         </event>
       </choice>
-      <choice>
-        <text>Nevermind.</text>
-        <event load="STORAGE_CHECK_FISHING_LOAD"/>
+      <choice req="FISHING_ROD_2_P">
+        <text>Upgrade your Power Efficient Harpoon MK II to a Power Efficient MK III. -100~</text>
+        <event>
+          <text>By following the provided manual you're able to increase the effectiveness of your harpoon.</text>
+          <item_modify>
+            <item type="scrap" min="-100" max="-100" />
+          </item_modify>
+          <remove name="FISHING_ROD_2_P" />
+          <weapon name="FISHING_ROD_3_P" />
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK_FISHING_LOAD"/>
+          </choice>
+        </event>
+      </choice>
+      <choice req="FISHING_ROD_3">
+        <text>Upgrade your Harpoon MK III to a Power Efficient MK III†. -10~</text>
+        <event>
+          <text>By following the provided manual you're able to increase the power efficiency of your harpoon.</text>
+          <item_modify>
+            <item type="scrap" min="-10" max="-10" />
+          </item_modify>
+          <remove name="FISHING_ROD_3" />
+          <weapon name="FISHING_ROD_3_P" />
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK_FISHING_LOAD"/>
+          </choice>
+        </event>
+      </choice>
+      <choice req="FISHING_ROD_3_P">
+        <text>Upgrade your Power Efficient Harpoon MK III† to a Double Power Efficient MK III††. -10~</text>
+        <event>
+          <text>By following the provided manual you're able to increase the power efficiency of your harpoon.</text>
+          <item_modify>
+            <item type="scrap" min="-10" max="-10" />
+          </item_modify>
+          <remove name="FISHING_ROD_3_P" />
+          <weapon name="FISHING_ROD_3_PP" />
+          <choice>
+            <text>Continue...</text>
+            <event load="STORAGE_CHECK_FISHING_LOAD"/>
+          </choice>
+        </event>
       </choice>
     </event>
   </choice>
@@ -185,6 +245,10 @@
   <choice>
     <text>Fishing Bait Options.</text>
     <event load="STORAGE_CHECK_FISHING_BAIT" />
+  </choice>
+  <choice req="fishing_store_visited">
+    <text>See Fishing Bounties.</text>
+    <event load="STORAGE_CHECK_FISHING_BOUNTY" />
   </choice>
   <choice>
     <text>Fishing Info.</text>
@@ -457,7 +521,7 @@
     </event>
   </choice>
   <choice req="FISH_FOOD_32">
-    <text>Cook the Mahi Mahi. (-100% damage for all crew on ship, 2 damage/second to enemy on ship)</text>
+    <text>Cook the Mahi Mahi. (-100% damage for all crew on ship, 5 damage/second to enemy on ship)</text>
     <event>
       <remove name="FISH_FOOD_32"/>
       <hiddenAug>FISH_AUG_32</hiddenAug>
@@ -2104,7 +2168,9 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
   <choice req="fish_bait_equip_14" blue="false">
     <text>Currently equiped bait: No Crew</text>
     <event>
+      <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_14"/>
     </event>
   </choice>
   <choice req="fish_bait_equip_15" blue="false">
@@ -2197,6 +2263,14 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <augment name="FISH_BAIT_35"/>
     </event>
   </choice>
+  <choice req="fish_bait_equip_DOUBLE" blue="false">
+    <text>Currently equiped bait: Double Hook</text>
+    <event>
+      <text>1</text>
+      <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
+      <augment name="FISH_BAIT_DOUBLE"/>
+    </event>
+  </choice>
 
   <choice blue="true">
     <text>Unequip bait.</text>
@@ -2216,6 +2290,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2245,6 +2320,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2274,6 +2350,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2303,6 +2380,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2332,6 +2410,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2361,6 +2440,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2390,6 +2470,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2419,6 +2500,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2448,6 +2530,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2477,6 +2560,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2506,6 +2590,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2535,6 +2620,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2564,6 +2650,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2593,6 +2680,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="1"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2622,6 +2710,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="1"/>
       <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
     </event>
   </choice>
 
@@ -2651,6 +2740,37 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <variable name="fish_bait_equip_33" op="set" val="0"/>
       <variable name="fish_bait_equip_34" op="set" val="0"/>
       <variable name="fish_bait_equip_35" op="set" val="1"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="0"/>
+    </event>
+  </choice>
+
+  <choice req="fish_instbait_DOUBLE" hidden="false">
+    <text>Store bait internally: Double Hook</text>
+    <event>
+      <text>1</text>
+      <loadEvent>FISH_INSTALL_BAIT_DOUBLE</loadEvent>
+      <weapon name="FISH_BAIT_FAKE_DOUBLE"/>
+    </event>
+  </choice>
+  <choice req="FISH_INBAIT_DOUBLE">
+    <text>Equip bait: Double Hook</text>
+    <event name="FISH_EQUIP_BAIT_DOUBLE">
+      <variable name="fish_bait_equip_11" op="set" val="0"/>
+      <variable name="fish_bait_equip_12" op="set" val="0"/>
+      <variable name="fish_bait_equip_13" op="set" val="0"/>
+      <variable name="fish_bait_equip_14" op="set" val="0"/>
+      <variable name="fish_bait_equip_15" op="set" val="0"/>
+      <variable name="fish_bait_equip_21" op="set" val="0"/>
+      <variable name="fish_bait_equip_22" op="set" val="0"/>
+      <variable name="fish_bait_equip_23" op="set" val="0"/>
+      <variable name="fish_bait_equip_24" op="set" val="0"/>
+      <variable name="fish_bait_equip_25" op="set" val="0"/>
+      <variable name="fish_bait_equip_31" op="set" val="0"/>
+      <variable name="fish_bait_equip_32" op="set" val="0"/>
+      <variable name="fish_bait_equip_33" op="set" val="0"/>
+      <variable name="fish_bait_equip_34" op="set" val="0"/>
+      <variable name="fish_bait_equip_35" op="set" val="0"/>
+      <variable name="fish_bait_equip_DOUBLE" op="set" val="1"/>
     </event>
   </choice>
 </event>
@@ -2802,6 +2922,695 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
   <choice>
     <text>Continue...</text>
     <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="FISH_INSTALL_BAIT_DOUBLE">
+  <text>You store the bait.</text>
+  <remove name="FISH_BAIT_DOUBLE"/>
+  <hiddenAug>FISH_INBAIT_DOUBLE</hiddenAug>
+  <choice>
+    <text>Continue...</text>
+    <event load="STORAGE_CHECK_FISHING_BAIT_LOAD"/>
+  </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISHING_BOUNTY">
+  <checkCargo/>
+  <text>What do you want to do?</text>
+  <choice>
+    <text>Nevermind</text>
+    <event load="STORAGE_CHECK_FISHING_LOAD"/>
+  </choice>
+  <choice req="fish_bait_bounty_DOUBLE" lvl="1" max_lvl="1" hidden="true">
+    <text>Bounty 0: Queenfish</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="ffish_bait_bounty_DOUBLE" lvl="2" max_lvl="2" hidden="true">
+    <text>Bounty 0: Mahi Mahi</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_DOUBLE" lvl="3" max_lvl="3" hidden="true">
+    <text>Bounty 0: Shorefish</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_DOUBLE" lvl="4" max_lvl="4" hidden="true">
+    <text>Bounty 0: Grouper</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_DOUBLE" lvl="5" max_lvl="5" hidden="true">
+    <text>Bounty 0: Bluefish</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_DOUBLE" lvl="6" max_lvl="6" hidden="true">
+    <text>Bounty 0: Arapaima</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_DOUBLE" lvl="7" max_lvl="7" hidden="true">
+    <text>Bounty 0: Blue Marlin</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="1" max_lvl="1">
+    <text>Bounty 1: Orange Snapper</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="2" max_lvl="2">
+    <text>Bounty 1: Red Emperor</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="3" max_lvl="3">
+    <text>Bounty 1: Striped Coral Trout</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="4" max_lvl="4">
+    <text>Bounty 1: Spotted Mackeral</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="5" max_lvl="5">
+    <text>Bounty 1: Estuary Rockcod</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="6" max_lvl="6">
+    <text>Bounty 1: Blue Threadfin</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="7" max_lvl="7">
+    <text>Bounty 1: Rock Blackfish</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="8" max_lvl="8">
+    <text>Bounty 1: Longtail Tuna</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="9" max_lvl="9">
+    <text>Bounty 1: Reef Octopus</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_11" hidden="true" lvl="10" max_lvl="10">
+    <text>Bounty 1: Eagle Ray</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 2: Orange Snapper</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 2: Red Emperor</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 2: Striped Coral Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 2: Spotted Mackeral</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 2: Estuary Rockcod</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 2: Blue Threadfin</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 2: Rock Blackfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 2: Longtail Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 2: Reef Octopus</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_12" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 2: Eagle Ray</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 3: Orange Snapper</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 3: Red Emperor</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 3: Striped Coral Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 3: Spotted Mackeral</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 3: Estuary Rockcod</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 3: Blue Threadfin</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 3: Rock Blackfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 3: Longtail Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 3: Reef Octopus</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_13" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 3: Eagle Ray</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 4: Orange Snapper</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 4: Red Emperor</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 4: Striped Coral Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 4: Spotted Mackeral</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 4: Estuary Rockcod</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 4: Blue Threadfin</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 4: Rock Blackfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 4: Longtail Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 4: Reef Octopus</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_14" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 4: Eagle Ray</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 5: Orange Snapper</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 5: Red Emperor</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 5: Striped Coral Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 5: Spotted Mackeral</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 5: Estuary Rockcod</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 5: Blue Threadfin</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 5: Rock Blackfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 5: Longtail Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 5: Reef Octopus</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_15" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 5: Eagle Ray</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+
+
+
+
+
+
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 6: Doublefin Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 6: Blue Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 6: Yellowfin Sunfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 6: Big Eye Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 6: Spotted Barracuda</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 6: Brown Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 6: Goatfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 6: Coronation Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 6: Yellowfin Kingfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_21" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 6: Rainbow Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 7: Doublefin Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 7: Blue Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 7: Yellowfin Sunfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 7: Big Eye Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 7: Spotted Barracuda</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 7: Brown Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 7: Goatfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 7: Coronation Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 7: Yellowfin Kingfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_22" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 7: Rainbow Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 8: Doublefin Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 8: Blue Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 8: Yellowfin Sunfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 8: Big Eye Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 8: Spotted Barracuda</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 8: Brown Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 8: Goatfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 8: Coronation Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 8: Yellowfin Kingfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_23" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 8: Rainbow Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 9: Doublefin Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 9: Blue Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 9: Yellowfin Sunfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 9: Big Eye Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 9: Spotted Barracuda</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 9: Brown Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 9: Goatfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 9: Coronation Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 9: Yellowfin Kingfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_24" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 9: Rainbow Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 10: Doublefin Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 10: Blue Eel</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 10: Yellowfin Sunfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 10: Big Eye Tuna</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 10: Spotted Barracuda</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 10: Brown Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 10: Goatfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 10: Coronation Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 10: Yellowfin Kingfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_25" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 10: Rainbow Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+
+
+
+
+
+
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 11: Coho Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 11: Roosterfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 11: Yellowfin Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 11: Flathead Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 11: Golden Bream</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 11: Black Cobia</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 11: Wisdomfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 11: Golden Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 11: Channel Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_31" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 11: Common Sturgeon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 12: Coho Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 12: Roosterfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 12: Yellowfin Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 12: Flathead Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 12: Golden Bream</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 12: Black Cobia</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 12: Wisdomfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 12: Golden Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 12: Channel Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_32" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 12: Common Sturgeon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 13: Coho Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 13: Roosterfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 13: Yellowfin Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 13: Flathead Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 13: Golden Bream</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 13: Black Cobia</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 13: Wisdomfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 13: Golden Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 13: Channel Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_33" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 13: Common Sturgeon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 14: Coho Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 14: Roosterfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 14: Yellowfin Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 14: Flathead Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 14: Golden Bream</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 14: Black Cobia</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 14: Wisdomfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 14: Golden Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 14: Channel Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_34" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 14: Common Sturgeon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+
+
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="1" max_lvl="1">
+      <text>Bounty 15: Coho Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="2" max_lvl="2">
+      <text>Bounty 15: Roosterfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="3" max_lvl="3">
+      <text>Bounty 15: Yellowfin Salmon</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="4" max_lvl="4">
+      <text>Bounty 15: Flathead Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="5" max_lvl="5">
+      <text>Bounty 15: Golden Bream</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="6" max_lvl="6">
+      <text>Bounty 15: Black Cobia</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="7" max_lvl="7">
+      <text>Bounty 15: Wisdomfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="8" max_lvl="8">
+      <text>Bounty 15: Golden Trout</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="9" max_lvl="9">
+      <text>Bounty 15: Channel Catfish</text>
+      <event load="OPTION_INVALID"/>
+  </choice>
+  <choice req="fish_bait_bounty_35" hidden="true" lvl="10" max_lvl="10">
+      <text>Bounty 15: Common Sturgeon</text>
+      <event load="OPTION_INVALID"/>
   </choice>
 </event>
 
