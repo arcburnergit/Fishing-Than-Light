@@ -698,7 +698,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                     fishSpeed2 = fishSpeed2 + (gravity) *  Hyperspace.FPS.SpeedFactor/16
                 end
 
-                fishTimer2 = math.max(fishTimer - Hyperspace.FPS.SpeedFactor/16, 0)
+                fishTimer2 = math.max(fishTimer2 - Hyperspace.FPS.SpeedFactor/16, 0)
                 if fishTimer2 == 0 then
                     local soundName = fishSounds:GetItem()
                     Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
