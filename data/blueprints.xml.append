@@ -1703,6 +1703,7 @@ Default Price: 80~ - Selling Price:40~
 <weaponBlueprint name="FISH_BAIT_FAKE_32">
 	<type>BEAM</type>
 	<flavorType>Lure</flavorType>
+	<title>Lure: Craw Grub Tail</title>
 	<short>Lure: Craw Grub Tail</short>
 	<desc>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish, you won't fish up crew.</desc>
 	<descriptionOverride>When fishing you are far less likely to fish up generic fish, you won't fish up gun fish and unique fish, you won't fish up crew.
