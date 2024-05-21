@@ -506,7 +506,7 @@ This harpoon will be able to catch most fish.
 	<image>invisible</image>
 	<boost>
 		<type>cooldown</type>
-		<amount>41</amount>
+		<amount>51</amount>
 		<count>2</count>
 	</boost>
 	<launchSounds>
@@ -570,7 +570,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<image>invisible</image>
 	<boost>
 		<type>cooldown</type>
-		<amount>21</amount>
+		<amount>31</amount>
 		<count>2</count>
 	</boost>
 	<launchSounds>
@@ -602,7 +602,7 @@ This harpoon will be able to catch even the most elusive fish.
 	<image>invisible</image>
 	<boost>
 		<type>cooldown</type>
-		<amount>21</amount>
+		<amount>41</amount>
 		<count>2</count>
 	</boost>
 	<launchSounds>
