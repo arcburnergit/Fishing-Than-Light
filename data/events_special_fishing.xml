@@ -5762,7 +5762,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <remove name="FISH_FOOD_31"/>
             <augment name="FISH_BAIT_DOUBLE"/>
             <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
-            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHARTY</unlockCustomShip>
             <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
         </event>
     </choice>
@@ -5794,7 +5794,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <remove name="FISH_FOOD_32"/>
             <augment name="FISH_BAIT_DOUBLE"/>
             <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
-            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHARTY</unlockCustomShip>
             <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
         </event>
     </choice>
@@ -5826,7 +5826,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <remove name="FISH_FOOD_33"/>
             <augment name="FISH_BAIT_DOUBLE"/>
             <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
-            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHARTY</unlockCustomShip>
             <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
         </event>
     </choice>
@@ -5858,7 +5858,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <remove name="FISH_FOOD_34"/>
             <augment name="FISH_BAIT_DOUBLE"/>
             <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
-            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHARTY</unlockCustomShip>
             <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
         </event>
     </choice>
@@ -5890,7 +5890,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <remove name="FISH_FOOD_35"/>
             <augment name="FISH_BAIT_DOUBLE"/>
             <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
-            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHARTY</unlockCustomShip>
             <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
         </event>
     </choice>
@@ -5922,7 +5922,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <remove name="FISH_FOOD_36"/>
             <augment name="FISH_BAIT_DOUBLE"/>
             <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
-            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHARTY</unlockCustomShip>
             <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
         </event>
     </choice>
@@ -5954,7 +5954,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
             <remove name="FISH_FOOD_37"/>
             <augment name="FISH_BAIT_DOUBLE"/>
             <variable name="fish_bait_bounty_DOUBLE" op="set" val="0"/>
-            <unlockCustomShip silent="false">PLAYER_SHIP_FISHART</unlockCustomShip>
+            <unlockCustomShip silent="false">PLAYER_SHIP_FISHARTY</unlockCustomShip>
             <loadEvent>FISHING_BOUNTY_BOARD</loadEvent>
         </event>
     </choice>

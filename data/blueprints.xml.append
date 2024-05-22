@@ -374,19 +374,77 @@
 	<aug name="DRONE_RECOVERY" />
 </shipBlueprint>
 
-<shipBlueprint name="PLAYER_SHIP_FISHARTY_3" layout="fishp_arty_b" img="fishp_arty_b">
+<shipBlueprint name="PLAYER_SHIP_FISHARTY_3" layout="fishp_arty_c" img="fishp_arty_c">
 	<class>Dredger</class>
-	<name>The </name>
-	<desc>???</desc>
+	<name>The Maw</name>
+	<desc>Somewhere between a living animal and a inanimate ship, the Maw must consume all.</desc>
 	<unlock id="ship_PLAYER_SHIP_FISHARTY_3_unlock"/>
 	<systemList>
+		<artillery power="5" max="5" room="1" start="true" weapon="ARTILLERY_FED" img="room_artillery_7" />
+		<battery power="1" room="6" start="false" img="room_battery_2" />
+		<cloaking power="1" room="8" start="false" img="room_cloaking_7" />
+		<clonebay power="1" room="12" start="false">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="false" img="room_doors">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="9" start="false" img="room_drones_18" />
+		<engines power="2" room="14" start="true" img="room_engines_2">
+			<slot>
+				<direction>down</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="7" start="false" img="room_hacking_3" />
+		<medbay power="1" room="12" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="5" start="false" img="room_mind_9" />
+		<oxygen power="1" room="10" start="false" img="room_oxygen_5" />
+		<pilot power="1" room="0" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="3" start="false" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="3" max="8" room="11" start="true" img="room_shields_5">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="13" start="false" />
+		<weapons power="2" max="8" room="2" start="true" img="room_weapons_8">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
 	</systemList>
-	<weaponSlots>3</weaponSlots>
-	<droneSlots>3</droneSlots>
-	<weaponList missiles="2" count="2" />
-	<droneList drones="16" count="4" />
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="6" count="4">
+		<weapon name="FISHING_ROD_3_P" />
+	</weaponList>
+	<droneList drones="6" count="2" />
 	<health amount="30" />
-	<maxPower amount="1" />
+	<maxPower amount="7" />
+	<aug name="FISH_BAIT_34" />
+	<aug name="EX_LIFE_SCANNER" />
 </shipBlueprint>
 
 <weaponBlueprint name="FISHING_ROD_0"> 
@@ -681,6 +739,44 @@ This harpoon will be able to catch even the most elusive fish.
 		<sound>hitHull1</sound>
 	</hitShipSounds>
 	<weaponArt>artillery_fishing_rod_2</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_MAW">
+	<type>LASER</type>
+	<flavorType>The Maw</flavorType>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<desc>[Base cooldown: 15] The Maw must consume.
+Cooldown will not go below 1x, Instead power scales number of shots.
+	</desc>
+	<tooltip>Artillery: The Maw.</tooltip>
+	<damage>1</damage>
+    <accuracyMod>20</accuracyMod>
+	<shots>1</shots>
+	<sp>0</sp>
+	<fireChance>1</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>15</cooldown>
+	<power>1</power>
+    <speed>180</speed>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+    <launchSounds>
+        <sound>heavyLaser1</sound>
+    </launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_maw</weaponArt>
 </weaponBlueprint>
 
 <weaponBlueprint name="FISH_FOOD_TINCAN">

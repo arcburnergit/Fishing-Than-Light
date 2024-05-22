@@ -266,7 +266,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_INITIALIZE, function(
         fishPos = 200
         fishTimer = 1
         if Hyperspace.playerVariables.fish_bait_equip_DOUBLE == 1 then
-            fishNumber2 = math.abs(fishNumber2-5)
+            fishNumber2 = math.abs(fishNumber-5)
             if fishNumber2 == 0 then fishNumber2 = 1 end
             fishSpeed2 = 0
             fishPos2 = 150
@@ -315,7 +315,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
         fishSpeed = 0
         fishPos = 200
         if Hyperspace.playerVariables.fish_bait_equip_DOUBLE == 1 then
-            fishNumber2 = math.abs(fishNumber2-5)
+            fishNumber2 = math.abs(fishNumber-5)
             if fishNumber2 == 0 then fishNumber2 = 1 end
             fishSpeed2 = 0
             fishPos2 = 150
@@ -426,7 +426,7 @@ local function fish_start_event()
     fishPos = 200
     
     if Hyperspace.playerVariables.fish_bait_equip_DOUBLE == 1 or hasArty2 then
-        fishNumber2 = math.abs(fishNumber2-5)
+        fishNumber2 = math.abs(fishNumber-5)
         if fishNumber2 == 0 then fishNumber2 = 1 end
         fishSpeed2 = 0
         fishPos2 = 150
@@ -522,6 +522,16 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
     end
 end)
 
+local enableReadouts = false
+function toggleFishPrint()
+    if enableReadouts then
+        enableReadouts = false
+    else
+        enableReadouts = true
+    end
+    print("Fish Readout Toggle now at: "..tostring(enableReadouts))
+end
+
 script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     if Hyperspace.Global.GetInstance():GetCApp().world.bStartedGame then
         local shipManager = Hyperspace.ships.player
@@ -573,6 +583,15 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
             --print(fishCatch)
             local gravity = 50
             local maxSpeed = 150
+            if enableReadouts then
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print("Gravity: "..gravity..", Max Speed: "..maxSpeed..", Max Rod Strength".. maxRodStrength)
+            end
             if shipManager:HasAugmentation("FISH_INAUG_GRAV") > 0 then gravity = 65 end
             if isJump and not hasJump then
                 --print("JUMP")
@@ -590,6 +609,10 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 selectSpeed = selectSpeed / -2
             elseif selectPos == 446-36 then
                 selectSpeed = selectSpeed / -2
+            end
+            if enableReadouts then
+                print()
+                print("Selector Speed: "..selectSpeed..", Selector Position: "..selectPos..", Fish1 Number: "..fishNumber..", Fish2 Number: "..fishNumber2)
             end
 
 
@@ -620,6 +643,10 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 elseif fishPos == 446 then
                     fishSpeed = fishSpeed * -1.5
                 end
+                if enableReadouts then
+                    print()
+                    print("Fish1 Speed: "..fishSpeed..", Fish1 Position: "..fishPos.."")
+                end
 
                 if math.abs(selectPos - fishPos) < 46 then
                     local maxRandom = 4
@@ -630,7 +657,11 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                     if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
                         scalerGain = 1.8
                     end
-                    fishCatch = math.min(fishMax, fishCatch + Hyperspace.FPS.SpeedFactor/16 * scalerGain * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
+                    fishCatch = math.min(fishMax, fishCatch + (Hyperspace.FPS.SpeedFactor/16) * scalerGain * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))
+                    if enableReadouts then
+                        print()
+                        print("Fish1 Catch Val: "..fishCatch..", Fish1 Catch Gain Rate: "..tostring(scalerGain * 2.75  * ((maxRodStrength/5) + (16-fishNumber)))..", Game Time: "..tostring(Hyperspace.FPS.SpeedFactor/16))
+                    end
                     if fishCatch == fishMax then 
                         local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
                         if fishNumber2 == 0 then
@@ -672,7 +703,11 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                     if shipManager:HasAugmentation("FISH_INAUG_SPEED") > 0 then
                         scalerLoss = 1.5
                     end
-                    fishCatch = math.max(0, fishCatch - Hyperspace.FPS.SpeedFactor/16 * scalerLoss * 5 * (5 - math.ceil(maxRodStrength/5)))
+                    fishCatch = math.max(0, fishCatch - (Hyperspace.FPS.SpeedFactor/16) * scalerLoss * 5 * (5 - math.ceil(maxRodStrength/5)))
+                    if enableReadouts then
+                        print()
+                        print("Fish1 Catch Val: "..fishCatch..", Fish1 Catch Loss Rate: "..tostring(scalerLoss * 5 * (5 - math.ceil(maxRodStrength/5)))..", Game Time: "..tostring(Hyperspace.FPS.SpeedFactor/16))
+                    end
                     if fishCatch == 0 then
                         fishNumber = 0
                         if fishNumber2 == 0 then
@@ -689,6 +724,7 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                         --Hyperspace.playerVariables.fish_this_sector = 2
                     end
                 end
+
             end
 
             if fishNumber2 > 0 then
@@ -717,6 +753,10 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 elseif fishPos2 == 446 then
                     fishSpeed2 = fishSpeed2 * -1.5
                 end
+                if enableReadouts then
+                    print()
+                    print("Fish2 Speed: "..fishSpeed..", Fish2 Position: "..fishPos.."")
+                end
 
                 if math.abs(selectPos - fishPos2) < 46 then
                     local maxRandom = 4
@@ -729,6 +769,10 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                     end
 
                     fishCatch2 = math.min(fishMax, fishCatch2 + Hyperspace.FPS.SpeedFactor/16 * scalerGain2 * 2.75  * ((maxRodStrength/5) + (16-fishNumber2)))
+                    if enableReadouts then
+                        print()
+                        print("Fish2 Catch Val: "..fishCatch2..", Fish2 Catch Gain Rate: "..tostring(scalerGain * 2.75  * ((maxRodStrength/5) + (16-fishNumber2)))..", Game Time: "..tostring(Hyperspace.FPS.SpeedFactor/16))
+                    end
 
                     if fishCatch2 == fishMax then 
                         local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
@@ -772,6 +816,10 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                         scalerLoss2 = 1.5
                     end
                     fishCatch2 = math.max(0, fishCatch2 - Hyperspace.FPS.SpeedFactor/16 * scalerLoss2 * 5 * (5 - math.ceil(maxRodStrength/5)))
+                    if enableReadouts then
+                        print()
+                        print("Fish2 Catch Val: "..fishCatch2..", Fish2 Catch Loss Rate: "..tostring(scalerLoss2 * 5 * (5 - math.ceil(maxRodStrength/5)))..", Game Time: "..tostring(Hyperspace.FPS.SpeedFactor/16))
+                    end
                     if fishCatch2 == 0 then
                         fishNumber2 = 0
                         if fishNumber == 0 then
@@ -1437,4 +1485,108 @@ script.on_game_event("START_BEACON_EXPLAIN", false, function()
     Hyperspace.playerVariables.fish_bait_bounty_34 = math.random(1, 10)
     Hyperspace.playerVariables.fish_bait_bounty_35 = math.random(1, 10)
     Hyperspace.playerVariables.fish_bait_bounty_DOUBLE = math.random(1, 7)
+end)
+
+local sysWeights = {}
+sysWeights.weapons = 6
+sysWeights.shields = 6
+sysWeights.pilot = 3
+sysWeights.engines = 3
+sysWeights.teleporter = 2
+sysWeights.hacking = 2
+sysWeights.medbay = 2
+sysWeights.clonebay = 2
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+    if weapon.blueprint.name == "ARTILLERY_MAW" then
+        local thisShip = Hyperspace.ships(weapon.iShipId)
+        local otherShip = Hyperspace.ships(1 - weapon.iShipId)
+        if thisShip and otherShip then
+            local sysTargets = {}
+            local weightSum = 0
+            
+            -- Collect all player systems and their weights
+            for system in vter(otherShip.vSystemList) do
+                local sysId = system:GetId()
+                if otherShip:HasSystem(sysId) then
+                    local weight = sysWeights[Hyperspace.ShipSystem.SystemIdToName(sysId)] or 1
+                    if weight > 0 then
+                        weightSum = weightSum + weight
+                        table.insert(sysTargets, {
+                            id = sysId,
+                            weight = weight
+                        })
+                    end
+                end
+            end
+            
+            -- Pick a random system using the weights
+            if #sysTargets > 0 then
+                local rnd = math.random(weightSum);
+                for i = 1, #sysTargets do
+                    if rnd <= sysTargets[i].weight then
+                        projectile.target = otherShip:GetRoomCenter(otherShip:GetSystemRoom(sysTargets[i].id))
+                        projectile:ComputeHeading()
+                        return
+                    end
+                    rnd = rnd - sysTargets[i].weight
+                end
+                error("Weighted selection error - reached end of options without making a choice!")
+            end
+        end
+
+        local shipManager = Hyperspace.ships.player
+        for artillery in vter(shipManager.artillerySystems) do
+            userdata_table(artillery, "mods.fish.maw").chain = {0.25,artillery.powerState.first,projectile.position.x,projectile.position.y,projectile.currentSpace,projectile.target,projectile.destinationSpace,projectile.heading}      
+        end
+    end
+end)
+
+local mawCooldownTable = {}
+mawCooldownTable[1] = 0.25
+mawCooldownTable[2] = 0
+mawCooldownTable[3] = -0.25
+mawCooldownTable[4] = -0.5
+mawCooldownTable[5] = -0.75
+
+
+script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
+    for artillery in vter(shipManager.artillerySystems) do
+        if artillery.projectileFactory.blueprint.name == "ARTILLERY_MAW" then
+            local power = artillery.powerState.first
+            if power > 0 then
+                local powerScale = -0.25 * (power - 2)
+                artillery.projectileFactory.cooldown.first = math.max(0,artillery.projectileFactory.cooldown.first + (powerScale * Hyperspace.FPS.SpeedFactor/16))
+            end
+        end
+        -- Fire More --
+        local chainTable = userdata_table(artillery, "mods.fish.maw")
+        if chainTable.chain then
+            chainTable.chain[1] = math.max(chainTable.chain[1] - Hyperspace.FPS.SpeedFactor/16, 0)
+            if chainTable.chain[1] == 0 then
+                --print("FIRERERE")local chainShots = weaponInfo[projectile.extend.name]["chainShot"]
+                local soundName = "heavyLaser1"
+                Hyperspace.Sounds:PlaySoundMix(soundName, -1, false)
+
+                local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
+                local laser = spaceManager:CreateLaserBlast(
+                    artillery.projectileFactory.blueprint,
+                    Hyperspace.Pointf(chainTable.chain[3],chainTable.chain[4]),
+                    chainTable.chain[5],
+                    shipManager.iShipId,
+                    chainTable.chain[6],
+                    chainTable.chain[7],
+                    chainTable.chain[8])
+                --weapon:Fire()
+                --weapon.boostLevel = chainTable.chain[3]
+                if chainTable.chain[2] <= 1 then
+                    chainTable.chain = nil
+                else
+                    chainTable.chain[1] = 0.25
+                    chainTable.chain[2] = chainTable.chain[2] -1
+                end
+            end
+        end
+        -- fire more end --
+    end
 end)
