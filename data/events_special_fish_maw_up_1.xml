@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+
+<textList name="MAW_UPGRADE_TEXT">
+    <text>The Maw appears to grow.</text>
+    <text>The Maw shimmers and shifts as it changes.</text>
+</textList>
+
+<event name="STORAGE_CHECK_FISH_MAW_1_000_UPGRADE">
+    <text>What do you want to do?
+
+Upgrade Points: MAW</text>
+    <checkCargo/>
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_FISH_MAW_LOAD" />
+	</choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_000_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_1_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_000_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_2_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_000_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_3_000"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_000"/>
+            <weapon name="FISH_MAW_1_100"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_000_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_100"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_000"/>
+            <weapon name="FISH_MAW_1_010"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_000_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_010"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_000"/>
+            <weapon name="FISH_MAW_1_001"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_000_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_001"/>
+        </event>
+    </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_MAW_1_100_UPGRADE">
+    <text>What do you want to do?
+
+Upgrade Points: MAW</text>
+    <checkCargo/>
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_FISH_MAW_LOAD" />
+	</choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_100_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_1_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_100_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_2_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_100_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_3_000"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_100"/>
+            <weapon name="FISH_MAW_1_110"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_100_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_110"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_100"/>
+            <weapon name="FISH_MAW_1_101"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_100_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_101"/>
+        </event>
+    </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_MAW_1_010_UPGRADE">
+    <text>What do you want to do?
+
+Upgrade Points: MAW</text>
+    <checkCargo/>
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_FISH_MAW_LOAD" />
+	</choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_010_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_1_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_010_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_2_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_010_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_3_000"/>
+        </event>
+    </choice>
+
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_010"/>
+            <weapon name="FISH_MAW_1_110"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_010_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_110"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_010"/>
+            <weapon name="FISH_MAW_1_011"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_010_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_011"/>
+        </event>
+    </choice>
+</event>
+
+<event name="STORAGE_CHECK_FISH_MAW_1_001_UPGRADE">
+    <text>What do you want to do?
+
+Upgrade Points: MAW</text>
+    <checkCargo/>
+	<choice>
+		<text>Nevermind.</text>
+		<event load="STORAGE_CHECK_FISH_MAW_LOAD" />
+	</choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_001_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_1_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_001_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_2_000"/>
+        </event>
+    </choice>
+    <choice blue="false">
+        <text>Cost: 10, Requires 2 Upgrades, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_001_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_2_3_000"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_001"/>
+            <weapon name="FISH_MAW_1_101"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_001_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_101"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="5">
+        <text>Cost: 5, Can Upgrade</text>
+        <event>
+            <text load="MAW_UPGRADE_TEXT" />
+            <variable name="fish_maw_upgrade" op="add" val="-5"/>
+            <remove name="FISH_MAW_1_001"/>
+            <weapon name="FISH_MAW_1_011"/>
+        </event>
+    </choice>
+    <choice req="fish_maw_upgrade" lvl="0" max_lvl="4" blue="false">
+        <text>Cost: 5, Can't Upgrade</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>STORAGE_CHECK_FISH_MAW_1_001_UPGRADE</loadEvent>
+            <weapon name="FISH_MAW_1_011"/>
+        </event>
+    </choice>
+</event>
+</FTL>

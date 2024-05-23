@@ -38,6 +38,7 @@
 	<mod-append:name>FISHING_ROD_1</mod-append:name>
 	<mod-append:name>FISHING_ROD_2</mod-append:name>
 	<mod-append:name>FISHING_ROD_3</mod-append:name>
+	<mod-append:name>FISH_MAW_1_000</mod-append:name>
 </mod:findName>
 
 <blueprintList name="BLUELIST_FISHING_RODS_UP">
@@ -59,6 +60,17 @@
   <name>FISHING_ROD_3_PP</name>
   <name>ARTILLERY_FISHING_ROD_1</name>
   <name>ARTILLERY_FISHING_ROD_2</name>
+</blueprintList>
+
+<blueprintList name="MAW_LIST_ALL">
+  <name>FISH_MAW_1_000</name>
+  <name>FISH_MAW_1_100</name>
+  <name>FISH_MAW_1_010</name>
+  <name>FISH_MAW_1_001</name>
+  <name>FISH_MAW_1_110</name>
+  <name>FISH_MAW_1_011</name>
+  <name>FISH_MAW_1_101</name>
+  <name>FISH_MAW_1_111</name>
 </blueprintList>
 
 <blueprintList name="BLUELIST_FISH">

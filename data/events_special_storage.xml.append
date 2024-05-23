@@ -5,6 +5,10 @@
     <text>Fishing.</text>
     <event load="STORAGE_CHECK_FISHING" />
   </mod-append:choice>
+  <mod-append:choice req="MAW_LIST_ALL" blue="true" hidden="true">
+    <text>The Maw.</text>
+    <event load="STORAGE_CHECK_FISH_MAW" />
+  </mod-append:choice>
 </mod:findName>
 
 <mod:findName type="event" name="COMBAT_CHECK_HOTKEYS">

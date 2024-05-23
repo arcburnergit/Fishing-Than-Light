@@ -66,6 +66,8 @@
 <events>
     <bossShip>FISHING_STORE</bossShip>
     <eventFile>special_fishing</eventFile>
+    <eventFile>special_fish_maw</eventFile>
+    <eventFile>special_fish_maw_up_1</eventFile>
 
     <metaVariable name="prof_r_boon_fish" op="set" val="0" />
     <metaVariable name="prof_hotkey_fish" op="set" val="9"/>
@@ -88,6 +90,8 @@
     <variable name="fishing_store_opened" op="set" val="0"/>
     <variable name="fishing_store_visited" op="set" val="0"/>
     <variable name="fish_caught_crew" op="set" val="0"/>
+
+
 
     <variable name="fish_bait_equip_11" op="set" val="0"/>
     <variable name="fish_bait_equip_12" op="set" val="0"/>
@@ -472,6 +476,10 @@
         <name>FISH_AUG_341</name>
         <name>FISH_AUG_342</name>
     </req>
+    
+    <variable name="fish_maw_upgrade" op="set" val="0"/>
+    <variable name="fish_maw_arty_upgrade" op="set" val="0"/>
+
 </events>
 
 <mod:findLike type="ships">
@@ -594,7 +602,7 @@
 			<slug room="3" /> 
 			<slug_saboteur room="10" />
 			<human room="10" />
-			<orchid room="9" />
+			<rock room="9" />
 			<soldier room="11" />
 			<shell room="15" />
 		</crew>

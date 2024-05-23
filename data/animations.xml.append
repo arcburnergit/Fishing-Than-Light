@@ -138,6 +138,17 @@
 	<boost>artillery_fishing_rod_2_charge</boost>
 </weaponAnim>
 
+<animSheet name="artillery_maw" w="198" h="75" fw="33" fh="75">weapon_fish/artillery_maw.png</animSheet>
+<weaponAnim name="artillery_maw">
+	<sheet>artillery_maw</sheet>
+	<desc length="6" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>3</fireFrame>
+	<firePoint x="16" y="44" />
+	<mountPoint x="16" y="61" />
+	<chargeImage>weapon_fish/artillery_maw_glow.png</chargeImage>
+</weaponAnim>
+
 
 <animSheet name="fish_laser" w="240" h="117" fw="30" fh="117">weapon_fish/fish_laser.png</animSheet>
 <weaponAnim name="fish_laser">
@@ -261,6 +272,117 @@
 	<desc length="5" x="0" y="0"/>
 	<time>0.2</time>
 </anim>
+</FTL>
+
+<FTL>
+<animSheet name="fish_maw_1" w="95" h="51" fw="19" fh="51">weapon_maw/fish_maw_1.png</animSheet>
+<weaponAnim name="fish_maw_1">
+	<sheet>fish_maw_1</sheet>
+	<desc length="5" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="11" y="2" />
+	<mountPoint x="3" y="40" />
+	<chargeImage>weapon_maw/fish_maw_1_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_2_1" w="132" h="68" fw="22" fh="68">weapon_maw/fish_maw_2_1.png</animSheet>
+<weaponAnim name="fish_maw_2_1">
+	<sheet>fish_maw_2_1</sheet>
+	<desc length="6" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>3</fireFrame>
+	<firePoint x="14" y="2" />
+	<mountPoint x="3" y="50" />
+	<chargeImage>weapon_maw/fish_maw_2_1_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_2_2" w="156" h="58" fw="26" fh="58">weapon_maw/fish_maw_2_2.png</animSheet>
+<weaponAnim name="fish_maw_2_2">
+	<sheet>fish_maw_2_2</sheet>
+	<desc length="6" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="15" y="27" />
+	<mountPoint x="3" y="45" />
+	<chargeImage>weapon_maw/fish_maw_2_2_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_2_3" w="125" h="48" fw="25" fh="48">weapon_maw/fish_maw_2_3.png</animSheet>
+<weaponAnim name="fish_maw_2_3">
+	<sheet>fish_maw_2_3</sheet>
+	<desc length="5" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint x="14" y="9" />
+	<mountPoint x="3" y="40" />
+	<chargeImage>weapon_maw/fish_maw_2_3_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_3_1" w="120" h="84" fw="24" fh="84">weapon_maw/fish_maw_3_1.png</animSheet>
+<weaponAnim name="fish_maw_3_1">
+	<sheet>fish_maw_3_1</sheet>
+	<desc length="5" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>3</fireFrame>
+	<firePoint x="15" y="4" />
+	<mountPoint x="3" y="62" />
+	<chargeImage>weapon_maw/fish_maw_3_1_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_3_2" w="242" h="66" fw="22" fh="66">weapon_maw/fish_maw_3_2.png</animSheet>
+<weaponAnim name="fish_maw_3_2">
+	<sheet>fish_maw_3_2</sheet>
+	<desc length="11" x="0" y="0" />
+	<chargedFrame>5</chargedFrame>
+	<fireFrame>8</fireFrame>
+	<firePoint x="14" y="5" />
+	<mountPoint x="3" y="47" />
+</weaponAnim>
+
+<animSheet name="fish_maw_3_3" w="174" h="85" fw="29" fh="85">weapon_maw/fish_maw_3_3.png</animSheet>
+<weaponAnim name="fish_maw_3_3">
+	<sheet>fish_maw_3_3</sheet>
+	<desc length="6" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="18" y="53" />
+	<mountPoint x="3" y="74" />
+	<chargeImage>weapon_maw/fish_maw_3_3_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_3_4" w="180" h="81" fw="30" fh="81">weapon_maw/fish_maw_3_4.png</animSheet>
+<weaponAnim name="fish_maw_3_4">
+	<sheet>fish_maw_3_4</sheet>
+	<desc length="6" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="18" y="47" />
+	<mountPoint x="3" y="69" />
+	<chargeImage>weapon_maw/fish_maw_3_4_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_3_5" w="496" h="47" fw="31" fh="47">weapon_maw/fish_maw_3_5.png</animSheet>
+<weaponAnim name="fish_maw_3_5">
+	<sheet>fish_maw_3_5</sheet>
+	<desc length="16" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>12</fireFrame>
+	<firePoint x="18" y="19" />
+	<mountPoint x="3" y="32" />
+	<chargeImage>weapon_maw/fish_maw_3_5_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="fish_maw_3_6" w="198" h="60" fw="33" fh="60">weapon_maw/fish_maw_3_6.png</animSheet>
+<weaponAnim name="fish_maw_3_6">
+	<sheet>fish_maw_3_6</sheet>
+	<desc length="6" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>3</fireFrame>
+	<firePoint x="19" y="11" />
+	<mountPoint x="3" y="42" />
+	<chargeImage>weapon_maw/fish_maw_3_6_glow.png</chargeImage>
+</weaponAnim>
 </FTL>
 
 <FTL>

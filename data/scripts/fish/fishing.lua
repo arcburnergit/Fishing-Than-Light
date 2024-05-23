@@ -1027,6 +1027,15 @@ script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(e
             "Gun Fish Caught: " .. tostring(math.floor(Hyperspace.playerVariables.fish_caught_guns)) --.. "\n\n\n" ..
             --"Fishes Consumed:"
     end
+    --print(string.sub(event.eventName, 0, 23))
+    local stringLeg = string.len(event.eventName)
+    --print(string.sub(event.eventName, stringLeg-7, stringLeg))
+    if string.sub(event.eventName, 0, 23) == "STORAGE_CHECK_FISH_MAW_" and string.sub(event.eventName, stringLeg-7, stringLeg) == "_UPGRADE" then
+        event.text.data = "What do you want to do?\n\nUpgrade Points: " .. tostring(math.floor(Hyperspace.playerVariables.fish_maw_upgrade))
+    end
+    if event.eventName == "STORAGE_CHECK_FISH_MAW_CONSUME" then
+        event.text.data = "What do you want to feed to The Maw?\n\nUpgrade Points: " .. tostring(math.floor(Hyperspace.playerVariables.fish_maw_upgrade))
+    end
 end)
 
 --[[local loopCount = 0
@@ -1438,9 +1447,11 @@ script.on_internal_event(Defines.InternalEvents.CREW_LOOP, function(crewmem)
 end)
 
 local entered = false
+local enteredO2 = false
 script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
     local shipManager = Hyperspace.ships.player
     local inWeaponLoop = true
+    local inO2Loop = true
     if Hyperspace.ships.enemy then
         for crewmem in vter(Hyperspace.ships.enemy.vCrewList) do
             if crewmem.iShipId == 0  then
@@ -1455,11 +1466,21 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
                 end
                 inWeaponLoop = false
             end
+            if crewmem.iShipId == 0 and crewmem.currentShipId == 1 and crewmem.iRoomId == 5 and Hyperspace.ships.enemy.myBlueprint.blueprintName == "FISHING_STORE" and Hyperspace.playerVariables.fishing_store_visited == 1 then
+                if enteredO2 then
+                    enteredO2 = false
+                    local worldManager = Hyperspace.Global.GetInstance():GetCApp().world
+                    Hyperspace.CustomEventsParser.GetInstance():LoadEvent(worldManager,"FISHING_STORE_INO2",false,-1)
+                end
+                inO2Loop = false
+            end
         end
     end
     if inWeaponLoop == true then
-        --print("WIPE")
         entered = true
+    end
+    if inO2Loop == true then
+        enteredO2 = true
     end
 end)
 
@@ -1497,47 +1518,52 @@ sysWeights.hacking = 2
 sysWeights.medbay = 2
 sysWeights.clonebay = 2
 
-script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-    if weapon.blueprint.name == "ARTILLERY_MAW" then
-        local thisShip = Hyperspace.ships(weapon.iShipId)
-        local otherShip = Hyperspace.ships(1 - weapon.iShipId)
-        if thisShip and otherShip then
-            local sysTargets = {}
-            local weightSum = 0
-            
-            -- Collect all player systems and their weights
-            for system in vter(otherShip.vSystemList) do
-                local sysId = system:GetId()
-                if otherShip:HasSystem(sysId) then
-                    local weight = sysWeights[Hyperspace.ShipSystem.SystemIdToName(sysId)] or 1
-                    if weight > 0 then
-                        weightSum = weightSum + weight
-                        table.insert(sysTargets, {
-                            id = sysId,
-                            weight = weight
-                        })
-                    end
+local function retargetProjectile(projectile, weapon)
+    local thisShip = Hyperspace.ships(weapon.iShipId)
+    local otherShip = Hyperspace.ships(1 - weapon.iShipId)
+    if thisShip and otherShip then
+        local sysTargets = {}
+        local weightSum = 0
+        
+        -- Collect all player systems and their weights
+        for system in vter(otherShip.vSystemList) do
+            local sysId = system:GetId()
+            if otherShip:HasSystem(sysId) then
+                local weight = sysWeights[Hyperspace.ShipSystem.SystemIdToName(sysId)] or 1
+                if weight > 0 then
+                    weightSum = weightSum + weight
+                    table.insert(sysTargets, {
+                        id = sysId,
+                        weight = weight
+                    })
                 end
-            end
-            
-            -- Pick a random system using the weights
-            if #sysTargets > 0 then
-                local rnd = math.random(weightSum);
-                for i = 1, #sysTargets do
-                    if rnd <= sysTargets[i].weight then
-                        projectile.target = otherShip:GetRoomCenter(otherShip:GetSystemRoom(sysTargets[i].id))
-                        projectile:ComputeHeading()
-                        return
-                    end
-                    rnd = rnd - sysTargets[i].weight
-                end
-                error("Weighted selection error - reached end of options without making a choice!")
             end
         end
+        
+        -- Pick a random system using the weights
+        if #sysTargets > 0 then
+            local rnd = math.random(weightSum);
+            for i = 1, #sysTargets do
+                if rnd <= sysTargets[i].weight then
+                    projectile.target = otherShip:GetRoomCenter(otherShip:GetSystemRoom(sysTargets[i].id))
+                    --projectile:ComputeHeading()
+                    return
+                end
+                rnd = rnd - sysTargets[i].weight
+            end
+            error("Weighted selection error - reached end of options without making a choice!")
+        end
+    end
+end
+
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+    if weapon.blueprint.name == "ARTILLERY_MAW" then
+        retargetProjectile(projectile, weapon)
 
         local shipManager = Hyperspace.ships.player
         for artillery in vter(shipManager.artillerySystems) do
-            userdata_table(artillery, "mods.fish.maw").chain = {0.25,artillery.powerState.first,projectile.position.x,projectile.position.y,projectile.currentSpace,projectile.target,projectile.destinationSpace,projectile.heading}      
+            --print("ARtillery fire")
+            userdata_table(artillery, "mods.fish.maw").chain = {0.125,(artillery.powerState.first-1),projectile.position.x,projectile.position.y,projectile.currentSpace,projectile.target,projectile.destinationSpace,projectile.heading}      
         end
     end
 end)
@@ -1554,7 +1580,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     for artillery in vter(shipManager.artillerySystems) do
         if artillery.projectileFactory.blueprint.name == "ARTILLERY_MAW" then
             local power = artillery.powerState.first
-            if power > 0 then
+            if power > 0 and artillery.projectileFactory.cooldown.first ~= artillery.projectileFactory.cooldown.second then
                 local powerScale = -0.25 * (power - 2)
                 artillery.projectileFactory.cooldown.first = math.max(0,artillery.projectileFactory.cooldown.first + (powerScale * Hyperspace.FPS.SpeedFactor/16))
             end
@@ -1562,6 +1588,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
         -- Fire More --
         local chainTable = userdata_table(artillery, "mods.fish.maw")
         if chainTable.chain then
+            --print("artillery refire")
             chainTable.chain[1] = math.max(chainTable.chain[1] - Hyperspace.FPS.SpeedFactor/16, 0)
             if chainTable.chain[1] == 0 then
                 --print("FIRERERE")local chainShots = weaponInfo[projectile.extend.name]["chainShot"]
@@ -1582,7 +1609,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
                 if chainTable.chain[2] <= 1 then
                     chainTable.chain = nil
                 else
-                    chainTable.chain[1] = 0.25
+                    chainTable.chain[1] = 0.125
                     chainTable.chain[2] = chainTable.chain[2] -1
                 end
             end
