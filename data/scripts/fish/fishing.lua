@@ -288,6 +288,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
         shipBlueprint = Hyperspace.ships.enemy.myBlueprint.blueprintName
         Hyperspace.playerVariables.fish_this_jump = 1
         Hyperspace.playerVariables.fish_active = 1
+        local fishingData = 16
         local shipManager = Hyperspace.ships.player
         local fishMin = 1
         local hasRepel = shipManager:HasAugmentation("FISH_INAUG_REPEL") > 0
@@ -337,6 +338,7 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
         shipBlueprint = Hyperspace.ships.enemy.myBlueprint.blueprintName
         Hyperspace.playerVariables.fish_this_jump = 1
         Hyperspace.playerVariables.fish_active = 1
+        local fishingData = 16
         local shipManager = Hyperspace.ships.player
         local fishMin = 1
         local hasRepel = shipManager:HasAugmentation("FISH_INAUG_REPEL") > 0

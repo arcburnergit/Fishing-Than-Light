@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
+<event name="ADDON_FISH">
+    <text>FTL: FISHIER THAN LIGHT
+Developed by: Arc
+Currently Enabled.
+        
+FTL Fishing, what more do I need to say. Over 60 fish, all with unique uses and effects.
+        
+To enable Fishier Than Light, go to the Multiverse Forums and visit the addon section!</text>
+</event>
+
 
 <ship name="FISHING_STORE_SHIP" auto_blueprint="FISHING_STORE" >
     <destroyed load="FISHING_STORE_KILLED" />
