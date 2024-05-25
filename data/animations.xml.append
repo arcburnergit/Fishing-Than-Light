@@ -777,3 +777,78 @@
 </anim>
 
 </FTL>
+
+<FTL>
+<animSheet name="drone_maw_recon" w="350" h="245" fw="35" fh="35">people/drone_maw_recon_base.png</animSheet>
+<animSheet name="drone_maw_recon_death" w="320" h="32" fh="32" fw="32">effects/explosion1_strip10.png</animSheet>
+<anim name="drone_maw_recon_death_right">
+	<sheet>drone_maw_recon_death</sheet>
+	<desc length="10" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="drone_maw_recon_death_left">
+	<sheet>drone_maw_recon_death</sheet>
+	<desc length="10" x="0" y="0" />
+	<time>1.0</time>
+</anim>
+<anim name="drone_maw_recon_walk_down">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="0" y="4" />
+	<time>0.5</time>
+</anim>
+<anim name="drone_maw_recon_walk_right">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="0" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="drone_maw_recon_walk_up">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="4" y="4" />
+	<time>0.5</time>
+</anim>
+<anim name="drone_maw_recon_walk_left">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="4" y="3" />
+	<time>0.5</time>
+</anim>
+<anim name="drone_maw_recon_shoot_down">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="0" y="2" />
+	<time>0.1</time>
+</anim>
+<anim name="drone_maw_recon_shoot_right">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="4" y="2" />
+	<time>0.1</time>
+</anim>
+<anim name="drone_maw_recon_shoot_up">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="0" y="1" />
+	<time>0.1</time>
+</anim>
+<anim name="drone_maw_recon_shoot_left">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="4" x="4" y="1" />
+	<time>0.1</time>
+</anim>
+<anim name="drone_maw_recon_power_down">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="8" x="0" y="5" />
+	<time>1.0</time>
+</anim>
+<anim name="drone_maw_recon_power_up">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="10" x="0" y="6" />
+	<time>1.0</time>
+</anim>
+<anim name="drone_maw_recon_fly">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="1" x="2" y="0" />
+	<time>1</time>
+</anim>
+<anim name="drone_maw_recon_portrait">
+	<sheet>drone_maw_recon</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>1</time>
+</anim>
+</FTL>

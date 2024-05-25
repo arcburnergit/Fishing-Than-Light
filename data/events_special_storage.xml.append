@@ -5,7 +5,7 @@
     <text>Fishing.</text>
     <event load="STORAGE_CHECK_FISHING" />
   </mod-append:choice>
-  <mod-append:choice req="MAW_LIST_ALL" blue="true" hidden="true">
+  <mod-append:choice req="MAW_BLUELIST_ALL" blue="true" hidden="true">
     <text>The Maw.</text>
     <event load="STORAGE_CHECK_FISH_MAW" />
   </mod-append:choice>

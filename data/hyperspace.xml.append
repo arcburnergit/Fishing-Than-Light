@@ -63,11 +63,57 @@
     </aug>
 </augments>
 
+<crew>
+	<race name="drone_maw_recon">
+		<selectable>true</selectable>
+		<controllable>true</controllable>
+		<canFight>false</canFight>
+		<canRepair>false</canRepair>
+		<canSabotage>false</canSabotage>
+		<canMan>false</canMan>
+		<canSuffocate>false</canSuffocate>
+		<maxHealth>100</maxHealth>
+		<damageTakenMultiplier>0.20</damageTakenMultiplier>
+		<fireDamageMultiplier>0.25</fireDamageMultiplier>
+		<moveSpeedMultiplier>2.5</moveSpeedMultiplier>
+		<detectsLifeforms>true</detectsLifeforms>
+		<isTelepathic>true</isTelepathic>
+		<stunMultiplier>0.25</stunMultiplier>
+		<animBase>mantis</animBase>
+		<shootingSounds>
+			<shootingSound>ionHit1</shootingSound>
+			<shootingSound>ionHit2</shootingSound>
+			<shootingSound>ionHit3</shootingSound>
+		</shootingSounds>
+		<droneAI>
+			<fightAI />
+			<returnToDroneRoom />
+		</droneAI>
+		<deathEffect>
+			<sysDamage>1</sysDamage>
+			<persDamage>2</persDamage>
+			<stun>3</stun>
+			<fireChance>3</fireChance>
+			<friendlyFire>true</friendlyFire>
+			<shipFriendlyFire>true</shipFriendlyFire>
+		</deathEffect>
+	</race>
+</crew>
+
 <events>
     <bossShip>FISHING_STORE</bossShip>
     <eventFile>special_fishing</eventFile>
     <eventFile>special_fish_maw</eventFile>
     <eventFile>special_fish_maw_up_1</eventFile>
+    <eventFile>special_fish_maw_up_2_1</eventFile>
+    <eventFile>special_fish_maw_up_2_2</eventFile>
+    <eventFile>special_fish_maw_up_2_3</eventFile>
+    <eventFile>special_fish_maw_up_3_1</eventFile>
+    <eventFile>special_fish_maw_up_3_2</eventFile>
+    <eventFile>special_fish_maw_up_3_3</eventFile>
+    <eventFile>special_fish_maw_up_3_4</eventFile>
+    <eventFile>special_fish_maw_up_3_5</eventFile>
+    <eventFile>special_fish_maw_up_3_6</eventFile>
 
     <metaVariable name="prof_r_boon_fish" op="set" val="0" />
     <metaVariable name="prof_hotkey_fish" op="set" val="9"/>
@@ -91,6 +137,7 @@
     <variable name="fishing_store_visited" op="set" val="0"/>
     <variable name="fish_caught_crew" op="set" val="0"/>
 
+    <variable name="fishing_store_killed" op="set" val="0"/>
 
 
     <variable name="fish_bait_equip_11" op="set" val="0"/>

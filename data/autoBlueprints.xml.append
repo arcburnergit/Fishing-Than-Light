@@ -22,9 +22,34 @@
   <crewCount amount="3" max="5" class="slug" />
   <boardingAI>sabotage</boardingAI>
   <aug name="SLUG_GEL" />
-  <aug name="UPG_TECH_RESPIRATOR" />
+  <aug name="SYSTEM_CASING_NEW" />
   <aug name="FISHING_STATION_AUGMENT" />
 </shipBlueprint>
+
+<shipBlueprint name="FISH_MAW_ENEMY" layout="fish_maw_enemy" img="fish_maw_enemy">
+	<class>The Maw</class>
+	<systemList>
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_MAW_ENEMY" />
+		<cloaking power="1" max="1" room="11" start="false" />
+		<doors power="2" max="3" room="7" start="true" />
+		<engines power="1" max="2" room="13" start="true" />
+		<mind power="1" max="2" room="8" start="false" />
+		<pilot power="3" max="3" room="3" start="true" />
+		<shields power="2" max="10" room="6" start="true" />
+		<weapons power="2" max="10" room="9" start="true" />
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>0</droneSlots>
+	<weaponList missiles="8" count="4" load="MAW_LIST_ALL" />
+	<droneList drones="4" count="0" />
+	<health amount="20" />
+	<maxPower amount="6" />
+	<boardingAI>sabotage</boardingAI>
+	<aug name="NANOBOT_DEFENSE_SYSTEM" />
+	<aug name="SYSTEM_CASING_NEW" />
+  <aug name="SLUG_GEL" />
+</shipBlueprint>
+
 
 <mod:findName type="blueprintList" name="LIST_WEAPONS_ALL">
 	<mod-append:name>FISHING_ROD_1</mod-append:name>
@@ -71,6 +96,235 @@
   <name>FISH_MAW_1_011</name>
   <name>FISH_MAW_1_101</name>
   <name>FISH_MAW_1_111</name>
+
+  <name>FISH_MAW_2_1_000</name>
+  <name>FISH_MAW_2_1_100</name>
+  <name>FISH_MAW_2_1_010</name>
+  <name>FISH_MAW_2_1_001</name>
+  <name>FISH_MAW_2_1_110</name>
+  <name>FISH_MAW_2_1_011</name>
+  <name>FISH_MAW_2_1_101</name>
+  <name>FISH_MAW_2_1_111</name>
+
+  <name>FISH_MAW_2_2_000</name>
+  <name>FISH_MAW_2_2_100</name>
+  <name>FISH_MAW_2_2_010</name>
+  <name>FISH_MAW_2_2_001</name>
+  <name>FISH_MAW_2_2_110</name>
+  <name>FISH_MAW_2_2_011</name>
+  <name>FISH_MAW_2_2_101</name>
+  <name>FISH_MAW_2_2_111</name>
+
+  <name>FISH_MAW_2_3_000</name>
+  <name>FISH_MAW_2_3_100</name>
+  <name>FISH_MAW_2_3_010</name>
+  <name>FISH_MAW_2_3_001</name>
+  <name>FISH_MAW_2_3_110</name>
+  <name>FISH_MAW_2_3_011</name>
+  <name>FISH_MAW_2_3_101</name>
+  <name>FISH_MAW_2_3_111</name>
+
+  <name>FISH_MAW_3_1_000</name>
+  <name>FISH_MAW_3_1_100</name>
+  <name>FISH_MAW_3_1_010</name>
+  <name>FISH_MAW_3_1_001</name>
+  <name>FISH_MAW_3_1_110</name>
+  <name>FISH_MAW_3_1_011</name>
+  <name>FISH_MAW_3_1_101</name>
+  <name>FISH_MAW_3_1_200</name>
+  <name>FISH_MAW_3_1_020</name>
+  <name>FISH_MAW_3_1_210</name>
+  <name>FISH_MAW_3_1_120</name>
+  <name>FISH_MAW_3_1_201</name>
+  <name>FISH_MAW_3_1_021</name>
+  <name>FISH_MAW_3_1_111</name>
+  <name>FISH_MAW_3_1_300</name>
+  <name>FISH_MAW_3_1_030</name>
+
+  <name>FISH_MAW_3_2_000</name>
+  <name>FISH_MAW_3_2_100</name>
+  <name>FISH_MAW_3_2_010</name>
+  <name>FISH_MAW_3_2_001</name>
+  <name>FISH_MAW_3_2_110</name>
+  <name>FISH_MAW_3_2_011</name>
+  <name>FISH_MAW_3_2_101</name>
+  <name>FISH_MAW_3_2_200</name>
+  <name>FISH_MAW_3_2_020</name>
+  <name>FISH_MAW_3_2_210</name>
+  <name>FISH_MAW_3_2_120</name>
+  <name>FISH_MAW_3_2_201</name>
+  <name>FISH_MAW_3_2_021</name>
+  <name>FISH_MAW_3_2_111</name>
+  <name>FISH_MAW_3_2_300</name>
+  <name>FISH_MAW_3_2_030</name>
+
+  <name>FISH_MAW_3_3_000</name>
+  <name>FISH_MAW_3_3_100</name>
+  <name>FISH_MAW_3_3_010</name>
+  <name>FISH_MAW_3_3_001</name>
+  <name>FISH_MAW_3_3_110</name>
+  <name>FISH_MAW_3_3_011</name>
+  <name>FISH_MAW_3_3_101</name>
+  <name>FISH_MAW_3_3_200</name>
+  <name>FISH_MAW_3_3_020</name>
+  <name>FISH_MAW_3_3_210</name>
+  <name>FISH_MAW_3_3_120</name>
+  <name>FISH_MAW_3_3_201</name>
+  <name>FISH_MAW_3_3_021</name>
+  <name>FISH_MAW_3_3_111</name>
+  <name>FISH_MAW_3_3_300</name>
+  <name>FISH_MAW_3_3_030</name>
+
+  <name>FISH_MAW_3_4_000</name>
+  <name>FISH_MAW_3_4_100</name>
+  <name>FISH_MAW_3_4_010</name>
+  <name>FISH_MAW_3_4_001</name>
+  <name>FISH_MAW_3_4_110</name>
+  <name>FISH_MAW_3_4_011</name>
+  <name>FISH_MAW_3_4_101</name>
+  <name>FISH_MAW_3_4_200</name>
+  <name>FISH_MAW_3_4_020</name>
+  <name>FISH_MAW_3_4_210</name>
+  <name>FISH_MAW_3_4_120</name>
+  <name>FISH_MAW_3_4_201</name>
+  <name>FISH_MAW_3_4_021</name>
+  <name>FISH_MAW_3_4_111</name>
+  <name>FISH_MAW_3_4_300</name>
+  <name>FISH_MAW_3_4_030</name>
+
+  <name>FISH_MAW_3_5_000</name>
+  <name>FISH_MAW_3_5_100</name>
+  <name>FISH_MAW_3_5_010</name>
+  <name>FISH_MAW_3_5_001</name>
+  <name>FISH_MAW_3_5_110</name>
+  <name>FISH_MAW_3_5_011</name>
+  <name>FISH_MAW_3_5_101</name>
+  <name>FISH_MAW_3_5_200</name>
+  <name>FISH_MAW_3_5_020</name>
+  <name>FISH_MAW_3_5_210</name>
+  <name>FISH_MAW_3_5_120</name>
+  <name>FISH_MAW_3_5_201</name>
+  <name>FISH_MAW_3_5_021</name>
+  <name>FISH_MAW_3_5_111</name>
+  <name>FISH_MAW_3_5_300</name>
+  <name>FISH_MAW_3_5_030</name>
+
+  <name>FISH_MAW_3_6_000</name>
+  <name>FISH_MAW_3_6_100</name>
+  <name>FISH_MAW_3_6_010</name>
+  <name>FISH_MAW_3_6_001</name>
+  <name>FISH_MAW_3_6_110</name>
+  <name>FISH_MAW_3_6_011</name>
+  <name>FISH_MAW_3_6_101</name>
+  <name>FISH_MAW_3_6_200</name>
+  <name>FISH_MAW_3_6_020</name>
+  <name>FISH_MAW_3_6_210</name>
+  <name>FISH_MAW_3_6_120</name>
+  <name>FISH_MAW_3_6_201</name>
+  <name>FISH_MAW_3_6_021</name>
+  <name>FISH_MAW_3_6_111</name>
+  <name>FISH_MAW_3_6_300</name>
+  <name>FISH_MAW_3_6_030</name>
+</blueprintList>
+
+<blueprintList name="MAW_BLUELIST_ALL">
+  <name>FISH_MAW_1_000</name>
+  <name>FISH_MAW_1_100</name>
+  <name>FISH_MAW_1_010</name>
+  <name>FISH_MAW_1_001</name>
+  <name>FISH_MAW_1_110</name>
+  <name>FISH_MAW_1_011</name>
+  <name>FISH_MAW_1_101</name>
+  <name>FISH_MAW_1_111</name>
+
+  <name>FISH_MAW_2_1_000</name>
+  <name>FISH_MAW_2_1_100</name>
+  <name>FISH_MAW_2_1_010</name>
+  <name>FISH_MAW_2_1_001</name>
+  <name>FISH_MAW_2_1_110</name>
+  <name>FISH_MAW_2_1_011</name>
+  <name>FISH_MAW_2_1_101</name>
+  <name>FISH_MAW_2_1_111</name>
+
+  <name>FISH_MAW_2_2_000</name>
+  <name>FISH_MAW_2_2_100</name>
+  <name>FISH_MAW_2_2_010</name>
+  <name>FISH_MAW_2_2_001</name>
+  <name>FISH_MAW_2_2_110</name>
+  <name>FISH_MAW_2_2_011</name>
+  <name>FISH_MAW_2_2_101</name>
+  <name>FISH_MAW_2_2_111</name>
+
+  <name>FISH_MAW_2_3_000</name>
+  <name>FISH_MAW_2_3_100</name>
+  <name>FISH_MAW_2_3_010</name>
+  <name>FISH_MAW_2_3_001</name>
+  <name>FISH_MAW_2_3_110</name>
+  <name>FISH_MAW_2_3_011</name>
+  <name>FISH_MAW_2_3_101</name>
+  <name>FISH_MAW_2_3_111</name>
+
+  <name>FISH_MAW_3_1_000</name>
+  <name>FISH_MAW_3_1_100</name>
+  <name>FISH_MAW_3_1_010</name>
+  <name>FISH_MAW_3_1_001</name>
+  <name>FISH_MAW_3_1_110</name>
+  <name>FISH_MAW_3_1_011</name>
+  <name>FISH_MAW_3_1_101</name>
+  <name>FISH_MAW_3_1_200</name>
+  <name>FISH_MAW_3_1_020</name>
+
+  <name>FISH_MAW_3_2_000</name>
+  <name>FISH_MAW_3_2_100</name>
+  <name>FISH_MAW_3_2_010</name>
+  <name>FISH_MAW_3_2_001</name>
+  <name>FISH_MAW_3_2_110</name>
+  <name>FISH_MAW_3_2_011</name>
+  <name>FISH_MAW_3_2_101</name>
+  <name>FISH_MAW_3_2_200</name>
+  <name>FISH_MAW_3_2_020</name>
+
+  <name>FISH_MAW_3_3_000</name>
+  <name>FISH_MAW_3_3_100</name>
+  <name>FISH_MAW_3_3_010</name>
+  <name>FISH_MAW_3_3_001</name>
+  <name>FISH_MAW_3_3_110</name>
+  <name>FISH_MAW_3_3_011</name>
+  <name>FISH_MAW_3_3_101</name>
+  <name>FISH_MAW_3_3_200</name>
+  <name>FISH_MAW_3_3_020</name>
+
+  <name>FISH_MAW_3_4_000</name>
+  <name>FISH_MAW_3_4_100</name>
+  <name>FISH_MAW_3_4_010</name>
+  <name>FISH_MAW_3_4_001</name>
+  <name>FISH_MAW_3_4_110</name>
+  <name>FISH_MAW_3_4_011</name>
+  <name>FISH_MAW_3_4_101</name>
+  <name>FISH_MAW_3_4_200</name>
+  <name>FISH_MAW_3_4_020</name>
+
+  <name>FISH_MAW_3_5_000</name>
+  <name>FISH_MAW_3_5_100</name>
+  <name>FISH_MAW_3_5_010</name>
+  <name>FISH_MAW_3_5_001</name>
+  <name>FISH_MAW_3_5_110</name>
+  <name>FISH_MAW_3_5_011</name>
+  <name>FISH_MAW_3_5_101</name>
+  <name>FISH_MAW_3_5_200</name>
+  <name>FISH_MAW_3_5_020</name>
+
+  <name>FISH_MAW_3_6_000</name>
+  <name>FISH_MAW_3_6_100</name>
+  <name>FISH_MAW_3_6_010</name>
+  <name>FISH_MAW_3_6_001</name>
+  <name>FISH_MAW_3_6_110</name>
+  <name>FISH_MAW_3_6_011</name>
+  <name>FISH_MAW_3_6_101</name>
+  <name>FISH_MAW_3_6_200</name>
+  <name>FISH_MAW_3_6_020</name>
+
+  <name>ARTILLERY_MAW</name>
 </blueprintList>
 
 <blueprintList name="BLUELIST_FISH">

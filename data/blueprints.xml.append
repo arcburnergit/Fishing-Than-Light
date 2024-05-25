@@ -44,7 +44,10 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+40% Fire Chance
+		+36% Breach Chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
 	<shots>2</shots>
@@ -83,16 +86,21 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+100 projectile speed
+		+100% stun chance
+		+20% accuracy bonus
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
+	<accuracyMod>20</accuracyMod>
 	<shots>2</shots>
 	<sp>0</sp>
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
 	<stunChance>10</stunChance>
-	<cooldown>8</cooldown>
-	<speed>100</speed>
+	<cooldown>10</cooldown>
+	<speed>140</speed>
 	<power>1</power>
 	<cost>80</cost>
 	<bp>10</bp>
@@ -124,13 +132,16 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+45 crew damage
+		+20% fire chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
-	<persDamage>4</persDamage>
+	<persDamage>3</persDamage>
 	<shots>2</shots>
 	<sp>0</sp>
-	<fireChance>0</fireChance>
+	<fireChance>2</fireChance>
 	<breachChance>0</breachChance>
 	<cooldown>10</cooldown>
 	<power>1</power>
@@ -164,17 +175,24 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+40% fire chance
+		+36% breach chance
+		+100 projectile speed
+		+100% stun chance
+		+20% accuracy bonus
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
+	<accuracyMod>20</accuracyMod>
 	<shots>2</shots>
 	<sp>0</sp>
 	<fireChance>4</fireChance>
 	<breachChance>6</breachChance>
 	<stunChance>10</stunChance>
-	<cooldown>8</cooldown>
+	<cooldown>10</cooldown>
 	<power>1</power>
-	<speed>100</speed>
+	<speed>140</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -205,18 +223,25 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+100 projectile speed
+		+100% stun chance
+		+20% accuracy bonus
+		+45 crew damage
+		+20% fire chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
-	<persDamage>4</persDamage>
+	<accuracyMod>20</accuracyMod>
+	<persDamage>3</persDamage>
 	<shots>2</shots>
 	<sp>0</sp>
-	<fireChance>0</fireChance>
+	<fireChance>2</fireChance>
 	<breachChance>0</breachChance>
 	<stunChance>10</stunChance>
-	<cooldown>8</cooldown>
+	<cooldown>10</cooldown>
 	<power>1</power>
-	<speed>100</speed>
+	<speed>140</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -247,14 +272,19 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+40% fire chance
+		+36% breach chance
+		+45 crew damage
+		+20% fire chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
-	<persDamage>4</persDamage>
+	<persDamage>3</persDamage>
 	<shots>2</shots>
 	<sp>0</sp>
-	<fireChance>4</fireChance>
-	<breachChance>6</breachChance>
+	<fireChance>6</fireChance>
+	<breachChance>9</breachChance>
 	<cooldown>10</cooldown>
 	<power>1</power>
 	<cost>80</cost>
@@ -287,18 +317,27 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+40% fire chance
+		+36% breach chance
+		+100 projectile speed
+		+100% stun chance
+		+20% accuracy bonus
+		+45 crew damage
+		+20% fire chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
-	<persDamage>4</persDamage>
+	<accuracyMod>20</accuracyMod>
+	<persDamage>3</persDamage>
 	<shots>2</shots>
 	<sp>0</sp>
-	<fireChance>4</fireChance>
-	<breachChance>6</breachChance>
+	<fireChance>6</fireChance>
+	<breachChance>9</breachChance>
 	<stunChance>10</stunChance>
-	<cooldown>8</cooldown>
+	<cooldown>10</cooldown>
 	<power>1</power>
-	<speed>100</speed>
+	<speed>140</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -370,7 +409,10 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots per burst
+		+1s cooldown
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
 	<shots>4</shots>
@@ -409,7 +451,10 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+		+110 projectile speed
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
 	<shots>3</shots>
@@ -418,7 +463,7 @@
 	<breachChance>0</breachChance>
 	<cooldown>12</cooldown>
 	<power>2</power>
-	<speed>130</speed>
+	<speed>150</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -449,7 +494,12 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-1 hull damage
+		+15 crew damage
+		+50% fire chance
+		+50% breach chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
@@ -490,7 +540,12 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots per burst
+		+1s cooldown
+		+1 shield pierce
+		+110 projectile speed
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>1</damage>
 	<shots>4</shots>
@@ -499,7 +554,7 @@
 	<breachChance>0</breachChance>
 	<cooldown>13</cooldown>
 	<power>2</power>
-	<speed>130</speed>
+	<speed>150</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -530,7 +585,14 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+		+110 projectile speed
+		-1 hull damage
+		+15 crew damage
+		+50% fire chance
+		+50% breach chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
@@ -541,7 +603,7 @@
 	<breachChance>10</breachChance>
 	<cooldown>12</cooldown>
 	<power>2</power>
-	<speed>130</speed>
+	<speed>150</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -572,7 +634,14 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots per burst
+		+1s cooldown
+		-1 hull damage
+		+15 crew damage
+		+50% fire chance
+		+50% breach chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
@@ -613,7 +682,16 @@
 	<title>The Maw</title>
 	<short>The Maw</short>
 	<tip>tip_fish_maw</tip>
-	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots per burst
+		+1s cooldown
+		+1 shield pierce
+		+110 projectile speed
+		-1 hull damage
+		+15 crew damage
+		+50% fire chance
+		+50% breach chance
+	</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>0</damage>
 	<sysDamage>1</sysDamage>
@@ -624,7 +702,7 @@
 	<breachChance>10</breachChance>
 	<cooldown>13</cooldown>
 	<power>2</power>
-	<speed>130</speed>
+	<speed>150</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -666,7 +744,652 @@
 	<breachChance>0</breachChance>
 	<cooldown>10</cooldown>
 	<power>3</power>
-	<speed>100</speed>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_100">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_010">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_001">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+40% fire chance
+		+30% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>2</sp>
+	<fireChance>4</fireChance>
+	<breachChance>5</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_110">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_011">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+		+40% fire chance
+		+30% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>3</sp>
+	<fireChance>4</fireChance>
+	<breachChance>5</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_101">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		+40% fire chance
+		+30% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>2</sp>
+	<fireChance>4</fireChance>
+	<breachChance>5</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_200">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>5</damage>
+	<shots>1</shots>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_020">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>4</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_210">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 damage
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_120">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		+2 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>4</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_021">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shield pierce
+		+40% fire chance
+		+30% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>4</sp>
+	<fireChance>4</fireChance>
+	<breachChance>5</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_201">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 damage
+		+40% fire chance
+		+30% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>5</damage>
+	<shots>1</shots>
+	<sp>2</sp>
+	<fireChance>4</fireChance>
+	<breachChance>5</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_111">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		+1 shield pierce
+		+40% fire chance
+		+30% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<shots>1</shots>
+	<sp>3</sp>
+	<fireChance>4</fireChance>
+	<breachChance>5</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_300">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>6</damage>
+	<shots>1</shots>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_1</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_1_030">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<shots>1</shots>
+	<sp>5</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<speed>140</speed>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
@@ -732,6 +1455,663 @@
 	<weaponArt>fish_maw_3_2</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_100">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<shots>6</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_010">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-2s cooldown
+		+15 crew damage
+		+30 fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<persDamage>1</persDamage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_001">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+hull bust
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<hullBust>1</hullBust>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_110">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		-2s cooldown
+		+15 crew damage
+		+30 fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<persDamage>1</persDamage>
+	<shots>6</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_011">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-2s cooldown
+		+15 crew damage
+		+30 fire chance
+		+hull bust
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<persDamage>1</persDamage>
+	<hullBust>1</hullBust>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_101">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+hull bust
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<hullBust>1</hullBust>
+	<shots>6</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_200">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<shots>7</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_020">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-4s cooldown
+		+30 crew damage
+		+60 fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<persDamage>2</persDamage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>8</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_210">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+		-2s cooldown
+		+15 crew damage
+		+30 fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<persDamage>1</persDamage>
+	<shots>7</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_120">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		-4s cooldown
+		+30 crew damage
+		+60 fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<persDamage>2</persDamage>
+	<shots>6</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>8</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_201">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+		+hull bust
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<hullBust>1</hullBust>
+	<shots>7</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_021">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-4s cooldown
+		+30 crew damage
+		+60 fire chance
+		+hull bust
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<hullBust>1</hullBust>
+	<persDamage>2</persDamage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>8</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_111">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		-2s cooldown
+		+15 crew damage
+		+30 fire chance
+		+hull bust
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<hullBust>1</hullBust>
+	<persDamage>1</persDamage>
+	<shots>6</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>10</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_300">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<shots>8</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_2_030">
+	<type>LASER</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-6s cooldown
+		+45 crew damage
+		+90 fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<persDamage>3</persDamage>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>9</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>6</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>laser_light2</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_2</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -747,11 +2127,231 @@
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
 	<cooldown>12</cooldown>
-	<power>3</power>
+	<power>2</power>
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
+	<speed>10</speed>
 	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_2_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_2_100">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>10</speed>
+	<length>80</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_2_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_2_010">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+25 beam speed
+		+1 system damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sysDamage>1</sysDamage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>35</speed>
+	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_2_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_2_001">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-1 hull damage
+		+1 shield pierce
+		+60% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<sysDamage>1</sysDamage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>6</breachChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>10</speed>
+	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_2_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_2_110">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+		+25 beam speed
+		+1 system damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sysDamage>1</sysDamage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>35</speed>
+	<length>80</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_2_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_2_011">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+25 beam speed
+		+1 system damage
+		-1 hull damage
+		+1 shield pierce
+		+60% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<sysDamage>2</sysDamage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>6</breachChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>35</speed>
+	<length>50</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_2_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_2_101">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+		-1 hull damage
+		+1 shield pierce
+		+60% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<sysDamage>1</sysDamage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>6</breachChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>10</speed>
+	<length>80</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_2_2</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_2_111">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+		+25 beam speed
+		+1 system damage
+		-1 hull damage
+		+1 shield pierce
+		+60% breach chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>1</damage>
+	<sysDamage>2</sysDamage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>6</breachChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>35</speed>
+	<length>80</length>
 	<image>beam_contact</image>
 	<launchSounds>
 		<sound>beam2</sound>
@@ -786,6 +2386,450 @@
 	<weaponArt>fish_maw_3_3</weaponArt>
 	<iconImage>beam</iconImage>
 </weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_100">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>150</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_010">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_001">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 chain damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<boost>
+		<type>damage</type>
+		<amount>1</amount>
+		<count>999</count>
+	</boost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_110">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>150</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_011">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+		+1 chain damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<boost>
+		<type>damage</type>
+		<amount>1</amount>
+		<count>999</count>
+	</boost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_101">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+		+1 chain damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<boost>
+		<type>damage</type>
+		<amount>1</amount>
+		<count>999</count>
+	</boost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>150</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_200">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+60 beam length
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>180</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_020">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_210">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+60 beam length
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>180</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_120">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+		+2 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>150</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_201">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+60 beam length
+		+1 chain damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<boost>
+		<type>damage</type>
+		<amount>1</amount>
+		<count>999</count>
+	</boost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>180</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_021">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shield pierce
+		+1 chain damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<boost>
+		<type>damage</type>
+		<amount>1</amount>
+		<count>999</count>
+	</boost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_111">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 beam length
+		+1 shield pierce
+		+1 chain damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<boost>
+		<type>damage</type>
+		<amount>1</amount>
+		<count>999</count>
+	</boost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>150</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_300">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+90 beam length
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>210</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_3_030">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<sp>4</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<length>120</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_3</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
 </FTL>
 
 <FTL>
@@ -805,6 +2849,454 @@
 	<cost>80</cost>
 	<bp>10</bp>
 	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_100">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>6</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_010">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>5</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_001">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-2 damage
+		+4 ion damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<ion>4</ion>
+	<ionBeamFix>true</ionBeamFix>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_110">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>6</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_011">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shield pierce
+		-2 damage
+		+4 ion damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<ion>4</ion>
+	<ionBeamFix>true</ionBeamFix>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_101">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		-2 damage
+		+4 ion damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<ion>4</ion>
+	<ionBeamFix>true</ionBeamFix>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_200">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>7</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_020">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>5</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_210">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 damage
+		+1 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>7</damage>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_120">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		+2 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>6</damage>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_201">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 damage
+		-2 damage
+		+4 ion damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>5</damage>
+	<ion>4</ion>
+	<ionBeamFix>true</ionBeamFix>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_021">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shield pierce
+		-2 damage
+		+4 ion damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<ion>4</ion>
+	<ionBeamFix>true</ionBeamFix>
+	<sp>2</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_111">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 damage
+		+1 shield pierce
+		-2 damage
+		+4 ion damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>4</damage>
+	<ion>4</ion>
+	<ionBeamFix>true</ionBeamFix>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_300">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 damage
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>8</damage>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
+	<length>1</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>fish_maw_3_4</weaponArt>
+	<iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_4_030">
+	<type>BEAM</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 shield pierce
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>5</damage>
+	<sp>3</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<speed>1</speed>
 	<length>1</length>
 	<image>beam_contact</image>
 	<launchSounds>
@@ -823,7 +3315,7 @@
 	<tip>tip_fish_maw</tip>
 	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
 	<tooltip>The Maw</tooltip>
-	<damage>2</damage>
+	<damage>3</damage>
 	<missiles>1</missiles>
 	<speed>50</speed>
 	<shots>1</shots>
@@ -832,6 +3324,325 @@
 	<breachChance>0</breachChance>
 	<stunChance>0</stunChance>
 	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_2_3</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_3_100">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-3 hull damage
+		+2 system damage
+		+40% fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>5</sysDamage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>4</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_2_3</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_3_010">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shot per charge
+		+3s cooldown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>3</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>2</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_2_3</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_3_001">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-1 hull damage
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>0</missiles>
+	<speed>50</speed>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_2_3</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_3_110">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-3 hull damage
+		+2 system damage
+		+40% fire chance
+		+1 shot per charge
+		+3s cooldown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>5</sysDamage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>2</shots>
+	<sp>10</sp>
+	<fireChance>4</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>13</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_2_3</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_3_011">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shot per charge
+		+3s cooldown
+		-1 hull damage
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>0</missiles>
+	<speed>50</speed>
+	<shots>2</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_2_3</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_3_101">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-3 hull damage
+		+2 system damage
+		+40% fire chance
+		-1 hull damage
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>-1</damage>
+	<sysDamage>5</sysDamage>
+	<missiles>0</missiles>
+	<speed>50</speed>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>4</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>12</cooldown>
+	<power>2</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_2_3</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_2_3_111">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-3 hull damage
+		+2 system damage
+		+40% fire chance
+		+1 shot per charge
+		+3s cooldown
+		-1 hull damage
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>-1</damage>
+	<sysDamage>5</sysDamage>
+	<missiles>0</missiles>
+	<speed>50</speed>
+	<shots>1</shots>
+	<sp>10</sp>
+	<fireChance>4</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
 	<power>2</power>
 	<cost>80</cost>
 	<bp>10</bp>
@@ -877,7 +3688,535 @@
 	<power>3</power>
 	<cost>52</cost>
 	<bp>4</bp>
-	<rarity>4</rarity>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_100">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>2</persDamage>
+	<missiles>1</missiles>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_010">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+15 crew damage
+		+30% fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>3</persDamage>
+	<missiles>1</missiles>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_001">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>2</persDamage>
+	<missiles>0</missiles>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_110">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+15 crew damage
+		+30% fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>3</persDamage>
+	<missiles>1</missiles>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_011">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+15 crew damage
+		+30% fire chance
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>3</persDamage>
+	<missiles>0</missiles>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_101">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>2</persDamage>
+	<missiles>0</missiles>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_200">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>2</persDamage>
+	<missiles>1</missiles>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_020">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 crew damage
+		+60% fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>4</persDamage>
+	<missiles>1</missiles>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_210">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+		+15 crew damage
+		+30% fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>3</persDamage>
+	<missiles>1</missiles>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_120">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+30 crew damage
+		+60% fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>4</persDamage>
+	<missiles>1</missiles>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_201">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>2</persDamage>
+	<missiles>0</missiles>
+	<shots>5</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_021">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+30 crew damage
+		+60% fire chance
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>4</persDamage>
+	<missiles>0</missiles>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>6</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_111">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+15 crew damage
+		+30% fire chance
+		-1 missile cost
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>3</persDamage>
+	<missiles>0</missiles>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>3</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_300">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>2</persDamage>
+	<missiles>1</missiles>
+	<shots>6</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<image>bomb_small</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>bombTeleport</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<weaponArt>fish_maw_3_5</weaponArt>
+	<iconImage>bomb</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_5_030">
+	<type>BOMB</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+45 crew damage
+		+90% fire chance
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>0</damage>
+	<sysDamage>2</sysDamage>
+	<persDamage>5</persDamage>
+	<missiles>1</missiles>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>9</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>14</cooldown>
+	<power>3</power>
+	<cost>52</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
 	<image>bomb_small</image>
 	<explosion>explosion_random</explosion>
 	<launchSounds>
@@ -892,6 +4231,17 @@
 </FTL>
 
 <FTL>
+<crewBlueprint name="drone_maw_recon">
+	<title>Recon Drone</title>
+	<short>Recon Drone</short>
+	<desc>YOU SHOULD NEVER SEE THIS.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<powerList>
+		<power>DRONE</power>
+	</powerList>
+</crewBlueprint>
+
 <weaponBlueprint name="FISH_MAW_3_6_000">
 	<type>MISSILES</type>
 	<title>The Maw</title>
@@ -930,6 +4280,705 @@
 	</missSounds>
 	<weaponArt>fish_maw_3_6</weaponArt>
 	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_100">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>4</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_010">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 recon drone spawn
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>1</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_001">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+lockdown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<lockdown>1</lockdown>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_110">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+1 recon drone spawn
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>4</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>1</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_011">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 recon drone spawn
+		+lockdown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<lockdown>1</lockdown>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>1</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_101">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+lockdown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<lockdown>1</lockdown>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>4</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_200">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>5</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_020">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 recon drone spawn
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>2</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_210">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+		+1 recon drone spawn
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>5</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>1</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_120">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+2 recon drone spawn
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>4</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>2</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_201">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 shots
+		+lockdown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<lockdown>1</lockdown>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>5</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_021">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+2 recon drone spawn
+		+lockdown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<lockdown>1</lockdown>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>2</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_111">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+1 shots
+		+1 recon drone spawn
+		+lockdown
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<lockdown>1</lockdown>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>4</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>1</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_300">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 shots
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>6</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="FISH_MAW_3_6_030">
+	<type>MISSILES</type>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<tip>tip_fish_maw</tip>
+	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.
+		+3 recon drone spawn
+	</desc>
+	<tooltip>The Maw</tooltip>
+	<damage>2</damage>
+	<missiles>1</missiles>
+	<speed>50</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>15</cooldown>
+	<power>3</power>
+	<cost>80</cost>
+	<bp>10</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>fish_maw_3_6</weaponArt>
+	<iconImage>missile</iconImage>
+	<spawnCrew>
+		<number>3</number>
+		<race>drone_maw_recon</race>
+		<lifetime>30</lifetime>
+	</spawnCrew>
+	<crewSpawnChance>10</crewSpawnChance>
 </weaponBlueprint>
 </FTL>
 
@@ -1316,7 +5365,7 @@
 	<desc>Somewhere between a living animal and a inanimate ship, the Maw must consume all.</desc>
 	<unlock id="ship_PLAYER_SHIP_FISHARTY_3_unlock"/>
 	<systemList>
-		<artillery power="5" max="5" room="1" start="true" weapon="ARTILLERY_MAW" img="room_artillery_7" />
+		<artillery power="2" max="5" room="1" start="true" weapon="ARTILLERY_MAW" img="room_artillery_7" />
 		<battery power="1" room="6" start="false" img="room_battery_2" />
 		<cloaking power="1" room="8" start="false" img="room_cloaking_7" />
 		<clonebay power="1" room="12" start="false">
@@ -1374,6 +5423,7 @@
 	<weaponSlots>4</weaponSlots>
 	<droneSlots>2</droneSlots>
 	<weaponList missiles="6" count="4">
+		<weapon name="FISH_MAW_1_000" />
 		<weapon name="FISHING_ROD_3_P" />
 	</weaponList>
 	<droneList drones="6" count="2" />
@@ -1692,6 +5742,42 @@ Cooldown will not go below 1x, Instead power scales number of shots.</desc>
 	<fireChance>1</fireChance>
 	<breachChance>1</breachChance>
 	<cooldown>15</cooldown>
+	<power>1</power>
+    <speed>180</speed>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+    <launchSounds>
+        <sound>heavyLaser1</sound>
+    </launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_maw</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_MAW_ENEMY">
+	<type>LASER</type>
+	<flavorType>The Maw</flavorType>
+	<title>The Maw</title>
+	<short>The Maw</short>
+	<desc>[Base cooldown: 12] The Maw must consume.</desc>
+	<tooltip>Artillery: The Maw.</tooltip>
+	<damage>1</damage>
+    <accuracyMod>20</accuracyMod>
+	<shots>3</shots>
+	<sp>0</sp>
+	<fireChance>1</fireChance>
+	<breachChance>1</breachChance>
+	<cooldown>12</cooldown>
 	<power>1</power>
     <speed>180</speed>
 	<cost>0</cost>

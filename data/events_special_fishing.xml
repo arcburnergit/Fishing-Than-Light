@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
 
-<ship name="FISHING_STORE_SHIP" auto_blueprint="FISHING_STORE" />
+<ship name="FISHING_STORE_SHIP" auto_blueprint="FISHING_STORE" >
+    <destroyed load="FISHING_STORE_KILLED" />
+    <deadCrew load="FISHING_STORE_KILLED" />
+</ship>
 <event name="FISHING_STORE">
     <beaconType id="map_icon_outpost" global="false">
       <color r="175" g="215" b="205" a="1"/>

@@ -13,8 +13,84 @@ There appears to note scratched into the generator.
 	</choice>
 	<choice>
 		<text>Sabotage the generator.</text>
-		<event/>
+		<event>
+            <text>You quickly destroy the oxygen generator, it's unlikely you'll be seeing this station again, atleast in this universe.</text>
+            <variable name="fishing_store_visited" op="set" val="0"/>
+            <status type="limit" target="enemy" system="oxygen" amount="0" />
+            <status type="limit" target="enemy" system="weapons" amount="0" />
+            <status type="limit" target="enemy" system="teleporter" amount="0" />
+            <status type="limit" target="enemy" system="medbay" amount="0" />
+            <enemyDamage amount="0" system="oxygen" effect="fire" damageHull="false" />
+            <enemyDamage amount="0" system="random" effect="fire" damageHull="false" />
+            <enemyDamage amount="0" system="random" effect="fire" damageHull="false" />
+            <enemyDamage amount="0" system="room" effect="fire" damageHull="false" />
+            <enemyDamage amount="0" system="room" effect="fire" damageHull="false" />
+            <ship hostile="true"/>
+        </event>
 	</choice>
+</event>
+
+<event name="FISHING_STORE_KILLED">
+    <text>The station has been emptied of crew.
+
+You recieve an empty message
+There's a set of coordinates attached...</text>
+    <variable name="fishing_store_killed" op="set" val="1"/>
+    <quest event="FISHING_MAW_QUEST"/>
+    <choice>
+        <text>Continue...</text>
+        <event/>
+    </choice>
+</event>
+  
+<ship name="FISH_MAW_ENEMY" auto_blueprint="FISH_MAW_ENEMY">
+  <destroyed load="DESTROYED_FISH_MAW_ENEMY" />
+</ship>
+
+<event name="FISHING_MAW_QUEST">
+    <text>You arrive at the beacon face to face with a strange looking autoship.
+
+"Ahh, A renegade, very well.
+Prove your competency in battle and I will join with you."
+    </text>
+    <ship load="FISH_MAW_ENEMY" hostile="false"/>
+    <choice>
+        <text>Fight the autoship.</text>
+        <event>
+            <text>"Very well challenger, prepare to meet your doom..."</text>
+            <ship hostile="true"/>
+            <choice>
+              <text>Continue...</text>
+              <event load="COMBAT_CHECK" />
+            </choice>
+        </event>
+    </choice>
+    <choice>
+        <text>Refuse and leave.</text>
+        <event>
+            <text>You refuse the offer from the strange autoship and move away to wait for your FTL drive to charge.</text>
+            <choice>
+                <text>Do something onboard the ship.</text>
+                <event load="STORAGE_CHECK" />
+            </choice>
+            <choice>
+              <text>Do nothing.</text>
+              <event />
+            </choice>
+        </event>
+    </choice>
+</event>
+
+<event name="DESTROYED_FISH_MAW_ENEMY">
+    <text>As the autoship is breaking apart you can see certain parts of the ship moving together to form an object.
+
+You move in and find a strange looking weapon resting in the middle of the wreck, it appears the autoship has formed itself into a weapon for your use.</text>
+    <weapon name="FISH_MAW_1_000"/>
+    <autoReward level="LOW">standard</autoReward>
+    <choice>
+        <text>Continue...</text>
+        <event/>
+    </choice>
 </event>
 
 <event name="STORAGE_CHECK_FISH_MAW_LOAD">
@@ -43,6 +119,344 @@ There appears to note scratched into the generator.
         <text>Upgrade The Maw.</text>
         <event load="STORAGE_CHECK_FISH_MAW_1_001_UPGRADE"/>
     </choice>
+    <choice blue="false" req="FISH_MAW_1_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_1_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_1_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_1_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_1_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_1_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_1_111" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_1_111_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_2_1_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_1_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_1_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_1_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_1_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_1_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_1_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_1_111" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_1_111_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_2_2_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_2_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_2_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_2_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_2_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_2_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_2_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_2_111" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_2_111_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_2_3_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_3_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_3_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_3_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_3_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_3_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_3_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_2_3_111" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_2_3_111_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_3_1_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_200" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_200_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_1_020" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_1_020_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_3_2_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_200" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_200_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_2_020" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_2_020_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_3_3_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_200" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_200_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_3_020" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_3_020_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_3_4_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_200" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_200_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_4_020" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_4_020_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_3_5_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_200" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_200_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_5_020" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_5_020_UPGRADE"/>
+    </choice>
+
+    <choice blue="false" req="FISH_MAW_3_6_000" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_000_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_100" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_100_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_010" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_010_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_001" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_001_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_110" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_110_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_011" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_011_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_101" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_101_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_200" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_200_UPGRADE"/>
+    </choice>
+    <choice blue="false" req="FISH_MAW_3_6_020" hidden="true">
+        <text>Upgrade The Maw.</text>
+        <event load="STORAGE_CHECK_FISH_MAW_3_6_020_UPGRADE"/>
+    </choice>
+
     <choice>
         <text>Feed The Maw.</text>
         <event load="STORAGE_CHECK_FISH_MAW_CONSUME"/>
@@ -142,6 +556,407 @@ Upgrade Points: MAW</text>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_0</loadEvent>
             <weapon name="FISH_FOOD_0"/>
+        </event>
+    </choice>
+
+    
+    <choice req="FISH_FOOD_11">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_11</loadEvent>
+            <weapon name="FISH_FOOD_11"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_12">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_12</loadEvent>
+            <weapon name="FISH_FOOD_12"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_13">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_13</loadEvent>
+            <weapon name="FISH_FOOD_13"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_14">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_14</loadEvent>
+            <weapon name="FISH_FOOD_14"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_15">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_15</loadEvent>
+            <weapon name="FISH_FOOD_15"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_16">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_16</loadEvent>
+            <weapon name="FISH_FOOD_16"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_17">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_17</loadEvent>
+            <weapon name="FISH_FOOD_17"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_18">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_18</loadEvent>
+            <weapon name="FISH_FOOD_18"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_19">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_19</loadEvent>
+            <weapon name="FISH_FOOD_19"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_10">
+        <text>Feed the Maw: (+2)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_10</loadEvent>
+            <weapon name="FISH_FOOD_10"/>
+        </event>
+    </choice>
+
+    
+    <choice req="FISH_FOOD_21">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_21</loadEvent>
+            <weapon name="FISH_FOOD_21"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_22">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_22</loadEvent>
+            <weapon name="FISH_FOOD_22"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_23">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_23</loadEvent>
+            <weapon name="FISH_FOOD_23"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_24">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_24</loadEvent>
+            <weapon name="FISH_FOOD_24"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_25">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_25</loadEvent>
+            <weapon name="FISH_FOOD_25"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_26">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_26</loadEvent>
+            <weapon name="FISH_FOOD_26"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_27">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_27</loadEvent>
+            <weapon name="FISH_FOOD_27"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_28">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_28</loadEvent>
+            <weapon name="FISH_FOOD_28"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_29">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_29</loadEvent>
+            <weapon name="FISH_FOOD_29"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_20">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_20</loadEvent>
+            <weapon name="FISH_FOOD_20"/>
+        </event>
+    </choice>
+
+    
+    <choice req="FISH_FOOD_31">
+        <text>Feed the Maw: (+7)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_31</loadEvent>
+            <weapon name="FISH_FOOD_31"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_32">
+        <text>Feed the Maw: (+7)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_32</loadEvent>
+            <weapon name="FISH_FOOD_32"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_33">
+        <text>Feed the Maw: (+7)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_33</loadEvent>
+            <weapon name="FISH_FOOD_33"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_34">
+        <text>Feed the Maw: (+7)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_34</loadEvent>
+            <weapon name="FISH_FOOD_34"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_35">
+        <text>Feed the Maw: (+7)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_35</loadEvent>
+            <weapon name="FISH_FOOD_35"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_36">
+        <text>Feed the Maw: (+7)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_36</loadEvent>
+            <weapon name="FISH_FOOD_36"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_37">
+        <text>Feed the Maw: (+7)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_37</loadEvent>
+            <weapon name="FISH_FOOD_37"/>
+        </event>
+    </choice>
+
+    
+    <choice req="FISH_FOOD_41">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_41</loadEvent>
+            <weapon name="FISH_FOOD_41"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_42">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_42</loadEvent>
+            <weapon name="FISH_FOOD_42"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_43">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_43</loadEvent>
+            <weapon name="FISH_FOOD_43"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_44">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_44</loadEvent>
+            <weapon name="FISH_FOOD_44"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_45">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_45</loadEvent>
+            <weapon name="FISH_FOOD_45"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_46">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_46</loadEvent>
+            <weapon name="FISH_FOOD_46"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_47">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_47</loadEvent>
+            <weapon name="FISH_FOOD_47"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_48">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_48</loadEvent>
+            <weapon name="FISH_FOOD_48"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_49">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_49</loadEvent>
+            <weapon name="FISH_FOOD_49"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_40">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_40</loadEvent>
+            <weapon name="FISH_FOOD_40"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4A">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_4A</loadEvent>
+            <weapon name="FISH_FOOD_4A"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4B">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_4B</loadEvent>
+            <weapon name="FISH_FOOD_4B"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4C">
+        <text>Feed the Maw: (+6)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_4C</loadEvent>
+            <weapon name="FISH_FOOD_4C"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4D">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_4D</loadEvent>
+            <weapon name="FISH_FOOD_4D"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_4E">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_4E</loadEvent>
+            <weapon name="FISH_FOOD_4E"/>
+        </event>
+    </choice>
+
+    <choice req="FISH_FOOD_LASER">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_LASER</loadEvent>
+            <weapon name="FISH_FOOD_LASER"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_ION">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_ION</loadEvent>
+            <weapon name="FISH_FOOD_ION"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_FLAK">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_FLAK</loadEvent>
+            <weapon name="FISH_FOOD_FLAK"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_BEAM">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_BEAM</loadEvent>
+            <weapon name="FISH_FOOD_BEAM"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_MINELAYER">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_MINELAYER</loadEvent>
+            <weapon name="FISH_FOOD_MINELAYER"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_MISSILE_1">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_MISSILE_1</loadEvent>
+            <weapon name="FISH_FOOD_MISSILE_1"/>
+        </event>
+    </choice>
+    <choice req="FISH_FOOD_MISSILE_2">
+        <text>Feed the Maw: (+10)</text>
+        <event>
+            <text> 1 </text>
+            <loadEvent>FISH_MAW_CONSUME_FOOD_MISSILE_2</loadEvent>
+            <weapon name="FISH_FOOD_MISSILE_2"/>
         </event>
     </choice>
 </event>
@@ -247,6 +1062,499 @@ Upgrade Points: MAW</text>
 </event>
 
 
+
+<event name="FISH_MAW_CONSUME_FOOD_11">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_11"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_12">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_12"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_13">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_13"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_14">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_14"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_15">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_15"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_16">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_16"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_17">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_17"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_18">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_18"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_19">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_19"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_10">
+    <text>You feed the uncommon fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="2"/>
+    <remove name="FISH_FOOD_10"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+
+
+<event name="FISH_MAW_CONSUME_FOOD_21">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_21"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_22">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_22"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_23">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_23"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_24">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_24"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_25">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_25"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_26">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_26"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_27">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_27"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_28">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_28"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_29">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_29"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_20">
+    <text>You feed the rare fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="4"/>
+    <remove name="FISH_FOOD_20"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+
+
+<event name="FISH_MAW_CONSUME_FOOD_31">
+    <text>You feed the legendary fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="7"/>
+    <remove name="FISH_FOOD_31"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_32">
+    <text>You feed the legendary fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="7"/>
+    <remove name="FISH_FOOD_32"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_33">
+    <text>You feed the legendary fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="7"/>
+    <remove name="FISH_FOOD_33"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_34">
+    <text>You feed the legendary fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="7"/>
+    <remove name="FISH_FOOD_34"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_35">
+    <text>You feed the legendary fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="7"/>
+    <remove name="FISH_FOOD_35"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_36">
+    <text>You feed the legendary fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="7"/>
+    <remove name="FISH_FOOD_36"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_37">
+    <text>You feed the legendary fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="7"/>
+    <remove name="FISH_FOOD_37"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+
+
+<event name="FISH_MAW_CONSUME_FOOD_41">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_41"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_42">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_42"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_43">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_43"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_44">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_44"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_45">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_45"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_46">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_46"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_47">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_47"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_48">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_48"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_49">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_49"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_40">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_40"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_4A">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_4A"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_4B">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_4B"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_4C">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="6"/>
+    <remove name="FISH_FOOD_4C"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_4D">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_4D"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+<event name="FISH_MAW_CONSUME_FOOD_4E">
+    <text>You feed the unique fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_4E"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+
+
+
+
+<event name="FISH_MAW_CONSUME_FOOD_LASER">
+    <text>You feed the gun fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_LASER"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+<event name="FISH_MAW_CONSUME_FOOD_ION">
+    <text>You feed the gun fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_ION"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+<event name="FISH_MAW_CONSUME_FOOD_FLAK">
+    <text>You feed the gun fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_FLAK"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+<event name="FISH_MAW_CONSUME_FOOD_BEAM">
+    <text>You feed the gun fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_BEAM"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+<event name="FISH_MAW_CONSUME_FOOD_MINELAYER">
+    <text>You feed the gun fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_MINELAYER"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+<event name="FISH_MAW_CONSUME_FOOD_MISSILE_1">
+    <text>You feed the gun fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_MISSILE_1"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
+<event name="FISH_MAW_CONSUME_FOOD_MISSILE_2">
+    <text>You feed the gun fish to The Maw, it greedily consumes the fish, bones and all.</text>
+    <variable name="fish_maw_upgrade" op="add" val="10"/>
+    <remove name="FISH_FOOD_MISSILE_2"/>
+	<choice>
+		<text>Continue...</text>
+		<event load="STORAGE_CHECK_FISH_MAW_CONSUME_LOAD" />
+	</choice>
+</event>
 
 
 
