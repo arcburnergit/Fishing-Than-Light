@@ -156,7 +156,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="fish_bait_bounty_11" lvl="4" max_lvl="4">
-        <text>Bounty 1: Spotted Mackeral</text>
+        <text>Bounty 1: Spotted Mackerel</text>
         <event>
             <loadEvent>FISH_BOUNTY_11_4</loadEvent>
         </event>
@@ -218,7 +218,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="fish_bait_bounty_12" lvl="4" max_lvl="4">
-        <text>Bounty 2: Spotted Mackeral</text>
+        <text>Bounty 2: Spotted Mackerel</text>
         <event>
             <loadEvent>FISH_BOUNTY_12_4</loadEvent>
         </event>
@@ -280,7 +280,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="fish_bait_bounty_13" lvl="4" max_lvl="4">
-        <text>Bounty 3: Spotted Mackeral</text>
+        <text>Bounty 3: Spotted Mackerel</text>
         <event>
             <loadEvent>FISH_BOUNTY_13_4</loadEvent>
         </event>
@@ -342,7 +342,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="fish_bait_bounty_14" lvl="4" max_lvl="4">
-        <text>Bounty 4: Spotted Mackeral</text>
+        <text>Bounty 4: Spotted Mackerel</text>
         <event>
             <loadEvent>FISH_BOUNTY_14_4</loadEvent>
         </event>
@@ -404,7 +404,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="fish_bait_bounty_15" lvl="4" max_lvl="4">
-        <text>Bounty 5: Spotted Mackeral</text>
+        <text>Bounty 5: Spotted Mackerel</text>
         <event>
             <loadEvent>FISH_BOUNTY_15_4</loadEvent>
         </event>
@@ -1187,7 +1187,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event>
             <remove name="FISH_FOOD_4"/>
             <augment name="FISH_BAIT_11"/>
@@ -1196,7 +1196,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice>
@@ -1499,7 +1499,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event>
             <remove name="FISH_FOOD_4"/>
             <augment name="FISH_BAIT_12"/>
@@ -1508,7 +1508,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice>
@@ -1811,7 +1811,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event>
             <remove name="FISH_FOOD_4"/>
             <augment name="FISH_BAIT_13"/>
@@ -1820,7 +1820,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice>
@@ -2123,7 +2123,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event>
             <remove name="FISH_FOOD_4"/>
             <augment name="FISH_BAIT_14"/>
@@ -2132,7 +2132,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice>
@@ -2435,7 +2435,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event>
             <remove name="FISH_FOOD_4"/>
             <augment name="FISH_BAIT_15"/>
@@ -2444,7 +2444,7 @@ It appears they have a bounty board setup for fish, The rewards appear quite val
         </event>
     </choice>
     <choice req="FISH_FOOD_4" lvl="0" max_lvl="0" hidden="true">
-        <text>Spotted Mackeral</text>
+        <text>Spotted Mackerel</text>
         <event load="OPTION_INVALID"/>
     </choice>
     <choice>

@@ -14,7 +14,7 @@ There appears to note scratched into the generator.
 	<choice>
 		<text>Sabotage the generator.</text>
 		<event>
-            <text>You quickly destroy the oxygen generator, it's unlikely you'll be seeing this station again, atleast in this universe.</text>
+            <text>You quickly destroy the oxygen generator, it's unlikely you'll be seeing this station again, at least in this universe.</text>
             <variable name="fishing_store_visited" op="set" val="0"/>
             <status type="limit" target="enemy" system="oxygen" amount="0" />
             <status type="limit" target="enemy" system="weapons" amount="0" />
@@ -33,7 +33,7 @@ There appears to note scratched into the generator.
 <event name="FISHING_STORE_KILLED">
     <text>The station has been emptied of crew.
 
-You recieve an empty message
+You receive an empty message
 There's a set of coordinates attached...</text>
     <variable name="fishing_store_killed" op="set" val="1"/>
     <quest event="FISHING_MAW_QUEST"/>

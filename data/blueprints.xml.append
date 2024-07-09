@@ -5910,7 +5910,7 @@ Cooldown will not go below 1x, Instead power scales number of shots.</desc>
 	<title>Shockfish</title>
 	<short>Shockfish</short>
 	<tip>tip_ion</tip>
-	<desc>Similiar to an ion weapon, however it shocks crew and causes them to run to a random room.</desc>
+	<desc>Similar to an ion weapon, however it shocks crew and causes them to run to a random room.</desc>
 	<tooltip>Fires 1 projectiles, 1 ion damage, sends crew away from the room.</tooltip>
 	<damage>0</damage>
 	<ion>1</ion>
@@ -6092,7 +6092,7 @@ Cooldown will not go below 1x, Instead power scales number of shots.</desc>
 	<title>Breachfish</title>
 	<short>Breachfish</short>
 	<desc>A fish specialized in breaching enemy ships, is capable of penetrating through super shields.</desc>
-	<tooltip>Fires 1 missile, does 3 damage, garenteed breach, penetrates super shields</tooltip>
+	<tooltip>Fires 1 missile, does 3 damage, guaranteed breach, penetrates super shields</tooltip>
 	<damage>3</damage>
 	<missiles>1</missiles>
 	<shots>1</shots>
@@ -7058,8 +7058,8 @@ Default Price: 80~ - Selling Price:40~
 	<type>BEAM</type>
 	<flavorType>Fish</flavorType>
 	<tip>tip_fish_food</tip>
-	<title>Spotted Mackeral</title>
-	<short>Spotted Mackeral</short>
+	<title>Spotted Mackerel</title>
+	<short>Spotted Mackerel</short>
 	<desc>A basic space fish, when consumed gives a +5% movement speed bonus to all crew</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
@@ -7899,7 +7899,7 @@ Default Price: 80~ - Selling Price:40~
 	<tip>tip_fish_food</tip>
 	<title>Shorefish</title>
 	<short>Shorefish</short>
-	<desc>A legendary space fish, when consumed makes your crew incapable of repairing, however all systems now autorepair at speeds equivilent to two crew members repairing.</desc>
+	<desc>A legendary space fish, when consumed makes your crew incapable of repairing, however all systems now autorepair at speeds equivalent to two crew members repairing.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
@@ -8399,7 +8399,7 @@ Default Price: 80~ - Selling Price:40~
 	<tip>tip_fish_food</tip>
 	<title>Ancient Fish</title>
 	<short>Ancient Fish</short>
-	<desc>A unique space fish, can be consumed to upgrade an obelisk weapon to the royal varient.</desc>
+	<desc>A unique space fish, can be consumed to upgrade an obelisk weapon to the royal variant.</desc>
 	<tooltip>Fish</tooltip>
 	<damage>0</damage>
 	<sp>0</sp>
