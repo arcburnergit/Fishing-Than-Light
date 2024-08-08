@@ -1333,8 +1333,8 @@
 				<multiDifficulty>false</multiDifficulty>
             </achievement>
             <achievement name="FISH_CAUGHT_4">
-                <name>Spotted Mackeral</name>
-                <description>Catch a Spotted Mackeral.</description>
+                <name>Spotted Mackerel</name>
+                <description>Catch a Spotted Mackerel.</description>
                 <header>Fish Caught!</header>
                 <icon>fish4</icon>
                 <variable name="fish_obtained_4" amount="1" />

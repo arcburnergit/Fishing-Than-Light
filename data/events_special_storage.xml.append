@@ -295,7 +295,7 @@
     </event>
   </choice>
   <choice req="FISH_FOOD_4">
-    <text>Cook the Spotted Mackeral. (+5% move speed)</text>
+    <text>Cook the Spotted Mackerel. (+5% move speed)</text>
     <event>
       <remove name="FISH_FOOD_4"/>
       <hiddenAug>FISH_AUG_4</hiddenAug>
@@ -712,7 +712,7 @@
     </event>
   </choice-->
   <choice req="FISH_FOOD_4D">
-    <text>Cook the Ancient Fish. (Upgrades 1 obelisk weapon to the royal varient)</text>
+    <text>Cook the Ancient Fish. (Upgrades 1 obelisk weapon to the royal variant)</text>
     <event load="STORAGE_CHECK_ANC_UPGRADE" />
   </choice>
   <choice req="FISH_FOOD_4E">
@@ -1973,7 +1973,7 @@
   </choice>
 
   <choice blue="false" req="fish_inaug_bait_check" >
-    <text>Improved bait. (Reduces chance of recieving junk)</text>
+    <text>Improved bait. (Reduces chance of receiving junk)</text>
     <event>
       <text>You install the improved bait.</text>
       <item_modify>
@@ -1989,7 +1989,7 @@
     </event>
   </choice>
   <!--choice blue="false" req="fish_inaug_bait_alt_check" >
-    <text>Improved bait. (Reduces chance of recieving junk)</text>
+    <text>Improved bait. (Reduces chance of receiving junk)</text>
     <event>
       <text>You install the improved bait.</text>
       <item_modify>
@@ -2117,13 +2117,13 @@
 
 <event name="STORAGE_CHECK_FISHING_INFO">
   <text>Fishing rewards are calculated as such;
-When you catch a fish it first calculates the chance of getting junk, intially this is a 3/4 chance, which is reduced to 2/3 by the internal augment, and 0/1 by the boon and fishing vessel augment.
+When you catch a fish it first calculates the chance of getting junk, initially this is a 3/4 chance, which is reduced to 2/3 by the internal augment, and 0/1 by the boon and fishing vessel augment.
 If it decided you caught junk theres a 50% chance of a basic fish and a 50% chance for a junk item (The useless items worth 5 scrap).
-(This does not apply to the glowing blue fish which is a garenteed legendary fish.)
+(This does not apply to the glowing blue fish which is a guaranteed legendary fish.)
 
 Otherwise the fishing loot is determined by the loot table corresponding to the difficulty of fish you caught. There are different loot tables depending on your sector.
 
-Fish difficulty is determined when you start fishing, normally its a number from 1 to the strength of your harpoon, a MK 1 has a strength of 5, a MK 2 a strength of 10, and a MK 3 a stregth of 16.
+Fish difficulty is determined when you start fishing, normally its a number from 1 to the strength of your harpoon, a MK 1 has a strength of 5, a MK 2 a strength of 10, and a MK 3 a strength of 16.
 The MK2 and MK3 will raise the lower bound of the difficulty if you have the internal augment to make basic fish rarer.
 
 Basic, Uncommon and Rare fishing bonuses all stack multiplicatively, they also only apply to your own crew.
@@ -2146,7 +2146,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     <event load="STORAGE_CHECK_FISHING_LOAD"/>
   </choice>
   <choice req="fish_bait_equip_11" blue="false">
-    <text>Currently equiped bait: No Scrap</text>
+    <text>Currently equipped bait: No Scrap</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2154,7 +2154,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_12" blue="false">
-    <text>Currently equiped bait: Less Generic Fish</text>
+    <text>Currently equipped bait: Less Generic Fish</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2162,7 +2162,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_13" blue="false">
-    <text>Currently equiped bait: No Gun or Unique Fish</text>
+    <text>Currently equipped bait: No Gun or Unique Fish</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2170,7 +2170,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_14" blue="false">
-    <text>Currently equiped bait: No Crew</text>
+    <text>Currently equipped bait: No Crew</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2178,7 +2178,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_15" blue="false">
-    <text>Currently equiped bait: No Equipment</text>
+    <text>Currently equipped bait: No Equipment</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2187,7 +2187,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
   </choice>
   
   <choice req="fish_bait_equip_21" blue="false">
-    <text>Currently equiped bait: No Scrap/Less Generic Fish</text>
+    <text>Currently equipped bait: No Scrap/Less Generic Fish</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2195,7 +2195,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_22" blue="false">
-    <text>Currently equiped bait: Less Generic Fish/No Gun or Unique Fish</text>
+    <text>Currently equipped bait: Less Generic Fish/No Gun or Unique Fish</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2203,7 +2203,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_23" blue="false">
-    <text>Currently equiped bait: No Gun or Unique Fish/No Crew</text>
+    <text>Currently equipped bait: No Gun or Unique Fish/No Crew</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2211,7 +2211,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_24" blue="false">
-    <text>Currently equiped bait: No Crew/No Equipment</text>
+    <text>Currently equipped bait: No Crew/No Equipment</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2219,7 +2219,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_25" blue="false">
-    <text>Currently equiped bait: No Equipment/No Scrap</text>
+    <text>Currently equipped bait: No Equipment/No Scrap</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2228,7 +2228,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
   </choice>
   
   <choice req="fish_bait_equip_31" blue="false">
-    <text>Currently equiped bait: No Scrap/Less Generic Fish/No Gun or Unique Fish</text>
+    <text>Currently equipped bait: No Scrap/Less Generic Fish/No Gun or Unique Fish</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2236,7 +2236,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_32" blue="false">
-    <text>Currently equiped bait: Less Generic Fish/No Gun or Unique Fish/No Crew</text>
+    <text>Currently equipped bait: Less Generic Fish/No Gun or Unique Fish/No Crew</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2244,7 +2244,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_33" blue="false">
-    <text>Currently equiped bait: No Gun or Unique Fish/No Crew/No Equipment</text>
+    <text>Currently equipped bait: No Gun or Unique Fish/No Crew/No Equipment</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2252,7 +2252,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_34" blue="false">
-    <text>Currently equiped bait: No Crew/No Equipment/No Scrap</text>
+    <text>Currently equipped bait: No Crew/No Equipment/No Scrap</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2260,7 +2260,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_35" blue="false">
-    <text>Currently equiped bait: No Equipment/No Scrap/Less Generic Fish</text>
+    <text>Currently equipped bait: No Equipment/No Scrap/Less Generic Fish</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2268,7 +2268,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     </event>
   </choice>
   <choice req="fish_bait_equip_DOUBLE" blue="false">
-    <text>Currently equiped bait: Double Hook</text>
+    <text>Currently equipped bait: Double Hook</text>
     <event>
       <text>1</text>
       <loadEvent>STORAGE_CHECK_FISHING_BAIT</loadEvent>
@@ -2950,7 +2950,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     <text>Bounty 0: Queenfish</text>
     <event load="OPTION_INVALID"/>
   </choice>
-  <choice req="ffish_bait_bounty_DOUBLE" lvl="2" max_lvl="2" hidden="true">
+  <choice req="fish_bait_bounty_DOUBLE" lvl="2" max_lvl="2" hidden="true">
     <text>Bounty 0: Mahi Mahi</text>
     <event load="OPTION_INVALID"/>
   </choice>
@@ -2989,7 +2989,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
     <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_11" hidden="true" lvl="4" max_lvl="4">
-    <text>Bounty 1: Spotted Mackeral</text>
+    <text>Bounty 1: Spotted Mackerel</text>
     <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_11" hidden="true" lvl="5" max_lvl="5">
@@ -3031,7 +3031,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_12" hidden="true" lvl="4" max_lvl="4">
-      <text>Bounty 2: Spotted Mackeral</text>
+      <text>Bounty 2: Spotted Mackerel</text>
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_12" hidden="true" lvl="5" max_lvl="5">
@@ -3073,7 +3073,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_13" hidden="true" lvl="4" max_lvl="4">
-      <text>Bounty 3: Spotted Mackeral</text>
+      <text>Bounty 3: Spotted Mackerel</text>
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_13" hidden="true" lvl="5" max_lvl="5">
@@ -3115,7 +3115,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_14" hidden="true" lvl="4" max_lvl="4">
-      <text>Bounty 4: Spotted Mackeral</text>
+      <text>Bounty 4: Spotted Mackerel</text>
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_14" hidden="true" lvl="5" max_lvl="5">
@@ -3157,7 +3157,7 @@ Other bonus will usually stack multiplicatively however they may apply to enemy 
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_15" hidden="true" lvl="4" max_lvl="4">
-      <text>Bounty 5: Spotted Mackeral</text>
+      <text>Bounty 5: Spotted Mackerel</text>
       <event load="OPTION_INVALID"/>
   </choice>
   <choice req="fish_bait_bounty_15" hidden="true" lvl="5" max_lvl="5">

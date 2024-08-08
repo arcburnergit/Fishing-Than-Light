@@ -12,7 +12,7 @@
 	<mod-append:choice hidden="true" req="BLUELIST_FISH" blue="false">
         <text>Present a fish.</text>
         <event>
-            <text>"This... this is a fish? I'm not sure why you have brought me this, however this IS tribute, if only becuase I'm not sure how you got your hands on it. I shall BLESS you with the BLESSING OF FISH. But have PATIENCE. It is not for now, but for LATER!"</text>
+            <text>"This... this is a fish? I'm not sure why you have brought me this, however this IS tribute, if only because I'm not sure how you got your hands on it. I shall BLESS you with the BLESSING OF FISH. But have PATIENCE. It is not for now, but for LATER!"</text>
             <achievement silent="false">ACH_BOON_FISH</achievement>
             <metaVariable name="prof_r_boon_fish" op="set" val="1" />
             <choice hidden="true">
