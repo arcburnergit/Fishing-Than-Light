@@ -109,7 +109,7 @@
   <autoReward level="LOW">stuff</autoReward>
 </event>
 <event name="FISH_SCRAP_2">
-  <text>You've pulled up a heap of junk, atleast there are some useful components in the mix.</text>
+  <text>You've pulled up a heap of junk, at least there are some useful components in the mix.</text>
   <autoReward level="MED">stuff</autoReward>
 </event>
 <event name="FISH_SCRAP_3">
@@ -139,7 +139,7 @@
 </event>
 <event name="FISH_ENGI_GIVE">
   <variable name="fish_caught_unique" op="add" val="1"/>
-  <text>You reeled in a unique engi fish!</text>
+  <text>You reeled in a unique Engi fish!</text>
   
   <weapon name="FISH_FOOD_43"/>
   <choice>
@@ -149,7 +149,7 @@
 </event>
 <event name="FISH_ZOL_GIVE">
   <variable name="fish_caught_unique" op="add" val="1"/>
-  <text>You reeled in a unique zoltan fish!</text>
+  <text>You reeled in a unique Zoltan fish!</text>
   
   <weapon name="FISH_FOOD_44"/>
   <choice>
