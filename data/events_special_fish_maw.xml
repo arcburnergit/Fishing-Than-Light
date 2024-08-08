@@ -643,7 +643,7 @@ Upgrade Points: MAW</text>
 
     
     <choice req="FISH_FOOD_21">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_21</loadEvent>
@@ -651,7 +651,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_22">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_22</loadEvent>
@@ -659,7 +659,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_23">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_23</loadEvent>
@@ -667,7 +667,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_24">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_24</loadEvent>
@@ -675,7 +675,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_25">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_25</loadEvent>
@@ -683,7 +683,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_26">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_26</loadEvent>
@@ -691,7 +691,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_27">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_27</loadEvent>
@@ -699,7 +699,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_28">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_28</loadEvent>
@@ -707,7 +707,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_29">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_29</loadEvent>
@@ -715,7 +715,7 @@ Upgrade Points: MAW</text>
         </event>
     </choice>
     <choice req="FISH_FOOD_20">
-        <text>Feed the Maw: (+6)</text>
+        <text>Feed the Maw: (+4)</text>
         <event>
             <text> 1 </text>
             <loadEvent>FISH_MAW_CONSUME_FOOD_20</loadEvent>

@@ -2370,7 +2370,7 @@
 	<desc>The Maw feeds on living organisms, it can be upgraded and changed in the storage menu after being fed enough.</desc>
 	<tooltip>The Maw</tooltip>
 	<damage>2</damage>
-	<sp>0</sp>
+	<sp>1</sp>
 	<fireChance>0</fireChance>
 	<breachChance>0</breachChance>
 	<cooldown>15</cooldown>

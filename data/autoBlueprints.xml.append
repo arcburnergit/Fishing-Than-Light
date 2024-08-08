@@ -75,6 +75,16 @@
   <name>FISHING_ROD_3_P</name>
 </blueprintList>
 
+<blueprintList name="BUYLIST_FISHING_RODS">
+  <name>FISHING_ROD_0</name>
+  <name>FISHING_ROD_1</name>
+  <name>FISHING_ROD_2</name>
+  <name>FISHING_ROD_2_P</name>
+  <name>FISHING_ROD_3</name>
+  <name>FISHING_ROD_3_P</name>
+  <name>FISHING_ROD_3_PP</name>
+</blueprintList>
+
 <blueprintList name="BLUELIST_FISHING_RODS">
   <name>FISHING_ROD_0</name>
   <name>FISHING_ROD_1</name>

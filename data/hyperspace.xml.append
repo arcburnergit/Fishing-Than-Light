@@ -7,7 +7,7 @@
 <mod:findLike type="scripts" limit="1">
     <mod-append:script>data/scripts/fish/fishing.lua</mod-append:script>
     <mod-append:script>data/scripts/fish/ship_ach.lua</mod-append:script>
-    <!--mod-append:script>data/scripts/fishIcon.lua</mod-append:script-->
+    <mod-append:script>data/scripts/fishIcon.lua</mod-append:script>
 </mod:findLike>
 
 
@@ -742,7 +742,7 @@
                 <price>-1</price>
             </item>
             <item>
-                <blueprint>BLUELIST_FISHING_RODS</blueprint>
+                <blueprint>BUYLIST_FISHING_RODS</blueprint>
                 <price>-1</price>
             </item>
         </category>
