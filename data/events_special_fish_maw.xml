@@ -44,7 +44,8 @@ There's a set of coordinates attached...</text>
 </event>
   
 <ship name="FISH_MAW_ENEMY" auto_blueprint="FISH_MAW_ENEMY">
-  <destroyed load="DESTROYED_FISH_MAW_ENEMY" />
+    <deadCrew load="DESTROYED_FISH_MAW_ENEMY" />
+    <destroyed load="DESTROYED_FISH_MAW_ENEMY" />
 </ship>
 
 <event name="FISHING_MAW_QUEST">
