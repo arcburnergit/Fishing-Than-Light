@@ -7,7 +7,6 @@
 <mod:findLike type="scripts" limit="1">
     <mod-append:script>data/scripts/fish/fishing.lua</mod-append:script>
     <mod-append:script>data/scripts/fish/ship_ach.lua</mod-append:script>
-    <mod-append:script>data/scripts/fishIcon.lua</mod-append:script>
 </mod:findLike>
 
 
