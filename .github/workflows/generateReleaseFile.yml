@@ -1,0 +1,52 @@
+name: Zip and Attach to Release with Tag
+
+on:
+  release:
+    types: [published] 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Create Mod File and upload
+      run: |
+        # Extract the tag name from the GITHUB_REF (e.g., refs/tags/v1.0.0 -> v1.0.0)
+        TAG_NAME="${GITHUB_REF#refs/tags/}"
+        
+        # Define the new filename including the tag and the new prefix
+        NEW_FILENAME="Fishing_${TAG_NAME}.ftl" # <--- Changed prefix here
+
+        # Check if the folders exist before zipping
+        for folder in audio data img mod-appendix; do
+          if [ ! -d "$folder" ]; then
+            echo "Warning: Folder '$folder' does not exist. It will be skipped."
+          fi
+        done
+        
+        # Create the zip file, excluding the .git directory if it somehow gets included
+        zip -r temp_archive.zip audio data img mod-appendix -x "*.git/*"
+
+        # Rename the zip file to the desired .ftl name with the tag
+        mv temp_archive.zip "$NEW_FILENAME"
+        
+        echo "Successfully created and renamed $NEW_FILENAME"
+        ls -lh "$NEW_FILENAME" # List the created file for verification
+
+        # Set the NEW_FILENAME as an environment variable so it can be used by subsequent steps
+        echo "NEW_FILENAME=$NEW_FILENAME" >> $GITHUB_ENV
+
+
+    - name: Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/') # Ensure this only runs for tags (releases)
+      with:
+        files: 
+          ${{ env.NEW_FILENAME }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub automatically provides this token
