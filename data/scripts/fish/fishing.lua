@@ -1325,7 +1325,7 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
     if shipManager.iShipId == 0 then
-        scrapLeft = 10 * shipManager:GetAugmentationValue("ARC_THIEVERY")
+        scrapLeft = 10 - 10 * shipManager:GetAugmentationValue("ARC_THIEVERY")
     end
 end)
 
